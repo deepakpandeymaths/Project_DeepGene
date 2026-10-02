@@ -1,0 +1,79 @@
+
+============================================================
+1. DATABASE OVERVIEW
+============================================================
+Genes: 1
+Unique variants: 5381
+Genomic representations: 10696
+ClinVar records: 10696
+
+============================================================
+2. VARIANT TYPES
+============================================================
+Variant type is not currently stored as a separate
+database field.
+
+The current database schema stores:
+- HGVS name
+- genomic representation
+- reference allele
+- alternate allele
+- ClinVar clinical evidence
+
+Therefore, variant-type statistics will be added
+later if/when the database schema includes this field.
+
+============================================================
+3. dbSNP COVERAGE
+============================================================
+Representations with dbSNP ID: 10696
+Representations without dbSNP ID: 0
+dbSNP coverage: 100.00%
+
+============================================================
+4. GENOMIC COORDINATE COVERAGE
+============================================================
+Representations with genomic coordinates: 10686
+Representations without genomic coordinates: 10
+Coordinate coverage: 99.91%
+
+============================================================
+5. GENOME ASSEMBLY DISTRIBUTION
+============================================================
+GRCh37: 5369
+GRCh38: 5317
+na: 10
+
+============================================================
+6. VARIANT REPRESENTATION ACROSS ASSEMBLIES
+============================================================
+Variants represented on both GRCh37 and GRCh38: 5315
+Variants represented only on GRCh37: 54
+Variants represented only on GRCh38: 2
+
+============================================================
+7. ALLELE INFORMATION
+============================================================
+Representations with reference and alternate alleles: 10696
+Representations without complete allele information: 0
+
+============================================================
+8. DATABASE CONSISTENCY CHECKS
+============================================================
+Variants without gene_id: 0
+Orphan genomic representations: 0
+Orphan ClinVar records: 0
+
+============================================================
+9. ANALYSIS SUMMARY
+============================================================
+The database contains 5381 unique SCN1A variants.
+These variants have 10696 genomic representations.
+The database contains 10696 ClinVar records.
+
+The genomic representation layer allows the same biological
+variant to be represented separately on GRCh37 and GRCh38.
+
+This analysis describes the structure and completeness of
+the current SCN1A ClinVar database. It does not assign
+pathogenicity or prioritize variants.
