@@ -1,0 +1,176 @@
+
+============================================================
+1. OVERALL EVIDENCE COUNTS
+============================================================
+Unique variants: 5381
+ClinVar records: 10696
+
+============================================================
+2. REVIEW STATUS
+============================================================
+criteria provided, single submitter: 3741 unique variants, 7417 records
+criteria provided, multiple submitters, no conflicts: 1083 unique variants, 2166 records
+criteria provided, conflicting classifications: 386 unique variants, 772 records
+no assertion criteria provided: 68 unique variants, 135 records
+no classification provided: 59 unique variants, 118 records
+reviewed by expert panel: 22 unique variants, 44 records
+-: 22 unique variants, 44 records
+
+============================================================
+3. NUMBER OF SUBMITTERS
+============================================================
+1 submitter(s): 3789 unique variants, 7512 records
+2 submitter(s): 927 unique variants, 1854 records
+3 submitter(s): 340 unique variants, 680 records
+4 submitter(s): 121 unique variants, 242 records
+5 submitter(s): 60 unique variants, 120 records
+6 submitter(s): 33 unique variants, 66 records
+7 submitter(s): 21 unique variants, 42 records
+8 submitter(s): 22 unique variants, 44 records
+9 submitter(s): 13 unique variants, 26 records
+10 submitter(s): 14 unique variants, 28 records
+11 submitter(s): 7 unique variants, 14 records
+12 submitter(s): 10 unique variants, 20 records
+13 submitter(s): 3 unique variants, 6 records
+14 submitter(s): 4 unique variants, 8 records
+15 submitter(s): 6 unique variants, 12 records
+16 submitter(s): 2 unique variants, 4 records
+17 submitter(s): 3 unique variants, 6 records
+18 submitter(s): 3 unique variants, 6 records
+19 submitter(s): 2 unique variants, 4 records
+20 submitter(s): 1 unique variants, 2 records
+
+============================================================
+4. SINGLE VS MULTIPLE SUBMITTERS
+============================================================
+Variants with one submitter: 3789
+Variants with multiple submitters: 1592
+Variants with unknown submitter count: 0
+
+============================================================
+5. EXPERT PANEL EVIDENCE
+============================================================
+Total unique variants with expert panel review: 22
+
+Likely pathogenic: 10
+Uncertain significance: 4
+Likely benign: 4
+Pathogenic: 2
+drug response: 1
+Benign: 1
+
+============================================================
+6. CONFLICTING CLASSIFICATIONS
+============================================================
+Variants with conflicting review status: 386
+Variants with conflicting clinical significance: 386
+
+============================================================
+7. REVIEW STATUS × NUMBER OF SUBMITTERS
+============================================================
+
+[-]
+  1 submitter(s): 22 unique variants
+
+[criteria provided, conflicting classifications]
+  1 submitter(s): 1 unique variants
+  2 submitter(s): 162 unique variants
+  3 submitter(s): 103 unique variants
+  4 submitter(s): 46 unique variants
+  5 submitter(s): 25 unique variants
+  6 submitter(s): 17 unique variants
+  7 submitter(s): 9 unique variants
+  8 submitter(s): 6 unique variants
+  9 submitter(s): 4 unique variants
+  10 submitter(s): 4 unique variants
+  11 submitter(s): 3 unique variants
+  12 submitter(s): 3 unique variants
+  17 submitter(s): 1 unique variants
+  18 submitter(s): 1 unique variants
+  20 submitter(s): 1 unique variants
+
+[criteria provided, multiple submitters, no conflicts]
+  2 submitter(s): 673 unique variants
+  3 submitter(s): 219 unique variants
+  4 submitter(s): 70 unique variants
+  5 submitter(s): 32 unique variants
+  6 submitter(s): 15 unique variants
+  7 submitter(s): 11 unique variants
+  8 submitter(s): 12 unique variants
+  9 submitter(s): 9 unique variants
+  10 submitter(s): 10 unique variants
+  11 submitter(s): 4 unique variants
+  12 submitter(s): 7 unique variants
+  13 submitter(s): 3 unique variants
+  14 submitter(s): 4 unique variants
+  15 submitter(s): 6 unique variants
+  16 submitter(s): 2 unique variants
+  17 submitter(s): 2 unique variants
+  18 submitter(s): 2 unique variants
+  19 submitter(s): 2 unique variants
+
+[criteria provided, single submitter]
+  1 submitter(s): 3657 unique variants
+  2 submitter(s): 75 unique variants
+  3 submitter(s): 5 unique variants
+  4 submitter(s): 4 unique variants
+
+[no assertion criteria provided]
+  1 submitter(s): 59 unique variants
+  2 submitter(s): 4 unique variants
+  3 submitter(s): 5 unique variants
+
+[no classification provided]
+  1 submitter(s): 49 unique variants
+  2 submitter(s): 10 unique variants
+
+[reviewed by expert panel]
+  1 submitter(s): 1 unique variants
+  2 submitter(s): 3 unique variants
+  3 submitter(s): 8 unique variants
+  4 submitter(s): 1 unique variants
+  5 submitter(s): 3 unique variants
+  6 submitter(s): 1 unique variants
+  7 submitter(s): 1 unique variants
+  8 submitter(s): 4 unique variants
+
+============================================================
+8. BROAD EVIDENCE CATEGORIES
+============================================================
+Expert panel reviewed: 22
+Multiple submitters, no conflicts: 1083
+Single submitter: 3741
+Conflicting: 386
+No assertion criteria: 68
+No classification: 59
+Unspecified: 22
+
+============================================================
+9. POTENTIAL EVIDENCE SIGNALS FOR DEEPGENE
+============================================================
+The current database contains several fields that
+could later contribute to a transparent prioritization
+system:
+
+- Clinical significance
+- Review status
+- Number of submitters
+- Expert panel review
+- Conflicting classification status
+- Phenotype information
+
+These fields should be treated as evidence signals,
+not as an automatic disease-causality score.
+
+This analysis does not assign weights or rank variants.
+
+============================================================
+10. ANALYSIS SUMMARY
+============================================================
+Evidence quality was examined using ClinVar review status and submitter information.
+
+Review status provides information about how ClinVar classifications were supported, while NumberSubmitters provides an additional description of the available evidence.
+
+These fields can later be incorporated into a transparent variant-prioritization framework.
+
+No pathogenicity score or ranking is produced by this analysis.

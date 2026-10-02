@@ -1,0 +1,227 @@
+
+============================================================
+1. PHENOTYPE COVERAGE
+============================================================
+Unique variants: 5381
+ClinVar records: 10696
+Variants with phenotype information: 5381
+Variants without phenotype information: 0
+Phenotype coverage: 100.00%
+
+============================================================
+2. PHENOTYPE COVERAGE — RECORD LEVEL
+============================================================
+Records with phenotype information: 10696
+Records without phenotype information: 0
+Record-level phenotype coverage: 100.00%
+
+============================================================
+3. MOST FREQUENT PHENOTYPE DESCRIPTIONS
+============================================================
+2050: Early-infantile DEE
+816: not provided
+426: Severe myoclonic epilepsy in infancy
+371: not provided|Early-infantile DEE
+132: Developmental and epileptic encephalopathy
+106: Generalized epilepsy with febrile seizures plus, type 2
+98: Severe myoclonic epilepsy in infancy|Early-infantile DEE
+65: Inborn genetic diseases
+60: SCN1A-related disorder
+59: not specified|Early-infantile DEE
+58: not specified
+44: Inborn genetic diseases|Early-infantile DEE
+44: Early-infantile DEE|not provided
+33: not provided|Inborn genetic diseases|Early-infantile DEE
+26: Severe myoclonic epilepsy in infancy|not provided|Early-infantile DEE
+25: Severe myoclonic epilepsy in infancy|not provided
+24: Early-infantile DEE|not specified
+22: not provided|Severe myoclonic epilepsy in infancy
+22: Seizure
+21: Developmental and epileptic encephalopathy 6B
+20: not specified|not provided|Early-infantile DEE
+18: not provided|not specified
+18: Migraine, familial hemiplegic, 3|Generalized epilepsy with febrile seizures plus, type 2
+18: Generalized epilepsy with febrile seizures plus, type 2|Early-infantile DEE
+18: Early-infantile DEE|SCN1A-related disorder
+17: Migraine, familial hemiplegic, 3
+15: not provided|not specified|Early-infantile DEE
+15: not provided|Early-infantile DEE|not specified
+14: not provided|Severe myoclonic epilepsy in infancy|Early-infantile DEE
+12: SCN1A-related disorder|Early-infantile DEE
+
+============================================================
+4. VARIANTS WITH MULTIPLE PHENOTYPE DESCRIPTIONS
+============================================================
+Variants with multiple distinct phenotype descriptions: 0
+
+============================================================
+5. PHENOTYPE COUNT PER VARIANT
+============================================================
+1 phenotype description(s): 5381 variants
+
+============================================================
+6. PHENOTYPE INFORMATION BY CLINICAL SIGNIFICANCE
+============================================================
+Uncertain significance: 1710 variants with phenotype information
+Pathogenic: 1380 variants with phenotype information
+Likely benign: 788 variants with phenotype information
+Likely pathogenic: 637 variants with phenotype information
+Conflicting classifications of pathogenicity: 386 variants with phenotype information
+Pathogenic/Likely pathogenic: 213 variants with phenotype information
+Benign: 123 variants with phenotype information
+Benign/Likely benign: 62 variants with phenotype information
+not provided: 59 variants with phenotype information
+-: 22 variants with phenotype information
+drug response: 1 variants with phenotype information
+
+============================================================
+7. PHENOTYPE INFORMATION FOR CONFLICTING VARIANTS
+============================================================
+Conflicting variants with phenotype information: 386
+Total conflicting variants: 386
+
+============================================================
+8. EXAMPLE PHENOTYPE RECORDS
+============================================================
+
+Variant ID: 1
+Allele ID: 27921
+HGVS: NM_001165963.4(SCN1A):c.4943G>A (p.Arg1648His)
+Clinical significance: Pathogenic
+Phenotype: Generalized epilepsy with febrile seizures plus, type 2|Severe myoclonic epilepsy in infancy|not provided|Autosomal dominant epilepsy|Early-infantile DEE
+
+Variant ID: 2
+Allele ID: 27922
+HGVS: NM_001165963.4(SCN1A):c.2624C>T (p.Thr875Met)
+Clinical significance: Pathogenic/Likely pathogenic
+Phenotype: Generalized epilepsy with febrile seizures plus, type 2|Generalized epilepsy with febrile seizures plus, type 1|Severe myoclonic epilepsy in infancy|not provided|Inborn genetic diseases|Seizure|SCN1A-related disorder|Early-infantile DEE|Autosomal dominant SCN1A-related disorders
+
+Variant ID: 3
+Allele ID: 27923
+HGVS: NM_001165963.4(SCN1A):c.563A>T (p.Asp188Val)
+Clinical significance: Likely pathogenic
+Phenotype: Generalized epilepsy with febrile seizures plus, type 2|Generalized epilepsy with febrile seizures plus, type 1|Early-infantile DEE
+
+Variant ID: 4
+Allele ID: 27924
+HGVS: NM_001165963.4(SCN1A):c.4057G>C (p.Val1353Leu)
+Clinical significance: Pathogenic
+Phenotype: Generalized epilepsy with febrile seizures plus, type 2|Generalized epilepsy with febrile seizures plus, type 1|Severe myoclonic epilepsy in infancy
+
+Variant ID: 5
+Allele ID: 27925
+HGVS: NM_001165963.4(SCN1A):c.4968C>G (p.Ile1656Met)
+Clinical significance: Pathogenic
+Phenotype: Generalized epilepsy with febrile seizures plus, type 2|Generalized epilepsy with febrile seizures plus, type 1|Severe myoclonic epilepsy in infancy|Early-infantile DEE
+
+Variant ID: 6
+Allele ID: 27926
+HGVS: NM_001165963.4(SCN1A):c.3610T>C (p.Trp1204Arg)
+Clinical significance: Pathogenic
+Phenotype: Generalized epilepsy with febrile seizures plus, type 1|Generalized epilepsy with febrile seizures plus, type 2|not provided
+
+Variant ID: 7
+Allele ID: 27927
+HGVS: NM_001165963.4(SCN1A):c.657_658del (p.Arg219fs)
+Clinical significance: Pathogenic
+Phenotype: Severe myoclonic epilepsy in infancy
+
+Variant ID: 8
+Allele ID: 27928
+HGVS: NM_001165963.4(SCN1A):c.664C>T (p.Arg222Ter)
+Clinical significance: Pathogenic/Likely pathogenic
+Phenotype: Severe myoclonic epilepsy in infancy|not provided|Migraine, familial hemiplegic, 3;Severe myoclonic epilepsy in infancy;Generalized epilepsy with febrile seizures plus, type 2|Intellectual disability|Inborn genetic diseases|Generalized epilepsy with febrile seizures plus, type 2|Developmental and epileptic encephalopathy 6B;Severe myoclonic epilepsy in infancy;Febrile seizures, familial, 3a;Generalized epilepsy with febrile seizures plus, type 2|Early-infantile DEE|SCN1A-related disorder
+
+Variant ID: 9
+Allele ID: 27929
+HGVS: NM_001165963.4(SCN1A):c.2956C>T (p.Leu986Phe)
+Clinical significance: Pathogenic
+Phenotype: Severe myoclonic epilepsy in infancy|Early-infantile DEE
+
+Variant ID: 10
+Allele ID: 27930
+HGVS: NM_001165963.4(SCN1A):c.3809A>C (p.Lys1270Thr)
+Clinical significance: Pathogenic
+Phenotype: Generalized epilepsy with febrile seizures plus, type 2|Generalized epilepsy with febrile seizures plus, type 1|Inborn genetic diseases|Early-infantile DEE
+
+Variant ID: 11
+Allele ID: 27931
+HGVS: NM_001165963.4(SCN1A):c.4283T>C (p.Val1428Ala)
+Clinical significance: Pathogenic
+Phenotype: Generalized epilepsy with febrile seizures plus, type 2|Generalized epilepsy with febrile seizures plus, type 1
+
+Variant ID: 12
+Allele ID: 27932
+HGVS: NM_001165963.4(SCN1A):c.4465C>A (p.Gln1489Lys)
+Clinical significance: Pathogenic
+Phenotype: Migraine, familial hemiplegic, 3|Severe myoclonic epilepsy in infancy
+
+Variant ID: 13
+Allele ID: 27933
+HGVS: NM_001165963.4(SCN1A):c.5126C>T (p.Thr1709Ile)
+Clinical significance: Pathogenic
+Phenotype: Generalized epilepsy with febrile seizures plus, type 2|Severe myoclonic epilepsy in infancy|Early-infantile DEE
+
+Variant ID: 14
+Allele ID: 27934
+HGVS: NM_001165963.4(SCN1A):c.4831G>T (p.Val1611Phe)
+Clinical significance: Pathogenic
+Phenotype: Severe myoclonic epilepsy in infancy|Generalized epilepsy with febrile seizures plus, type 2
+
+Variant ID: 15
+Allele ID: 27935
+HGVS: NM_001165963.4(SCN1A):c.434T>C (p.Met145Thr)
+Clinical significance: Pathogenic
+Phenotype: Generalized epilepsy with febrile seizures plus, type 2|not provided|Febrile seizures, familial, 3a|Generalized epilepsy with febrile seizures plus, type 2;Severe myoclonic epilepsy in infancy;Developmental and epileptic encephalopathy 6B;Migraine, familial hemiplegic, 3|Severe myoclonic epilepsy in infancy
+
+Variant ID: 16
+Allele ID: 27936
+HGVS: NM_001165963.4(SCN1A):c.603-91G>A
+Clinical significance: drug response
+Phenotype: Febrile seizures, familial, 3a|carbamazepine response - Dosage|Early-infantile DEE
+
+Variant ID: 17
+Allele ID: 27937
+HGVS: NM_001165963.4(SCN1A):c.2528del (p.Ser843fs)
+Clinical significance: Pathogenic
+Phenotype: Generalized epilepsy with febrile seizures plus, type 2
+
+Variant ID: 18
+Allele ID: 27938
+HGVS: NC_000002.12:g.(?_165985812)_(166002754_166009718)del
+Clinical significance: Pathogenic
+Phenotype: Severe myoclonic epilepsy in infancy
+
+Variant ID: 19
+Allele ID: 27939
+HGVS: NM_001165963.4(SCN1A):c.4002+1195_4284+346delinsTATT
+Clinical significance: Pathogenic
+Phenotype: Severe myoclonic epilepsy in infancy
+
+Variant ID: 20
+Allele ID: 27940
+HGVS: NM_001165963.4(SCN1A):c.3609del (p.Gln1203fs)
+Clinical significance: Pathogenic
+Phenotype: Severe myoclonic epilepsy in infancy
+
+============================================================
+9. POTENTIAL USE IN DEEPGENE
+============================================================
+Phenotype information can provide clinical context for SCN1A variants.
+
+The current database preserves the phenotype information reported in ClinVar.
+
+Phenotype information should not be treated as independent proof of pathogenicity.
+
+For future prioritization, phenotype matching could become one evidence component alongside clinical significance, review status, submitter information, and other available evidence.
+
+============================================================
+10. ANALYSIS SUMMARY
+============================================================
+Unique SCN1A variants: 5381
+Variants with phenotype information: 5381
+Variants without phenotype information: 0
+
+This analysis describes phenotype coverage and the phenotype descriptions present in the current ClinVar dataset.
+
+It does not determine whether a phenotype is caused by a specific variant.

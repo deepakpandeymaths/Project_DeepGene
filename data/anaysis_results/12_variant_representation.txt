@@ -1,0 +1,247 @@
+
+============================================================
+1. OVERALL VARIANT REPRESENTATION
+============================================================
+Unique biological variants: 5381
+Genomic representations: 10696
+
+============================================================
+2. ASSEMBLY DISTRIBUTION
+============================================================
+GRCh37: 5369 variants, 5369 representations
+GRCh38: 5317 variants, 5317 representations
+na: 10 variants, 10 representations
+
+============================================================
+3. VARIANTS REPRESENTED ON BOTH ASSEMBLIES
+============================================================
+Both GRCh37 and GRCh38: 5315
+GRCh37 only: 54
+GRCh38 only: 2
+Neither GRCh37 nor GRCh38: 10
+
+============================================================
+4. MISSING GENOMIC COORDINATES
+============================================================
+Representations without complete coordinates: 10
+na: 10
+
+============================================================
+5. dbSNP REPRESENTATION CONSISTENCY
+============================================================
+Variants with multiple dbSNP IDs across representations: 0
+Variants with different reference alleles across representations: 0
+Variants with different alternate alleles across representations: 0
+
+============================================================
+6. EXAMPLES OF MULTI-ASSEMBLY REPRESENTATIONS
+============================================================
+
+Variant ID: 1
+Allele ID: 27921
+HGVS: NM_001165963.4(SCN1A):c.4943G>A (p.Arg1648His)
+Assembly: GRCh37
+Coordinate: chr2:166848842-166848842
+Reference: na
+Alternate: na
+dbSNP: 121918622
+
+Variant ID: 1
+Allele ID: 27921
+HGVS: NM_001165963.4(SCN1A):c.4943G>A (p.Arg1648His)
+Assembly: GRCh38
+Coordinate: chr2:165992332-165992332
+Reference: na
+Alternate: na
+dbSNP: 121918622
+
+Variant ID: 2
+Allele ID: 27922
+HGVS: NM_001165963.4(SCN1A):c.2624C>T (p.Thr875Met)
+Assembly: GRCh37
+Coordinate: chr2:166894608-166894608
+Reference: na
+Alternate: na
+dbSNP: 121918623
+
+Variant ID: 2
+Allele ID: 27922
+HGVS: NM_001165963.4(SCN1A):c.2624C>T (p.Thr875Met)
+Assembly: GRCh38
+Coordinate: chr2:166038098-166038098
+Reference: na
+Alternate: na
+dbSNP: 121918623
+
+Variant ID: 3
+Allele ID: 27923
+HGVS: NM_001165963.4(SCN1A):c.563A>T (p.Asp188Val)
+Assembly: GRCh37
+Coordinate: chr2:166911187-166911187
+Reference: na
+Alternate: na
+dbSNP: 121917953
+
+Variant ID: 3
+Allele ID: 27923
+HGVS: NM_001165963.4(SCN1A):c.563A>T (p.Asp188Val)
+Assembly: GRCh38
+Coordinate: chr2:166054677-166054677
+Reference: na
+Alternate: na
+dbSNP: 121917953
+
+Variant ID: 4
+Allele ID: 27924
+HGVS: NM_001165963.4(SCN1A):c.4057G>C (p.Val1353Leu)
+Assembly: GRCh37
+Coordinate: chr2:166859209-166859209
+Reference: na
+Alternate: na
+dbSNP: 121917954
+
+Variant ID: 4
+Allele ID: 27924
+HGVS: NM_001165963.4(SCN1A):c.4057G>C (p.Val1353Leu)
+Assembly: GRCh38
+Coordinate: chr2:166002699-166002699
+Reference: na
+Alternate: na
+dbSNP: 121917954
+
+Variant ID: 5
+Allele ID: 27925
+HGVS: NM_001165963.4(SCN1A):c.4968C>G (p.Ile1656Met)
+Assembly: GRCh37
+Coordinate: chr2:166848817-166848817
+Reference: na
+Alternate: na
+dbSNP: 121917955
+
+Variant ID: 5
+Allele ID: 27925
+HGVS: NM_001165963.4(SCN1A):c.4968C>G (p.Ile1656Met)
+Assembly: GRCh38
+Coordinate: chr2:165992307-165992307
+Reference: na
+Alternate: na
+dbSNP: 121917955
+
+Variant ID: 6
+Allele ID: 27926
+HGVS: NM_001165963.4(SCN1A):c.3610T>C (p.Trp1204Arg)
+Assembly: GRCh37
+Coordinate: chr2:166870349-166870349
+Reference: na
+Alternate: na
+dbSNP: 121917930
+
+Variant ID: 6
+Allele ID: 27926
+HGVS: NM_001165963.4(SCN1A):c.3610T>C (p.Trp1204Arg)
+Assembly: GRCh38
+Coordinate: chr2:166013839-166013839
+Reference: na
+Alternate: na
+dbSNP: 121917930
+
+Variant ID: 7
+Allele ID: 27927
+HGVS: NM_001165963.4(SCN1A):c.657_658del (p.Arg219fs)
+Assembly: GRCh37
+Coordinate: chr2:166909398-166909399
+Reference: na
+Alternate: na
+dbSNP: 1574272192
+
+Variant ID: 7
+Allele ID: 27927
+HGVS: NM_001165963.4(SCN1A):c.657_658del (p.Arg219fs)
+Assembly: GRCh38
+Coordinate: chr2:166052888-166052889
+Reference: na
+Alternate: na
+dbSNP: 1574272192
+
+Variant ID: 8
+Allele ID: 27928
+HGVS: NM_001165963.4(SCN1A):c.664C>T (p.Arg222Ter)
+Assembly: GRCh37
+Coordinate: chr2:166909392-166909392
+Reference: na
+Alternate: na
+dbSNP: 121918624
+
+Variant ID: 8
+Allele ID: 27928
+HGVS: NM_001165963.4(SCN1A):c.664C>T (p.Arg222Ter)
+Assembly: GRCh38
+Coordinate: chr2:166052882-166052882
+Reference: na
+Alternate: na
+dbSNP: 121918624
+
+Variant ID: 9
+Allele ID: 27929
+HGVS: NM_001165963.4(SCN1A):c.2956C>T (p.Leu986Phe)
+Assembly: GRCh37
+Coordinate: chr2:166893031-166893031
+Reference: na
+Alternate: na
+dbSNP: 121918625
+
+Variant ID: 9
+Allele ID: 27929
+HGVS: NM_001165963.4(SCN1A):c.2956C>T (p.Leu986Phe)
+Assembly: GRCh38
+Coordinate: chr2:166036521-166036521
+Reference: na
+Alternate: na
+dbSNP: 121918625
+
+Variant ID: 10
+Allele ID: 27930
+HGVS: NM_001165963.4(SCN1A):c.3809A>C (p.Lys1270Thr)
+Assembly: GRCh37
+Coordinate: chr2:166868689-166868689
+Reference: na
+Alternate: na
+dbSNP: 121918626
+
+Variant ID: 10
+Allele ID: 27930
+HGVS: NM_001165963.4(SCN1A):c.3809A>C (p.Lys1270Thr)
+Assembly: GRCh38
+Coordinate: chr2:166012179-166012179
+Reference: na
+Alternate: na
+dbSNP: 121918626
+
+============================================================
+7. REPRESENTATION MODEL VALIDATION
+============================================================
+Variants without any genomic representation: 0
+Orphan genomic representations: 0
+
+============================================================
+8. POTENTIAL USE IN DEEPGENE
+============================================================
+The representation layer separates biological variants from genome-assembly-specific coordinates.
+
+This prevents GRCh37 and GRCh38 representations of the same variant from being treated as separate biological variants.
+
+Assembly-specific coordinates can later support genomic annotation and external database integration.
+
+This analysis does not assign pathogenicity or prioritize variants.
+
+============================================================
+9. ANALYSIS SUMMARY
+============================================================
+Unique biological variants: 5381
+Genomic representations: 10696
+Represented on both GRCh37 and GRCh38: 5315
+GRCh37-only variants: 54
+GRCh38-only variants: 2
+Representations without coordinates: 10
+
+The representation layer successfully separates biological variant identity from assembly-specific genomic coordinates.
