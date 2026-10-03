@@ -1,0 +1,214 @@
+==============================================================================
+DEEPGENE ML STEP 32
+FINAL ML HANDOFF / REPRODUCIBILITY SUMMARY
+==============================================================================
+
+Handoff generated: 2026-10-03 16:02:54
+
+PURPOSE
+------------------------------------------------------------------------------
+Create the final reproducibility and handoff record for the completed exploratory DeepGene supervised-ML analysis.
+This handoff records the dataset, target, predictor set, validation design, major findings, leakage controls, limitations, and final model-selection decision.
+No new model is trained in this step.
+No hyperparameter tuning is performed in this step.
+No feature selection is performed in this step.
+
+DATASET VALIDATION
+------------------------------------------------------------------------------
+Input file: data\processed\deepgene_ml_ready_v1.csv
+Rows: 51
+Columns: 26
+Target column: functional_target
+Model feature count: 14
+
+Target present: True
+Missing target values: 0
+
+Missing model features: 0
+Non-numeric model features: 0
+Missing model-feature values: 0
+
+TARGET DEFINITION
+------------------------------------------------------------------------------
+Target: functional_target
+Target represents the independent functional-effect classification derived from the matched functional dataset.
+Primary supervised classes:
+  Gain: 4 (0.0784)
+  Loss: 35 (0.6863)
+  Mixed: 12 (0.2353)
+
+Primary supervised dataset size: 51 variants
+Smallest class: Gain, n=4
+
+FINAL MODEL PREDICTOR SET
+------------------------------------------------------------------------------
+01. protein_position
+02. same_amino_acid
+03. reference_hydrophobicity
+04. alternate_hydrophobicity
+05. delta_hydrophobicity
+06. absolute_delta_hydrophobicity
+07. reference_charge
+08. alternate_charge
+09. delta_charge
+10. absolute_delta_charge
+11. reference_volume
+12. alternate_volume
+13. delta_volume
+14. absolute_delta_volume
+
+These are biological/amino-acid-level predictors.
+Identifier, phenotype, inheritance, functional target text, and ClinVar-derived evidence variables were not used as model predictors.
+
+LEAKAGE AND TARGET-INDEPENDENCE CONTROL
+------------------------------------------------------------------------------
+Step 29 report found: PASS
+Step 29 report file: data\analysis_results\29_final_leakage_audit.txt
+
+The documented 14-feature predictor set is structurally separated from the functional target.
+Target-related metadata were explicitly excluded from the model predictor list.
+No identifier column was used as a model predictor.
+No phenotype or inheritance variable was used as a model predictor.
+No ClinVar clinical-significance or evidence-count variable was used as a model predictor.
+
+VALIDATION DESIGN
+------------------------------------------------------------------------------
+Primary validation: repeated stratified cross-validation.
+Number of folds: 4
+Number of independent fold assignments: 5
+CV seeds: 42, 123, 2024, 7, 99
+Total validation evaluations per model: 20
+Primary metrics: balanced accuracy, macro precision, macro recall, macro F1, and confusion matrix.
+
+BASELINE
+------------------------------------------------------------------------------
+Majority class: Loss
+Majority-class balanced accuracy: 0.3333
+Majority-class macro F1: 0.2713
+
+SUPERVISED MODEL RESULTS
+------------------------------------------------------------------------------
+Logistic Regression:
+  Repeated-CV balanced accuracy: 0.2750 ± 0.0740
+  Repeated-CV macro F1: 0.2472 ± 0.0537
+
+Random Forest:
+  Repeated-CV balanced accuracy: 0.3032 ± 0.1663
+  Repeated-CV macro F1: 0.2718 ± 0.1274
+
+No model demonstrated robust superiority over the majority-class baseline.
+
+UNCERTAINTY AND STABILITY
+------------------------------------------------------------------------------
+Repeated CV demonstrated substantial variability across fold assignments.
+Random Forest showed particularly high variation in balanced accuracy.
+Feature-importance stability analysis did not identify a consistently dominant predictor.
+Learning-curve analysis did not demonstrate a clear pattern of improved performance with additional training data.
+Repeated out-of-fold predictions showed that prediction stability does not imply prediction correctness.
+
+TARGET-PERMUTATION SANITY TEST
+------------------------------------------------------------------------------
+Number of target permutations: 100
+
+Logistic Regression:
+  Real-label balanced accuracy: 0.2750
+  Permutation mean: 0.3394
+  Permutations >= real-label score: 95/100
+
+Random Forest:
+  Real-label balanced accuracy: 0.3012
+  Permutation mean: 0.3390
+  Permutations >= real-label score: 78/100
+
+Interpretation: the observed model scores were not unusually high relative to randomized-target performance.
+
+ERROR STRUCTURE
+------------------------------------------------------------------------------
+Repeated errors were concentrated among the minority functional classes.
+Logistic Regression repeatedly misclassified Gain variants.
+Random Forest showed substantial confusion between Loss and Mixed and difficulty with Gain.
+
+FEATURE AUDIT SUMMARY
+------------------------------------------------------------------------------
+Correlation audit:
+  No feature pair reached |r| >= 0.80.
+
+Variance audit:
+  same_amino_acid was constant.
+  No additional near-zero-variance feature was identified.
+
+Scale audit:
+  Feature numerical scales differed substantially.
+  Logistic Regression used StandardScaler inside each validation training fold.
+  Random Forest did not require standardization.
+
+==============================================================================
+FINAL MODEL DECISION
+==============================================================================
+FINAL MODEL SELECTED: NO
+
+Reason:
+The current dataset and 14-feature representation do not provide sufficient evidence for selecting a reliable three-class functional-effect predictive model.
+Observed performance is around or below the majority-class baseline, repeated validation is unstable, feature importance is unstable, and target permutation testing does not show unusually high performance.
+
+SCIENTIFIC SCOPE
+------------------------------------------------------------------------------
+This ML branch is an exploratory SCN1A functional-effect classification analysis.
+It is not a clinical diagnostic model.
+It is not a pathogenicity/benignity classifier.
+It is not a disease-risk predictor.
+It does not establish clinical validity or clinical utility.
+
+FINAL LIMITATIONS
+------------------------------------------------------------------------------
+1. Primary supervised dataset contains only 51 variants.
+2. Gain class contains only 4 variants.
+3. Functional data originate from a limited experimental source.
+4. No external independent functional benchmark was evaluated.
+5. Current feature representation is limited.
+6. Repeated cross-validation remains unstable.
+7. Feature importance is not stable.
+8. No final model has demonstrated robust predictive value.
+
+REPRODUCIBILITY FILE CHECK
+------------------------------------------------------------------------------
+12_ml_handoff_check.txt: PRESENT
+13_majority_class_baseline.txt: PRESENT
+14_stratified_cv_setup.txt: PRESENT
+15_logistic_regression_cv.txt: PRESENT
+16_random_forest_cv.txt: PRESENT
+17_model_comparison.txt: PRESENT
+18_repeated_stratified_cv.txt: PRESENT
+19_feature_class_separability.txt: PRESENT
+20_feature_importance_stability.txt: PRESENT
+21_learning_curve_analysis.txt: PRESENT
+22_model_uncertainty_analysis.txt: PRESENT
+23_out_of_fold_prediction_audit.txt: PRESENT
+24_error_pattern_analysis.txt: PRESENT
+25_ml_feature_correlation_audit.txt: PRESENT
+26_ml_feature_variance_audit.txt: PRESENT
+27_ml_feature_scale_audit.txt: PRESENT
+28_class_weight_sensitivity.txt: PRESENT
+30_target_permutation_test.txt: PRESENT
+31_consolidated_ml_evidence_summary.txt: PRESENT
+Step 29 leakage audit artifact: PRESENT (29_final_leakage_audit.txt)
+
+CORE DATA/ANALYSIS ARTIFACTS
+------------------------------------------------------------------------------
+data/processed/deepgene_ml_ready_v1.csv: PRESENT
+data/analysis_results/30_target_permutation_test.txt: PRESENT
+data/analysis_results/31_consolidated_ml_evidence_summary.txt: PRESENT
+data/analysis_results/32_ml_final_handoff.txt: PRESENT
+
+==============================================================================
+HANDOFF STATUS
+==============================================================================
+DATASET VALIDATION: PASS
+ANALYSIS ARTIFACT CHECK: PASS
+LEAKAGE CONTROL: PASS
+MODEL SELECTION: NO MODEL SELECTED
+OVERALL HANDOFF: COMPLETE
+
+==============================================================================
+STATUS: PASS
+==============================================================================

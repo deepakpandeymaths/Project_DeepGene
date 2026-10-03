@@ -1,0 +1,17 @@
+DEEPGENE GENERATION-2 DATA EXPANSION
+
+Source rows: 375
+Unique variant keys: 375
+Genes: SCN10A, SCN11A, SCN1A, SCN2A, SCN3A, SCN4A, SCN5A, SCN8A, SCN9A
+LOF: 211
+GOF: 164
+Exact overlaps with DeepGene V1: 40
+Gen-2 training rows after exact-overlap exclusion: 335
+
+IMPORTANT: Exact overlap was excluded. The source is still literature-related to V1, so this is expanded cross-channel training data, not a fully independent external test set.
+
+Harmonized table: C:\Users\Hp\OneDrive\Documents\Project_DeepGene_2.0\data\processed\deepgene_gen2_scion_harmonized_v1.csv
+ML matrix: C:\Users\Hp\OneDrive\Documents\Project_DeepGene_2.0\data\processed\deepgene_gen2_ml_ready_v1.csv
+Manifest: C:\Users\Hp\OneDrive\Documents\Project_DeepGene_2.0\data\raw\generation2_source_manifest.json
+
+STATUS: PASS

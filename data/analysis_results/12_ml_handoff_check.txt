@@ -1,0 +1,47 @@
+PROJECT DEEPGENE — ML STEP 12
+STEP-42 ML HANDOFF CHECK
+============================================================
+
+Input file: D:\Project_DeepGene\data\processed\deepgene_ml_ready_v1.csv
+Rows: 51
+Columns: 26
+
+TARGET
+------------------------------------------------------------
+Target column: functional_target
+Target missing values: 0
+Target classes: ['Gain', 'Loss', 'Mixed']
+
+TARGET DISTRIBUTION
+------------------------------------------------------------
+Loss: 35
+Mixed: 12
+Gain: 4
+
+EXPECTED BIOLOGICAL FEATURES
+------------------------------------------------------------
+protein_position
+same_amino_acid
+reference_hydrophobicity
+alternate_hydrophobicity
+delta_hydrophobicity
+absolute_delta_hydrophobicity
+reference_charge
+alternate_charge
+delta_charge
+absolute_delta_charge
+reference_volume
+alternate_volume
+delta_volume
+absolute_delta_volume
+
+FEATURE VALIDATION
+------------------------------------------------------------
+Missing required features: 0
+Missing feature values: 0
+Non-numeric/invalid feature values: 0
+
+ML HANDOFF DECISION
+------------------------------------------------------------
+STATUS: PASS
+Step-42 dataset is ready for baseline and stratified CV.

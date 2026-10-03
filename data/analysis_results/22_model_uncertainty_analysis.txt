@@ -1,0 +1,120 @@
+DEEPGENE ML STEP 22 — CONTROLLED UNCERTAINTY ANALYSIS
+========================================================================
+
+Purpose:
+Quantify the observed variability of Logistic Regression and Random Forest using the same repeated stratified cross-validation design used in Steps 18–21.
+This is a descriptive uncertainty analysis, not a claim of statistical significance or clinical validity.
+
+INPUT
+------------------------------------------------------------------------
+File: data\processed\deepgene_ml_ready_v1.csv
+Rows: 51
+Features: 14
+Target: functional_target
+
+TARGET DISTRIBUTION
+------------------------------------------------------------------------
+Loss: 35 (0.6863)
+Mixed: 12 (0.2353)
+Gain: 4 (0.0784)
+
+BASELINE
+------------------------------------------------------------------------
+Majority class: Loss
+Balanced accuracy: 0.333333
+
+CROSS-VALIDATION DESIGN
+------------------------------------------------------------------------
+Seeds: [42, 123, 2024, 7, 99]
+Folds per seed: 4
+Total validation evaluations per model: 20
+Metric: balanced accuracy
+No hyperparameter tuning performed.
+
+LOGISTIC REGRESSION
+------------------------------------------------------------------------
+Evaluations: 20
+Mean: 0.275000
+SD: 0.074004
+Median: 0.259259
+Minimum: 0.185185
+Maximum: 0.481481
+Empirical 95% interval across repeated CV evaluations: 0.185185 to 0.457292
+Mean difference vs majority baseline: -0.058333
+Empirical 95% interval for fold-level difference vs baseline: -0.148148 to 0.123958
+
+RANDOM FOREST
+------------------------------------------------------------------------
+Evaluations: 20
+Mean: 0.303241
+SD: 0.166297
+Median: 0.254630
+Minimum: 0.111111
+Maximum: 0.703704
+Empirical 95% interval across repeated CV evaluations: 0.111111 to 0.686111
+Mean difference vs majority baseline: -0.030093
+Empirical 95% interval for fold-level difference vs baseline: -0.222222 to 0.352778
+
+FOLD-LEVEL RESULTS
+------------------------------------------------------------------------
+
+Logistic Regression
+seed=42, fold=1, train=38, valid=13, balanced_accuracy=0.296296
+seed=42, fold=2, train=38, valid=13, balanced_accuracy=0.259259
+seed=42, fold=3, train=38, valid=13, balanced_accuracy=0.333333
+seed=42, fold=4, train=39, valid=12, balanced_accuracy=0.430556
+seed=123, fold=1, train=38, valid=13, balanced_accuracy=0.259259
+seed=123, fold=2, train=38, valid=13, balanced_accuracy=0.259259
+seed=123, fold=3, train=38, valid=13, balanced_accuracy=0.185185
+seed=123, fold=4, train=39, valid=12, balanced_accuracy=0.250000
+seed=2024, fold=1, train=38, valid=13, balanced_accuracy=0.481481
+seed=2024, fold=2, train=38, valid=13, balanced_accuracy=0.222222
+seed=2024, fold=3, train=38, valid=13, balanced_accuracy=0.296296
+seed=2024, fold=4, train=39, valid=12, balanced_accuracy=0.208333
+seed=7, fold=1, train=38, valid=13, balanced_accuracy=0.259259
+seed=7, fold=2, train=38, valid=13, balanced_accuracy=0.185185
+seed=7, fold=3, train=38, valid=13, balanced_accuracy=0.259259
+seed=7, fold=4, train=39, valid=12, balanced_accuracy=0.250000
+seed=99, fold=1, train=38, valid=13, balanced_accuracy=0.259259
+seed=99, fold=2, train=38, valid=13, balanced_accuracy=0.222222
+seed=99, fold=3, train=38, valid=13, balanced_accuracy=0.333333
+seed=99, fold=4, train=39, valid=12, balanced_accuracy=0.250000
+
+Random Forest
+seed=42, fold=1, train=38, valid=13, balanced_accuracy=0.666667
+seed=42, fold=2, train=38, valid=13, balanced_accuracy=0.222222
+seed=42, fold=3, train=38, valid=13, balanced_accuracy=0.259259
+seed=42, fold=4, train=39, valid=12, balanced_accuracy=0.263889
+seed=123, fold=1, train=38, valid=13, balanced_accuracy=0.333333
+seed=123, fold=2, train=38, valid=13, balanced_accuracy=0.222222
+seed=123, fold=3, train=38, valid=13, balanced_accuracy=0.111111
+seed=123, fold=4, train=39, valid=12, balanced_accuracy=0.319444
+seed=2024, fold=1, train=38, valid=13, balanced_accuracy=0.518519
+seed=2024, fold=2, train=38, valid=13, balanced_accuracy=0.222222
+seed=2024, fold=3, train=38, valid=13, balanced_accuracy=0.111111
+seed=2024, fold=4, train=39, valid=12, balanced_accuracy=0.319444
+seed=7, fold=1, train=38, valid=13, balanced_accuracy=0.296296
+seed=7, fold=2, train=38, valid=13, balanced_accuracy=0.703704
+seed=7, fold=3, train=38, valid=13, balanced_accuracy=0.148148
+seed=7, fold=4, train=39, valid=12, balanced_accuracy=0.250000
+seed=99, fold=1, train=38, valid=13, balanced_accuracy=0.481481
+seed=99, fold=2, train=38, valid=13, balanced_accuracy=0.185185
+seed=99, fold=3, train=38, valid=13, balanced_accuracy=0.222222
+seed=99, fold=4, train=39, valid=12, balanced_accuracy=0.208333
+
+INTERPRETATION
+------------------------------------------------------------------------
+Logistic Regression: 2/20 repeated validation evaluations exceeded the majority-class balanced accuracy of 0.333333; 18/20 were at or below it.
+Random Forest: 4/20 repeated validation evaluations exceeded the majority-class balanced accuracy of 0.333333; 16/20 were at or below it.
+
+The repeated-validation distributions should be interpreted as evidence of substantial uncertainty in model performance on this 51-variant dataset.
+The empirical intervals describe variation across the chosen validation evaluations; they are not formal confidence intervals for a population-level model performance parameter.
+Because the Gain class contains only 4 variants, estimates involving that class remain particularly unstable.
+No final model is selected from this analysis.
+No hyperparameter tuning is performed.
+No clinical interpretation or pathogenicity/benignity conclusion is made.
+
+STATUS
+------------------------------------------------------------------------
+PASS
+Controlled uncertainty analysis completed successfully.

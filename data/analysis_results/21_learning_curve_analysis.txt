@@ -1,0 +1,124 @@
+======================================================================
+ML STEP 21 - LEARNING-CURVE / SAMPLE-SIZE STABILITY ANALYSIS
+======================================================================
+
+DATASET
+----------------------------------------------------------------------
+Input file: data\processed\deepgene_ml_ready_v1.csv
+Variants: 51
+Features: 14
+
+CLASS COUNTS
+----------------------------------------------------------------------
+Loss: 35
+Mixed: 12
+Gain: 4
+
+VALIDATION DESIGN
+----------------------------------------------------------------------
+Repeated stratified CV: 5 repeats × 4 folds
+Training fractions: [0.5, 0.75, 1.0]
+Metric: balanced accuracy
+Validation sets remain untouched while training subsets are reduced.
+
+======================================================================
+Logistic Regression
+======================================================================
+
+Training fraction: 0.50
+Training size: 18
+Mean balanced accuracy: 0.3405
+SD balanced accuracy: 0.1000
+Median balanced accuracy: 0.3472
+Minimum balanced accuracy: 0.1667
+Maximum balanced accuracy: 0.5185
+
+Training fraction: 0.75
+Training size: 27
+Mean balanced accuracy: 0.2543
+SD balanced accuracy: 0.0482
+Median balanced accuracy: 0.2593
+Minimum balanced accuracy: 0.1481
+Maximum balanced accuracy: 0.3333
+
+Training fraction: 0.75
+Training size: 28
+Mean balanced accuracy: 0.2722
+SD balanced accuracy: 0.0211
+Median balanced accuracy: 0.2778
+Minimum balanced accuracy: 0.2500
+Maximum balanced accuracy: 0.2917
+
+Training fraction: 1.00
+Training size: 38
+Mean balanced accuracy: 0.2741
+SD balanced accuracy: 0.0725
+Median balanced accuracy: 0.2593
+Minimum balanced accuracy: 0.1852
+Maximum balanced accuracy: 0.4815
+
+Training fraction: 1.00
+Training size: 39
+Mean balanced accuracy: 0.2778
+SD balanced accuracy: 0.0873
+Median balanced accuracy: 0.2500
+Minimum balanced accuracy: 0.2083
+Maximum balanced accuracy: 0.4306
+
+======================================================================
+Random Forest
+======================================================================
+
+Training fraction: 0.50
+Training size: 18
+Mean balanced accuracy: 0.3257
+SD balanced accuracy: 0.1268
+Median balanced accuracy: 0.3079
+Minimum balanced accuracy: 0.1667
+Maximum balanced accuracy: 0.7222
+
+Training fraction: 0.75
+Training size: 27
+Mean balanced accuracy: 0.3037
+SD balanced accuracy: 0.1086
+Median balanced accuracy: 0.2963
+Minimum balanced accuracy: 0.1481
+Maximum balanced accuracy: 0.5185
+
+Training fraction: 0.75
+Training size: 28
+Mean balanced accuracy: 0.2583
+SD balanced accuracy: 0.0569
+Median balanced accuracy: 0.2361
+Minimum balanced accuracy: 0.2083
+Maximum balanced accuracy: 0.3194
+
+Training fraction: 1.00
+Training size: 38
+Mean balanced accuracy: 0.2938
+SD balanced accuracy: 0.1641
+Median balanced accuracy: 0.2593
+Minimum balanced accuracy: 0.1111
+Maximum balanced accuracy: 0.6667
+
+Training fraction: 1.00
+Training size: 39
+Mean balanced accuracy: 0.2722
+SD balanced accuracy: 0.0412
+Median balanced accuracy: 0.2778
+Minimum balanced accuracy: 0.2083
+Maximum balanced accuracy: 0.3194
+
+======================================================================
+INTERPRETATION
+======================================================================
+
+This analysis examines whether model performance changes systematically with the amount of training data available.
+It is not a substitute for independent validation.
+Because the complete dataset contains only 51 variants and the Gain class contains 4 variants, all learning-curve estimates are subject to substantial sampling variability.
+Training subsets were constructed within each training fold, so validation observations remain outside the training subset.
+No feature selection or hyperparameter tuning was performed in Step 21.
+
+======================================================================
+STATUS: PASS
+======================================================================

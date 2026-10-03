@@ -1,0 +1,477 @@
+{
+  "artifact": "C:\\Users\\Hp\\OneDrive\\Documents\\Project_DeepGene_2.0\\data\\model\\deepgene_functional_exploratory.pkl",
+  "status": "exploratory_only",
+  "selected_model": "random_forest",
+  "classes": [
+    "Loss",
+    "Mixed",
+    "Gain"
+  ],
+  "features": [
+    "protein_position",
+    "same_amino_acid",
+    "reference_hydrophobicity",
+    "alternate_hydrophobicity",
+    "delta_hydrophobicity",
+    "absolute_delta_hydrophobicity",
+    "reference_charge",
+    "alternate_charge",
+    "delta_charge",
+    "absolute_delta_charge",
+    "reference_volume",
+    "alternate_volume",
+    "delta_volume",
+    "absolute_delta_volume"
+  ],
+  "training_rows": 51,
+  "class_counts": {
+    "Loss": 35,
+    "Mixed": 12,
+    "Gain": 4
+  },
+  "validation": [
+    {
+      "model": "majority_baseline",
+      "seed": 42,
+      "fold": 1,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.27272727272727276
+    },
+    {
+      "model": "logistic_regression",
+      "seed": 42,
+      "fold": 1,
+      "balanced_accuracy": 0.2962962962962963,
+      "macro_f1": 0.22377622377622378
+    },
+    {
+      "model": "random_forest",
+      "seed": 42,
+      "fold": 1,
+      "balanced_accuracy": 0.6666666666666666,
+      "macro_f1": 0.5094017094017094
+    },
+    {
+      "model": "majority_baseline",
+      "seed": 42,
+      "fold": 2,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.27272727272727276
+    },
+    {
+      "model": "logistic_regression",
+      "seed": 42,
+      "fold": 2,
+      "balanced_accuracy": 0.1851851851851852,
+      "macro_f1": 0.19607843137254902
+    },
+    {
+      "model": "random_forest",
+      "seed": 42,
+      "fold": 2,
+      "balanced_accuracy": 0.2222222222222222,
+      "macro_f1": 0.21052631578947367
+    },
+    {
+      "model": "majority_baseline",
+      "seed": 42,
+      "fold": 3,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.27272727272727276
+    },
+    {
+      "model": "logistic_regression",
+      "seed": 42,
+      "fold": 3,
+      "balanced_accuracy": 0.1851851851851852,
+      "macro_f1": 0.20833333333333334
+    },
+    {
+      "model": "random_forest",
+      "seed": 42,
+      "fold": 3,
+      "balanced_accuracy": 0.2222222222222222,
+      "macro_f1": 0.2222222222222222
+    },
+    {
+      "model": "majority_baseline",
+      "seed": 42,
+      "fold": 4,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.26666666666666666
+    },
+    {
+      "model": "logistic_regression",
+      "seed": 42,
+      "fold": 4,
+      "balanced_accuracy": 0.34722222222222215,
+      "macro_f1": 0.2871794871794872
+    },
+    {
+      "model": "random_forest",
+      "seed": 42,
+      "fold": 4,
+      "balanced_accuracy": 0.2638888888888889,
+      "macro_f1": 0.1818181818181818
+    },
+    {
+      "model": "majority_baseline",
+      "seed": 123,
+      "fold": 1,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.27272727272727276
+    },
+    {
+      "model": "logistic_regression",
+      "seed": 123,
+      "fold": 1,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.34640522875817
+    },
+    {
+      "model": "random_forest",
+      "seed": 123,
+      "fold": 1,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.3333333333333333
+    },
+    {
+      "model": "majority_baseline",
+      "seed": 123,
+      "fold": 2,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.27272727272727276
+    },
+    {
+      "model": "logistic_regression",
+      "seed": 123,
+      "fold": 2,
+      "balanced_accuracy": 0.037037037037037035,
+      "macro_f1": 0.047619047619047616
+    },
+    {
+      "model": "random_forest",
+      "seed": 123,
+      "fold": 2,
+      "balanced_accuracy": 0.14814814814814814,
+      "macro_f1": 0.1568627450980392
+    },
+    {
+      "model": "majority_baseline",
+      "seed": 123,
+      "fold": 3,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.27272727272727276
+    },
+    {
+      "model": "logistic_regression",
+      "seed": 123,
+      "fold": 3,
+      "balanced_accuracy": 0.07407407407407407,
+      "macro_f1": 0.09523809523809523
+    },
+    {
+      "model": "random_forest",
+      "seed": 123,
+      "fold": 3,
+      "balanced_accuracy": 0.1111111111111111,
+      "macro_f1": 0.125
+    },
+    {
+      "model": "majority_baseline",
+      "seed": 123,
+      "fold": 4,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.26666666666666666
+    },
+    {
+      "model": "logistic_regression",
+      "seed": 123,
+      "fold": 4,
+      "balanced_accuracy": 0.34722222222222215,
+      "macro_f1": 0.301994301994302
+    },
+    {
+      "model": "random_forest",
+      "seed": 123,
+      "fold": 4,
+      "balanced_accuracy": 0.23611111111111108,
+      "macro_f1": 0.23809523809523805
+    },
+    {
+      "model": "majority_baseline",
+      "seed": 2024,
+      "fold": 1,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.27272727272727276
+    },
+    {
+      "model": "logistic_regression",
+      "seed": 2024,
+      "fold": 1,
+      "balanced_accuracy": 0.4444444444444444,
+      "macro_f1": 0.32051282051282054
+    },
+    {
+      "model": "random_forest",
+      "seed": 2024,
+      "fold": 1,
+      "balanced_accuracy": 0.8148148148148149,
+      "macro_f1": 0.7202797202797203
+    },
+    {
+      "model": "majority_baseline",
+      "seed": 2024,
+      "fold": 2,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.27272727272727276
+    },
+    {
+      "model": "logistic_regression",
+      "seed": 2024,
+      "fold": 2,
+      "balanced_accuracy": 0.1111111111111111,
+      "macro_f1": 0.13333333333333333
+    },
+    {
+      "model": "random_forest",
+      "seed": 2024,
+      "fold": 2,
+      "balanced_accuracy": 0.1851851851851852,
+      "macro_f1": 0.19607843137254902
+    },
+    {
+      "model": "majority_baseline",
+      "seed": 2024,
+      "fold": 3,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.27272727272727276
+    },
+    {
+      "model": "logistic_regression",
+      "seed": 2024,
+      "fold": 3,
+      "balanced_accuracy": 0.14814814814814814,
+      "macro_f1": 0.12962962962962962
+    },
+    {
+      "model": "random_forest",
+      "seed": 2024,
+      "fold": 3,
+      "balanced_accuracy": 0.1111111111111111,
+      "macro_f1": 0.125
+    },
+    {
+      "model": "majority_baseline",
+      "seed": 2024,
+      "fold": 4,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.26666666666666666
+    },
+    {
+      "model": "logistic_regression",
+      "seed": 2024,
+      "fold": 4,
+      "balanced_accuracy": 0.19444444444444442,
+      "macro_f1": 0.19444444444444442
+    },
+    {
+      "model": "random_forest",
+      "seed": 2024,
+      "fold": 4,
+      "balanced_accuracy": 0.27777777777777773,
+      "macro_f1": 0.273015873015873
+    },
+    {
+      "model": "majority_baseline",
+      "seed": 7,
+      "fold": 1,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.27272727272727276
+    },
+    {
+      "model": "logistic_regression",
+      "seed": 7,
+      "fold": 1,
+      "balanced_accuracy": 0.2222222222222222,
+      "macro_f1": 0.21666666666666667
+    },
+    {
+      "model": "random_forest",
+      "seed": 7,
+      "fold": 1,
+      "balanced_accuracy": 0.2962962962962963,
+      "macro_f1": 0.27941176470588236
+    },
+    {
+      "model": "majority_baseline",
+      "seed": 7,
+      "fold": 2,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.27272727272727276
+    },
+    {
+      "model": "logistic_regression",
+      "seed": 7,
+      "fold": 2,
+      "balanced_accuracy": 0.2222222222222222,
+      "macro_f1": 0.22857142857142856
+    },
+    {
+      "model": "random_forest",
+      "seed": 7,
+      "fold": 2,
+      "balanced_accuracy": 0.6666666666666666,
+      "macro_f1": 0.5352941176470588
+    },
+    {
+      "model": "majority_baseline",
+      "seed": 7,
+      "fold": 3,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.27272727272727276
+    },
+    {
+      "model": "logistic_regression",
+      "seed": 7,
+      "fold": 3,
+      "balanced_accuracy": 0.1111111111111111,
+      "macro_f1": 0.14285714285714285
+    },
+    {
+      "model": "random_forest",
+      "seed": 7,
+      "fold": 3,
+      "balanced_accuracy": 0.14814814814814814,
+      "macro_f1": 0.16666666666666666
+    },
+    {
+      "model": "majority_baseline",
+      "seed": 7,
+      "fold": 4,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.26666666666666666
+    },
+    {
+      "model": "logistic_regression",
+      "seed": 7,
+      "fold": 4,
+      "balanced_accuracy": 0.16666666666666666,
+      "macro_f1": 0.17777777777777778
+    },
+    {
+      "model": "random_forest",
+      "seed": 7,
+      "fold": 4,
+      "balanced_accuracy": 0.16666666666666666,
+      "macro_f1": 0.16666666666666666
+    },
+    {
+      "model": "majority_baseline",
+      "seed": 99,
+      "fold": 1,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.27272727272727276
+    },
+    {
+      "model": "logistic_regression",
+      "seed": 99,
+      "fold": 1,
+      "balanced_accuracy": 0.3703703703703704,
+      "macro_f1": 0.3444444444444444
+    },
+    {
+      "model": "random_forest",
+      "seed": 99,
+      "fold": 1,
+      "balanced_accuracy": 0.4444444444444444,
+      "macro_f1": 0.3356643356643357
+    },
+    {
+      "model": "majority_baseline",
+      "seed": 99,
+      "fold": 2,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.27272727272727276
+    },
+    {
+      "model": "logistic_regression",
+      "seed": 99,
+      "fold": 2,
+      "balanced_accuracy": 0.25925925925925924,
+      "macro_f1": 0.20875420875420878
+    },
+    {
+      "model": "random_forest",
+      "seed": 99,
+      "fold": 2,
+      "balanced_accuracy": 0.25925925925925924,
+      "macro_f1": 0.2037037037037037
+    },
+    {
+      "model": "majority_baseline",
+      "seed": 99,
+      "fold": 3,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.27272727272727276
+    },
+    {
+      "model": "logistic_regression",
+      "seed": 99,
+      "fold": 3,
+      "balanced_accuracy": 0.1851851851851852,
+      "macro_f1": 0.19607843137254902
+    },
+    {
+      "model": "random_forest",
+      "seed": 99,
+      "fold": 3,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.31746031746031744
+    },
+    {
+      "model": "majority_baseline",
+      "seed": 99,
+      "fold": 4,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.26666666666666666
+    },
+    {
+      "model": "logistic_regression",
+      "seed": 99,
+      "fold": 4,
+      "balanced_accuracy": 0.041666666666666664,
+      "macro_f1": 0.05555555555555555
+    },
+    {
+      "model": "random_forest",
+      "seed": 99,
+      "fold": 4,
+      "balanced_accuracy": 0.5,
+      "macro_f1": 0.3444444444444444
+    }
+  ],
+  "summary": {
+    "('balanced_accuracy', 'mean')": {
+      "logistic_regression": 0.2141203704,
+      "majority_baseline": 0.3333333333,
+      "random_forest": 0.3203703704
+    },
+    "('balanced_accuracy', 'std')": {
+      "logistic_regression": 0.1141249297,
+      "majority_baseline": 0.0,
+      "random_forest": 0.1995783314
+    },
+    "('macro_f1', 'mean')": {
+      "logistic_regression": 0.2027625017,
+      "majority_baseline": 0.2712121212,
+      "random_forest": 0.2820472894
+    },
+    "('macro_f1', 'std')": {
+      "logistic_regression": 0.087284891,
+      "majority_baseline": 0.0026924949,
+      "random_forest": 0.1529425853
+    }
+  },
+  "scientific_boundary": "Functional-effect research output only; not pathogenicity, disease-risk, diagnosis, or treatment advice."
+}

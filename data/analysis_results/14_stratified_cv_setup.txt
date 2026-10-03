@@ -1,0 +1,65 @@
+PROJECT DEEPGENE — ML STEP 14
+STRATIFIED CROSS-VALIDATION SETUP
+============================================================
+
+Input dataset: D:\Project_DeepGene\data\processed\deepgene_ml_ready_v1.csv
+Number of variants: 51
+Target: functional_target
+
+CROSS-VALIDATION DESIGN
+------------------------------------------------------------
+Number of folds: 4
+Shuffle: True
+Random state: 42
+Validation strategy: StratifiedKFold
+
+TARGET DISTRIBUTION
+------------------------------------------------------------
+Loss: 35
+Mixed: 12
+Gain: 4
+Smallest class count: 4
+
+FOLD DISTRIBUTIONS
+------------------------------------------------------------
+Fold 1: train=38, validation=13
+  Train: Loss=26, Mixed=9, Gain=3
+  Validation: Loss=9, Mixed=3, Gain=1
+
+Fold 2: train=38, validation=13
+  Train: Loss=26, Mixed=9, Gain=3
+  Validation: Loss=9, Mixed=3, Gain=1
+
+Fold 3: train=38, validation=13
+  Train: Loss=26, Mixed=9, Gain=3
+  Validation: Loss=9, Mixed=3, Gain=1
+
+Fold 4: train=39, validation=12
+  Train: Loss=27, Mixed=9, Gain=3
+  Validation: Loss=8, Mixed=3, Gain=1
+
+FEATURE SET
+------------------------------------------------------------
+protein_position
+same_amino_acid
+reference_hydrophobicity
+alternate_hydrophobicity
+delta_hydrophobicity
+absolute_delta_hydrophobicity
+reference_charge
+alternate_charge
+delta_charge
+absolute_delta_charge
+reference_volume
+alternate_volume
+delta_volume
+absolute_delta_volume
+
+INTERPRETATION
+------------------------------------------------------------
+Four-fold stratified cross-validation is used because the smallest target class contains four variants.
+Stratification preserves class representation across training and validation folds as far as the sample size permits.
+The fixed random state makes the fold assignment reproducible.
+This step defines the validation framework; no supervised model is trained in this step.
+
+STATUS: PASS

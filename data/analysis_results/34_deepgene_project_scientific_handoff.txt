@@ -1,0 +1,244 @@
+================================================================================
+DEEPGENE STEP 34
+PROJECT SCIENTIFIC HANDOFF
+================================================================================
+
+Generated: 2026-10-03 16:06:43
+
+PURPOSE
+--------------------------------------------------------------------------------
+Create the final project-level scientific handoff for the completed DeepGene V1 analysis and its exploratory machine-learning branch.
+This step does not train a model.
+This step does not perform model tuning.
+This step does not perform feature selection.
+This step does not create a clinical prediction system.
+
+================================================================================
+PROJECT STATUS
+================================================================================
+DeepGene V1 dataset construction: COMPLETE
+Evidence consistency auditing: COMPLETE
+Phenotype normalization/auditing: COMPLETE
+Feature redundancy auditing: COMPLETE
+Independent functional-data investigation: COMPLETE
+Independent functional ML dataset construction: COMPLETE
+Exploratory supervised ML analysis: COMPLETE
+Leakage/target-independence auditing: COMPLETE
+Permutation sanity testing: COMPLETE
+ML reproducibility handoff: COMPLETE
+Project scientific handoff: CURRENT STEP
+
+DEEPGENE V1 DATASET
+--------------------------------------------------------------------------------
+Dataset: data\processed\deepgene_v1_final.csv
+Rows: 5381
+Columns: 26
+The V1 dataset is the canonical project-level variant dataset used for the completed preprocessing and evidence-analysis workflow.
+
+DATA AND EVIDENCE AUDIT STATUS
+--------------------------------------------------------------------------------
+Evidence consistency audit: PASS
+Evidence-count consistency audit: PASS
+Phenotype evidence audit: PASS
+Phenotype normalization validation: PASS
+Feature redundancy audit: PASS
+
+The completed audits did not identify the documented structural inconsistencies that were specifically tested.
+
+INDEPENDENT FUNCTIONAL-EFFECT ANALYSIS
+--------------------------------------------------------------------------------
+The functional-effect analysis used an independent functional dataset rather than using ClinVar pathogenicity labels as the supervised target.
+The matched functional dataset contained 56 matched functional variants.
+The primary supervised ML subset contained 51 variants after excluding functional classes that were not suitable for the primary three-class supervised analysis.
+Primary supervised classes:
+  Loss: 35
+  Mixed: 12
+  Gain: 4
+
+FINAL EXPLORATORY ML DATASET
+--------------------------------------------------------------------------------
+Dataset: data\processed\deepgene_ml_ready_v1.csv
+Rows: 51
+Columns: 26
+Target: functional_target
+Predictor count: 14
+
+Target distribution:
+  Gain: 4 (0.0784)
+  Loss: 35 (0.6863)
+  Mixed: 12 (0.2353)
+
+Smallest supervised class: Gain, n=4
+
+FINAL BIOLOGICAL PREDICTOR SET
+--------------------------------------------------------------------------------
+01. protein_position
+02. same_amino_acid
+03. reference_hydrophobicity
+04. alternate_hydrophobicity
+05. delta_hydrophobicity
+06. absolute_delta_hydrophobicity
+07. reference_charge
+08. alternate_charge
+09. delta_charge
+10. absolute_delta_charge
+11. reference_volume
+12. alternate_volume
+13. delta_volume
+14. absolute_delta_volume
+
+The final predictor representation consists of protein-position and amino-acid physicochemical features.
+Identifier, phenotype, inheritance, functional target text, and ClinVar-derived evidence variables were excluded from the model predictor set.
+
+ML DATASET VALIDATION
+--------------------------------------------------------------------------------
+Target present: True
+Missing target values: 0
+Missing predictor columns: 0
+Missing predictor values: 0
+Non-numeric predictors: 0
+
+LEAKAGE AND TARGET-INDEPENDENCE
+--------------------------------------------------------------------------------
+Step 29 leakage audit: PASS
+The documented predictor set is structurally separated from the functional target.
+Target-derived functional metadata were excluded from model predictors.
+Identifier variables were not used as predictors.
+Phenotype and inheritance were not used as predictors.
+ClinVar clinical-significance and evidence-count variables were not used as predictors.
+
+ML VALIDATION DESIGN
+--------------------------------------------------------------------------------
+Validation strategy: repeated stratified cross-validation
+Folds per repeat: 4
+Independent fold assignments: 5
+Total validation evaluations per model: 20
+Seeds: 42, 123, 2024, 7, 99
+Primary metrics: balanced accuracy, macro precision, macro recall, macro F1, confusion matrix
+
+ML RESULTS
+--------------------------------------------------------------------------------
+Majority-class baseline:
+  Balanced accuracy: 0.3333
+  Macro F1: 0.2713
+
+Logistic Regression:
+  Repeated-CV balanced accuracy: 0.2750 ± 0.0740
+  Repeated-CV macro F1: 0.2472 ± 0.0537
+
+Random Forest:
+  Repeated-CV balanced accuracy: 0.3032 ± 0.1663
+  Repeated-CV macro F1: 0.2718 ± 0.1274
+
+No final predictive model was selected.
+
+UNCERTAINTY AND STABILITY
+--------------------------------------------------------------------------------
+Repeated CV showed substantial variability.
+Random Forest showed particularly high variability in balanced accuracy.
+Feature-importance stability did not identify a consistently dominant predictor.
+Learning-curve analysis did not demonstrate a clear improvement pattern with additional training data.
+Repeated out-of-fold analysis showed that prediction stability did not imply prediction correctness.
+Minority-class error patterns remained persistent.
+
+TARGET-PERMUTATION SANITY TEST
+--------------------------------------------------------------------------------
+Number of permutations: 100
+
+Logistic Regression:
+  Real-label balanced accuracy: 0.2750
+  Permutation mean: 0.3394
+  Randomized runs >= real score: 95/100
+
+Random Forest:
+  Real-label balanced accuracy: 0.3012
+  Permutation mean: 0.3390
+  Randomized runs >= real score: 78/100
+
+The observed model scores were not unusually high relative to randomized-target performance.
+
+================================================================================
+SCIENTIFIC INTERPRETATION
+================================================================================
+The completed DeepGene workflow establishes a reproducible V1 variant dataset and a separately defined independent functional-effect ML dataset.
+The exploratory supervised analysis did not provide sufficient evidence to select a reliable three-class functional-effect predictive model.
+This is an insufficient/negative predictive finding for the current dataset and feature representation.
+It does not demonstrate that the biological features have no relationship with functional effect.
+It also does not establish clinical pathogenicity, benignity, disease risk, or clinical utility.
+
+FINAL MODEL STATUS
+--------------------------------------------------------------------------------
+FINAL MODEL SELECTED: NO
+ML BRANCH: COMPLETE
+MODEL DEPLOYMENT: NOT JUSTIFIED
+CLINICAL USE: NOT ESTABLISHED
+
+FINAL PROJECT LIMITATIONS
+--------------------------------------------------------------------------------
+1. The primary supervised ML dataset contains only 51 variants.
+2. The Gain class contains only 4 variants.
+3. The functional dataset originates from a limited experimental source.
+4. No external independent functional benchmark was evaluated.
+5. The current biological feature representation is limited.
+6. Repeated cross-validation remains unstable.
+7. Feature importance is not stable.
+8. No final predictive model demonstrated robust predictive value.
+
+CLAIMS NOT SUPPORTED BY THE COMPLETED ANALYSIS
+--------------------------------------------------------------------------------
+1. Clinical diagnostic capability.
+2. Clinical pathogenicity or benignity classification.
+3. Disease-risk prediction.
+4. Clinical deployment or clinical utility.
+5. Causal biological conclusions from model feature importance.
+6. A conclusion that the tested biological features are unrelated to functional effect.
+
+PROJECT ARTIFACT CHECK
+--------------------------------------------------------------------------------
+data\processed\deepgene_v1_final.csv: PRESENT
+data\processed\deepgene_ml_ready_v1.csv: PRESENT
+data\analysis_results\42_final_ml_design.txt: PRESENT
+data\analysis_results\12_ml_handoff_check.txt: PRESENT
+data\analysis_results\13_majority_class_baseline.txt: PRESENT
+data\analysis_results\14_stratified_cv_setup.txt: PRESENT
+data\analysis_results\15_logistic_regression_cv.txt: PRESENT
+data\analysis_results\16_random_forest_cv.txt: PRESENT
+data\analysis_results\17_model_comparison.txt: PRESENT
+data\analysis_results\18_repeated_stratified_cv.txt: PRESENT
+data\analysis_results\19_feature_class_separability.txt: PRESENT
+data\analysis_results\20_feature_importance_stability.txt: PRESENT
+data\analysis_results\21_learning_curve_analysis.txt: PRESENT
+data\analysis_results\22_model_uncertainty_analysis.txt: PRESENT
+data\analysis_results\23_out_of_fold_prediction_audit.txt: PRESENT
+data\analysis_results\24_error_pattern_analysis.txt: PRESENT
+data\analysis_results\25_ml_feature_correlation_audit.txt: PRESENT
+data\analysis_results\26_ml_feature_variance_audit.txt: PRESENT
+data\analysis_results\27_ml_feature_scale_audit.txt: PRESENT
+data\analysis_results\28_class_weight_sensitivity.txt: PRESENT
+data\analysis_results\29_final_leakage_audit.txt: PRESENT
+data\analysis_results\30_target_permutation_test.txt: PRESENT
+data\analysis_results\31_consolidated_ml_evidence_summary.txt: PRESENT
+data\analysis_results\32_ml_final_handoff.txt: PRESENT
+data\analysis_results\33_ml_project_integration_handoff.txt: PRESENT
+
+FUTURE WORK BOUNDARY
+--------------------------------------------------------------------------------
+The completed ML branch should not be extended by arbitrary model tuning or forced model selection.
+If the project continues, scientifically justified future work may evaluate additional independent functional measurements or additional biologically justified features.
+Any new supervised analysis should preserve the target-independence and leakage controls established in the current workflow.
+Any future model should be treated as a new experimental analysis and independently validated.
+
+================================================================================
+FINAL DEEPGENE PROJECT HANDOFF
+================================================================================
+V1 DATASET: AVAILABLE
+ML DATASET VALIDATION: PASS
+ML ARTIFACT CHECK: PASS
+LEAKAGE CONTROL: PASS
+ML BRANCH: COMPLETE
+FINAL MODEL: NONE SELECTED
+SCIENTIFIC HANDOFF: COMPLETE
+
+================================================================================
+STATUS: PASS
+================================================================================

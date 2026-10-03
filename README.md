@@ -1138,3 +1138,150 @@ Independent validation
 ## DeepGene in one sentence
 
 > **DeepGene is an interpretable, reproducible research framework that starts from SCN1A ClinVar evidence and progressively develops toward phenotype-aware and machine-learning-based genetic variant prioritization while explicitly controlling for missing evidence, data quality, and target leakage.**
+
+---
+
+# 23. Generation-2 Functional Model Status
+
+The Generation-2 functional branch now uses the published SCION cross-channel
+functional dataset covering 375 variants across nine sodium-channel genes.
+After removing 40 exact protein-level overlaps with the DeepGene V1 functional
+dataset, 335 variants remain in the current cross-channel training matrix.
+
+Implemented artifacts:
+
+```text
+data/raw/scion_clean_tbl.csv
+data/raw/generation2_source_manifest.json
+data/processed/deepgene_gen2_scion_harmonized_v1.csv
+data/processed/deepgene_gen2_ml_ready_v1.csv
+data/model/deepgene_generation2_gbm.pkl
+```
+
+The current Generation-2 candidate predicts functional `LOF` versus `GOF`.
+Its primary validation is leave-one-gene-out validation. The current Gradient
+Boosting candidate achieved balanced accuracy of approximately `0.6368 +/-
+0.1465`; this is a research benchmark, not clinical validation or an
+independent external test.
+
+Run a Generation-2 functional prediction with:
+
+```powershell
+python data/ml/39_predict_generation2_effect.py --gene SCN1A --variant p.Arg1234Gly
+```
+
+# 24. Dravet-Syndrome Model Status
+
+The Dravet model is a separate, not-yet-trained clinical-outcome branch.
+Functional `LOF/GOF` labels cannot be used as a Dravet target because SCN1A
+loss-of-function is associated with a spectrum of phenotypes, not Dravet
+syndrome alone. A Dravet model requires clinically curated variant-level labels
+and phenotype information.
+
+The safe workflow is:
+
+```text
+Reviewed Dravet/non-Dravet labels
+              ↓
+Leakage-controlled feature matrix
+              ↓
+Patient/cohort-aware validation
+              ↓
+Independent clinical test set
+              ↓
+Research-only prediction model
+```
+
+Create the required label template:
+
+```powershell
+python data/ml/45_create_dravet_label_template.py
+```
+
+Then populate:
+
+```text
+data/raw/dravet_clinical_labels.csv
+```
+
+Required fields are `variant_key`, `dravet_label`, `label_source`,
+`source_accession`, `cohort_id`, and `reviewer_status`. Unknown or unresolved
+cases must not be assigned a negative label. The preparation and training
+commands are:
+
+```powershell
+python data/ml/46_prepare_dravet_dataset.py
+python data/ml/47_train_dravet_model.py
+```
+
+Until reviewed labels are supplied, the Dravet branch intentionally stops and
+does not train. No current DeepGene output should be interpreted as a Dravet
+diagnosis, pathogenicity classification, disease-risk probability, or treatment
+recommendation.
+
+If a variant has no reviewed Dravet label, the non-crashing status is expected:
+
+```powershell
+python data/ml/47_train_dravet_model.py
+```
+
+For documented phenotype mentions in the local ClinVar-derived dataset, use:
+
+```powershell
+python data/ml/48_scn1a_syndrome_evidence.py --variant p.Arg1648His
+```
+
+This reports observed syndrome terms and whether Dravet-related wording is
+present. It intentionally reports no percentage when a validated penetrance or
+clinical-outcome dataset is unavailable.
+
+---
+
+# 25. Local Web Dashboard
+
+DeepGene now includes a local two-page HTML/CSS/JavaScript dashboard.
+
+Start it from the project root:
+
+```powershell
+python app/server.py
+```
+
+Open:
+
+```text
+http://127.0.0.1:8765
+```
+
+Pages:
+
+```text
+/             AI analysis and local project statistics
+/upload.html  dataset validation, SQLite import, and functional retraining
+```
+
+The dashboard works without an external AI service. It answers basic project
+questions locally from SQLite and current CSV artifacts. Optional natural-
+language answers can be enabled by setting an `OPENROUTER_API_KEY`; the key is
+read only by the local server and is never sent to the browser. The server uses
+OpenRouter's `openrouter/free` router by default, subject to provider
+availability and rate limits.
+
+Supported upload workflows:
+
+```text
+ClinVar CSV/TSV
+    -> column validation
+    -> transactional SQLite update
+    -> upload audit log
+
+Functional CSV/TSV
+    -> LOF/GOF validation
+    -> cleaned feature construction
+    -> research-model retraining
+    -> upload audit log
+```
+
+The dashboard does not automatically create Dravet labels. Dravet model
+training remains blocked until clinically reviewed labels are supplied through
+the dedicated label template.

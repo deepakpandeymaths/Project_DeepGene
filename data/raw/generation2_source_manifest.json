@@ -1,0 +1,25 @@
+{
+  "source": "SCION",
+  "url": "https://github.com/christianbosselmann/SCION",
+  "source_file": "C:\\Users\\Hp\\OneDrive\\Documents\\Project_DeepGene_2.0\\data\\raw\\scion_clean_tbl.csv",
+  "source_rows": 375,
+  "source_genes": [
+    "SCN10A",
+    "SCN11A",
+    "SCN1A",
+    "SCN2A",
+    "SCN3A",
+    "SCN4A",
+    "SCN5A",
+    "SCN8A",
+    "SCN9A"
+  ],
+  "exact_v1_overlap": 40,
+  "gen2_training_rows_after_overlap_exclusion": 335,
+  "label_policy": {
+    "LOF": "primary",
+    "GOF": "primary",
+    "mixed_or_unclear": "excluded"
+  },
+  "independence_note": "SCION and DeepGene V1 are related literature-derived functional sources; exact variant overlaps are excluded, but source-level dependence cannot be ruled out."
+}

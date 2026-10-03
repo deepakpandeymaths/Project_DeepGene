@@ -1,0 +1,101 @@
+======================================================================
+DEEPGENE ML STEP 29
+FINAL LEAKAGE & TARGET INDEPENDENCE AUDIT
+======================================================================
+
+DATASET
+----------------------------------------------------------------------
+Input: data\processed\deepgene_ml_ready_v1.csv
+Rows: 51
+Columns: 26
+Target: functional_target
+
+TARGET CHECK
+----------------------------------------------------------------------
+Target exists: True
+Target missing values: 0
+Target unique classes: 3
+Target distribution:
+  Gain: 4 (0.0784)
+  Loss: 35 (0.6863)
+  Mixed: 12 (0.2353)
+
+MODEL FEATURE SET CHECK
+----------------------------------------------------------------------
+Expected model features: 14
+Expected metadata columns: 11
+Missing expected model features: None
+Unexpected columns outside documented dataset structure: None
+
+DOCUMENTED METADATA CHECK
+----------------------------------------------------------------------
+Expected metadata columns present: ['variant_id', 'functional_protein', 'protein_variant', 'reference_aa', 'alternate_aa', 'amino_acid_change_type', 'functional_effect', 'phenotype', 'inheritance', 'protein_position.1', 'ml_target']
+Missing documented metadata columns: None
+
+MODEL PREDICTOR DEFINITION
+----------------------------------------------------------------------
+The supervised models are restricted to exactly 14 biological features.
+  protein_position
+  same_amino_acid
+  reference_hydrophobicity
+  alternate_hydrophobicity
+  delta_hydrophobicity
+  absolute_delta_hydrophobicity
+  reference_charge
+  alternate_charge
+  delta_charge
+  absolute_delta_charge
+  reference_volume
+  alternate_volume
+  delta_volume
+  absolute_delta_volume
+Duplicate feature names in predictor list: False
+
+TARGET DUPLICATION AUDIT
+----------------------------------------------------------------------
+Model features exactly equal to target: None
+
+TARGET-RELATED METADATA SEPARATION
+----------------------------------------------------------------------
+Target-related metadata present in dataset: ['functional_protein', 'protein_variant', 'functional_effect', 'protein_position.1', 'ml_target']
+These columns are NOT included in ALLOWED_FEATURES and therefore are not model predictors.
+
+MODEL FEATURE TYPE AUDIT
+----------------------------------------------------------------------
+Non-numeric model features: None
+
+MODEL FEATURE MISSING-VALUE AUDIT
+----------------------------------------------------------------------
+No missing values detected in model features.
+
+IDENTIFIER EXCLUSION AUDIT
+----------------------------------------------------------------------
+Identifier-like dataset columns present: ['variant_id']
+Identifier columns included as model predictors: None
+
+CLINICAL / CLINVAR FEATURE EXCLUSION
+----------------------------------------------------------------------
+Clinical/ClinVar-related dataset columns detected: ['phenotype', 'inheritance']
+Clinical/ClinVar-related model predictors: None
+
+======================================================================
+FINAL LEAKAGE DECISION
+======================================================================
+No structural leakage indicators detected.
+
+The functional target is kept separate from the 14 biological predictor features.
+Metadata columns are present in the dataset but are excluded from the model predictor list.
+Identifier columns are not model predictors.
+Clinical/ClinVar-derived variables are not model predictors.
+Phenotype and inheritance variables are not model predictors.
+No model feature exactly duplicates the target.
+
+STATUS: PASS
+
+======================================================================
+LIMITATION
+======================================================================
+This audit verifies the documented predictor set and structural separation of target, metadata, identifiers, and clinical variables.
+It does not establish clinical validity or biological causality.
+No model selection is performed in Step 29.
+======================================================================

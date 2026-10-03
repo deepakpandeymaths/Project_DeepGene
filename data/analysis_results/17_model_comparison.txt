@@ -1,0 +1,49 @@
+PROJECT DEEPGENE — ML STEP 17
+MODEL COMPARISON
+============================================================
+
+MODELS INCLUDED
+------------------------------------------------------------
+1. Majority-class baseline
+2. Logistic Regression
+3. Random Forest
+
+PERFORMANCE SUMMARY
+------------------------------------------------------------
+Model                           Bal.Acc.   Macro Prec.  Macro Recall    Macro F1
+--------------------------------------------------------------------------------
+Majority-class baseline           0.3333        0.2288        0.3333      0.2713
+Logistic Regression               0.3299        0.2771        0.3299      0.2968
+Random Forest                     0.3530        0.2796        0.3530      0.2838
+
+CROSS-VALIDATION VARIABILITY
+------------------------------------------------------------
+Logistic Regression:
+  Balanced accuracy SD: 0.0736
+  Macro F1 SD: 0.0657
+
+Random Forest:
+  Balanced accuracy SD: 0.2099
+  Macro F1 SD: 0.1519
+
+CHANGE FROM MAJORITY BASELINE
+------------------------------------------------------------
+Logistic Regression:
+  Balanced accuracy change: -0.0034
+  Macro F1 change: +0.0255
+
+Random Forest:
+  Balanced accuracy change: +0.0197
+  Macro F1 change: +0.0125
+
+INTERPRETATION
+------------------------------------------------------------
+The majority-class baseline provides the reference performance without biological features.
+Logistic Regression has balanced accuracy of 0.3299 and macro F1 of 0.2968.
+Random Forest has balanced accuracy of 0.3530 and macro F1 of 0.2838.
+The Random Forest balanced-accuracy variability is substantial (SD=0.2099).
+The small number of Gain variants limits the stability and precision of model comparison.
+These results are exploratory and do not establish clinical validity or clinical predictive performance.
+No model is selected as a final model in this step.
+
+STATUS: PASS

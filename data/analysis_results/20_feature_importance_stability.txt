@@ -1,0 +1,74 @@
+======================================================================
+ML STEP 20 - FEATURE-IMPORTANCE STABILITY AUDIT
+======================================================================
+
+DATASET
+----------------------------------------------------------------------
+Input file: data\processed\deepgene_ml_ready_v1.csv
+Variants: 51
+Features: 14
+Classes: Loss, Mixed, Gain
+
+VALIDATION DESIGN
+----------------------------------------------------------------------
+Repeated stratified CV: 5 repeats × 4 folds
+Total validation folds: 20
+Permutation repeats per fold: 20
+Permutation importance metric: balanced accuracy
+
+======================================================================
+LOGISTIC REGRESSION
+======================================================================
+
+Mean permutation importance across all 20 validation folds:
+
+same_amino_acid: mean=0.000000, std=0.000000, median=0.000000, positive_fraction=0.000
+reference_volume: mean=-0.003704, std=0.022413, median=0.000000, positive_fraction=0.350
+absolute_delta_hydrophobicity: mean=-0.005648, std=0.059125, median=-0.004977, positive_fraction=0.350
+reference_hydrophobicity: mean=-0.006620, std=0.054624, median=-0.009954, positive_fraction=0.350
+delta_charge: mean=-0.008368, std=0.017657, median=-0.001042, positive_fraction=0.150
+alternate_charge: mean=-0.010035, std=0.024822, median=0.000000, positive_fraction=0.300
+reference_charge: mean=-0.010729, std=0.021983, median=-0.001968, positive_fraction=0.050
+delta_volume: mean=-0.013553, std=0.030548, median=0.000000, positive_fraction=0.150
+alternate_volume: mean=-0.013657, std=0.036509, median=-0.003704, positive_fraction=0.350
+alternate_hydrophobicity: mean=-0.014051, std=0.021252, median=-0.001852, positive_fraction=0.100
+absolute_delta_charge: mean=-0.014236, std=0.049646, median=0.000000, positive_fraction=0.300
+delta_hydrophobicity: mean=-0.015718, std=0.031926, median=-0.013889, positive_fraction=0.250
+protein_position: mean=-0.017106, std=0.050481, median=-0.006250, positive_fraction=0.300
+absolute_delta_volume: mean=-0.028079, std=0.057061, median=-0.037963, positive_fraction=0.300
+
+======================================================================
+RANDOM FOREST
+======================================================================
+
+Mean permutation importance across all 20 validation folds:
+
+reference_hydrophobicity: mean=0.022951, std=0.063816, median=0.001389, positive_fraction=0.550
+reference_volume: mean=0.013102, std=0.063433, median=0.000347, positive_fraction=0.500
+alternate_hydrophobicity: mean=0.009653, std=0.055603, median=0.000000, positive_fraction=0.350
+delta_charge: mean=0.005035, std=0.015915, median=0.000000, positive_fraction=0.300
+reference_charge: mean=0.004294, std=0.016638, median=0.000000, positive_fraction=0.250
+absolute_delta_charge: mean=0.001840, std=0.015757, median=0.000000, positive_fraction=0.200
+delta_hydrophobicity: mean=0.001620, std=0.077875, median=-0.008333, positive_fraction=0.350
+same_amino_acid: mean=0.000000, std=0.000000, median=0.000000, positive_fraction=0.000
+alternate_charge: mean=-0.001076, std=0.005248, median=0.000000, positive_fraction=0.100
+protein_position: mean=-0.001458, std=0.086618, median=0.004630, positive_fraction=0.550
+absolute_delta_volume: mean=-0.005162, std=0.025715, median=-0.001968, positive_fraction=0.250
+absolute_delta_hydrophobicity: mean=-0.028356, std=0.058139, median=-0.022222, positive_fraction=0.200
+alternate_volume: mean=-0.040799, std=0.079425, median=-0.008681, positive_fraction=0.350
+delta_volume: mean=-0.072141, std=0.116682, median=0.000000, positive_fraction=0.300
+
+======================================================================
+STABILITY INTERPRETATION
+======================================================================
+
+Positive permutation importance means that permuting the feature tended to reduce balanced accuracy on validation data.
+Importance values near zero indicate little measurable contribution under this validation setup.
+Negative permutation importance can occur when permuting a feature happens to improve validation performance or due to sampling variability.
+Because the dataset contains only 51 variants and the Gain class contains 4 variants, importance estimates may be unstable.
+Feature importance from this audit is descriptive and is not sufficient by itself to justify feature removal or a final model.
+No feature was removed from the ML feature set in Step 20.
+
+======================================================================
+STATUS: PASS
+======================================================================

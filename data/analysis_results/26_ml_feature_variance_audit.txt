@@ -1,0 +1,70 @@
+ML STEP 26 — FEATURE VARIANCE AUDIT
+======================================================================
+
+Purpose: audit feature variance and identify constant or near-zero-variance biological ML features.
+This is a feature-structure audit only. It does not establish predictive importance, biological significance, or clinical validity.
+
+INPUT
+----------------------------------------------------------------------
+File: data\processed\deepgene_ml_ready_v1.csv
+Rows: 51
+Features audited: 14
+
+VARIANCE THRESHOLDS
+----------------------------------------------------------------------
+Zero variance threshold: 0.0
+Near-zero variance threshold: 1e-06
+
+FEATURE VARIANCE SUMMARY
+----------------------------------------------------------------------
+same_amino_acid: unique=1, mean=0.000000, variance=0.000000000000, SD=0.000000, min=0.000000, max=0.000000, range=0.000000, status=ZERO_VARIANCE
+reference_charge: unique=3, mean=0.176471, variance=0.188235294118, SD=0.433861, min=-1.000000, max=1.000000, range=2.000000, status=VARIABLE
+absolute_delta_charge: unique=2, mean=0.333333, variance=0.226666666667, SD=0.476095, min=0.000000, max=1.000000, range=1.000000, status=VARIABLE
+alternate_charge: unique=3, mean=0.156863, variance=0.254901960784, SD=0.504878, min=-1.000000, max=1.000000, range=2.000000, status=VARIABLE
+delta_charge: unique=3, mean=-0.019608, variance=0.339607843137, SD=0.582759, min=-1.000000, max=1.000000, range=2.000000, status=VARIABLE
+absolute_delta_hydrophobicity: unique=22, mean=2.958824, variance=4.550070588235, SD=2.133089, min=0.100000, max=8.000000, range=7.900000, status=VARIABLE
+reference_hydrophobicity: unique=15, mean=-0.068627, variance=9.362596078431, SD=3.059836, min=-4.500000, max=4.500000, range=9.000000, status=VARIABLE
+alternate_hydrophobicity: unique=17, mean=-0.003922, variance=9.956384313725, SD=3.155374, min=-4.500000, max=4.500000, range=9.000000, status=VARIABLE
+delta_hydrophobicity: unique=30, mean=0.064706, variance=13.475529411765, SD=3.670903, min=-7.000000, max=8.000000, range=15.000000, status=VARIABLE
+absolute_delta_volume: unique=28, mean=50.088235, variance=932.643458823529, SD=30.539212, min=3.800000, max=113.300000, range=109.500000, status=VARIABLE
+alternate_volume: unique=19, mean=138.476471, variance=1362.863035294117, SD=36.916975, min=60.100000, max=227.800000, range=167.700000, status=VARIABLE
+reference_volume: unique=16, mean=140.807843, variance=1638.659537254902, SD=40.480360, min=60.100000, max=193.600000, range=133.500000, status=VARIABLE
+delta_volume: unique=35, mean=-2.331373, variance=3486.107396078431, SD=59.043267, min=-113.300000, max=113.300000, range=226.600000, status=VARIABLE
+protein_position: unique=47, mean=1184.921569, variance=313719.393725490198, SD=560.106591, min=145.000000, max=1927.000000, range=1782.000000, status=VARIABLE
+
+ZERO-VARIANCE FEATURES
+----------------------------------------------------------------------
+- same_amino_acid (unique values=1)
+
+NEAR-ZERO-VARIANCE FEATURES
+----------------------------------------------------------------------
+None
+
+VARIABLE FEATURES
+----------------------------------------------------------------------
+- protein_position (variance=313719.393725490198)
+- reference_hydrophobicity (variance=9.362596078431)
+- alternate_hydrophobicity (variance=9.956384313725)
+- delta_hydrophobicity (variance=13.475529411765)
+- absolute_delta_hydrophobicity (variance=4.550070588235)
+- reference_charge (variance=0.188235294118)
+- alternate_charge (variance=0.254901960784)
+- delta_charge (variance=0.339607843137)
+- absolute_delta_charge (variance=0.226666666667)
+- reference_volume (variance=1638.659537254902)
+- alternate_volume (variance=1362.863035294117)
+- delta_volume (variance=3486.107396078431)
+- absolute_delta_volume (variance=932.643458823529)
+
+INTERPRETATION
+----------------------------------------------------------------------
+1 feature(s) have zero variance and therefore contain no within-dataset variation.
+No additional near-zero-variance features were detected.
+A constant feature is not informative for distinguishing observations within this dataset.
+Variance magnitude alone does not determine predictive value; features on different biological scales can legitimately have different variances.
+No feature was automatically removed in this step.
+No model was trained, tuned, or selected in this step.
+No clinical interpretation is made.
+
+STATUS: PASS
+======================================================================

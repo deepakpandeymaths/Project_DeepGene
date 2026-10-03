@@ -1,0 +1,197 @@
+DEEPGENE ML STEP 23 — OUT-OF-FOLD PREDICTION AUDIT
+========================================================================
+
+Purpose:
+Audit repeated out-of-fold predictions at the individual variant level to determine how consistently each model assigns functional-effect classes.
+This is a descriptive stability analysis and does not establish clinical validity.
+
+INPUT
+------------------------------------------------------------------------
+File: data\processed\deepgene_ml_ready_v1.csv
+Rows: 51
+Features: 14
+Repeated CV seeds: [42, 123, 2024, 7, 99]
+Folds per seed: 4
+
+LOGISTIC REGRESSION
+------------------------------------------------------------------------
+Actual class counts across validation predictions:
+Loss: 175
+Mixed: 60
+Gain: 20
+
+Predicted class counts:
+Loss: 197
+Mixed: 44
+Gain: 14
+
+Aggregate repeated-CV confusion matrix:
+Rows = actual; columns = predicted
+                Loss    Mixed     Gain
+        Loss     127       38       10
+       Mixed      50        6        4
+        Gain      20        0        0
+
+RANDOM FOREST
+------------------------------------------------------------------------
+Actual class counts across validation predictions:
+Loss: 175
+Mixed: 60
+Gain: 20
+
+Predicted class counts:
+Loss: 155
+Mixed: 80
+Gain: 20
+
+Aggregate repeated-CV confusion matrix:
+Rows = actual; columns = predicted
+                Loss    Mixed     Gain
+        Loss      95       62       18
+       Mixed      44       16        0
+        Gain      16        2        2
+
+VARIANT-LEVEL PREDICTION STABILITY
+------------------------------------------------------------------------
+
+Logistic Regression
+row=0, actual=Loss, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=1, actual=Loss, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=2, actual=Loss, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=3, actual=Mixed, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=4, actual=Loss, dominant_prediction=Loss, dominant_fraction=0.800, predictions={'Loss': np.int64(4), 'Gain': np.int64(1)}
+row=5, actual=Loss, dominant_prediction=Loss, dominant_fraction=0.800, predictions={'Loss': np.int64(4), 'Gain': np.int64(1)}
+row=6, actual=Gain, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=7, actual=Loss, dominant_prediction=Loss, dominant_fraction=0.800, predictions={'Loss': np.int64(4), 'Mixed': np.int64(1)}
+row=8, actual=Loss, dominant_prediction=Loss, dominant_fraction=0.800, predictions={'Loss': np.int64(4), 'Mixed': np.int64(1)}
+row=9, actual=Loss, dominant_prediction=Mixed, dominant_fraction=0.800, predictions={'Mixed': np.int64(4), 'Loss': np.int64(1)}
+row=10, actual=Mixed, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=11, actual=Mixed, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=12, actual=Mixed, dominant_prediction=Loss, dominant_fraction=0.800, predictions={'Loss': np.int64(4), 'Mixed': np.int64(1)}
+row=13, actual=Loss, dominant_prediction=Loss, dominant_fraction=0.800, predictions={'Loss': np.int64(4), 'Mixed': np.int64(1)}
+row=14, actual=Loss, dominant_prediction=Mixed, dominant_fraction=0.800, predictions={'Mixed': np.int64(4), 'Loss': np.int64(1)}
+row=15, actual=Loss, dominant_prediction=Loss, dominant_fraction=0.800, predictions={'Loss': np.int64(4), 'Mixed': np.int64(1)}
+row=16, actual=Loss, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=17, actual=Loss, dominant_prediction=Mixed, dominant_fraction=0.600, predictions={'Mixed': np.int64(3), 'Loss': np.int64(2)}
+row=18, actual=Loss, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=19, actual=Loss, dominant_prediction=Loss, dominant_fraction=0.800, predictions={'Loss': np.int64(4), 'Gain': np.int64(1)}
+row=20, actual=Loss, dominant_prediction=Loss, dominant_fraction=0.800, predictions={'Loss': np.int64(4), 'Mixed': np.int64(1)}
+row=21, actual=Loss, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=22, actual=Loss, dominant_prediction=Gain, dominant_fraction=0.600, predictions={'Gain': np.int64(3), 'Loss': np.int64(2)}
+row=23, actual=Loss, dominant_prediction=Mixed, dominant_fraction=0.600, predictions={'Mixed': np.int64(3), 'Loss': np.int64(2)}
+row=24, actual=Mixed, dominant_prediction=Loss, dominant_fraction=0.600, predictions={'Loss': np.int64(3), 'Mixed': np.int64(2)}
+row=25, actual=Loss, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=26, actual=Mixed, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=27, actual=Loss, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=28, actual=Loss, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=29, actual=Gain, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=30, actual=Gain, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=31, actual=Loss, dominant_prediction=Mixed, dominant_fraction=0.800, predictions={'Mixed': np.int64(4), 'Loss': np.int64(1)}
+row=32, actual=Mixed, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=33, actual=Mixed, dominant_prediction=Loss, dominant_fraction=0.600, predictions={'Loss': np.int64(3), 'Mixed': np.int64(2)}
+row=34, actual=Loss, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=35, actual=Loss, dominant_prediction=Mixed, dominant_fraction=0.600, predictions={'Mixed': np.int64(3), 'Loss': np.int64(2)}
+row=36, actual=Mixed, dominant_prediction=Loss, dominant_fraction=0.800, predictions={'Loss': np.int64(4), 'Gain': np.int64(1)}
+row=37, actual=Loss, dominant_prediction=Gain, dominant_fraction=0.600, predictions={'Gain': np.int64(3), 'Loss': np.int64(2)}
+row=38, actual=Gain, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=39, actual=Loss, dominant_prediction=Loss, dominant_fraction=0.800, predictions={'Loss': np.int64(4), 'Mixed': np.int64(1)}
+row=40, actual=Loss, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=41, actual=Loss, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=42, actual=Loss, dominant_prediction=Loss, dominant_fraction=0.800, predictions={'Loss': np.int64(4), 'Mixed': np.int64(1)}
+row=43, actual=Loss, dominant_prediction=Loss, dominant_fraction=0.800, predictions={'Loss': np.int64(4), 'Mixed': np.int64(1)}
+row=44, actual=Loss, dominant_prediction=Loss, dominant_fraction=0.600, predictions={'Loss': np.int64(3), 'Mixed': np.int64(2)}
+row=45, actual=Mixed, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=46, actual=Loss, dominant_prediction=Loss, dominant_fraction=0.800, predictions={'Loss': np.int64(4), 'Mixed': np.int64(1)}
+row=47, actual=Mixed, dominant_prediction=Gain, dominant_fraction=0.600, predictions={'Gain': np.int64(3), 'Loss': np.int64(2)}
+row=48, actual=Mixed, dominant_prediction=Loss, dominant_fraction=0.800, predictions={'Loss': np.int64(4), 'Mixed': np.int64(1)}
+row=49, actual=Loss, dominant_prediction=Loss, dominant_fraction=0.600, predictions={'Loss': np.int64(3), 'Mixed': np.int64(1), 'Gain': np.int64(1)}
+row=50, actual=Loss, dominant_prediction=Mixed, dominant_fraction=1.000, predictions={'Mixed': np.int64(5)}
+
+Mean variant prediction stability: 0.8510
+Median variant prediction stability: 0.8000
+Variants with 100% identical predictions: 23/51
+Variants with prediction stability < 0.75: 10/51
+
+Random Forest
+row=0, actual=Loss, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=1, actual=Loss, dominant_prediction=Mixed, dominant_fraction=0.800, predictions={'Mixed': np.int64(4), 'Loss': np.int64(1)}
+row=2, actual=Loss, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=3, actual=Mixed, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=4, actual=Loss, dominant_prediction=Gain, dominant_fraction=0.800, predictions={'Gain': np.int64(4), 'Loss': np.int64(1)}
+row=5, actual=Loss, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=6, actual=Gain, dominant_prediction=Loss, dominant_fraction=0.600, predictions={'Loss': np.int64(3), 'Mixed': np.int64(2)}
+row=7, actual=Loss, dominant_prediction=Mixed, dominant_fraction=0.600, predictions={'Mixed': np.int64(3), 'Loss': np.int64(2)}
+row=8, actual=Loss, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=9, actual=Loss, dominant_prediction=Mixed, dominant_fraction=0.800, predictions={'Mixed': np.int64(4), 'Loss': np.int64(1)}
+row=10, actual=Mixed, dominant_prediction=Mixed, dominant_fraction=0.800, predictions={'Mixed': np.int64(4), 'Loss': np.int64(1)}
+row=11, actual=Mixed, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=12, actual=Mixed, dominant_prediction=Loss, dominant_fraction=0.600, predictions={'Loss': np.int64(3), 'Mixed': np.int64(2)}
+row=13, actual=Loss, dominant_prediction=Mixed, dominant_fraction=1.000, predictions={'Mixed': np.int64(5)}
+row=14, actual=Loss, dominant_prediction=Mixed, dominant_fraction=0.600, predictions={'Mixed': np.int64(3), 'Loss': np.int64(2)}
+row=15, actual=Loss, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=16, actual=Loss, dominant_prediction=Mixed, dominant_fraction=1.000, predictions={'Mixed': np.int64(5)}
+row=17, actual=Loss, dominant_prediction=Mixed, dominant_fraction=1.000, predictions={'Mixed': np.int64(5)}
+row=18, actual=Loss, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=19, actual=Loss, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=20, actual=Loss, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=21, actual=Loss, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=22, actual=Loss, dominant_prediction=Gain, dominant_fraction=0.800, predictions={'Gain': np.int64(4), 'Loss': np.int64(1)}
+row=23, actual=Loss, dominant_prediction=Mixed, dominant_fraction=0.600, predictions={'Mixed': np.int64(3), 'Loss': np.int64(2)}
+row=24, actual=Mixed, dominant_prediction=Mixed, dominant_fraction=0.800, predictions={'Mixed': np.int64(4), 'Loss': np.int64(1)}
+row=25, actual=Loss, dominant_prediction=Mixed, dominant_fraction=0.600, predictions={'Mixed': np.int64(3), 'Loss': np.int64(2)}
+row=26, actual=Mixed, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=27, actual=Loss, dominant_prediction=Loss, dominant_fraction=0.600, predictions={'Loss': np.int64(3), 'Gain': np.int64(2)}
+row=28, actual=Loss, dominant_prediction=Loss, dominant_fraction=0.600, predictions={'Loss': np.int64(3), 'Gain': np.int64(1), 'Mixed': np.int64(1)}
+row=29, actual=Gain, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=30, actual=Gain, dominant_prediction=Loss, dominant_fraction=0.600, predictions={'Loss': np.int64(3), 'Gain': np.int64(2)}
+row=31, actual=Loss, dominant_prediction=Mixed, dominant_fraction=0.800, predictions={'Mixed': np.int64(4), 'Loss': np.int64(1)}
+row=32, actual=Mixed, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=33, actual=Mixed, dominant_prediction=Mixed, dominant_fraction=0.800, predictions={'Mixed': np.int64(4), 'Loss': np.int64(1)}
+row=34, actual=Loss, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=35, actual=Loss, dominant_prediction=Mixed, dominant_fraction=1.000, predictions={'Mixed': np.int64(5)}
+row=36, actual=Mixed, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=37, actual=Loss, dominant_prediction=Gain, dominant_fraction=0.600, predictions={'Gain': np.int64(3), 'Loss': np.int64(2)}
+row=38, actual=Gain, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=39, actual=Loss, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=40, actual=Loss, dominant_prediction=Loss, dominant_fraction=0.800, predictions={'Loss': np.int64(4), 'Gain': np.int64(1)}
+row=41, actual=Loss, dominant_prediction=Mixed, dominant_fraction=0.600, predictions={'Mixed': np.int64(3), 'Loss': np.int64(2)}
+row=42, actual=Loss, dominant_prediction=Mixed, dominant_fraction=0.800, predictions={'Mixed': np.int64(4), 'Loss': np.int64(1)}
+row=43, actual=Loss, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=44, actual=Loss, dominant_prediction=Mixed, dominant_fraction=1.000, predictions={'Mixed': np.int64(5)}
+row=45, actual=Mixed, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=46, actual=Loss, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=47, actual=Mixed, dominant_prediction=Loss, dominant_fraction=1.000, predictions={'Loss': np.int64(5)}
+row=48, actual=Mixed, dominant_prediction=Loss, dominant_fraction=0.600, predictions={'Loss': np.int64(3), 'Mixed': np.int64(2)}
+row=49, actual=Loss, dominant_prediction=Gain, dominant_fraction=0.600, predictions={'Gain': np.int64(3), 'Loss': np.int64(2)}
+row=50, actual=Loss, dominant_prediction=Mixed, dominant_fraction=1.000, predictions={'Mixed': np.int64(5)}
+
+Mean variant prediction stability: 0.8588
+Median variant prediction stability: 1.0000
+Variants with 100% identical predictions: 28/51
+Variants with prediction stability < 0.75: 13/51
+
+STABILITY BY ACTUAL FUNCTIONAL CLASS
+------------------------------------------------------------------------
+
+Logistic Regression
+Loss: variants=35, mean_stability=0.8343, median_stability=0.8000
+Mixed: variants=12, mean_stability=0.8500, median_stability=0.9000
+Gain: variants=4, mean_stability=1.0000, median_stability=1.0000
+
+Random Forest
+Loss: variants=35, mean_stability=0.8571, median_stability=1.0000
+Mixed: variants=12, mean_stability=0.8833, median_stability=1.0000
+Gain: variants=4, mean_stability=0.8000, median_stability=0.8000
+
+INTERPRETATION
+------------------------------------------------------------------------
+Repeated out-of-fold predictions are used here to assess prediction stability across different stratified validation assignments.
+Low variant-level stability indicates that predictions depend strongly on which variants are included in the training fold.
+Because the dataset contains only 4 Gain variants, prediction behavior for Gain is expected to be particularly sensitive to fold composition.
+This analysis does not establish that a model is clinically useful and does not establish pathogenicity or benignity.
+No final model is selected.
+
+STATUS
+------------------------------------------------------------------------
+PASS
+Out-of-fold prediction stability audit completed successfully.

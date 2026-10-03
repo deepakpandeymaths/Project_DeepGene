@@ -1,0 +1,44 @@
+PROJECT DEEPGENE — ML STEP 13
+MAJORITY-CLASS BASELINE
+============================================================
+
+Input dataset: D:\Project_DeepGene\data\processed\deepgene_ml_ready_v1.csv
+Number of variants: 51
+Target: functional_target
+
+TARGET DISTRIBUTION
+------------------------------------------------------------
+Loss: 35 (68.63%)
+Mixed: 12 (23.53%)
+Gain: 4 (7.84%)
+
+BASELINE
+------------------------------------------------------------
+Majority class: Loss
+Majority count: 35
+Majority-class accuracy: 0.6863
+
+BASELINE METRICS
+------------------------------------------------------------
+Balanced accuracy: 0.3333
+Macro precision:   0.2288
+Macro recall:      0.3333
+Macro F1:          0.2713
+
+CONFUSION MATRIX
+------------------------------------------------------------
+Rows = actual classes
+Columns = predicted classes
+
+                 Loss     Mixed      Gain
+      Loss       35         0         0
+     Mixed       12         0         0
+      Gain        4         0         0
+
+INTERPRETATION
+------------------------------------------------------------
+This baseline predicts the majority class for every variant.
+It provides the reference point for subsequent supervised models.
+No biological features are used by this baseline.
+
+STATUS: PASS

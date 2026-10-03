@@ -1,0 +1,107 @@
+PROJECT DEEPGENE — ML STEP 18
+REPEATED STRATIFIED CROSS-VALIDATION
+============================================================
+
+Input dataset: D:\Project_DeepGene\data\processed\deepgene_ml_ready_v1.csv
+Number of variants: 51
+Target: functional_target
+
+VALIDATION DESIGN
+------------------------------------------------------------
+Stratified folds per repeat: 4
+Number of repeats: 5
+Total validation evaluations per model: 20
+Seeds: [42, 123, 2024, 7, 99]
+
+MODELS
+------------------------------------------------------------
+Logistic Regression
+Random Forest
+
+PER-REPEAT RESULTS
+------------------------------------------------------------
+Logistic Regression | Repeat 1 | Seed 42
+  Balanced accuracy: 0.3299
+  Macro precision:   0.2771
+  Macro recall:      0.3299
+  Macro F1:          0.2968
+
+Logistic Regression | Repeat 2 | Seed 123
+  Balanced accuracy: 0.2384
+  Macro precision:   0.2024
+  Macro recall:      0.2384
+  Macro F1:          0.2185
+
+Logistic Regression | Repeat 3 | Seed 2024
+  Balanced accuracy: 0.3021
+  Macro precision:   0.2498
+  Macro recall:      0.3021
+  Macro F1:          0.2582
+
+Logistic Regression | Repeat 4 | Seed 7
+  Balanced accuracy: 0.2384
+  Macro precision:   0.2077
+  Macro recall:      0.2384
+  Macro F1:          0.2216
+
+Logistic Regression | Repeat 5 | Seed 99
+  Balanced accuracy: 0.2662
+  Macro precision:   0.2211
+  Macro recall:      0.2662
+  Macro F1:          0.2409
+
+Random Forest | Repeat 1 | Seed 42
+  Balanced accuracy: 0.3530
+  Macro precision:   0.2796
+  Macro recall:      0.3530
+  Macro F1:          0.2838
+
+Random Forest | Repeat 2 | Seed 123
+  Balanced accuracy: 0.2465
+  Macro precision:   0.2489
+  Macro recall:      0.2465
+  Macro F1:          0.2471
+
+Random Forest | Repeat 3 | Seed 2024
+  Balanced accuracy: 0.2928
+  Macro precision:   0.2693
+  Macro recall:      0.2928
+  Macro F1:          0.2683
+
+Random Forest | Repeat 4 | Seed 7
+  Balanced accuracy: 0.3495
+  Macro precision:   0.3145
+  Macro recall:      0.3495
+  Macro F1:          0.3208
+
+Random Forest | Repeat 5 | Seed 99
+  Balanced accuracy: 0.2743
+  Macro precision:   0.2442
+  Macro recall:      0.2743
+  Macro F1:          0.2394
+
+OVERALL REPEATED-CV SUMMARY
+------------------------------------------------------------
+Logistic Regression:
+  Balanced accuracy: 0.2750 +/- 0.0740
+  Macro precision:   0.2316 +/- 0.0563
+  Macro recall:      0.2750 +/- 0.0740
+  Macro F1:          0.2472 +/- 0.0537
+
+Random Forest:
+  Balanced accuracy: 0.3032 +/- 0.1663
+  Macro precision:   0.2713 +/- 0.1233
+  Macro recall:      0.3032 +/- 0.1663
+  Macro F1:          0.2718 +/- 0.1274
+
+INTERPRETATION
+------------------------------------------------------------
+Repeated stratified cross-validation evaluates model stability across multiple fold assignments.
+The same 14 Step-42 biological features are used throughout.
+Logistic Regression scaling is performed inside each training fold.
+No hyperparameter tuning is performed.
+No model is selected as a final model in this step.
+The four Gain variants remain a major limitation on performance-estimate stability.
+Results are exploratory and do not establish clinical validity or clinical predictive performance.
+
+STATUS: PASS

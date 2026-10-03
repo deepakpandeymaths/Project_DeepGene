@@ -1,0 +1,84 @@
+ML STEP 27 — FEATURE SCALE AND STANDARDIZATION AUDIT
+======================================================================
+
+Purpose: audit the numerical scale of the 14 biological ML features and document whether standardization is relevant for scale-sensitive models.
+This is a preprocessing/design audit only. It does not establish predictive importance, biological significance, or clinical validity.
+
+INPUT
+----------------------------------------------------------------------
+File: data\processed\deepgene_ml_ready_v1.csv
+Rows: 51
+Features audited: 14
+
+RAW FEATURE SCALE
+----------------------------------------------------------------------
+protein_position: mean=1184.921569, SD=560.106591, min=145.000000, max=1927.000000, range=1782.000000
+same_amino_acid: mean=0.000000, SD=0.000000, min=0.000000, max=0.000000, range=0.000000
+reference_hydrophobicity: mean=-0.068627, SD=3.059836, min=-4.500000, max=4.500000, range=9.000000
+alternate_hydrophobicity: mean=-0.003922, SD=3.155374, min=-4.500000, max=4.500000, range=9.000000
+delta_hydrophobicity: mean=0.064706, SD=3.670903, min=-7.000000, max=8.000000, range=15.000000
+absolute_delta_hydrophobicity: mean=2.958824, SD=2.133089, min=0.100000, max=8.000000, range=7.900000
+reference_charge: mean=0.176471, SD=0.433861, min=-1.000000, max=1.000000, range=2.000000
+alternate_charge: mean=0.156863, SD=0.504878, min=-1.000000, max=1.000000, range=2.000000
+delta_charge: mean=-0.019608, SD=0.582759, min=-1.000000, max=1.000000, range=2.000000
+absolute_delta_charge: mean=0.333333, SD=0.476095, min=0.000000, max=1.000000, range=1.000000
+reference_volume: mean=140.807843, SD=40.480360, min=60.100000, max=193.600000, range=133.500000
+alternate_volume: mean=138.476471, SD=36.916975, min=60.100000, max=227.800000, range=167.700000
+delta_volume: mean=-2.331373, SD=59.043267, min=-113.300000, max=113.300000, range=226.600000
+absolute_delta_volume: mean=50.088235, SD=30.539212, min=3.800000, max=113.300000, range=109.500000
+
+STANDARDIZATION CHECK
+----------------------------------------------------------------------
+protein_position: standardized_mean=-0.000000000000, standardized_SD=1.000000000000
+same_amino_acid: CONSTANT_FEATURE (standardized statistics not defined)
+reference_hydrophobicity: standardized_mean=-0.000000000000, standardized_SD=1.000000000000
+alternate_hydrophobicity: standardized_mean=-0.000000000000, standardized_SD=1.000000000000
+delta_hydrophobicity: standardized_mean=-0.000000000000, standardized_SD=1.000000000000
+absolute_delta_hydrophobicity: standardized_mean=-0.000000000000, standardized_SD=1.000000000000
+reference_charge: standardized_mean=-0.000000000000, standardized_SD=1.000000000000
+alternate_charge: standardized_mean=0.000000000000, standardized_SD=1.000000000000
+delta_charge: standardized_mean=0.000000000000, standardized_SD=1.000000000000
+absolute_delta_charge: standardized_mean=0.000000000000, standardized_SD=1.000000000000
+reference_volume: standardized_mean=-0.000000000000, standardized_SD=1.000000000000
+alternate_volume: standardized_mean=0.000000000000, standardized_SD=1.000000000000
+delta_volume: standardized_mean=0.000000000000, standardized_SD=1.000000000000
+absolute_delta_volume: standardized_mean=-0.000000000000, standardized_SD=1.000000000000
+
+FEATURE SCALE SPREAD
+----------------------------------------------------------------------
+Largest variable-feature SD: 560.106591
+Smallest variable-feature SD: 0.433861
+Largest/smallest SD ratio: 1290.981905
+
+CONSTANT FEATURES
+----------------------------------------------------------------------
+- same_amino_acid
+
+FEATURES WITH SD > 10
+----------------------------------------------------------------------
+- protein_position: SD=560.106591
+- reference_volume: SD=40.480360
+- alternate_volume: SD=36.916975
+- delta_volume: SD=59.043267
+- absolute_delta_volume: SD=30.539212
+
+VARIABLE FEATURES WITH SD < 1
+----------------------------------------------------------------------
+- reference_charge: SD=0.433861
+- alternate_charge: SD=0.504878
+- delta_charge: SD=0.582759
+- absolute_delta_charge: SD=0.476095
+
+INTERPRETATION
+----------------------------------------------------------------------
+The biological features are measured on different numerical scales, including amino-acid physicochemical values and protein-position/volume variables.
+Scale differences are relevant for scale-sensitive models such as logistic regression.
+The existing logistic-regression pipeline already applies StandardScaler inside each cross-validation training fold, which prevents validation-data leakage during scaling.
+Random Forest does not require feature standardization for tree split construction.
+The constant feature(s) contain no within-dataset variation and do not contribute useful scale information.
+No feature was removed or transformed in this step.
+No model was trained, tuned, or selected in this step.
+No clinical interpretation is made.
+
+STATUS: PASS
+======================================================================

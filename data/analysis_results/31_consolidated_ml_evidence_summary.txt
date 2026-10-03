@@ -1,0 +1,167 @@
+==============================================================================
+DEEPGENE ML STEP 31
+CONSOLIDATED ML EVIDENCE SUMMARY
+==============================================================================
+
+PURPOSE
+------------------------------------------------------------------------------
+Consolidate the evidence generated across the DeepGene exploratory machine-learning workflow.
+The purpose is to determine whether the current dataset supports selection of a final predictive model.
+This step does not train a new model.
+This step does not perform hyperparameter tuning.
+This step does not perform feature selection.
+This step does not provide clinical interpretation.
+
+DATASET
+------------------------------------------------------------------------------
+Input file: data\processed\deepgene_ml_ready_v1.csv
+Rows: 51
+Columns: 26
+Target: functional_target
+Model features: 14
+
+TARGET DISTRIBUTION
+------------------------------------------------------------------------------
+Gain: 4 (0.0784)
+Loss: 35 (0.6863)
+Mixed: 12 (0.2353)
+
+Smallest target class: 4
+Largest target class: 35
+
+MODEL FEATURE AUDIT
+------------------------------------------------------------------------------
+All 14 predefined biological model features are present.
+All model features are numeric.
+Missing model-feature values: 0
+
+CONSOLIDATED EVIDENCE
+------------------------------------------------------------------------------
+Step 13 — Majority-class baseline:
+  Balanced accuracy: 0.3333
+  Macro F1: 0.2713
+  Majority class: Loss
+
+Step 15 — Logistic Regression:
+  Repeated-CV balanced accuracy: 0.2750 ± 0.0740
+  Repeated-CV macro F1: 0.2472 ± 0.0537
+
+Step 16 — Random Forest:
+  Repeated-CV balanced accuracy: 0.3032 ± 0.1663
+  Repeated-CV macro F1: 0.2718 ± 0.1274
+
+Step 17 — Initial model comparison:
+  Neither supervised model showed a robust advantage over the majority baseline.
+
+Step 18 — Repeated stratified CV:
+  Logistic Regression remained below the majority baseline.
+  Random Forest remained below the majority baseline on average.
+  Results were unstable across fold assignments.
+
+Step 19 — Feature class-separability audit:
+  delta_hydrophobicity showed an exploratory class-distribution difference.
+  This did not establish predictive utility.
+
+Step 20 — Feature-importance stability:
+  Feature importance was unstable across repeated validation folds.
+  No feature was selected or removed.
+
+Step 21 — Learning-curve analysis:
+  No clear pattern showed improved performance with additional training data.
+  Dataset size remains a major limitation.
+
+Step 22 — Controlled uncertainty analysis:
+  Logistic Regression mean balanced accuracy: 0.2750
+  Random Forest mean balanced accuracy: 0.3032
+  Both showed substantial fold-level uncertainty.
+
+Step 23 — Out-of-fold prediction audit:
+  Predictions showed some repeated stability, but stable predictions were not equivalent to correct predictions.
+  Logistic Regression repeatedly misclassified Gain variants.
+  Random Forest showed substantial Gain/Mixed confusion.
+
+Step 24 — Error-pattern analysis:
+  Major repeated error directions included Gain→Loss, Loss→Gain, Loss→Mixed, and Mixed→Loss.
+  Error persistence was high for minority classes.
+
+Step 25 — Feature correlation audit:
+  No pairwise feature correlation reached |r| >= 0.80.
+  No feature was removed.
+
+Step 26 — Feature variance audit:
+  same_amino_acid was constant.
+  No additional near-zero-variance feature was identified.
+
+Step 27 — Feature scale audit:
+  Biological features have substantially different numerical scales.
+  Logistic Regression appropriately uses fold-contained standardization.
+
+Step 28 — Class-weight sensitivity:
+  Logistic Regression performance decreased under class weighting.
+  Random Forest mean performance was similar with and without class weighting, but balanced Random Forest remained highly variable.
+
+Step 29 — Final leakage and target-independence audit:
+  STATUS PASS.
+  The documented predictor set is structurally separated from the functional target.
+
+Step 30 — Target permutation sanity test:
+  Logistic Regression real-label balanced accuracy: 0.2750
+  Logistic Regression permutation mean: 0.3394
+  95/100 randomized permutations reached or exceeded the real-label score.
+  Random Forest real-label balanced accuracy: 0.3012
+  Random Forest permutation mean: 0.3390
+  78/100 randomized permutations reached or exceeded the real-label score.
+  The observed scores were therefore not unusually high relative to randomized-target performance.
+
+==============================================================================
+OVERALL ML ASSESSMENT
+==============================================================================
+1. The independent functional-effect dataset is suitable for exploratory supervised analysis.
+2. Structural leakage checks passed.
+3. The current biological feature set does not produce robust predictive performance above the majority-class baseline.
+4. Repeated cross-validation demonstrates substantial performance variability.
+5. Feature importance is unstable.
+6. Error analysis shows persistent difficulty with the minority functional classes.
+7. The target-permutation test does not provide evidence that the observed model scores are unusually high relative to randomized target labels.
+8. The Gain class contains only 4 variants, creating a major limitation for supervised classification.
+9. No model has demonstrated sufficient evidence for selection as a final DeepGene predictive model.
+
+==============================================================================
+MODEL DECISION
+==============================================================================
+FINAL MODEL SELECTED: NO
+REASON:
+The available evidence does not support selecting Logistic Regression or Random Forest as a final predictive model.
+Both models perform around or below the majority-class balanced-accuracy baseline, show substantial uncertainty, and do not outperform randomized-target performance convincingly.
+
+==============================================================================
+SCIENTIFIC INTERPRETATION
+==============================================================================
+The current result should be interpreted as an exploratory negative/insufficient predictive finding.
+It does not demonstrate that the biological features have no relationship with SCN1A functional effect.
+It demonstrates that this 51-variant dataset and the current 14-feature representation do not provide sufficient evidence for a reliable three-class predictive model.
+The result should not be interpreted as clinical prediction, pathogenicity classification, or disease-risk prediction.
+
+==============================================================================
+KEY LIMITATIONS
+==============================================================================
+1. Only 51 variants are available for the primary supervised task.
+2. The Gain class contains only 4 variants.
+3. The functional dataset originates from a limited experimental source.
+4. Repeated cross-validation remains unstable.
+5. Feature importance is not stable across validation assignments.
+6. The current feature representation is limited to amino-acid-level biological properties and protein position.
+7. No external independent functional benchmark has been evaluated in this workflow.
+8. No hyperparameter tuning was used to rescue model performance.
+9. No clinical validity or clinical utility has been established.
+
+==============================================================================
+NEXT-STAGE DECISION
+==============================================================================
+The project should not proceed to deployment or clinical prediction using the current supervised models.
+The next stage should focus on documenting the negative/limited ML finding and determining whether additional independent functional data or scientifically justified features are available.
+Any future model development should preserve the independent functional target and the leakage controls established in Steps 29 and 30.
+
+==============================================================================
+STATUS: PASS
+==============================================================================

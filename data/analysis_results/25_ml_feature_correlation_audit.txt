@@ -1,0 +1,144 @@
+ML STEP 25 — FEATURE CORRELATION AUDIT
+======================================================================
+
+Purpose: audit redundancy and pairwise correlation among the 14 biological ML features.
+This is a feature-structure audit only. It does not establish predictive importance, causality, or biological significance.
+
+INPUT
+----------------------------------------------------------------------
+File: data\processed\deepgene_ml_ready_v1.csv
+Rows: 51
+Features audited: 14
+
+FEATURES
+----------------------------------------------------------------------
+- protein_position
+- same_amino_acid
+- reference_hydrophobicity
+- alternate_hydrophobicity
+- delta_hydrophobicity
+- absolute_delta_hydrophobicity
+- reference_charge
+- alternate_charge
+- delta_charge
+- absolute_delta_charge
+- reference_volume
+- alternate_volume
+- delta_volume
+- absolute_delta_volume
+
+CONSTANT FEATURES
+----------------------------------------------------------------------
+- same_amino_acid
+
+PAIRWISE PEARSON CORRELATIONS
+----------------------------------------------------------------------
+reference_volume <-> delta_volume: -0.786979
+alternate_volume <-> delta_volume: 0.736412
+alternate_charge <-> delta_charge: 0.690421
+alternate_hydrophobicity <-> delta_hydrophobicity: 0.607322
+reference_hydrophobicity <-> reference_charge: -0.596325
+reference_hydrophobicity <-> delta_hydrophobicity: -0.573421
+reference_charge <-> delta_charge: -0.539759
+delta_charge <-> alternate_volume: 0.519554
+alternate_hydrophobicity <-> absolute_delta_charge: -0.516999
+reference_charge <-> delta_volume: -0.447381
+delta_charge <-> delta_volume: 0.446274
+absolute_delta_hydrophobicity <-> absolute_delta_volume: 0.430987
+reference_hydrophobicity <-> absolute_delta_charge: -0.428802
+alternate_hydrophobicity <-> alternate_charge: -0.408876
+delta_hydrophobicity <-> reference_charge: 0.393274
+delta_hydrophobicity <-> delta_charge: -0.385511
+reference_charge <-> reference_volume: 0.381976
+absolute_delta_charge <-> absolute_delta_volume: 0.380754
+absolute_delta_hydrophobicity <-> absolute_delta_charge: 0.374180
+alternate_charge <-> alternate_volume: 0.344756
+reference_hydrophobicity <-> alternate_hydrophobicity: 0.302615
+reference_charge <-> alternate_volume: -0.296673
+absolute_delta_charge <-> reference_volume: -0.296208
+reference_hydrophobicity <-> alternate_charge: -0.293246
+alternate_volume <-> absolute_delta_volume: -0.266161
+alternate_hydrophobicity <-> delta_charge: -0.264342
+reference_charge <-> alternate_charge: 0.236318
+absolute_delta_charge <-> delta_volume: 0.218094
+reference_charge <-> absolute_delta_charge: 0.193649
+reference_hydrophobicity <-> delta_charge: 0.189904
+delta_hydrophobicity <-> delta_volume: -0.185567
+alternate_hydrophobicity <-> reference_volume: 0.183682
+protein_position <-> alternate_volume: 0.180162
+delta_charge <-> reference_volume: -0.177100
+reference_volume <-> absolute_delta_volume: -0.173792
+alternate_hydrophobicity <-> absolute_delta_volume: -0.171256
+protein_position <-> absolute_delta_charge: 0.169677
+reference_volume <-> alternate_volume: -0.162132
+absolute_delta_hydrophobicity <-> delta_charge: -0.156727
+delta_hydrophobicity <-> reference_volume: 0.151877
+reference_hydrophobicity <-> absolute_delta_volume: -0.147467
+alternate_hydrophobicity <-> delta_volume: -0.141442
+reference_hydrophobicity <-> alternate_volume: 0.130683
+alternate_charge <-> delta_volume: 0.130663
+delta_hydrophobicity <-> alternate_volume: -0.130250
+absolute_delta_hydrophobicity <-> reference_charge: 0.126868
+protein_position <-> absolute_delta_hydrophobicity: 0.124300
+reference_hydrophobicity <-> absolute_delta_hydrophobicity: -0.124084
+alternate_charge <-> reference_volume: 0.123828
+alternate_hydrophobicity <-> reference_charge: -0.120741
+delta_hydrophobicity <-> absolute_delta_hydrophobicity: 0.114390
+alternate_charge <-> absolute_delta_charge: 0.110940
+delta_hydrophobicity <-> alternate_charge: -0.107023
+protein_position <-> alternate_hydrophobicity: 0.089422
+absolute_delta_hydrophobicity <-> reference_volume: -0.088853
+delta_hydrophobicity <-> absolute_delta_charge: -0.086971
+alternate_charge <-> absolute_delta_volume: -0.081727
+protein_position <-> delta_hydrophobicity: 0.081351
+reference_hydrophobicity <-> delta_volume: 0.076767
+absolute_delta_hydrophobicity <-> alternate_charge: -0.071881
+protein_position <-> delta_volume: 0.069694
+protein_position <-> reference_volume: 0.062650
+protein_position <-> reference_charge: -0.057800
+protein_position <-> absolute_delta_volume: -0.053205
+absolute_delta_hydrophobicity <-> alternate_volume: -0.052708
+delta_charge <-> absolute_delta_charge: -0.048057
+delta_volume <-> absolute_delta_volume: -0.047265
+delta_charge <-> absolute_delta_volume: -0.046313
+reference_charge <-> absolute_delta_volume: -0.032897
+absolute_delta_hydrophobicity <-> delta_volume: 0.027962
+protein_position <-> delta_charge: 0.024811
+alternate_hydrophobicity <-> alternate_volume: -0.024804
+delta_hydrophobicity <-> absolute_delta_volume: -0.024286
+absolute_delta_charge <-> alternate_volume: 0.024010
+protein_position <-> alternate_charge: -0.021032
+alternate_hydrophobicity <-> absolute_delta_hydrophobicity: 0.012753
+reference_hydrophobicity <-> reference_volume: 0.007209
+protein_position <-> reference_hydrophobicity: -0.005383
+protein_position <-> same_amino_acid: nan
+same_amino_acid <-> reference_hydrophobicity: nan
+same_amino_acid <-> alternate_hydrophobicity: nan
+same_amino_acid <-> delta_hydrophobicity: nan
+same_amino_acid <-> absolute_delta_hydrophobicity: nan
+same_amino_acid <-> reference_charge: nan
+same_amino_acid <-> alternate_charge: nan
+same_amino_acid <-> delta_charge: nan
+same_amino_acid <-> absolute_delta_charge: nan
+same_amino_acid <-> reference_volume: nan
+same_amino_acid <-> alternate_volume: nan
+same_amino_acid <-> delta_volume: nan
+same_amino_acid <-> absolute_delta_volume: nan
+
+HIGH-CORRELATION PAIRS (|r| >= 0.80)
+----------------------------------------------------------------------
+None
+
+INTERPRETATION
+----------------------------------------------------------------------
+At least one feature is constant and therefore contains no within-dataset variation.
+No feature pair reached the predefined high-correlation threshold of |r| >= 0.80.
+The 14-feature representation therefore does not show strong pairwise linear redundancy under this threshold.
+
+Important: correlation does not imply causation and does not demonstrate predictive usefulness.
+No feature was removed or selected in this step.
+No model was tuned or selected in this step.
+No clinical interpretation is made.
+
+STATUS: PASS
+======================================================================

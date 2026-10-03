@@ -1,0 +1,84 @@
+======================================================================
+DEEPGENE ML STEP 30
+TARGET-PERMUTATION SANITY TEST
+======================================================================
+
+PURPOSE
+----------------------------------------------------------------------
+Assess whether observed model performance is distinguishable from performance obtained after randomized target labels.
+This is a sanity test for predictive signal.
+It is not clinical validation.
+No model selection is performed.
+
+DATASET
+----------------------------------------------------------------------
+Input: data\processed\deepgene_ml_ready_v1.csv
+Rows: 51
+Features: 14
+Target: functional_target
+
+TARGET DISTRIBUTION
+----------------------------------------------------------------------
+Gain: 4 (0.0784)
+Loss: 35 (0.6863)
+Mixed: 12 (0.2353)
+
+CROSS-VALIDATION DESIGN
+----------------------------------------------------------------------
+StratifiedKFold: 4 folds
+CV seeds: [42, 123, 2024, 7, 99]
+Evaluations per permutation: 20
+
+PERMUTATION DESIGN
+----------------------------------------------------------------------
+Number of permutations: 100
+Permutation seed: 42
+Target labels are shuffled while biological features remain unchanged.
+Random Forest uses 100 trees and single-thread execution to avoid excessive parallel-processing overhead.
+
+======================================================================
+LOGISTIC REGRESSION
+======================================================================
+Real-label mean balanced accuracy: 0.275000
+Permutation mean balanced accuracy: 0.339440
+Permutation SD: 0.051707
+Permutation median: 0.327778
+Permutation minimum: 0.254861
+Permutation maximum: 0.491898
+Permutation 95th percentile: 0.431898
+Permutations >= real-label score: 95/100
+Empirical percentile of real-label score: 5.00%
+
+======================================================================
+RANDOM FOREST
+======================================================================
+Real-label mean balanced accuracy: 0.301157
+Permutation mean balanced accuracy: 0.339012
+Permutation SD: 0.050093
+Permutation median: 0.333333
+Permutation minimum: 0.245833
+Permutation maximum: 0.500000
+Permutation 95th percentile: 0.416609
+Permutations >= real-label score: 78/100
+Empirical percentile of real-label score: 22.00%
+
+======================================================================
+INTERPRETATION
+======================================================================
+Target permutation testing compares the observed feature-target relationship with randomized target assignments.
+A low proportion of permutations reaching the real-label score means the observed score is unusual relative to randomized labels.
+A high proportion means the observed score is compatible with randomized-target performance.
+The permutation result does not establish clinical validity, biological causality, or external generalization.
+The Gain class contains only 4 variants, limiting stability.
+
+======================================================================
+DECISION
+======================================================================
+No model selected in Step 30.
+No hyperparameter tuning performed.
+No feature selection performed.
+No clinical interpretation made.
+
+======================================================================
+STATUS: PASS
+======================================================================

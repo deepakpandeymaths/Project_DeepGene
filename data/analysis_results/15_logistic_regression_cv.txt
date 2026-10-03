@@ -1,0 +1,73 @@
+PROJECT DEEPGENE — ML STEP 15
+LOGISTIC REGRESSION WITH STRATIFIED CV
+============================================================
+
+Input dataset: D:\Project_DeepGene\data\processed\deepgene_ml_ready_v1.csv
+Number of variants: 51
+Target: functional_target
+
+MODEL
+------------------------------------------------------------
+Algorithm: Logistic Regression
+Multiclass strategy: LogisticRegression default
+Feature scaling: StandardScaler
+Scaling location: Inside CV pipeline
+Maximum iterations: 5000
+
+CROSS-VALIDATION
+------------------------------------------------------------
+Folds: 4
+Method: StratifiedKFold
+Shuffle: True
+Random state: 42
+
+FEATURES
+------------------------------------------------------------
+protein_position
+same_amino_acid
+reference_hydrophobicity
+alternate_hydrophobicity
+delta_hydrophobicity
+absolute_delta_hydrophobicity
+reference_charge
+alternate_charge
+delta_charge
+absolute_delta_charge
+reference_volume
+alternate_volume
+delta_volume
+absolute_delta_volume
+
+FOLD RESULTS
+------------------------------------------------------------
+Fold 1: Balanced accuracy=0.2963, Macro precision=0.2750, Macro recall=0.2963, Macro F1=0.2794
+Fold 2: Balanced accuracy=0.2593, Macro precision=0.2121, Macro recall=0.2593, Macro F1=0.2333
+Fold 3: Balanced accuracy=0.3333, Macro precision=0.2500, Macro recall=0.3333, Macro F1=0.2857
+Fold 4: Balanced accuracy=0.4306, Macro precision=0.3714, Macro recall=0.4306, Macro F1=0.3889
+
+CROSS-VALIDATED SUMMARY
+------------------------------------------------------------
+Balanced accuracy: 0.3299 +/- 0.0736
+Macro precision:   0.2771 +/- 0.0680
+Macro recall:      0.3299 +/- 0.0736
+Macro F1:          0.2968 +/- 0.0657
+
+AGGREGATE CONFUSION MATRIX
+------------------------------------------------------------
+Rows = actual classes
+Columns = predicted classes
+
+                 Loss     Mixed      Gain
+      Loss       26         9         0
+     Mixed        8         3         1
+      Gain        4         0         0
+
+INTERPRETATION
+------------------------------------------------------------
+This is the first supervised feature-based model.
+All preprocessing is performed inside each training fold.
+The model uses only the 14 Step-42 biological features.
+Performance should be compared with the Step-13 majority-class baseline.
+Because only four Gain variants exist, Gain-specific performance is expected to have high uncertainty.
+
+STATUS: PASS

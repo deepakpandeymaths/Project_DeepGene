@@ -1,0 +1,359 @@
+{
+  "dataset": "C:\\Users\\Hp\\OneDrive\\Documents\\Project_DeepGene_2.0\\data\\processed\\deepgene_gen2_ml_ready_v1.csv",
+  "rows": 335,
+  "genes": [
+    "SCN10A",
+    "SCN11A",
+    "SCN1A",
+    "SCN2A",
+    "SCN3A",
+    "SCN4A",
+    "SCN5A",
+    "SCN8A",
+    "SCN9A"
+  ],
+  "features": [
+    "protein_position",
+    "reference_hydro",
+    "alternate_hydro",
+    "delta_hydro",
+    "absolute_delta_hydro",
+    "reference_charge",
+    "alternate_charge",
+    "delta_charge",
+    "absolute_delta_charge",
+    "reference_volume",
+    "alternate_volume",
+    "delta_volume",
+    "absolute_delta_volume",
+    "same_amino_acid",
+    "gene_SCN10A",
+    "gene_SCN11A",
+    "gene_SCN1A",
+    "gene_SCN2A",
+    "gene_SCN3A",
+    "gene_SCN4A",
+    "gene_SCN5A",
+    "gene_SCN8A",
+    "gene_SCN9A"
+  ],
+  "validation": "Leave-one-gene-out",
+  "fold_results": [
+    {
+      "fold": 1,
+      "held_out_gene": "SCN10A",
+      "model": "logistic_regression",
+      "n_test": 16,
+      "balanced_accuracy": 0.46031746031746035,
+      "macro_f1": 0.4181818181818182
+    },
+    {
+      "fold": 1,
+      "held_out_gene": "SCN10A",
+      "model": "svm_rbf",
+      "n_test": 16,
+      "balanced_accuracy": 0.45238095238095233,
+      "macro_f1": 0.43529411764705883
+    },
+    {
+      "fold": 1,
+      "held_out_gene": "SCN10A",
+      "model": "gradient_boosting",
+      "n_test": 16,
+      "balanced_accuracy": 0.5317460317460317,
+      "macro_f1": 0.5151515151515151
+    },
+    {
+      "fold": 1,
+      "held_out_gene": "SCN10A",
+      "model": "random_forest",
+      "n_test": 16,
+      "balanced_accuracy": 0.47619047619047616,
+      "macro_f1": 0.4666666666666667
+    },
+    {
+      "fold": 2,
+      "held_out_gene": "SCN11A",
+      "model": "logistic_regression",
+      "n_test": 6,
+      "balanced_accuracy": 0.3333333333333333,
+      "macro_f1": 0.25
+    },
+    {
+      "fold": 2,
+      "held_out_gene": "SCN11A",
+      "model": "svm_rbf",
+      "n_test": 6,
+      "balanced_accuracy": 0.5,
+      "macro_f1": 0.3333333333333333
+    },
+    {
+      "fold": 2,
+      "held_out_gene": "SCN11A",
+      "model": "gradient_boosting",
+      "n_test": 6,
+      "balanced_accuracy": 0.6666666666666666,
+      "macro_f1": 0.4
+    },
+    {
+      "fold": 2,
+      "held_out_gene": "SCN11A",
+      "model": "random_forest",
+      "n_test": 6,
+      "balanced_accuracy": 0.6666666666666666,
+      "macro_f1": 0.4
+    },
+    {
+      "fold": 3,
+      "held_out_gene": "SCN1A",
+      "model": "logistic_regression",
+      "n_test": 21,
+      "balanced_accuracy": 0.5714285714285714,
+      "macro_f1": 0.47139588100686497
+    },
+    {
+      "fold": 3,
+      "held_out_gene": "SCN1A",
+      "model": "svm_rbf",
+      "n_test": 21,
+      "balanced_accuracy": 0.5714285714285714,
+      "macro_f1": 0.5227272727272727
+    },
+    {
+      "fold": 3,
+      "held_out_gene": "SCN1A",
+      "model": "gradient_boosting",
+      "n_test": 21,
+      "balanced_accuracy": 0.6785714285714286,
+      "macro_f1": 0.6181818181818182
+    },
+    {
+      "fold": 3,
+      "held_out_gene": "SCN1A",
+      "model": "random_forest",
+      "n_test": 21,
+      "balanced_accuracy": 0.5357142857142857,
+      "macro_f1": 0.41666666666666663
+    },
+    {
+      "fold": 4,
+      "held_out_gene": "SCN2A",
+      "model": "logistic_regression",
+      "n_test": 32,
+      "balanced_accuracy": 0.623015873015873,
+      "macro_f1": 0.6101882613510521
+    },
+    {
+      "fold": 4,
+      "held_out_gene": "SCN2A",
+      "model": "svm_rbf",
+      "n_test": 32,
+      "balanced_accuracy": 0.5079365079365079,
+      "macro_f1": 0.5
+    },
+    {
+      "fold": 4,
+      "held_out_gene": "SCN2A",
+      "model": "gradient_boosting",
+      "n_test": 32,
+      "balanced_accuracy": 0.5753968253968254,
+      "macro_f1": 0.5733333333333333
+    },
+    {
+      "fold": 4,
+      "held_out_gene": "SCN2A",
+      "model": "random_forest",
+      "n_test": 32,
+      "balanced_accuracy": 0.6111111111111112,
+      "macro_f1": 0.611336032388664
+    },
+    {
+      "fold": 5,
+      "held_out_gene": "SCN3A",
+      "model": "logistic_regression",
+      "n_test": 12,
+      "balanced_accuracy": 0.7,
+      "macro_f1": 0.7
+    },
+    {
+      "fold": 5,
+      "held_out_gene": "SCN3A",
+      "model": "svm_rbf",
+      "n_test": 12,
+      "balanced_accuracy": 0.6,
+      "macro_f1": 0.5555555555555556
+    },
+    {
+      "fold": 5,
+      "held_out_gene": "SCN3A",
+      "model": "gradient_boosting",
+      "n_test": 12,
+      "balanced_accuracy": 0.4,
+      "macro_f1": 0.4
+    },
+    {
+      "fold": 5,
+      "held_out_gene": "SCN3A",
+      "model": "random_forest",
+      "n_test": 12,
+      "balanced_accuracy": 0.4,
+      "macro_f1": 0.4
+    },
+    {
+      "fold": 6,
+      "held_out_gene": "SCN4A",
+      "model": "logistic_regression",
+      "n_test": 31,
+      "balanced_accuracy": 0.7029914529914529,
+      "macro_f1": 0.7047619047619047
+    },
+    {
+      "fold": 6,
+      "held_out_gene": "SCN4A",
+      "model": "svm_rbf",
+      "n_test": 31,
+      "balanced_accuracy": 0.7564102564102564,
+      "macro_f1": 0.7416666666666667
+    },
+    {
+      "fold": 6,
+      "held_out_gene": "SCN4A",
+      "model": "gradient_boosting",
+      "n_test": 31,
+      "balanced_accuracy": 0.8782051282051282,
+      "macro_f1": 0.8697478991596639
+    },
+    {
+      "fold": 6,
+      "held_out_gene": "SCN4A",
+      "model": "random_forest",
+      "n_test": 31,
+      "balanced_accuracy": 0.8461538461538461,
+      "macro_f1": 0.8590909090909091
+    },
+    {
+      "fold": 7,
+      "held_out_gene": "SCN5A",
+      "model": "logistic_regression",
+      "n_test": 157,
+      "balanced_accuracy": 0.6133547008547009,
+      "macro_f1": 0.5056230319388214
+    },
+    {
+      "fold": 7,
+      "held_out_gene": "SCN5A",
+      "model": "svm_rbf",
+      "n_test": 157,
+      "balanced_accuracy": 0.5969017094017094,
+      "macro_f1": 0.5030215827338129
+    },
+    {
+      "fold": 7,
+      "held_out_gene": "SCN5A",
+      "model": "gradient_boosting",
+      "n_test": 157,
+      "balanced_accuracy": 0.5959401709401709,
+      "macro_f1": 0.47056433592004226
+    },
+    {
+      "fold": 7,
+      "held_out_gene": "SCN5A",
+      "model": "random_forest",
+      "n_test": 157,
+      "balanced_accuracy": 0.5679487179487179,
+      "macro_f1": 0.49228855721393033
+    },
+    {
+      "fold": 8,
+      "held_out_gene": "SCN8A",
+      "model": "logistic_regression",
+      "n_test": 22,
+      "balanced_accuracy": 0.7410714285714286,
+      "macro_f1": 0.7471264367816092
+    },
+    {
+      "fold": 8,
+      "held_out_gene": "SCN8A",
+      "model": "svm_rbf",
+      "n_test": 22,
+      "balanced_accuracy": 0.5892857142857143,
+      "macro_f1": 0.5454545454545454
+    },
+    {
+      "fold": 8,
+      "held_out_gene": "SCN8A",
+      "model": "gradient_boosting",
+      "n_test": 22,
+      "balanced_accuracy": 0.5803571428571428,
+      "macro_f1": 0.5809523809523809
+    },
+    {
+      "fold": 8,
+      "held_out_gene": "SCN8A",
+      "model": "random_forest",
+      "n_test": 22,
+      "balanced_accuracy": 0.5803571428571428,
+      "macro_f1": 0.5809523809523809
+    },
+    {
+      "fold": 9,
+      "held_out_gene": "SCN9A",
+      "model": "logistic_regression",
+      "n_test": 38,
+      "balanced_accuracy": 0.7837837837837838,
+      "macro_f1": 0.4176245210727969
+    },
+    {
+      "fold": 9,
+      "held_out_gene": "SCN9A",
+      "model": "svm_rbf",
+      "n_test": 38,
+      "balanced_accuracy": 0.7702702702702703,
+      "macro_f1": 0.40350877192982454
+    },
+    {
+      "fold": 9,
+      "held_out_gene": "SCN9A",
+      "model": "gradient_boosting",
+      "n_test": 38,
+      "balanced_accuracy": 0.8243243243243243,
+      "macro_f1": 0.4601092896174863
+    },
+    {
+      "fold": 9,
+      "held_out_gene": "SCN9A",
+      "model": "random_forest",
+      "n_test": 38,
+      "balanced_accuracy": 0.8918918918918919,
+      "macro_f1": 0.5393939393939394
+    }
+  ],
+  "summary": {
+    "('balanced_accuracy', 'mean')": {
+      "gradient_boosting": 0.6368,
+      "logistic_regression": 0.6144,
+      "random_forest": 0.6196,
+      "svm_rbf": 0.5938
+    },
+    "('balanced_accuracy', 'std')": {
+      "gradient_boosting": 0.1465,
+      "logistic_regression": 0.1434,
+      "random_forest": 0.1612,
+      "svm_rbf": 0.1086
+    },
+    "('macro_f1', 'mean')": {
+      "gradient_boosting": 0.5431,
+      "logistic_regression": 0.5361,
+      "random_forest": 0.5296,
+      "svm_rbf": 0.5045
+    },
+    "('macro_f1', 'std')": {
+      "gradient_boosting": 0.1452,
+      "logistic_regression": 0.1659,
+      "random_forest": 0.1456,
+      "svm_rbf": 0.1147
+    }
+  },
+  "interpretation": "Generation-2 cross-channel benchmark; not a clinical or fully independent external validation.",
+  "status": "PASS"
+}

@@ -1,0 +1,180 @@
+================================================================================
+DEEPGENE STEP 33
+ML PROJECT INTEGRATION / HANDOFF
+================================================================================
+
+Generated: 2026-10-03 16:04:18
+
+PURPOSE
+--------------------------------------------------------------------------------
+Integrate the completed exploratory machine-learning branch into the broader DeepGene project record.
+This step does not train a new model.
+This step does not perform model tuning.
+This step does not perform feature selection.
+This step does not create a clinical prediction system.
+
+ML PIPELINE COMPLETION
+--------------------------------------------------------------------------------
+Independent functional dataset
+        ↓
+Leakage-controlled biological feature set
+        ↓
+Exploratory supervised ML
+        ↓
+Repeated stratified cross-validation
+        ↓
+Uncertainty, stability, and error analysis
+        ↓
+Target-permutation sanity test
+        ↓
+No final predictive model selected
+        ↓
+ML branch complete
+
+INTEGRATED ML DATASET
+--------------------------------------------------------------------------------
+Dataset: data\processed\deepgene_ml_ready_v1.csv
+Rows: 51
+Columns: 26
+Target: functional_target
+Biological predictors: 14
+
+Functional target distribution:
+  Gain: 4 (0.0784)
+  Loss: 35 (0.6863)
+  Mixed: 12 (0.2353)
+
+Smallest class: 4
+
+INTEGRATED BIOLOGICAL PREDICTORS
+--------------------------------------------------------------------------------
+01. protein_position
+02. same_amino_acid
+03. reference_hydrophobicity
+04. alternate_hydrophobicity
+05. delta_hydrophobicity
+06. absolute_delta_hydrophobicity
+07. reference_charge
+08. alternate_charge
+09. delta_charge
+10. absolute_delta_charge
+11. reference_volume
+12. alternate_volume
+13. delta_volume
+14. absolute_delta_volume
+
+The predictor set consists of protein-position and amino-acid physicochemical features.
+ClinVar-derived clinical/evidence variables, phenotype, inheritance, identifiers, and target-derived functional text were not used as model predictors.
+
+INTEGRATION DATASET VALIDATION
+--------------------------------------------------------------------------------
+Target present: True
+Missing target values: 0
+Missing predictor columns: 0
+Non-numeric predictors: 0
+Missing predictor values: 0
+
+LEAKAGE CONTROL
+--------------------------------------------------------------------------------
+Step 29 leakage audit: PRESENT
+Documented Step 29 result: PASS
+The final predictor set is structurally separated from the functional target.
+No identifier predictor was used.
+No phenotype or inheritance predictor was used.
+No ClinVar clinical-significance or evidence-count predictor was used.
+
+MODEL EVIDENCE INTEGRATION
+--------------------------------------------------------------------------------
+Majority-class baseline:
+  Balanced accuracy = 0.3333
+  Macro F1 = 0.2713
+
+Logistic Regression:
+  Repeated-CV balanced accuracy = 0.2750 ± 0.0740
+  Repeated-CV macro F1 = 0.2472 ± 0.0537
+
+Random Forest:
+  Repeated-CV balanced accuracy = 0.3032 ± 0.1663
+  Repeated-CV macro F1 = 0.2718 ± 0.1274
+
+Neither supervised model demonstrated robust superiority over the majority-class baseline.
+
+TARGET-PERMUTATION EVIDENCE
+--------------------------------------------------------------------------------
+Permutation report: PRESENT
+100 randomized-target permutations were evaluated.
+
+Logistic Regression:
+  Real-label balanced accuracy = 0.2750
+  Permutation mean = 0.3394
+  Randomized runs >= real-label score = 95/100
+
+Random Forest:
+  Real-label balanced accuracy = 0.3012
+  Permutation mean = 0.3390
+  Randomized runs >= real-label score = 78/100
+
+Integrated interpretation:
+The observed model scores were not unusually high relative to randomized-target performance.
+
+STABILITY AND ERROR EVIDENCE
+--------------------------------------------------------------------------------
+Repeated cross-validation showed substantial variation across fold assignments.
+Feature-importance stability did not identify a consistently dominant predictor.
+Learning-curve analysis did not demonstrate a clear improvement pattern with additional training data.
+Repeated out-of-fold prediction analysis showed that prediction stability did not imply correctness.
+Error analysis showed persistent difficulty with minority functional classes.
+The Gain class contains only 4 variants.
+
+================================================================================
+FINAL ML PROJECT DECISION
+================================================================================
+ML BRANCH STATUS: COMPLETE
+FINAL MODEL SELECTED: NO
+
+The current evidence does not support selection of Logistic Regression or Random Forest as a final predictive model.
+The ML branch therefore ends as an exploratory analysis rather than a deployed predictive model.
+
+VALID INFORMATION TO CARRY FORWARD
+--------------------------------------------------------------------------------
+1. The independent functional-effect dataset is documented and reproducible.
+2. The leakage-controlled 14-feature biological representation is documented.
+3. The exploratory ML performance and uncertainty results are documented.
+4. The negative/insufficient model-selection result is documented.
+5. The limitations of the current functional dataset are documented.
+
+CLAIMS NOT SUPPORTED BY THIS ML BRANCH
+--------------------------------------------------------------------------------
+1. No clinical diagnostic capability is established.
+2. No pathogenicity/benignity classifier is established.
+3. No disease-risk prediction is established.
+4. No clinically deployable prediction model is established.
+5. No causal biological conclusion is established from feature importance.
+6. No claim that the biological features have no relationship with functional effect is justified.
+
+ML HANDOFF ARTIFACTS
+--------------------------------------------------------------------------------
+data\processed\deepgene_ml_ready_v1.csv: PRESENT
+data\analysis_results\29_final_leakage_audit.txt: PRESENT
+data\analysis_results\30_target_permutation_test.txt: PRESENT
+data\analysis_results\31_consolidated_ml_evidence_summary.txt: PRESENT
+data\analysis_results\32_ml_final_handoff.txt: PRESENT
+
+NEXT-STAGE GUIDANCE
+--------------------------------------------------------------------------------
+The ML branch should not proceed to deployment, clinical prediction, or forced model selection.
+If the project continues, scientifically justified future work may evaluate additional independent functional data or additional biologically justified features while preserving the existing target-independence and leakage controls.
+Any future supervised analysis should be treated as a new experimental analysis and independently validated.
+
+================================================================================
+INTEGRATION CHECK
+================================================================================
+ML DATASET VALIDATION: PASS
+ML HANDOFF ARTIFACTS: PASS
+LEAKAGE CONTROL: PASS
+MODEL SELECTION: NO MODEL SELECTED
+PROJECT ML INTEGRATION: COMPLETE
+
+================================================================================
+STATUS: PASS
+================================================================================

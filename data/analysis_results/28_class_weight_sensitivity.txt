@@ -1,0 +1,107 @@
+======================================================================
+DEEPGENE ML STEP 28
+CLASS-WEIGHT SENSITIVITY AUDIT
+======================================================================
+
+PURPOSE
+----------------------------------------------------------------------
+Assess whether model performance is sensitive to class weighting.
+This is a sensitivity analysis, not model selection.
+No hyperparameter tuning was performed.
+
+INPUT
+----------------------------------------------------------------------
+Dataset: data\processed\deepgene_ml_ready_v1.csv
+Rows: 51
+Features: 14
+Target: functional_target
+
+TARGET DISTRIBUTION
+----------------------------------------------------------------------
+Gain: 4 (0.0784)
+Loss: 35 (0.6863)
+Mixed: 12 (0.2353)
+
+CROSS-VALIDATION DESIGN
+----------------------------------------------------------------------
+StratifiedKFold: 4 folds
+Seeds: [42, 123, 2024, 7, 99]
+Total validation evaluations per model: 20
+Logistic Regression: StandardScaler fitted inside each training fold.
+Random Forest: no feature standardization.
+
+MODEL CONFIGURATIONS
+----------------------------------------------------------------------
+Logistic Regression: max_iter=5000, random_state=42
+Random Forest: n_estimators=300, random_state=42, n_jobs=-1
+Compared class_weight values: None vs balanced
+
+======================================================================
+LOGISTIC REGRESSION - UNWEIGHTED
+======================================================================
+balanced_accuracy: mean=0.275000, SD=0.074004, median=0.259259, min=0.185185, max=0.481481
+macro_precision: mean=0.231602, SD=0.056320, median=0.212121, min=0.185185, max=0.391667
+macro_recall: mean=0.275000, SD=0.074004, median=0.259259, min=0.185185, max=0.481481
+macro_f1: mean=0.247207, SD=0.053746, median=0.233333, min=0.185185, max=0.388889
+
+======================================================================
+LOGISTIC REGRESSION - BALANCED
+======================================================================
+balanced_accuracy: mean=0.214120, SD=0.114125, median=0.189815, min=0.037037, max=0.444444
+macro_precision: mean=0.229524, SD=0.083698, median=0.233333, min=0.066667, max=0.361111
+macro_recall: mean=0.214120, SD=0.114125, median=0.189815, min=0.037037, max=0.444444
+macro_f1: mean=0.202763, SD=0.087285, median=0.202206, min=0.047619, max=0.346405
+
+======================================================================
+RANDOM FOREST - UNWEIGHTED
+======================================================================
+balanced_accuracy: mean=0.303472, SD=0.079912, median=0.296296, min=0.148148, max=0.444444
+macro_precision: mean=0.267982, SD=0.081995, median=0.222222, min=0.166667, max=0.409091
+macro_recall: mean=0.303472, SD=0.079912, median=0.296296, min=0.148148, max=0.444444
+macro_f1: mean=0.280803, SD=0.077359, median=0.253968, min=0.156863, max=0.401961
+
+======================================================================
+RANDOM FOREST - BALANCED
+======================================================================
+balanced_accuracy: mean=0.303241, SD=0.166297, median=0.254630, min=0.111111, max=0.703704
+macro_precision: mean=0.271320, SD=0.123263, median=0.206061, min=0.142857, max=0.592593
+macro_recall: mean=0.303241, SD=0.166297, median=0.254630, min=0.111111, max=0.703704
+macro_f1: mean=0.271849, SD=0.127382, median=0.222222, min=0.125000, max=0.614815
+
+======================================================================
+CLASS-WEIGHT SENSITIVITY COMPARISON
+======================================================================
+
+Logistic Regression
+----------------------------------------------------------------------
+balanced_accuracy: unweighted=0.275000, balanced=0.214120, balanced-minus-unweighted=-0.060880
+macro_precision: unweighted=0.231602, balanced=0.229524, balanced-minus-unweighted=-0.002078
+macro_recall: unweighted=0.275000, balanced=0.214120, balanced-minus-unweighted=-0.060880
+macro_f1: unweighted=0.247207, balanced=0.202763, balanced-minus-unweighted=-0.044444
+
+Random Forest
+----------------------------------------------------------------------
+balanced_accuracy: unweighted=0.303472, balanced=0.303241, balanced-minus-unweighted=-0.000231
+macro_precision: unweighted=0.267982, balanced=0.271320, balanced-minus-unweighted=0.003338
+macro_recall: unweighted=0.303472, balanced=0.303241, balanced-minus-unweighted=-0.000231
+macro_f1: unweighted=0.280803, balanced=0.271849, balanced-minus-unweighted=-0.008954
+
+======================================================================
+INTERPRETATION
+======================================================================
+Class weighting changes the training objective by giving greater weight to minority classes.
+This audit determines whether conclusions are sensitive to that choice.
+Because the Gain class contains only 4 variants, class-weight sensitivity is particularly important.
+Differences between weighted and unweighted models are descriptive and should not be interpreted as evidence that one configuration is the final model.
+Repeated cross-validation variability remains important because the dataset contains only 51 variants.
+
+DECISION
+----------------------------------------------------------------------
+No model selected in Step 28.
+No feature selection performed.
+No hyperparameter tuning performed.
+No clinical interpretation made.
+
+======================================================================
+STATUS: PASS
+======================================================================
