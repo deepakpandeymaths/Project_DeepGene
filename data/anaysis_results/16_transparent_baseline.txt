@@ -1,0 +1,50 @@
+============================================================
+DEEPGENE TRANSPARENT BASELINE
+============================================================
+
+Variants analysed: 5381
+
+============================================================
+EVIDENCE CATEGORY DISTRIBUTION
+============================================================
+Uncertain evidence: 1710 (31.78%)
+Pathogenic evidence: 1380 (25.65%)
+Likely benign evidence: 788 (14.64%)
+Likely pathogenic evidence: 637 (11.84%)
+Conflicting evidence: 386 (7.17%)
+Pathogenic/Likely pathogenic evidence: 213 (3.96%)
+Benign evidence: 123 (2.29%)
+Other / insufficiently classified: 82 (1.52%)
+Benign/Likely benign evidence: 62 (1.15%)
+
+============================================================
+RELIABILITY CONTEXT
+============================================================
+Single submitter / no multiple-submitter evidence: 3788 (70.40%)
+Multiple submitters: 1571 (29.20%)
+Expert panel reviewed: 22 (0.41%)
+
+============================================================
+EVIDENCE REVIEW FLAGS
+============================================================
+Variants with conflicting evidence: 386
+Variants without conflicting evidence: 4995
+
+============================================================
+REVIEW GROUP DISTRIBUTION
+============================================================
+Pathogenicity evidence present: 2230 (41.44%)
+Uncertain evidence: 1710 (31.78%)
+Benign evidence: 973 (18.08%)
+Review conflicting evidence: 386 (7.17%)
+Other evidence: 82 (1.52%)
+
+============================================================
+BASELINE DESIGN
+============================================================
+No arbitrary numerical pathogenicity score was assigned.
+Evidence categories directly describe the existing clinical significance classification.
+Reliability context is reported separately from clinical significance.
+Conflicting evidence remains explicitly identifiable.
+Phenotype information is preserved for future phenotype-based analysis.
+This baseline is an evidence-prioritization framework, not a clinical diagnostic system.
