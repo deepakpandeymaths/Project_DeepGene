@@ -1,0 +1,46 @@
+PROJECT DEEPGENE
+STEP 05 — MODEL INPUT MATRIX AUDIT
+
+Training matrix shape: (4304, 18)
+Testing matrix shape: (1077, 18)
+Feature count: 18
+
+Training missing values: 0
+Testing missing values: 0
+
+Training matrix finite: True
+Testing matrix finite: True
+
+Training minimum value: 0.0
+Training maximum value: 20.0
+
+FEATURES:
+  - pathogenic_count
+  - pathogenic_likely_pathogenic_count
+  - likely_pathogenic_count
+  - benign_count
+  - benign_likely_benign_count
+  - likely_benign_count
+  - vus_count
+  - conflicting_count
+  - submitter_count
+  - multiple_submitters
+  - expert_panel_review
+  - conflict_flag
+  - phenotype_available
+  - grch37_present
+  - grch38_present
+  - dbsnp_present
+  - genomic_coordinates_present
+  - hgvs_present
+
+TARGET STATUS:
+  Independent target: NOT AVAILABLE
+  Supervised model training: NOT PERFORMED
+
+INTERPRETATION:
+  The feature matrix is numerically ready for supervised ML.
+  Model fitting remains blocked until an independent target
+  is supplied and validated.
+
+STATUS: PASS

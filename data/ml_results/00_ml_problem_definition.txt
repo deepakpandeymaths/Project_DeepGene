@@ -1,0 +1,129 @@
+======================================================================
+PROJECT DEEPGENE
+STEP 00 — ML PROBLEM DEFINITION
+======================================================================
+
+PROJECT
+----------------------------------------------------------------------
+Project: Project_DeepGene
+Gene: SCN1A
+
+CURRENT DATASET
+----------------------------------------------------------------------
+Input file: D:\Project_DeepGene\data\processed\deepgene_v1_final.csv
+Rows: 5381
+Columns: 26
+Unique variants: 5381
+Data source: ClinVar-derived variant evidence
+
+ML OBJECTIVE
+----------------------------------------------------------------------
+Develop a reproducible machine-learning framework for SCN1A variant prediction using appropriately defined independent labels and non-leaking features.
+
+TARGET STATUS
+----------------------------------------------------------------------
+NOT AVAILABLE — an independent ML benchmark label has not yet been established.
+
+IMPORTANT TARGET-LEAKAGE RULE
+----------------------------------------------------------------------
+Clinical significance is ClinVar-derived evidence and must not be used as an independent target for the current ML benchmark.
+
+MODEL TRAINING STATUS
+----------------------------------------------------------------------
+MODEL TRAINING MUST NOT START until an independent target definition is available.
+
+FEATURE POLICY
+----------------------------------------------------------------------
+Candidate features may be prepared and audited, but features derived directly from the target source must be assessed for leakage before supervised training.
+
+EVALUATION POLICY
+----------------------------------------------------------------------
+Final model evaluation must use data that are independent of model fitting and target construction.
+
+IDENTIFIER COLUMNS
+----------------------------------------------------------------------
+- variant_id
+- gene_id
+- allele_id
+- variation_id
+
+RAW TEXT / REVIEW COLUMNS
+----------------------------------------------------------------------
+- hgvs_name
+- phenotypes
+- review_status
+
+TARGET CANDIDATE COLUMNS
+----------------------------------------------------------------------
+- clinical_significance → NOT an independent ML target
+
+CANDIDATE ML FEATURES
+----------------------------------------------------------------------
+- pathogenic_count
+- pathogenic_likely_pathogenic_count
+- likely_pathogenic_count
+- benign_count
+- benign_likely_benign_count
+- likely_benign_count
+- vus_count
+- conflicting_count
+- submitter_count
+- multiple_submitters
+- expert_panel_review
+- conflict_flag
+- phenotype_available
+- grch37_present
+- grch38_present
+- dbsnp_present
+- genomic_coordinates_present
+- hgvs_present
+
+FEATURES REQUIRING LEAKAGE ASSESSMENT
+----------------------------------------------------------------------
+- pathogenic_count
+- pathogenic_likely_pathogenic_count
+- likely_pathogenic_count
+- benign_count
+- benign_likely_benign_count
+- likely_benign_count
+- vus_count
+- conflicting_count
+- multiple_submitters
+- expert_panel_review
+- conflict_flag
+- review_status
+- clinical_significance
+
+CLINICAL SIGNIFICANCE DISTRIBUTION
+----------------------------------------------------------------------
+- Uncertain significance: 1710
+- Pathogenic: 1380
+- Likely benign: 788
+- Likely pathogenic: 637
+- Conflicting classifications of pathogenicity: 386
+- Pathogenic/Likely pathogenic: 213
+- Benign: 123
+- Benign/Likely benign: 62
+- not provided: 59
+- -: 22
+- drug response: 1
+
+REVIEW STATUS DISTRIBUTION
+----------------------------------------------------------------------
+- criteria provided, single submitter: 3741
+- criteria provided, multiple submitters, no conflicts: 1083
+- criteria provided, conflicting classifications: 386
+- no assertion criteria provided: 68
+- no classification provided: 59
+- reviewed by expert panel: 22
+- -: 22
+
+FINAL STATUS
+----------------------------------------------------------------------
+PASS — ML problem definition documented.
+PASS — No independent target was invented.
+PASS — ClinVar clinical significance is not treated as an independent benchmark target.
+PASS — Candidate features have been identified.
+NEXT — Proceed to ML dataset preparation and feature audit.
+
+======================================================================

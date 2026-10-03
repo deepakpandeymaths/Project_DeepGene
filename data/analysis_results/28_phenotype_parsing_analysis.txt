@@ -1,0 +1,16 @@
+DEEPGENE STEP 28
+PHENOTYPE PARSING / REPRESENTATION ANALYSIS
+======================================================================
+
+Total variants: 5381
+Variants containing semicolons: 122
+Percentage containing semicolons: 2.27%
+Variants affected by semicolon parsing: 122
+Additional term occurrences exposed: 308
+Unique terms using '|': 113
+Unique terms using '|' + ';': 71
+Duplicates after combined parsing: 40
+Unique semicolon-separated components: 96
+
+IMPORTANT: No phenotype values were modified.
+STATUS: AUDIT COMPLETE

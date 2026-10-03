@@ -1,0 +1,19 @@
+feature,decision,reason
+pathogenic_count,RETAIN,Retained as a non-constant candidate feature.
+pathogenic_likely_pathogenic_count,RETAIN,Retained as a non-constant candidate feature.
+likely_pathogenic_count,RETAIN,Retained as a non-constant candidate feature.
+benign_count,RETAIN,Retained as a non-constant candidate feature.
+benign_likely_benign_count,RETAIN,Retained as a non-constant candidate feature.
+likely_benign_count,RETAIN,Retained as a non-constant candidate feature.
+vus_count,RETAIN,Retained as a non-constant candidate feature.
+conflicting_count,RETAIN,Retained as a non-constant candidate feature.
+submitter_count,RETAIN,Retained as a non-constant candidate feature.
+multiple_submitters,RETAIN,Retained as a non-constant candidate feature.
+expert_panel_review,RETAIN,Retained as a non-constant candidate feature.
+conflict_flag,REMOVED_REDUNDANT,Perfectly redundant with conflicting_count (Pearson r = 1.0000).
+phenotype_available,REMOVED_CONSTANT,Constant in both training and testing datasets.
+grch37_present,RETAIN,Retained as a non-constant candidate feature.
+grch38_present,RETAIN,Retained as a non-constant candidate feature.
+dbsnp_present,RETAIN,Retained as a non-constant candidate feature.
+genomic_coordinates_present,REMOVED_CONSTANT,Constant in both training and testing datasets.
+hgvs_present,REMOVED_CONSTANT,Constant in both training and testing datasets.

@@ -1,0 +1,14 @@
+DEEPGENE STEP 27
+PHENOTYPE TERM NORMALIZATION AUDIT
+======================================================================
+
+Rows checked: 5381
+Variants containing semicolons: 122
+Variants with duplicate terms: 0
+Variants with whitespace issues: 0
+Variants with empty terms: 0
+Total phenotype term occurrences: 5791
+Unique phenotype terms: 113
+Compound phenotype candidates: 59
+
+NORMALIZATION STATUS: REVIEW REQUIRED

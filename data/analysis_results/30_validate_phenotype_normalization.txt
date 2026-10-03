@@ -1,0 +1,18 @@
+DEEPGENE STEP 30
+VALIDATE PHENOTYPE NORMALIZATION
+======================================================================
+
+Original rows: 5381
+Normalized rows: 5381
+Original semicolon variants: 122
+Normalized changed variants: 122
+Remaining semicolons: 0
+Duplicate normalized variants: 0
+Empty normalized variants: 0
+Term count mismatches: 0
+Normalization flag mismatches: 0
+
+Checks passed: 14
+Checks failed: 0
+
+OVERALL STATUS: PASS

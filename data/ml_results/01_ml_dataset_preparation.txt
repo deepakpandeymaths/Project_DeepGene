@@ -1,0 +1,18 @@
+======================================================================
+PROJECT DEEPGENE
+STEP 01 — ML DATASET PREPARATION
+======================================================================
+Input rows: 5381
+Input columns: 26
+
+Removed columns:
+  - variant_id
+  - gene_id
+  - allele_id
+  - variation_id
+  - hgvs_name
+  - phenotypes
+
+Remaining features: 20
+
+Total missing values: 0

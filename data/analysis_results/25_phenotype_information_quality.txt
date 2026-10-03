@@ -1,0 +1,17 @@
+DEEPGENE STEP 25
+PHENOTYPE INFORMATION QUALITY
+======================================================================
+
+Total variants: 5381
+Variants with at least one meaningful phenotype term: 4486
+Variants with no meaningful phenotype term: 895
+Unique phenotype strings: 460
+
+PHENOTYPE INFORMATION CATEGORIES
+----------------------------------------------------------------------
+ONE MEANINGFUL PHENOTYPE TERM: 3648
+NON-INFORMATIVE PHENOTYPE ONLY: 895
+MULTIPLE MEANINGFUL PHENOTYPE TERMS: 838
+
+Meaningful phenotype coverage: 83.37%
+No meaningful phenotype coverage: 16.63%

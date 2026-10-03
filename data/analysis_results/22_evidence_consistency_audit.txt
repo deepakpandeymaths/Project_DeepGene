@@ -1,0 +1,27 @@
+DEEPGENE STEP 22
+EVIDENCE CONSISTENCY AUDIT
+======================================================================
+
+Genes: 1
+Unique variants: 5381
+ClinVar records: 10696
+Genomic representations: 10696
+
+Variants with multiple ClinVar records: 5315
+Variants with multiple clinical significance categories: 0
+Variants with multiple review statuses: 0
+Variants with both GRCh37 and GRCh38: 5315
+Variants with only GRCh37: 54
+Variants with only GRCh38: 2
+Variants with neither assembly: 10
+
+Duplicate variant IDs: 0
+Duplicate ClinVar record IDs: 0
+Duplicate representation IDs: 0
+
+Final V1 dataset rows: 5381
+Final V1 unique variants: 5381
+Database variants missing from final dataset: 0
+Final dataset variants not found in database: 0
+
+AUDIT STATUS: PASS

@@ -1,0 +1,13 @@
+DEEPGENE — SCN1A FUNCTIONAL VARIANT MATCHING AUDIT
+======================================================================
+
+Functional rows: 59
+DeepGene V1 rows: 5381
+Exact coding matches: 0
+Normalized coding matches: 0
+
+TARGET STATUS
+Validated biological overlap: NOT YET
+Independent ML target: NOT YET DEFINED
+Pathogenic/Benign labels: NOT CREATED
+ML training: NOT STARTED

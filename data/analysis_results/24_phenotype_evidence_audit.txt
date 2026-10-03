@@ -1,0 +1,15 @@
+DEEPGENE STEP 24
+PHENOTYPE EVIDENCE AUDIT
+======================================================================
+
+Final dataset rows: 5381
+Phenotype available: 5381
+Phenotype unavailable: 0
+Empty phenotype values: 0
+Placeholder/missing-style phenotype values: 816
+Unique phenotype strings: 460
+Variants with multiple distinct phenotype values: 0
+Phenotype value mismatches: 0
+Phenotype availability mismatches: 0
+
+STATUS: PASS

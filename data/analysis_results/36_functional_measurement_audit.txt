@@ -1,0 +1,135 @@
+DEEPGENE — SCN1A FUNCTIONAL MEASUREMENT AUDIT
+======================================================================
+
+Workbook: /Users/sudevnprabhu/Desktop/SCN1A_Variant_Project/Project_DeepGen/Project_DeepGene/data/raw/SCN1A_functional_Brunklaus_2020.xlsx
+Sheet: Sheet1
+Rows: 59
+Columns: 55
+
+FUNCTION CATEGORIES
+----------------------------------------------------------------------
+Loss: 36
+Mixed: 13
+Gain: 4
+Insufficient data: 2
+No effect: 1
+Unclear effect: 1
+Loss/Gain: 1
+
+EXPERIMENTAL MEASUREMENTS
+----------------------------------------------------------------------
+
+Measurable           Whole-cell current
+  non_empty: 57
+  missing: 2
+  numeric_like: 57
+  coverage_percent: 96.61
+
+Peak current Density            (% of WT)
+  non_empty: 35
+  missing: 24
+  numeric_like: 35
+  coverage_percent: 59.32
+
+Change in Peak current Density         (% of WT)
+  non_empty: 35
+  missing: 24
+  numeric_like: 35
+  coverage_percent: 59.32
+
+Persistent Na current (% of peak current)
+  non_empty: 29
+  missing: 30
+  numeric_like: 29
+  coverage_percent: 49.15
+
+WT persistent Na current (% of peak current)
+  non_empty: 29
+  missing: 30
+  numeric_like: 29
+  coverage_percent: 49.15
+
+Persistent Na current Ratio vs WT
+  non_empty: 29
+  missing: 30
+  numeric_like: 29
+  coverage_percent: 49.15
+
+WT Activation (mV)
+  non_empty: 33
+  missing: 26
+  numeric_like: 33
+  coverage_percent: 55.93
+
+Variant Activation (mV)
+  non_empty: 33
+  missing: 26
+  numeric_like: 33
+  coverage_percent: 55.93
+
+Shift of Activation curve (mV)
+  non_empty: 33
+  missing: 26
+  numeric_like: 33
+  coverage_percent: 55.93
+
+WT Fast Inactivation (mV)
+  non_empty: 34
+  missing: 25
+  numeric_like: 34
+  coverage_percent: 57.63
+
+Variant Fast Inactivation (mV)
+  non_empty: 34
+  missing: 25
+  numeric_like: 34
+  coverage_percent: 57.63
+
+Shift of Fast Inactivation (mV)
+  non_empty: 34
+  missing: 25
+  numeric_like: 34
+  coverage_percent: 57.63
+
+Recovery from Fast Inactivation
+  non_empty: 33
+  missing: 26
+  numeric_like: 32
+  coverage_percent: 55.93
+
+Onset of Slow Inactivation
+  non_empty: 16
+  missing: 43
+  numeric_like: 15
+  coverage_percent: 27.12
+
+WT Slow inactivation (mV)
+  non_empty: 16
+  missing: 43
+  numeric_like: 16
+  coverage_percent: 27.12
+
+Variant Slow inactivation (mV)
+  non_empty: 16
+  missing: 43
+  numeric_like: 16
+  coverage_percent: 27.12
+
+Slow inactivation (mV)
+  non_empty: 16
+  missing: 43
+  numeric_like: 16
+  coverage_percent: 27.12
+
+Recovery from Slow inactivation
+  non_empty: 17
+  missing: 42
+  numeric_like: 16
+  coverage_percent: 28.81
+
+TARGET STATUS
+----------------------------------------------------------------------
+Independent ML target: NOT YET DEFINED
+Pathogenic/Benign labels: NOT CREATED
+ML training: NOT STARTED
+DeepGene V1 modified: NO

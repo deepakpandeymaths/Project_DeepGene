@@ -1,0 +1,67 @@
+DEEPGENE STEP 42 - FINAL ML DESIGN
+======================================================================
+
+DATASET
+Total Step 41 variants: 56
+Primary ML variants: 51
+Primary classes: 3
+
+TARGET
+Independent experimental functional-effect classification
+NOT pathogenic/benign
+
+PRIMARY CLASSES
+ - Loss: 35
+ - Mixed: 12
+ - Gain: 4
+
+EXCLUDED CLASSES
+ - Insufficient data: 2
+ - No effect: 1
+ - Unclear effect: 1
+ - Loss/Gain: 1
+
+FEATURES
+ - protein_position
+ - same_amino_acid
+ - reference_hydrophobicity
+ - alternate_hydrophobicity
+ - delta_hydrophobicity
+ - absolute_delta_hydrophobicity
+ - reference_charge
+ - alternate_charge
+ - delta_charge
+ - absolute_delta_charge
+ - reference_volume
+ - alternate_volume
+ - delta_volume
+ - absolute_delta_volume
+
+LEAKAGE POLICY
+ClinVar clinical significance: EXCLUDED
+ClinVar pathogenicity counts: EXCLUDED
+ClinVar review/reliability fields: EXCLUDED
+Phenotype: EXCLUDED
+Inheritance: EXCLUDED
+Functional target: EXCLUDED from predictors
+Identifiers: EXCLUDED from predictors
+
+VALIDATION
+Stratified cross-validation
+Fixed random seed before training
+
+METRICS
+ - balanced_accuracy
+ - macro_precision
+ - macro_recall
+ - macro_f1
+ - confusion_matrix
+
+BASELINE
+Majority-class classifier
+
+ML TRAINING
+NOT STARTED
+
+STATUS
+FINAL DESIGN DEFINED

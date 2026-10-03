@@ -1,0 +1,48 @@
+PROJECT DEEPGENE
+STEP 10 — FINAL FEATURE-SET AUDIT
+
+Original candidate features: 18
+Constant features removed: 3
+Perfectly redundant feature removed: 1
+Final candidate features: 14
+
+CONSTANT FEATURES REMOVED:
+  - phenotype_available
+  - genomic_coordinates_present
+  - hgvs_present
+
+REDUNDANT FEATURE REMOVED:
+  - conflict_flag
+    Reason: perfectly correlated with conflicting_count.
+
+RETAINED FEATURES:
+  - pathogenic_count
+  - pathogenic_likely_pathogenic_count
+  - likely_pathogenic_count
+  - benign_count
+  - benign_likely_benign_count
+  - likely_benign_count
+  - vus_count
+  - conflicting_count
+  - submitter_count
+  - multiple_submitters
+  - expert_panel_review
+  - grch37_present
+  - grch38_present
+  - dbsnp_present
+
+Final dataset rows: 5381
+Final dataset columns: 15
+Final feature missing values: 0
+
+TARGET STATUS:
+  Independent target: NOT AVAILABLE
+  Error analysis: NOT PERFORMED
+
+IMPORTANT:
+  Feature removal is based only on feature structure.
+  No predictive performance claim is made.
+  Supervised modeling remains blocked until an independent
+  target is established.
+
+STATUS: PASS

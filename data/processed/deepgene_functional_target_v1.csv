@@ -1,0 +1,17 @@
+measurement,matched_variants_with_value,matched_variants,coverage_percent
+Peak current Density            (% of WT),33,56,58.93
+Change in Peak current Density         (% of WT),33,56,58.93
+WT Fast Inactivation (mV),32,56,57.14
+Variant Fast Inactivation (mV),32,56,57.14
+Shift of Fast Inactivation (mV),32,56,57.14
+Shift of Activation curve (mV),31,56,55.36
+Variant Activation (mV),31,56,55.36
+WT Activation (mV),31,56,55.36
+Recovery from Fast Inactivation,30,56,53.57
+Persistent Na current Ratio vs WT,27,56,48.21
+Persistent Na current (% of peak current),27,56,48.21
+WT Slow inactivation (mV),16,56,28.57
+Slow inactivation (mV),16,56,28.57
+Variant Slow inactivation (mV),16,56,28.57
+Recovery from Slow inactivation,16,56,28.57
+Onset of Slow Inactivation,15,56,26.79

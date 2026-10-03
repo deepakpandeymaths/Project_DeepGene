@@ -1,0 +1,38 @@
+DEEPGENE VARIANT EVIDENCE PROFILES
+======================================================================
+Variants profiled: 5381
+Profile columns: 38
+
+PURPOSE
+----------------------------------------------------------------------
+This dataset converts the validated DeepGene V1 evidence representation into an explainable variant-level profile.
+It does not assign an arbitrary pathogenicity score.
+It preserves the underlying ClinVar evidence and explicitly separates evidence, reliability, phenotype, representation, and review context.
+
+EVIDENCE PROFILE DISTRIBUTION
+----------------------------------------------------------------------
+Uncertain significance: 1710
+Pathogenic: 1593
+Likely benign: 788
+Likely pathogenic: 637
+Conflicting: 386
+Benign: 185
+No classified evidence category detected: 82
+
+RELIABILITY PROFILE DISTRIBUTION
+----------------------------------------------------------------------
+Single submitter: 3787
+Multiple submitters: 1186
+Multiple submitters; Conflicting classifications: 385
+Expert panel; Multiple submitters: 21
+Single submitter; Conflicting classifications: 1
+Expert panel; Single submitter: 1
+
+IMPORTANT METHODOLOGICAL NOTE
+----------------------------------------------------------------------
+The evidence profile is descriptive.
+It should not be interpreted as an independent pathogenicity prediction.
+ClinVar clinical significance remains part of the V1 evidence representation and therefore cannot simultaneously serve as an independent benchmark label for machine-learning evaluation.
+
+======================================================================
+END OF REPORT

@@ -1,0 +1,26 @@
+DEEPGENE STEP 23
+EVIDENCE COUNT CONSISTENCY AUDIT
+======================================================================
+
+Final dataset rows: 5381
+Final dataset columns: 26
+ClinVar evidence rows checked: 5381
+
+EVIDENCE COUNT MISMATCHES
+----------------------------------------------------------------------
+pathogenic_count: 0
+likely_pathogenic_count: 0
+pathogenic_likely_pathogenic_count: 0
+benign_count: 0
+likely_benign_count: 0
+benign_likely_benign_count: 0
+vus_count: 0
+conflicting_count: 0
+
+submitter_count mismatches: 0
+multiple_submitters mismatches: 0
+conflict_flag mismatches: 0
+expert_panel_review mismatches: 0
+
+TOTAL MISMATCHES: 0
+STATUS: PASS

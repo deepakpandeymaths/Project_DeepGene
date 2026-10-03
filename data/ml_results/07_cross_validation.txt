@@ -1,0 +1,90 @@
+PROJECT DEEPGENE
+STEP 07 — TARGET PROVENANCE AND LEAKAGE AUDIT
+
+PURPOSE:
+Determine whether candidate target-bearing datasets provide
+an independent ML target or merely reproduce ClinVar-derived
+evidence already represented in the feature matrix.
+
+CURRENT ML FEATURES:
+  - pathogenic_count
+  - pathogenic_likely_pathogenic_count
+  - likely_pathogenic_count
+  - benign_count
+  - benign_likely_benign_count
+  - likely_benign_count
+  - vus_count
+  - conflicting_count
+  - submitter_count
+  - multiple_submitters
+  - expert_panel_review
+  - conflict_flag
+  - phenotype_available
+  - grch37_present
+  - grch38_present
+  - dbsnp_present
+  - genomic_coordinates_present
+  - hgvs_present
+
+CANDIDATE DATASETS:
+  deepgene_evidence_v1.csv: READ_OK
+    ClinVar-derived fields detected:
+      - pathogenic_count
+      - pathogenic_likely_pathogenic_count
+      - likely_pathogenic_count
+      - benign_count
+      - benign_likely_benign_count
+      - likely_benign_count
+      - vus_count
+      - conflicting_count
+      - multiple_submitters
+      - expert_panel_review
+      - conflict_flag
+  deepgene_ml_ready_v1.csv: READ_OK
+    ClinVar-derived fields detected:
+      - pathogenic_count
+      - pathogenic_likely_pathogenic_count
+      - likely_pathogenic_count
+      - benign_count
+      - benign_likely_benign_count
+      - likely_benign_count
+      - vus_count
+      - conflicting_count
+      - multiple_submitters
+      - expert_panel_review
+      - conflict_flag
+  deepgene_variant_profiles_v1.csv: READ_OK
+    ClinVar-derived fields detected:
+      - pathogenic_count
+      - pathogenic_likely_pathogenic_count
+      - likely_pathogenic_count
+      - benign_count
+      - benign_likely_benign_count
+      - likely_benign_count
+      - vus_count
+      - conflicting_count
+      - multiple_submitters
+      - expert_panel_review
+      - conflict_flag
+
+LEAKAGE ASSESSMENT:
+  Candidate datasets contain ClinVar-derived evidence already represented in ML features.
+  They are NOT independent ground-truth targets.
+
+CROSS-VALIDATION STATUS:
+  NOT PERFORMED.
+
+Reason:
+  Cross-validation requires a valid independent target.
+  Running cross-validation without such a target would not
+  produce a meaningful supervised ML performance estimate.
+
+REQUIRED NEXT DATA:
+  An independently defined variant-level target with:
+    1. documented provenance,
+    2. explicit labeling rules,
+    3. one label per eligible variant,
+    4. no circular dependence on the current ClinVar evidence
+       features.
+
+STATUS: PASS

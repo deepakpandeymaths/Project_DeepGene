@@ -1,0 +1,19 @@
+feature,category,initial_use,reason
+pathogenic_count,LEAKAGE_RISK,AUDIT_BEFORE_MODELING,Feature is derived from ClinVar evidence or review information and may encode information closely related to the eventual target.
+pathogenic_likely_pathogenic_count,LEAKAGE_RISK,AUDIT_BEFORE_MODELING,Feature is derived from ClinVar evidence or review information and may encode information closely related to the eventual target.
+likely_pathogenic_count,LEAKAGE_RISK,AUDIT_BEFORE_MODELING,Feature is derived from ClinVar evidence or review information and may encode information closely related to the eventual target.
+benign_count,LEAKAGE_RISK,AUDIT_BEFORE_MODELING,Feature is derived from ClinVar evidence or review information and may encode information closely related to the eventual target.
+benign_likely_benign_count,LEAKAGE_RISK,AUDIT_BEFORE_MODELING,Feature is derived from ClinVar evidence or review information and may encode information closely related to the eventual target.
+likely_benign_count,LEAKAGE_RISK,AUDIT_BEFORE_MODELING,Feature is derived from ClinVar evidence or review information and may encode information closely related to the eventual target.
+vus_count,LEAKAGE_RISK,AUDIT_BEFORE_MODELING,Feature is derived from ClinVar evidence or review information and may encode information closely related to the eventual target.
+conflicting_count,LEAKAGE_RISK,AUDIT_BEFORE_MODELING,Feature is derived from ClinVar evidence or review information and may encode information closely related to the eventual target.
+submitter_count,CANDIDATE_FEATURE,ELIGIBLE_AFTER_AUDIT,"Feature represents phenotype availability, variant representation, or basic evidence metadata rather than a direct clinical label."
+multiple_submitters,LEAKAGE_RISK,AUDIT_BEFORE_MODELING,Feature is derived from ClinVar evidence or review information and may encode information closely related to the eventual target.
+expert_panel_review,LEAKAGE_RISK,AUDIT_BEFORE_MODELING,Feature is derived from ClinVar evidence or review information and may encode information closely related to the eventual target.
+conflict_flag,LEAKAGE_RISK,AUDIT_BEFORE_MODELING,Feature is derived from ClinVar evidence or review information and may encode information closely related to the eventual target.
+phenotype_available,CANDIDATE_FEATURE,ELIGIBLE_AFTER_AUDIT,"Feature represents phenotype availability, variant representation, or basic evidence metadata rather than a direct clinical label."
+grch37_present,CANDIDATE_FEATURE,ELIGIBLE_AFTER_AUDIT,"Feature represents phenotype availability, variant representation, or basic evidence metadata rather than a direct clinical label."
+grch38_present,CANDIDATE_FEATURE,ELIGIBLE_AFTER_AUDIT,"Feature represents phenotype availability, variant representation, or basic evidence metadata rather than a direct clinical label."
+dbsnp_present,CANDIDATE_FEATURE,ELIGIBLE_AFTER_AUDIT,"Feature represents phenotype availability, variant representation, or basic evidence metadata rather than a direct clinical label."
+genomic_coordinates_present,CANDIDATE_FEATURE,ELIGIBLE_AFTER_AUDIT,"Feature represents phenotype availability, variant representation, or basic evidence metadata rather than a direct clinical label."
+hgvs_present,CANDIDATE_FEATURE,ELIGIBLE_AFTER_AUDIT,"Feature represents phenotype availability, variant representation, or basic evidence metadata rather than a direct clinical label."

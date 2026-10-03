@@ -1,0 +1,91 @@
+functional_cDNA,functional_protein,normalized_protein,protein_position,functional_class,phenotype,inheritance,deepgene_match,deepgene_match_count,deepgene_variant_ids
+c.434T>C,Met145Thr,M145T,145,Loss,familial FS,Inherited from affected individuals also presenting with FS,True,1,15
+c.530G>C,Gly177Ala,G177A,177,Loss,DS only,De novo,True,1,4417
+c.530G>A,Gly177Glu,G177E,177,Loss,DS only,De novo,True,1,186
+c.677C>T,Thr226Met,T226M,226,Mixed,Eearly epileptic encephalopathy,De novo,True,1,107
+c.680T>G,Ile227Ser,I227S,227,Loss,DS only,De novo,True,1,108
+c.777C>A,Ser259Arg,S259R,259,Loss,DS only,De novo,True,2,201|4428
+c.787C>G,Leu263Val,L263V,263,Gain,DS only,"Inherited, The L263V mutation segregated in five FHM patients",True,1,2454
+c.1178G>A,Arg393His,R393H,393,Loss,DS only,De novo,True,1,36
+c.1276T>A,Tyr426Asn,Y426N,426,Loss,DS only,De novo,True,1,41
+c.2369A>G,Tyr790Cys,Y790C,790,Loss,"GEFS+, Panayiotopoulos syndrome","The first mutation is a heterozygous point mutation,A2336G, which was detected in the three affected mem-bers of family 5, whereas it was not detected in three un-affected relatives including the mother. This mutation inexon 13 ofSCN1Aresults in a Tyr779Cys amino acid sub-stitution that lies within the S1 segment of domain II. Thetwo probands of family 5 had had FSs until age 5 years.These were followed by afebrile generalized seizures,which disappeared with phenobarbital (PB) or valproate(VPA), respectively. Their father had only four FSs aroundage 3 years",True,1,119
+c.2422A>T,Thr808Ser,T808S,808,Mixed,DS only,De novo,True,2,120|4430
+c.2576G>A,Arg859His,R859H,859,Mixed,GEFS+,"Inherited from the affected father. The novel R859H mutation was detected in a girl diagnosed with
+GEFS+ and a paternal history of (a)febrile seizures.",True,1,224
+c.2575C>T,Arg859Cys,R859C,859,Loss,"GEFS+, DS","The mutation R859C (p.Arg859Cys; c.2575CNT in exon 14), which
+substitutes the first arginine of the voltage-sensing S4 segment of domain
+II with a cysteine, was inherited in a five-generation family with
+GEFS+ phenotypes, in which one member had severe intractable
+tonic–clonic seizures (Barela et al., 2006), and appeared de novo in a
+non-related DS patient",False,0,
+c.2593C>G,Arg865Gly,R865G,865,Mixed,DS only,Not available,True,1,4427
+c.2624C>T,Thr875Met,T875M,875,Loss,GEFS+; SMEB,"Inherited GEFS+ variant, that co-segregate with the disorder in two families with GEFS+",True,1,2
+c.2705T>G,Phe902Cys,F902C,902,Loss,DS only,De novo,True,1,123
+c.2817C>G,His939Gln,H939Q,939,Loss,DS only,De novo,True,2,129|1114
+c.2836C>T,Arg946Cys,R946C,946,Loss,DS only,De novo,True,1,132
+c.2837G>A,Arg946His,R946H,946,Loss,"PEFS+, DS",De novo,True,1,53
+c.2867T>C,Met956Thr,M956T,956,Loss,GEFS+,"The probands sister (III-2), mother
+(II-4), uncle (II-3) and aunt (II-1), all carrying the samemutation, experienced
+frequent focal febrile seizures only during childhood. All within GEFS+ spectrum",True,1,1939
+c.2875T>C,Cys959Arg,C959R,959,Loss,DS only,De novo,True,1,135
+c.2935G>A,Gly979Arg,G979R,979,Loss,DS only,Not available,True,1,137
+c.2948T>C,Val983Ala,V983A,983,Loss,DS only,De novo,True,1,138
+c.2956C>T,Leu986Phe,L986F,986,Loss,DS only,De novo,True,1,9
+c.3032A>T,Asn1011Ile,N1011I,1011,Loss,DS only,De novo,True,1,140
+c.3521C>G,Thr1174Ser,T1174S,1174,Mixed,Polymorphism,familial and maternal,True,1,144
+c.3610T>C,p.(Trp1204Arg),,1204,Mixed,GEFS+,"The mutation W1204R (p.Trp1204Arg; c.3610TNC in exon 18), located
+in the cytoplasmic loop between DII and DIII, has been identified
+in two unrelated families. It causes GEFS+ with phenotypes that include
+childhood febrile or afebrile seizures, tonic–clonic, myoclonic or
+myoclonic–atonic seizures in a four-generation family (one individual
+had particularly severe intractable seizures and intellectual disability,
+which may fit in the DS spectrum) (Escayg et al., 2001; Spampanato
+et al., 2003), and FS or FS+ with language delay in an unrelated twogeneration
+family (Marini et al., 2007).",False,0,
+c.3801G>A,Met1267Ile,M1267I,1267,Loss,SMEB/GEFS+,De novo,True,1,4422
+c.3818C >T,Ala1273Val,A1273V,1273,Mixed,GEFS+,De novo,True,1,345
+c.4057G>C,Val1353Leu,V1353L,1353,Loss,GEFS+,"A mutation in exon 21 (c.4057GrC) of SCN1A was
+found to segregate with GEFS1 in the Ashkenazi family
+(fig. 1B). This mutation changes a highly conserved
+amino acid (V1353L) located in the S5 segment of domain III (fig. 2)",True,1,4
+c.4096G>A,Val1366Ile,V1366I,1366,Loss,"FS, GEFS+, DS","The mutation V1366I (p.Val1366Ile; c.4096GNA in exon 21), located
+in the S5 segment of domain III (pore module), has been identified in
+three unrelated families showing FS, FS with myoclonic or absence
+seizures, intractable childhood epilepsy with generalized tonic–clonic
+seizures (ICEGTC, a phenotype included in the DS spectrum), GEFS+,
+or GEFS+ with psychiatric disorders (panic disorder or Asperger
+syndrome) (Osaka et al., 2007).",True,1,156
+c.4243T>A,Phe1415Ile,F1415I,1415,Insufficient data,DS only,Not available,True,1,4414
+c.4465C>A,Gln1489Lys,Q1489K,1489,Gain,FHM3,familial hemiplegic migraine segregating in family,True,1,12
+c.4723C>T,Arg1575Cys,R1575C,1575,No effect,Polymorphism,detected in patient and in healthy father,True,1,164
+c.4831G>T,Val1611Phe,V1611F,1611,Unclear effect,DS only,"maternal, mother has GEFS+",True,1,14
+c.4871T>C,Leu1624Pro,L1624P,1624,Gain,FHM3,"familial, segregating in 3 generation family",True,1,2112
+c.4894C>T,Pro1632Ser,P1632S,1632,Loss,DS only,Not available,True,1,167
+c.4942C>T,Arg1648Cys,R1648C,1648,Mixed,DS only,De novo,True,1,169
+c.4943G>A,Arg1648His,R1648H,1648,Mixed,"GEFS+, DS","One reported as familial and one as paternal, co-segregating with the disorder in two families with GEFS+",True,1,1
+c.4946T>A,Leu1649Gln,L1649Q,1649,Loss/Gain,FHM3,"familial, segregating in family",True,1,4420
+c.4968C>G,Ile1656Met,I1656M,1656,Loss,GEFS+,"familial, segregating in GEFS+ family",True,1,5
+c.4969C>T,Arg1657Cys,R1657C,1657,Loss,GEFS+,"familial, segregating in GEFS+ family",True,1,170
+c.4982T>C,Phe1661Ser,F1661S,1661,Mixed,DS only,De novo,True,1,172
+c.4991T>A,Met1664Lys,M1664K,1664,Loss,"GEFS+, DS","The mutation M1664K (p.Met1664Lys; c.4991TNA in exon 26),
+located in the intracellular loop between the S4 and S5 segments of
+domain IV (linker between voltage-sensing and pore modules), causes
+FS, GEFS+ or DS in a large family. The possibility of mosaicism was excluded
+because the mutation was inherited over at least three generations
+and the quantification of the amount of the mutated allele in the
+blood, obtained by quantitative genomic allele-specific PCR, showed
+that it was identical in the DS patient and the transmitting parent",True,1,173
+c.5009T>G,Leu1670Trp,L1670W,1670,Gain,FHM3,"familial, segregating in FHM family",True,1,4421
+c.5020G>C,Gly1674Arg,G1674R,1674,Loss,DS only,De novo,True,1,174
+c.5054C>A,Ala1685Asp,A1685D,1685,Loss,DS only,De novo,True,1,175
+c.5054C>T,Ala1685Val,A1685V,1685,Loss,PEFS+,"familial, segregating in GEFS+ family",True,1,176
+c.5126C>T,Thr1709Ile,T1709I,1709,Loss,DS only,"maternal, mother has GEFS+",True,1,13
+c.5246G>A,Gly1749Glu,G1749E,1749,Loss,DS only,De novo,True,1,182
+c.5295T>A,Phe1765Leu,F1765L,1765,Loss,PEFS+,De novo,True,1,2039
+c.5422T>C,Phe1808Leu,F1808L,1808,Mixed,DS only,Not available,True,3,189|4895|5286
+c.5434T>G,Trp1812Gly,W1812G,1812,Insufficient data,DS only,De novo,True,1,190
+c.5555T>C,Met1852Thr,M1852T,1852,Loss,"DS, GEFS+, FS","familial, detected in both affected members of family 8, but not in their mother, who was unaffected.",True,1,192
+c.5596G>T,Asp1866Tyr,D1866Y,1866,Mixed,GEFS+,identified in a small Italian family with dominantly inherited generalized epilepsy with febrile seizures plus (GEFS+),True,1,194
+c.5726C>T,Thr1909Ile,T1909I,1909,Mixed,DS only,De novo,True,1,197
+c.5768A>G,Gln1923Arg,Q1923R,1923,Loss,DS only,De novo,True,1,4429
+c.5779A>G,Arg1927Gly,R1927G,1927,Loss,GEFS+,"familila, has been identified in a GEFS+ family with relatively mild phenotypes.",True,1,4426

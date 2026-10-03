@@ -1,0 +1,48 @@
+DEEPGENE EVIDENCE DATASET VALIDATION
+======================================================================
+Rows: 5381
+Unique variants: 5381
+Features: 26
+Overall status: PASS
+
+[PASS] Expected variant count: Found 5381 rows; expected 5381.
+[PASS] Required columns present: All required columns are present.
+[PASS] One row per variant: No duplicate variant_id values found.
+[PASS] Unique variant count: 5381 unique variant IDs across 5381 rows.
+[PASS] No missing variant_id: 0 missing values.
+[PASS] No missing hgvs_name: 0 missing values.
+[PASS] No missing gene_id: 0 missing values.
+[PASS] Clinical significance categories: All categories are expected.
+[PASS] Review status categories: All categories are expected.
+[PASS] Submitter count has no missing values: 0 missing values.
+[PASS] Submitter count is non-negative: 0 negative values.
+[PASS] Submitter count is positive: 0 variants have zero submitters.
+[PASS] multiple_submitters flag is consistent: Flag matches submitter_count for all variants.
+[PASS] expert_panel_review flag is consistent: Flag matches review status for all variants.
+[PASS] conflict_flag is consistent: Flag matches clinical significance for all variants.
+[PASS] Expert-panel variants have expert review status: 22 expert-panel variants checked.
+[PASS] Phenotype flag uses binary values: Observed values: [np.int64(1)]
+[PASS] Phenotype information available: 5381 / 5381 variants have phenotype information.
+[PASS] grch37_present uses binary values: Observed values: [np.int64(0), np.int64(1)]
+[PASS] grch38_present uses binary values: Observed values: [np.int64(0), np.int64(1)]
+[PASS] dbsnp_present uses binary values: Observed values: [np.int64(0), np.int64(1)]
+[PASS] genomic_coordinates_present uses binary values: Observed values: [np.int64(1)]
+[PASS] hgvs_present uses binary values: Observed values: [np.int64(1)]
+[PASS] All variants have genomic coordinates: 5381 / 5381 variants have genomic coordinates.
+[PASS] All variants have HGVS representation: 5381 / 5381 variants have HGVS.
+[PASS] pathogenic_count is valid: 0 missing, 0 negative values.
+[PASS] pathogenic_likely_pathogenic_count is valid: 0 missing, 0 negative values.
+[PASS] likely_pathogenic_count is valid: 0 missing, 0 negative values.
+[PASS] benign_count is valid: 0 missing, 0 negative values.
+[PASS] benign_likely_benign_count is valid: 0 missing, 0 negative values.
+[PASS] likely_benign_count is valid: 0 missing, 0 negative values.
+[PASS] vus_count is valid: 0 missing, 0 negative values.
+[PASS] conflicting_count is valid: 0 missing, 0 negative values.
+[PASS] conflicting_count agrees with conflict_flag: All variants are internally consistent.
+[PASS] Prioritized dataset exists: 5381 rows loaded.
+[PASS] Prioritized dataset preserves variants: Evidence dataset: 5381 rows / 5381 variants; prioritized dataset: 5381 rows / 5381 variants.
+[PASS] Prioritization categories are valid: Observed categories: ['HIGH REVIEW PRIORITY', 'LOW REVIEW PRIORITY', 'MEDIUM REVIEW PRIORITY', 'REVIEW CLASSIFICATION']
+[PASS] No missing values: No missing values detected.
+
+======================================================================
+END OF VALIDATION REPORT

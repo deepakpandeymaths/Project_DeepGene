@@ -1,0 +1,61 @@
+PROJECT DEEPGENE
+STEP 11 — FINAL MODEL READINESS
+
+Input dataset: D:\Project_DeepGene\data\processed\deepgene_ml_features_v2.csv
+Variants: 5381
+Input columns: 15
+
+Manifest feature entries: 18
+Final retained features: 14
+
+REMOVED CONSTANT FEATURES:
+  - genomic_coordinates_present
+  - hgvs_present
+  - phenotype_available
+
+REMOVED REDUNDANT FEATURE:
+  - conflict_flag
+
+FINAL FEATURES:
+  - pathogenic_count
+  - pathogenic_likely_pathogenic_count
+  - likely_pathogenic_count
+  - benign_count
+  - benign_likely_benign_count
+  - likely_benign_count
+  - vus_count
+  - conflicting_count
+  - submitter_count
+  - multiple_submitters
+  - expert_panel_review
+  - grch37_present
+  - grch38_present
+  - dbsnp_present
+
+Missing feature values: 0
+Non-numeric features: 0
+Final feature matrix finite: True
+
+INDEPENDENT TARGET:
+NOT AVAILABLE
+
+ClinVar clinical_significance:
+NOT used as an independent ML target.
+
+FINAL MODEL STATUS:
+READY FOR SUPERVISED MODELING ONLY AFTER
+AN INDEPENDENT GROUND-TRUTH TARGET IS PROVIDED.
+
+Supervised model fitting:
+NOT PERFORMED.
+
+Model performance metrics:
+NOT AVAILABLE.
+
+Final model feature dataset:
+D:\Project_DeepGene\data\processed\deepgene_final_model_features_v1.csv
+
+Report:
+D:\Project_DeepGene\data\ml_results\11_final_model.txt
+
+STATUS: PASS

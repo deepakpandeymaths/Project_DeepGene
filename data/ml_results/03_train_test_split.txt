@@ -1,0 +1,51 @@
+======================================================================
+PROJECT DEEPGENE
+STEP 03 — TRAIN/TEST SPLIT
+======================================================================
+
+INPUT
+----------------------------------------------------------------------
+Input file: D:\Project_DeepGene\data\processed\deepgene_ml_features_v1.csv
+Total variants/rows: 5381
+Total features: 18
+
+SPLIT CONFIGURATION
+----------------------------------------------------------------------
+Random state: 42
+Test size: 0.2
+Training fraction: 0.80
+Testing fraction: 0.20
+
+SPLIT RESULTS
+----------------------------------------------------------------------
+Training rows: 4304
+Testing rows: 1077
+
+OVERLAP CHECK
+----------------------------------------------------------------------
+Train/test overlapping rows: 0
+
+TARGET STATUS
+----------------------------------------------------------------------
+No independent ML target is currently available.
+This split is therefore a reproducible partition for future supervised learning and dataset auditing.
+
+IMPORTANT
+----------------------------------------------------------------------
+The ml_row_id column is a partition-tracking identifier and must not be used as a model feature.
+Clinical significance is not included in this dataset and is not used as a target.
+
+OUTPUTS
+----------------------------------------------------------------------
+Training dataset: D:\Project_DeepGene\data\processed\deepgene_ml_train_v1.csv
+Testing dataset: D:\Project_DeepGene\data\processed\deepgene_ml_test_v1.csv
+Split manifest: D:\Project_DeepGene\data\ml_results\03_train_test_split_ids_v1.csv
+
+STATUS
+----------------------------------------------------------------------
+PASS — reproducible train/test partition created.
+PASS — no train/test overlap.
+PASS — all original rows accounted for.
+PASS — no target leakage introduced by this step.
+
+======================================================================

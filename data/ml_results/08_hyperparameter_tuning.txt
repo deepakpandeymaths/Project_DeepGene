@@ -1,0 +1,31 @@
+PROJECT DEEPGENE
+STEP 08 — FEATURE REDUNDANCY AUDIT
+
+Training rows: 4304
+Feature count: 18
+
+PURPOSE:
+Assess numerical redundancy among candidate ML features
+before an independently labeled target is introduced.
+
+Feature pairs evaluated: 105
+Pairs with |Pearson r| >= 0.90: 1
+Constant features: 3
+
+HIGH-CORRELATION PAIRS:
+  - conflicting_count <-> conflict_flag: r=1.0000
+
+CONSTANT FEATURES:
+  - phenotype_available
+  - genomic_coordinates_present
+  - hgvs_present
+
+TARGET STATUS:
+  Independent target: NOT AVAILABLE
+  Supervised model tuning: NOT PERFORMED
+
+INTERPRETATION:
+  Correlation analysis is an unsupervised feature audit.
+  It does not establish predictive performance.
+
+STATUS: PASS

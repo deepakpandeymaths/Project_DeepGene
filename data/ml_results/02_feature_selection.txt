@@ -1,0 +1,68 @@
+======================================================================
+PROJECT DEEPGENE
+STEP 02 — FEATURE SELECTION
+======================================================================
+
+INPUT DATASET
+----------------------------------------------------------------------
+Input: D:\Project_DeepGene\data\processed\deepgene_ml_ready_v1.csv
+Variants: 5381
+Original ML columns: 20
+
+SELECTED FEATURE GROUPS
+----------------------------------------------------------------------
+Evidence features: 8
+  - pathogenic_count
+  - pathogenic_likely_pathogenic_count
+  - likely_pathogenic_count
+  - benign_count
+  - benign_likely_benign_count
+  - likely_benign_count
+  - vus_count
+  - conflicting_count
+
+Reliability features: 3
+  - submitter_count
+  - multiple_submitters
+  - expert_panel_review
+
+Conflict features: 1
+  - conflict_flag
+
+Phenotype features: 1
+  - phenotype_available
+
+Representation/QC features: 5
+  - grch37_present
+  - grch38_present
+  - dbsnp_present
+  - genomic_coordinates_present
+  - hgvs_present
+
+FEATURE SUMMARY
+----------------------------------------------------------------------
+Total candidate features: 18
+Leakage-risk features: 11
+Lower-risk candidate features: 7
+Missing values: 0
+
+IMPORTANT ML CONSTRAINT
+----------------------------------------------------------------------
+No independent target is currently available.
+Clinical significance must not be used as the independent target.
+Leakage-risk features must be assessed before supervised model training.
+
+OUTPUTS
+----------------------------------------------------------------------
+Feature dataset: D:\Project_DeepGene\data\processed\deepgene_ml_features_v1.csv
+Feature manifest: D:\Project_DeepGene\data\ml_results\02_feature_manifest_v1.csv
+
+STATUS
+----------------------------------------------------------------------
+PASS — candidate feature dataset created.
+PASS — feature types validated.
+PASS — binary features validated.
+PASS — no missing values detected.
+NEXT — perform train/test strategy and leakage assessment before modeling.
+
+======================================================================

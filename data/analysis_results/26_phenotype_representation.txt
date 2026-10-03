@@ -1,0 +1,18 @@
+DEEPGENE STEP 26
+PHENOTYPE REPRESENTATION
+======================================================================
+
+Input rows: 5381
+Output rows: 5381
+Output columns: 33
+Unique variants: 5381
+Duplicate variant IDs: 0
+
+PHENOTYPE INFORMATION CATEGORIES
+----------------------------------------------------------------------
+ONE MEANINGFUL PHENOTYPE TERM: 3648
+NON-INFORMATIVE PHENOTYPE ONLY: 895
+MULTIPLE MEANINGFUL PHENOTYPE TERMS: 838
+
+Meaningful phenotype coverage: 83.37%
+No meaningful phenotype: 16.63%

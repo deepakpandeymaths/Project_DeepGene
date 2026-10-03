@@ -1,0 +1,90 @@
+DEEPGENE V1 DATASET MANIFEST
+======================================================================
+Dataset name: deepgene_v1_final.csv
+Project: DeepGene
+Gene: SCN1A
+Primary data source: ClinVar
+Dataset version: V1
+
+DATASET SIZE
+----------------------------------------------------------------------
+Rows / unique variants: 5381
+Columns: 26
+
+DATASET REPRESENTATION
+----------------------------------------------------------------------
+Each row represents one unique SCN1A variant.
+ClinVar evidence was aggregated at the variant level.
+Genomic representations are represented through presence/QC features.
+
+CLINICAL SIGNIFICANCE DISTRIBUTION
+----------------------------------------------------------------------
+Uncertain significance: 1710
+Pathogenic: 1380
+Likely benign: 788
+Likely pathogenic: 637
+Conflicting classifications of pathogenicity: 386
+Pathogenic/Likely pathogenic: 213
+Benign: 123
+Benign/Likely benign: 62
+not provided: 59
+-: 22
+drug response: 1
+
+REVIEW STATUS DISTRIBUTION
+----------------------------------------------------------------------
+criteria provided, single submitter: 3741
+criteria provided, multiple submitters, no conflicts: 1083
+criteria provided, conflicting classifications: 386
+no assertion criteria provided: 68
+no classification provided: 59
+reviewed by expert panel: 22
+-: 22
+
+KEY EVIDENCE FEATURES
+----------------------------------------------------------------------
+Conflicting variants: 386
+Expert-panel variants: 22
+Multiple-submitter variants: 1592
+Variants with phenotype information: 5381
+
+GENOMIC REPRESENTATION
+----------------------------------------------------------------------
+GRCh37 present: 5369
+GRCh38 present: 5317
+dbSNP present: 4400
+Genomic coordinates present: 5381
+HGVS present: 5381
+
+FEATURE GROUPS
+----------------------------------------------------------------------
+Clinical evidence features: 8
+Reliability features: 4
+Phenotype features: 2
+Identity/QC features: 5
+Representation features: 5
+
+BENCHMARK STATUS
+----------------------------------------------------------------------
+Independent pathogenicity labels are NOT available in the ClinVar-only V1 dataset.
+ClinVar clinical significance must therefore not be treated as an independent ML benchmark label while the same information is used as an input feature.
+
+VALIDATION STATUS
+----------------------------------------------------------------------
+Step 19 validation: PASS
+Duplicate variant IDs: 0
+Missing essential identifiers: 0
+Missing values in final evidence dataset: 0
+
+FILE INTEGRITY
+----------------------------------------------------------------------
+SHA-256: 3d480edec10f22d3713dbda5f2c7550a0bc48d42de850f92b2e188cd13b2d63a
+
+DOWNSTREAM USE
+----------------------------------------------------------------------
+This dataset is the frozen V1 evidence representation for downstream DeepGene development.
+It is suitable for transparent evidence analysis and feature-development work.
+Machine-learning benchmarking requires a separate independent label source.
+
+======================================================================
+END OF DEEPGENE V1 DATASET MANIFEST

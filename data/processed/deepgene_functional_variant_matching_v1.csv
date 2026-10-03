@@ -1,0 +1,60 @@
+functional_cDNA,functional_protein,function,protein_position,normalized_cDNA,exact_cDNA_match,normalized_cDNA_match
+,,,,,False,False
+c.434T>C,Met145Thr,Loss,145.0,C.434T>C,False,False
+c.530G>C,Gly177Ala,Loss,177.0,C.530G>C,False,False
+c.530G>A,Gly177Glu,Loss,177.0,C.530G>A,False,False
+c.677C>T,Thr226Met,Mixed,226.0,C.677C>T,False,False
+c.680T>G,Ile227Ser,Loss,227.0,C.680T>G,False,False
+c.777C>A,Ser259Arg,Loss,259.0,C.777C>A,False,False
+c.787C>G,Leu263Val,Gain,263.0,C.787C>G,False,False
+c.1178G>A,Arg393His,Loss,393.0,C.1178G>A,False,False
+c.1276T>A,Tyr426Asn,Loss,426.0,C.1276T>A,False,False
+c.2369A>G,Tyr790Cys,Loss,790.0,C.2369A>G,False,False
+c.2422A>T,Thr808Ser,Mixed,808.0,C.2422A>T,False,False
+c.2576G>A,Arg859His,Mixed,859.0,C.2576G>A,False,False
+c.2575C>T,Arg859Cys,Loss,859.0,C.2575C>T,False,False
+c.2593C>G,Arg865Gly,Mixed,865.0,C.2593C>G,False,False
+c.2624C>T,Thr875Met,Loss,875.0,C.2624C>T,False,False
+c.2705T>G,Phe902Cys,Loss,902.0,C.2705T>G,False,False
+c.2817C>G,His939Gln,Loss,939.0,C.2817C>G,False,False
+c.2836C>T,Arg946Cys,Loss,946.0,C.2836C>T,False,False
+c.2837G>A,Arg946His,Loss,946.0,C.2837G>A,False,False
+c.2867T>C,Met956Thr,Loss,956.0,C.2867T>C,False,False
+c.2875T>C,Cys959Arg,Loss,959.0,C.2875T>C,False,False
+c.2935G>A,Gly979Arg,Loss,979.0,C.2935G>A,False,False
+c.2948T>C,Val983Ala,Loss,983.0,C.2948T>C,False,False
+c.2956C>T,Leu986Phe,Loss,986.0,C.2956C>T,False,False
+c.3032A>T,Asn1011Ile,Loss,1011.0,C.3032A>T,False,False
+c.3521C>G,Thr1174Ser,Mixed,1174.0,C.3521C>G,False,False
+c.3610T>C,p.(Trp1204Arg),Mixed,1204.0,C.3610T>C,False,False
+c.3801G>A,Met1267Ile,Loss,1267.0,C.3801G>A,False,False
+c.3818C >T,Ala1273Val,Mixed,1273.0,C.3818C>T,False,False
+c.4057G>C,Val1353Leu,Loss,1353.0,C.4057G>C,False,False
+c.4096G>A,Val1366Ile,Loss,1366.0,C.4096G>A,False,False
+c.4243T>A,Phe1415Ile,Insufficient data,1415.0,C.4243T>A,False,False
+c.4465C>A,Gln1489Lys,Gain,1489.0,C.4465C>A,False,False
+c.4723C>T,Arg1575Cys,No effect,1575.0,C.4723C>T,False,False
+c.4831G>T,Val1611Phe,Unclear effect,1611.0,C.4831G>T,False,False
+c.4871T>C,Leu1624Pro,Gain,1624.0,C.4871T>C,False,False
+c.4894C>T,Pro1632Ser,Loss,1632.0,C.4894C>T,False,False
+c.4942C>T,Arg1648Cys,Mixed,1648.0,C.4942C>T,False,False
+c.4943G>A,Arg1648His,Mixed,1648.0,C.4943G>A,False,False
+c.4946T>A,Leu1649Gln,Loss/Gain,1649.0,C.4946T>A,False,False
+c.4968C>G,Ile1656Met,Loss,1656.0,C.4968C>G,False,False
+c.4969C>T,Arg1657Cys,Loss,1657.0,C.4969C>T,False,False
+c.4982T>C,Phe1661Ser,Mixed,1661.0,C.4982T>C,False,False
+c.4991T>A,Met1664Lys,Loss,1664.0,C.4991T>A,False,False
+c.5009T>G,Leu1670Trp,Gain,1670.0,C.5009T>G,False,False
+c.5020G>C,Gly1674Arg,Loss,1674.0,C.5020G>C,False,False
+c.5054C>A,Ala1685Asp,Loss,1685.0,C.5054C>A,False,False
+c.5054C>T,Ala1685Val,Loss,1685.0,C.5054C>T,False,False
+c.5126C>T,Thr1709Ile,Loss,1709.0,C.5126C>T,False,False
+c.5246G>A,Gly1749Glu,Loss,1749.0,C.5246G>A,False,False
+c.5295T>A,Phe1765Leu,Loss,1765.0,C.5295T>A,False,False
+c.5422T>C,Phe1808Leu,Mixed,1808.0,C.5422T>C,False,False
+c.5434T>G,Trp1812Gly,Insufficient data,1812.0,C.5434T>G,False,False
+c.5555T>C,Met1852Thr,Loss,1852.0,C.5555T>C,False,False
+c.5596G>T,Asp1866Tyr,Mixed,1866.0,C.5596G>T,False,False
+c.5726C>T,Thr1909Ile,Mixed,1909.0,C.5726C>T,False,False
+c.5768A>G,Gln1923Arg,Loss,1923.0,C.5768A>G,False,False
+c.5779A>G,Arg1927Gly,Loss,1927.0,C.5779A>G,False,False

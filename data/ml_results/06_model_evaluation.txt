@@ -1,0 +1,32 @@
+PROJECT DEEPGENE
+STEP 06 — INDEPENDENT TARGET AUDIT
+
+Processed CSV files found: 10
+
+Known ML/evidence datasets excluded from target search:
+  - deepgene_ml_features_v1.csv
+  - deepgene_ml_test_v1.csv
+  - deepgene_ml_train_v1.csv
+  - deepgene_v1_final.csv
+
+Candidate external files:
+  - deepgene_baseline_v1.csv
+  - deepgene_evidence_v1.csv
+  - deepgene_ml_ready_v1.csv
+  - deepgene_prioritized_v1.csv
+  - deepgene_variant_profiles_v1.csv
+  - SCN1A_clinvar_clean.csv
+
+Potential target-bearing files:
+  - deepgene_evidence_v1.csv: pathogenic_count, pathogenic_likely_pathogenic_count, likely_pathogenic_count, benign_count, benign_likely_benign_count, likely_benign_count
+  - deepgene_ml_ready_v1.csv: pathogenic_count, pathogenic_likely_pathogenic_count, likely_pathogenic_count, benign_count, benign_likely_benign_count, likely_benign_count
+  - deepgene_variant_profiles_v1.csv: pathogenic_count, pathogenic_likely_pathogenic_count, likely_pathogenic_count, benign_count, benign_likely_benign_count, likely_benign_count, has_pathogenic_evidence, has_likely_pathogenic_evidence, has_benign_evidence, has_likely_benign_evidence
+
+TARGET DECISION:
+  Potential target source detected.
+  It requires manual provenance and leakage validation
+  before it can be used as an ML target.
+
+  Supervised modeling remains BLOCKED until validated.
+
+STATUS: PASS

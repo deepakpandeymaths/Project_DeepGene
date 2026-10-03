@@ -1,0 +1,18 @@
+DEEPGENE STEP 29
+PHENOTYPE NORMALIZATION
+======================================================================
+
+Variants processed: 5381
+Variants changed: 122
+Variants unchanged: 5259
+Original term occurrences: 5791
+Normalized term occurrences: 6020
+Terms removed: -229
+Duplicate normalized variants: 0
+Remaining semicolon entries: 0
+Empty normalized entries: 0
+Unique normalized phenotype terms: 71
+
+IMPORTANT:
+The original phenotype representation remains preserved.
+The normalized representation is a separate derived field.

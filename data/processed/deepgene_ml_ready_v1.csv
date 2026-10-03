@@ -1,0 +1,71 @@
+variant_id,functional_protein,protein_variant,reference_aa,alternate_aa,protein_position,amino_acid_change_type,functional_effect,functional_target,phenotype,inheritance,protein_position.1,same_amino_acid,reference_hydrophobicity,alternate_hydrophobicity,delta_hydrophobicity,absolute_delta_hydrophobicity,reference_charge,alternate_charge,delta_charge,absolute_delta_charge,reference_volume,alternate_volume,delta_volume,absolute_delta_volume,ml_target
+15,Met145Thr,M145T,M,T,145,hydrophobicity_class_change,Loss,Loss,familial FS,Inherited from affected individuals also presenting with FS,145,0,1.9,-0.7,-2.6,2.6,0,0,0,0,162.9,116.1,-46.80000000000001,46.80000000000001,Loss
+4417,Gly177Ala,G177A,G,A,177,hydrophobicity_class_change,Loss,Loss,DS only,De novo,177,0,-0.4,1.8,2.2,2.2,0,0,0,0,60.1,88.6,28.499999999999996,28.499999999999996,Loss
+186,Gly177Glu,G177E,G,E,177,charge_change,Loss,Loss,DS only,De novo,177,0,-0.4,-3.5,-3.1,3.1,0,-1,-1,1,60.1,138.4,78.30000000000001,78.30000000000001,Loss
+107,Thr226Met,T226M,T,M,226,hydrophobicity_class_change,Mixed,Mixed,Eearly epileptic encephalopathy,De novo,226,0,-0.7,1.9,2.6,2.6,0,0,0,0,116.1,162.9,46.80000000000001,46.80000000000001,Mixed
+108,Ile227Ser,I227S,I,S,227,hydrophobicity_class_change,Loss,Loss,DS only,De novo,227,0,4.5,-0.8,-5.3,5.3,0,0,0,0,166.7,89.0,-77.69999999999999,77.69999999999999,Loss
+201,Ser259Arg,S259R,S,R,259,charge_change,Loss,Loss,DS only,De novo,259,0,-0.8,-4.5,-3.7,3.7,0,1,1,1,89.0,173.4,84.4,84.4,Loss
+2454,Leu263Val,L263V,L,V,263,physicochemical_change,Gain,Gain,DS only,"Inherited, The L263V mutation segregated in five FHM patients",263,0,3.8,4.2,0.4000000000000003,0.4000000000000003,0,0,0,0,166.7,140.0,-26.69999999999999,26.69999999999999,Gain
+36,Arg393His,R393H,R,H,393,physicochemical_change,Loss,Loss,DS only,De novo,393,0,-4.5,-3.2,1.2999999999999998,1.2999999999999998,1,1,0,0,173.4,153.2,-20.200000000000017,20.200000000000017,Loss
+41,Tyr426Asn,Y426N,Y,N,426,physicochemical_change,Loss,Loss,DS only,De novo,426,0,-1.3,-3.5,-2.2,2.2,0,0,0,0,193.6,114.1,-79.5,79.5,Loss
+119,Tyr790Cys,Y790C,Y,C,790,hydrophobicity_class_change,Loss,Loss,"GEFS+, Panayiotopoulos syndrome","The first mutation is a heterozygous point mutation,A2336G, which was detected in the three affected mem-bers of family 5, whereas it was not detected in three un-affected relatives including the mother. This mutation inexon 13 ofSCN1Aresults in a Tyr779Cys amino acid sub-stitution that lies within the S1 segment of domain II. Thetwo probands of family 5 had had FSs until age 5 years.These were followed by afebrile generalized seizures,which disappeared with phenobarbital (PB) or valproate(VPA), respectively. Their father had only four FSs aroundage 3 years",790,0,-1.3,2.5,3.8,3.8,0,0,0,0,193.6,108.5,-85.1,85.1,Loss
+120,Thr808Ser,T808S,T,S,808,physicochemical_change,Mixed,Mixed,DS only,De novo,808,0,-0.7,-0.8,-0.1,0.1,0,0,0,0,116.1,89.0,-27.099999999999994,27.099999999999994,Mixed
+224,Arg859His,R859H,R,H,859,physicochemical_change,Mixed,Mixed,GEFS+,"Inherited from the affected father. The novel R859H mutation was detected in a girl diagnosed with
+GEFS+ and a paternal history of (a)febrile seizures.",859,0,-4.5,-3.2,1.2999999999999998,1.2999999999999998,1,1,0,0,173.4,153.2,-20.200000000000017,20.200000000000017,Mixed
+4427,Arg865Gly,R865G,R,G,865,charge_change,Mixed,Mixed,DS only,Not available,865,0,-4.5,-0.4,4.1,4.1,1,0,-1,1,173.4,60.1,-113.3,113.3,Mixed
+2,Thr875Met,T875M,T,M,875,hydrophobicity_class_change,Loss,Loss,GEFS+; SMEB,"Inherited GEFS+ variant, that co-segregate with the disorder in two families with GEFS+",875,0,-0.7,1.9,2.6,2.6,0,0,0,0,116.1,162.9,46.80000000000001,46.80000000000001,Loss
+123,Phe902Cys,F902C,F,C,902,physicochemical_change,Loss,Loss,DS only,De novo,902,0,2.8,2.5,-0.2999999999999998,0.2999999999999998,0,0,0,0,189.9,108.5,-81.4,81.4,Loss
+129,His939Gln,H939Q,H,Q,939,charge_change,Loss,Loss,DS only,De novo,939,0,-3.2,-3.5,-0.2999999999999998,0.2999999999999998,1,0,-1,1,153.2,143.8,-9.399999999999975,9.399999999999975,Loss
+132,Arg946Cys,R946C,R,C,946,charge_change,Loss,Loss,DS only,De novo,946,0,-4.5,2.5,7.0,7.0,1,0,-1,1,173.4,108.5,-64.9,64.9,Loss
+53,Arg946His,R946H,R,H,946,physicochemical_change,Loss,Loss,"PEFS+, DS",De novo,946,0,-4.5,-3.2,1.2999999999999998,1.2999999999999998,1,1,0,0,173.4,153.2,-20.200000000000017,20.200000000000017,Loss
+1939,Met956Thr,M956T,M,T,956,hydrophobicity_class_change,Loss,Loss,GEFS+,"The probands sister (III-2), mother
+(II-4), uncle (II-3) and aunt (II-1), all carrying the samemutation, experienced
+frequent focal febrile seizures only during childhood. All within GEFS+ spectrum",956,0,1.9,-0.7,-2.6,2.6,0,0,0,0,162.9,116.1,-46.80000000000001,46.80000000000001,Loss
+135,Cys959Arg,C959R,C,R,959,charge_change,Loss,Loss,DS only,De novo,959,0,2.5,-4.5,-7.0,7.0,0,1,1,1,108.5,173.4,64.9,64.9,Loss
+137,Gly979Arg,G979R,G,R,979,charge_change,Loss,Loss,DS only,Not available,979,0,-0.4,-4.5,-4.1,4.1,0,1,1,1,60.1,173.4,113.3,113.3,Loss
+138,Val983Ala,V983A,V,A,983,physicochemical_change,Loss,Loss,DS only,De novo,983,0,4.2,1.8,-2.4000000000000004,2.4000000000000004,0,0,0,0,140.0,88.6,-51.400000000000006,51.400000000000006,Loss
+9,Leu986Phe,L986F,L,F,986,physicochemical_change,Loss,Loss,DS only,De novo,986,0,3.8,2.8,-1.0,1.0,0,0,0,0,166.7,189.9,23.200000000000017,23.200000000000017,Loss
+140,Asn1011Ile,N1011I,N,I,1011,hydrophobicity_class_change,Loss,Loss,DS only,De novo,1011,0,-3.5,4.5,8.0,8.0,0,0,0,0,114.1,166.7,52.6,52.6,Loss
+144,Thr1174Ser,T1174S,T,S,1174,physicochemical_change,Mixed,Mixed,Polymorphism,familial and maternal,1174,0,-0.7,-0.8,-0.1,0.1,0,0,0,0,116.1,89.0,-27.099999999999994,27.099999999999994,Mixed
+4422,Met1267Ile,M1267I,M,I,1267,physicochemical_change,Loss,Loss,SMEB/GEFS+,De novo,1267,0,1.9,4.5,2.6,2.6,0,0,0,0,162.9,166.7,3.799999999999983,3.799999999999983,Loss
+345,Ala1273Val,A1273V,A,V,1273,physicochemical_change,Mixed,Mixed,GEFS+,De novo,1273,0,1.8,4.2,2.4000000000000004,2.4000000000000004,0,0,0,0,88.6,140.0,51.400000000000006,51.400000000000006,Mixed
+4,Val1353Leu,V1353L,V,L,1353,physicochemical_change,Loss,Loss,GEFS+,"A mutation in exon 21 (c.4057GrC) of SCN1A was
+found to segregate with GEFS1 in the Ashkenazi family
+(fig. 1B). This mutation changes a highly conserved
+amino acid (V1353L) located in the S5 segment of domain III (fig. 2)",1353,0,4.2,3.8,-0.4000000000000003,0.4000000000000003,0,0,0,0,140.0,166.7,26.69999999999999,26.69999999999999,Loss
+156,Val1366Ile,V1366I,V,I,1366,physicochemical_change,Loss,Loss,"FS, GEFS+, DS","The mutation V1366I (p.Val1366Ile; c.4096GNA in exon 21), located
+in the S5 segment of domain III (pore module), has been identified in
+three unrelated families showing FS, FS with myoclonic or absence
+seizures, intractable childhood epilepsy with generalized tonic–clonic
+seizures (ICEGTC, a phenotype included in the DS spectrum), GEFS+,
+or GEFS+ with psychiatric disorders (panic disorder or Asperger
+syndrome) (Osaka et al., 2007).",1366,0,4.2,4.5,0.2999999999999998,0.2999999999999998,0,0,0,0,140.0,166.7,26.69999999999999,26.69999999999999,Loss
+12,Gln1489Lys,Q1489K,Q,K,1489,charge_change,Gain,Gain,FHM3,familial hemiplegic migraine segregating in family,1489,0,-3.5,-3.9,-0.3999999999999999,0.3999999999999999,0,1,1,1,143.8,168.6,24.799999999999983,24.799999999999983,Gain
+2112,Leu1624Pro,L1624P,L,P,1624,hydrophobicity_class_change,Gain,Gain,FHM3,"familial, segregating in 3 generation family",1624,0,3.8,-1.6,-5.4,5.4,0,0,0,0,166.7,112.7,-53.99999999999999,53.99999999999999,Gain
+167,Pro1632Ser,P1632S,P,S,1632,physicochemical_change,Loss,Loss,DS only,Not available,1632,0,-1.6,-0.8,0.8,0.8,0,0,0,0,112.7,89.0,-23.700000000000003,23.700000000000003,Loss
+169,Arg1648Cys,R1648C,R,C,1648,charge_change,Mixed,Mixed,DS only,De novo,1648,0,-4.5,2.5,7.0,7.0,1,0,-1,1,173.4,108.5,-64.9,64.9,Mixed
+1,Arg1648His,R1648H,R,H,1648,physicochemical_change,Mixed,Mixed,"GEFS+, DS","One reported as familial and one as paternal, co-segregating with the disorder in two families with GEFS+",1648,0,-4.5,-3.2,1.2999999999999998,1.2999999999999998,1,1,0,0,173.4,153.2,-20.200000000000017,20.200000000000017,Mixed
+5,Ile1656Met,I1656M,I,M,1656,physicochemical_change,Loss,Loss,GEFS+,"familial, segregating in GEFS+ family",1656,0,4.5,1.9,-2.6,2.6,0,0,0,0,166.7,162.9,-3.799999999999983,3.799999999999983,Loss
+170,Arg1657Cys,R1657C,R,C,1657,charge_change,Loss,Loss,GEFS+,"familial, segregating in GEFS+ family",1657,0,-4.5,2.5,7.0,7.0,1,0,-1,1,173.4,108.5,-64.9,64.9,Loss
+172,Phe1661Ser,F1661S,F,S,1661,hydrophobicity_class_change,Mixed,Mixed,DS only,De novo,1661,0,2.8,-0.8,-3.6,3.6,0,0,0,0,189.9,89.0,-100.9,100.9,Mixed
+173,Met1664Lys,M1664K,M,K,1664,charge_change,Loss,Loss,"GEFS+, DS","The mutation M1664K (p.Met1664Lys; c.4991TNA in exon 26),
+located in the intracellular loop between the S4 and S5 segments of
+domain IV (linker between voltage-sensing and pore modules), causes
+FS, GEFS+ or DS in a large family. The possibility of mosaicism was excluded
+because the mutation was inherited over at least three generations
+and the quantification of the amount of the mutated allele in the
+blood, obtained by quantitative genomic allele-specific PCR, showed
+that it was identical in the DS patient and the transmitting parent",1664,0,1.9,-3.9,-5.8,5.8,0,1,1,1,162.9,168.6,5.699999999999989,5.699999999999989,Loss
+4421,Leu1670Trp,L1670W,L,W,1670,hydrophobicity_class_change,Gain,Gain,FHM3,"familial, segregating in FHM family",1670,0,3.8,-0.9,-4.7,4.7,0,0,0,0,166.7,227.8,61.10000000000002,61.10000000000002,Gain
+174,Gly1674Arg,G1674R,G,R,1674,charge_change,Loss,Loss,DS only,De novo,1674,0,-0.4,-4.5,-4.1,4.1,0,1,1,1,60.1,173.4,113.3,113.3,Loss
+175,Ala1685Asp,A1685D,A,D,1685,charge_change,Loss,Loss,DS only,De novo,1685,0,1.8,-3.5,-5.3,5.3,0,-1,-1,1,88.6,111.1,22.5,22.5,Loss
+176,Ala1685Val,A1685V,A,V,1685,physicochemical_change,Loss,Loss,PEFS+,"familial, segregating in GEFS+ family",1685,0,1.8,4.2,2.4000000000000004,2.4000000000000004,0,0,0,0,88.6,140.0,51.400000000000006,51.400000000000006,Loss
+13,Thr1709Ile,T1709I,T,I,1709,hydrophobicity_class_change,Loss,Loss,DS only,"maternal, mother has GEFS+",1709,0,-0.7,4.5,5.2,5.2,0,0,0,0,116.1,166.7,50.6,50.6,Loss
+182,Gly1749Glu,G1749E,G,E,1749,charge_change,Loss,Loss,DS only,De novo,1749,0,-0.4,-3.5,-3.1,3.1,0,-1,-1,1,60.1,138.4,78.30000000000001,78.30000000000001,Loss
+2039,Phe1765Leu,F1765L,F,L,1765,physicochemical_change,Loss,Loss,PEFS+,De novo,1765,0,2.8,3.8,1.0,1.0,0,0,0,0,189.9,166.7,-23.200000000000017,23.200000000000017,Loss
+189,Phe1808Leu,F1808L,F,L,1808,physicochemical_change,Mixed,Mixed,DS only,Not available,1808,0,2.8,3.8,1.0,1.0,0,0,0,0,189.9,166.7,-23.200000000000017,23.200000000000017,Mixed
+192,Met1852Thr,M1852T,M,T,1852,hydrophobicity_class_change,Loss,Loss,"DS, GEFS+, FS","familial, detected in both affected members of family 8, but not in their mother, who was unaffected.",1852,0,1.9,-0.7,-2.6,2.6,0,0,0,0,162.9,116.1,-46.80000000000001,46.80000000000001,Loss
+194,Asp1866Tyr,D1866Y,D,Y,1866,charge_change,Mixed,Mixed,GEFS+,identified in a small Italian family with dominantly inherited generalized epilepsy with febrile seizures plus (GEFS+),1866,0,-3.5,-1.3,2.2,2.2,-1,0,1,1,111.1,193.6,82.5,82.5,Mixed
+197,Thr1909Ile,T1909I,T,I,1909,hydrophobicity_class_change,Mixed,Mixed,DS only,De novo,1909,0,-0.7,4.5,5.2,5.2,0,0,0,0,116.1,166.7,50.6,50.6,Mixed
+4429,Gln1923Arg,Q1923R,Q,R,1923,charge_change,Loss,Loss,DS only,De novo,1923,0,-3.5,-4.5,-1.0,1.0,0,1,1,1,143.8,173.4,29.599999999999994,29.599999999999994,Loss
+4426,Arg1927Gly,R1927G,R,G,1927,charge_change,Loss,Loss,GEFS+,"familila, has been identified in a GEFS+ family with relatively mild phenotypes.",1927,0,-4.5,-0.4,4.1,4.1,1,0,-1,1,173.4,60.1,-113.3,113.3,Loss

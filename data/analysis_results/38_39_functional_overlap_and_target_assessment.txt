@@ -1,0 +1,13 @@
+DEEPGENE — STEPS 38–39 FUNCTIONAL OVERLAP AND TARGET ASSESSMENT
+======================================================================
+
+Functional variants: 58
+Protein-level DeepGene matches: 56
+Overlap coverage: 96.55%
+Decision: PROMISING — overlap exists; further measurement harmonization and leakage audit required before ML
+
+TARGET STATUS
+Independent pathogenic/benign labels: NO
+Final ML target accepted: NO
+ML training started: NO
+DeepGene V1 modified: NO

@@ -1,0 +1,58 @@
+DEEPGENE STEP 41
+INDEPENDENT FUNCTIONAL ML DATASET
+============================================================
+Input overlap rows: 58
+Matched rows: 56
+Parsed rows: 56
+Unique DeepGene variants: 56
+
+TARGET
+Independent experimental functional classification
+NOT pathogenic/benign
+
+FEATURE POLICY
+Variant-derived biological features only.
+ClinVar clinical significance excluded.
+ClinVar review status excluded.
+ClinVar pathogenicity counts excluded.
+ClinVar submitter/reliability fields excluded.
+ClinVar conflict fields excluded.
+Phenotype retained only as source metadata;
+not used as an ML feature.
+Inheritance retained only as source metadata;
+not used as an ML feature.
+
+ML FEATURES:
+ - protein_position
+ - same_amino_acid
+ - reference_hydrophobicity
+ - alternate_hydrophobicity
+ - delta_hydrophobicity
+ - absolute_delta_hydrophobicity
+ - reference_charge
+ - alternate_charge
+ - delta_charge
+ - absolute_delta_charge
+ - reference_volume
+ - alternate_volume
+ - delta_volume
+ - absolute_delta_volume
+
+FUNCTIONAL TARGET DISTRIBUTION:
+ - Loss: 35
+ - Mixed: 12
+ - Gain: 4
+ - Insufficient data: 2
+ - No effect: 1
+ - Unclear effect: 1
+ - Loss/Gain: 1
+
+STATUS
+Independent experimental dataset: YES
+Biological variant overlap: YES
+Independent target candidate: YES
+ClinVar pathogenicity target: NO
+ML training: NOT STARTED
+Train/test split: NOT STARTED
+Model training: NOT STARTED
+Evaluation: NOT STARTED

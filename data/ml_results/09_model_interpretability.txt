@@ -1,0 +1,46 @@
+PROJECT DEEPGENE
+STEP 09 — FEATURE STABILITY AND DISTRIBUTION AUDIT
+
+Training rows: 4304
+Testing rows: 1077
+Feature count: 18
+
+TRAINING-SET CONSTANT FEATURES:
+  - phenotype_available
+  - genomic_coordinates_present
+  - hgvs_present
+
+TEST-SET CONSTANT FEATURES:
+  - phenotype_available
+  - genomic_coordinates_present
+  - hgvs_present
+
+FEATURE DISTRIBUTION SUMMARY:
+  pathogenic_count: train_unique=2, test_unique=2, train_mean=0.259991, test_mean=0.242340
+  pathogenic_likely_pathogenic_count: train_unique=2, test_unique=2, train_mean=0.038336, test_mean=0.044568
+  likely_pathogenic_count: train_unique=2, test_unique=2, train_mean=0.116636, test_mean=0.125348
+  benign_count: train_unique=2, test_unique=2, train_mean=0.023002, test_mean=0.022284
+  benign_likely_benign_count: train_unique=2, test_unique=2, train_mean=0.010688, test_mean=0.014856
+  likely_benign_count: train_unique=2, test_unique=2, train_mean=0.146840, test_mean=0.144847
+  vus_count: train_unique=2, test_unique=2, train_mean=0.316682, test_mean=0.322191
+  conflicting_count: train_unique=2, test_unique=2, train_mean=0.072491, test_mean=0.068709
+  submitter_count: train_unique=20, test_unique=15, train_mean=1.613615, test_mean=1.724234
+  multiple_submitters: train_unique=2, test_unique=2, train_mean=0.292983, test_mean=0.307335
+  expert_panel_review: train_unique=2, test_unique=2, train_mean=0.002788, test_mean=0.009285
+  conflict_flag: train_unique=2, test_unique=2, train_mean=0.072491, test_mean=0.068709
+  phenotype_available: train_unique=1, test_unique=1, train_mean=1.000000, test_mean=1.000000
+  grch37_present: train_unique=2, test_unique=2, train_mean=0.997909, test_mean=0.997214
+  grch38_present: train_unique=2, test_unique=2, train_mean=0.988615, test_mean=0.986072
+  dbsnp_present: train_unique=2, test_unique=2, train_mean=0.820400, test_mean=0.806871
+  genomic_coordinates_present: train_unique=1, test_unique=1, train_mean=1.000000, test_mean=1.000000
+  hgvs_present: train_unique=1, test_unique=1, train_mean=1.000000, test_mean=1.000000
+
+TARGET STATUS:
+  Independent target: NOT AVAILABLE
+  Model interpretability analysis: NOT PERFORMED
+
+NOTE:
+  This step evaluates feature stability only.
+  It does not estimate model performance or feature importance.
+
+STATUS: PASS

@@ -1,0 +1,27 @@
+feature,feature_group,dtype,unique_values,missing_values,is_constant,usable_as_analytical_feature,reason,exact_duplicate_of
+variant_id,IDENTIFIER,int64,5381,0,False,False,Identifier / traceability field,
+gene_id,IDENTIFIER,int64,1,0,True,False,Identifier / traceability field,phenotype_available|genomic_coordinates_present|hgvs_present
+allele_id,IDENTIFIER,int64,5381,0,False,False,Identifier / traceability field,
+variation_id,IDENTIFIER,int64,5381,0,False,False,Identifier / traceability field,
+hgvs_name,IDENTIFIER,str,5379,0,False,False,Identifier / traceability field,
+clinical_significance,CLINICAL_EVIDENCE,str,11,0,False,True,ClinVar-derived evidence feature; target leakage must be avoided,
+review_status,RELIABILITY_CONTEXT,str,7,0,False,True,Evidence reliability/context feature,
+phenotypes,PHENOTYPE,str,460,0,False,True,Potential analytical feature after explicit representation,
+pathogenic_count,CLINICAL_EVIDENCE,int64,2,0,False,True,ClinVar-derived evidence feature; target leakage must be avoided,
+pathogenic_likely_pathogenic_count,CLINICAL_EVIDENCE,int64,2,0,False,True,ClinVar-derived evidence feature; target leakage must be avoided,
+likely_pathogenic_count,CLINICAL_EVIDENCE,int64,2,0,False,True,ClinVar-derived evidence feature; target leakage must be avoided,
+benign_count,CLINICAL_EVIDENCE,int64,2,0,False,True,ClinVar-derived evidence feature; target leakage must be avoided,
+benign_likely_benign_count,CLINICAL_EVIDENCE,int64,2,0,False,True,ClinVar-derived evidence feature; target leakage must be avoided,
+likely_benign_count,CLINICAL_EVIDENCE,int64,2,0,False,True,ClinVar-derived evidence feature; target leakage must be avoided,
+vus_count,CLINICAL_EVIDENCE,int64,2,0,False,True,ClinVar-derived evidence feature; target leakage must be avoided,
+conflicting_count,CLINICAL_EVIDENCE,int64,2,0,False,True,ClinVar-derived evidence feature; target leakage must be avoided,conflict_flag
+submitter_count,RELIABILITY_CONTEXT,int64,20,0,False,True,Evidence reliability/context feature,
+multiple_submitters,RELIABILITY_CONTEXT,int64,2,0,False,True,Evidence reliability/context feature,
+expert_panel_review,RELIABILITY_CONTEXT,int64,2,0,False,True,Evidence reliability/context feature,
+conflict_flag,RELIABILITY_CONTEXT,int64,2,0,False,True,Evidence reliability/context feature,conflicting_count
+phenotype_available,PHENOTYPE,int64,1,0,True,False,Constant across all SCN1A variants,gene_id|genomic_coordinates_present|hgvs_present
+grch37_present,REPRESENTATION_QC,int64,2,0,False,False,Representation / QC context,
+grch38_present,REPRESENTATION_QC,int64,2,0,False,False,Representation / QC context,
+dbsnp_present,REPRESENTATION_QC,int64,2,0,False,False,Representation / QC context,
+genomic_coordinates_present,REPRESENTATION_QC,int64,1,0,True,False,Constant across all SCN1A variants,gene_id|phenotype_available|hgvs_present
+hgvs_present,REPRESENTATION_QC,int64,1,0,True,False,Constant across all SCN1A variants,gene_id|phenotype_available|genomic_coordinates_present

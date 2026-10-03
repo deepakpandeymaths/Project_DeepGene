@@ -1,0 +1,52 @@
+PROJECT DEEPGENE
+STEP 04 — BASELINE MODEL READINESS
+
+Training rows: 4304
+Testing rows: 1077
+Feature count: 18
+
+EXPECTED FEATURES:
+  - pathogenic_count
+  - pathogenic_likely_pathogenic_count
+  - likely_pathogenic_count
+  - benign_count
+  - benign_likely_benign_count
+  - likely_benign_count
+  - vus_count
+  - conflicting_count
+  - submitter_count
+  - multiple_submitters
+  - expert_panel_review
+  - conflict_flag
+  - phenotype_available
+  - grch37_present
+  - grch38_present
+  - dbsnp_present
+  - genomic_coordinates_present
+  - hgvs_present
+
+Training feature missing values: 0
+Testing feature missing values: 0
+
+INDEPENDENT TARGET:
+  Status: NOT AVAILABLE
+
+CLINVAR CLINICAL SIGNIFICANCE:
+  NOT used as an independent ML target.
+  Using it as the prediction target would create target leakage
+  because the current feature set contains ClinVar-derived evidence.
+
+LEAKAGE-CHECK FIELDS PRESENT:
+  None
+
+BASELINE MODEL STATUS:
+  SUPERVISED MODEL TRAINING BLOCKED
+
+Reason:
+  No independent ground-truth target is currently available.
+
+VALID NEXT INPUT:
+  An independently established target label for each variant,
+  with documented provenance and labeling rules.
+
+STATUS: PASS

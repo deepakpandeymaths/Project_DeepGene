@@ -1,0 +1,40 @@
+============================================================
+DEEPGENE EVIDENCE PRIORITIZATION
+============================================================
+
+Variants analysed: 5381
+
+============================================================
+REVIEW PRIORITY DISTRIBUTION
+============================================================
+MEDIUM REVIEW PRIORITY: 3372 (62.66%)
+LOW REVIEW PRIORITY: 968 (17.99%)
+HIGH REVIEW PRIORITY: 960 (17.84%)
+REVIEW CLASSIFICATION: 81 (1.51%)
+
+============================================================
+CONFLICTING EVIDENCE
+============================================================
+Variants with conflicting evidence: 386
+
+============================================================
+EXPERT PANEL EVIDENCE
+============================================================
+Variants with expert panel review: 22
+
+============================================================
+MULTIPLE SUBMITTER EVIDENCE
+============================================================
+Variants with multiple submitters: 1592
+
+============================================================
+DESIGN NOTES
+============================================================
+This output is a review-priority framework.
+It is not a pathogenicity probability.
+It is not a clinical diagnostic classification.
+No arbitrary numerical pathogenicity weights were used.
+Conflicting classifications are explicitly prioritized for review.
+Expert-panel evidence is explicitly retained.
+Multiple-submitter evidence is retained as reliability context.
+Benign evidence remains in the dataset and is not discarded.
