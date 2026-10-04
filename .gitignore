@@ -9,6 +9,9 @@ env/
 
 *.log
 
+# Local conversation memory may contain sensitive research notes.
+data/memory/*.jsonl
+
 .ipynb_checkpoints/
 
 .vscode/

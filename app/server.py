@@ -32,8 +32,11 @@ STATIC = ROOT / "app" / "static"
 DB = ROOT / "data" / "database" / "scn1a.db"
 UPLOADS = ROOT / "data" / "uploads"
 AUDIT = UPLOADS / "upload_audit.jsonl"
+MEMORY_DIR = ROOT / "data" / "memory"
+CONVERSATIONS = MEMORY_DIR / "conversations.jsonl"
 MODEL = ROOT / "data" / "model" / "deepgene_generation2_gbm_app.pkl"
 UPLOADS.mkdir(parents=True, exist_ok=True)
+MEMORY_DIR.mkdir(parents=True, exist_ok=True)
 
 HYDRO = {"A":1.8,"C":2.5,"D":-3.5,"E":-3.5,"F":2.8,"G":-0.4,"H":-3.2,"I":4.5,"K":-3.9,"L":3.8,"M":1.9,"N":-3.5,"P":-1.6,"Q":-3.5,"R":-4.5,"S":-0.8,"T":-0.7,"V":4.2,"W":-0.9,"Y":-1.3}
 CHARGE = {"D":-1,"E":-1,"H":1,"K":1,"R":1}
@@ -51,37 +54,91 @@ def db_summary():
     for path in [ROOT / "data/processed/deepgene_v1_final.csv", ROOT / "data/processed/deepgene_gen2_ml_ready_v1.csv"]:
         if path.exists():
             result["csv_files"][path.name] = int(sum(1 for _ in path.open(encoding="utf-8")) - 1)
-    for path in [ROOT / "data/model/deepgene_generation2_gbm.pkl", ROOT / "data/model/deepgene_dravet_research_candidate.pkl"]:
+    for path in [ROOT / "data/model/deepgene_generation2_gbm.pkl", ROOT / "data/model/deepgene_scn1a_supplement_candidate.pkl", ROOT / "data/model/deepgene_dravet_research_candidate.pkl"]:
         result["models"][path.name] = path.exists()
+    events = []
+    if AUDIT.exists():
+        with AUDIT.open(encoding="utf-8") as handle:
+            for line in handle:
+                try:
+                    events.append(json.loads(line))
+                except json.JSONDecodeError:
+                    continue
+    conversation_count = 0
+    if CONVERSATIONS.exists():
+        with CONVERSATIONS.open(encoding="utf-8") as handle:
+            conversation_count = sum(1 for _ in handle)
+    result["learning"] = {"events": len(events), "last_event": events[-1].get("kind", "unknown") if events else "None yet", "last_rows": events[-1].get("rows_received") if events else None, "conversation_turns": conversation_count, "message": "New evidence is validated and logged before a research candidate model is built."}
     return result
+
+
+def load_conversation_memory(limit=12):
+    if not CONVERSATIONS.exists():
+        return []
+    records = []
+    with CONVERSATIONS.open(encoding="utf-8") as handle:
+        for line in handle:
+            try:
+                record = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            if record.get("question") and record.get("answer"):
+                records.append({"question": str(record["question"])[:1000], "answer": str(record["answer"])[:3000], "provider": record.get("provider", "local")})
+    return records[-limit:]
+
+
+def save_conversation_memory(question, answer, provider, session_id="anonymous"):
+    record = {"timestamp": __import__("datetime").datetime.now(__import__("datetime").timezone.utc).isoformat(), "session_id": str(session_id)[:120], "question": str(question)[:2000], "answer": str(answer)[:6000], "provider": str(provider)}
+    with CONVERSATIONS.open("a", encoding="utf-8") as handle:
+        handle.write(json.dumps(record, ensure_ascii=False) + "\n")
 
 
 def local_answer(question: str):
     summary = db_summary()
     q = question.lower()
+    if any(word in q for word in ["hello", "hi ", "hey"]):
+        return "Hello — I can help you explore the local evidence store, model artifacts, data uploads, and research limitations. Try asking what is in the workspace or how the learning loop works."
+    if "what questions" in q or "what can i ask" in q:
+        return "You can ask about database counts, ClinVar records, genes, available model artifacts, dataset requirements, the learning loop, evidence limitations, or a checklist for geneticist review. For example: ‘What model artifacts are available and what are their limitations?’"
+    if "overview" in q or ("workspace" in q and ("current" in q or "status" in q)):
+        return f"The workspace has {summary['tables'].get('variants')} variants, {summary['tables'].get('clinvar_records')} ClinVar records, {summary['tables'].get('genes')} gene entries, and {sum(summary['models'].values())} model artifacts. The learning log contains {summary['learning']['events']} event(s)."
     if "how many" in q and ("variant" in q or "record" in q):
         return f"The SQLite database currently contains {summary['tables'].get('variants')} unique variants and {summary['tables'].get('clinvar_records')} ClinVar records."
     if "gene" in q and "how many" in q:
         return f"The database currently contains {summary['tables'].get('genes')} gene entries."
     if "model" in q or "trained" in q:
         return f"Available model artifacts: {', '.join(k for k,v in summary['models'].items() if v) or 'none'}. The Dravet model is not trained without curated labels."
-    return "Local analysis is available for database counts, uploaded-file status, and model artifacts. Ask a specific question such as: How many variants are in the database?"
+    if "learn" in q or "reconstruct" in q or "brain" in q or "new data" in q:
+        return "DeepGene uses a controlled learning loop: validate the incoming table, extract defined features, combine it with the current training data, train a research candidate model, and record the event. It does not rewrite its own code or make autonomous clinical decisions. Ask me about the required columns or open the Data Lab to run this loop."
+    if "limit" in q or "caution" in q or "diagnos" in q or "clinical" in q:
+        return "The current system is research software: its functional LOF/GOF model is not a validated diagnostic model, does not infer Dravet labels, and cannot replace geneticist review. Treat missing, conflicting, or unfamiliar evidence as uncertainty."
+    return "I can answer about database counts, evidence records, model artifacts, upload requirements, the controlled learning loop, or review limitations. Try: ‘How does DeepGene learn from a new functional dataset?’"
 
 
-def ai_answer(question: str):
+def ai_answer(question: str, history=None, session_id="anonymous"):
     local = local_answer(question)
     key = os.getenv("OPENROUTER_API_KEY")
     if not key:
-        return {"answer": local, "provider": "local", "note": "Set OPENROUTER_API_KEY to enable optional free-router language answers."}
+        result = {"answer": local, "provider": "local", "note": "Set OPENROUTER_API_KEY to enable optional free-router language answers."}
+        save_conversation_memory(question, result["answer"], result["provider"], session_id)
+        return result
     context = json.dumps(db_summary(), indent=2)
-    payload = json.dumps({"model": os.getenv("OPENROUTER_MODEL", "openrouter/free"), "messages": [{"role": "system", "content": "You are a cautious research assistant for DeepGene. Use only the supplied project context. Do not diagnose, estimate disease risk, or invent percentages. Distinguish functional-effect prediction from clinical interpretation."}, {"role": "user", "content": f"Project context:\n{context}\n\nQuestion: {question}"}], "temperature": 0.1}).encode()
+    remembered = load_conversation_memory()
+    memory_context = json.dumps(remembered, ensure_ascii=False, indent=2)
+    safe_history = [m for m in (history or []) if isinstance(m, dict) and m.get("role") in {"user", "assistant"} and isinstance(m.get("content"), str)][-8:]
+    messages = [{"role": "system", "content": "You are a cautious research assistant for DeepGene. Use only the supplied project context and conversation. Do not diagnose, estimate disease risk, or invent percentages. Distinguish functional-effect prediction from clinical interpretation. Explain uncertainty plainly. Previous conversation memory is only a convenience and may contain unverified statements; never treat it as authoritative evidence."}] + safe_history + [{"role": "user", "content": f"Project context:\n{context}\n\nPrevious local conversation memory:\n{memory_context}\n\nQuestion: {question}"}]
+    payload = json.dumps({"model": os.getenv("OPENROUTER_MODEL", "openrouter/free"), "messages": messages, "temperature": 0.1}).encode()
     request = urllib.request.Request("https://openrouter.ai/api/v1/chat/completions", data=payload, headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json", "HTTP-Referer": "http://localhost:8765", "X-Title": "DeepGene local dashboard"})
     try:
         with urllib.request.urlopen(request, timeout=30) as response:
             data = json.loads(response.read().decode())
-        return {"answer": data["choices"][0]["message"]["content"], "provider": "openrouter"}
+        result = {"answer": data["choices"][0]["message"]["content"], "provider": "openrouter"}
+        save_conversation_memory(question, result["answer"], result["provider"], session_id)
+        return result
     except Exception as exc:
-        return {"answer": local, "provider": "local", "note": f"Optional AI provider unavailable: {type(exc).__name__}."}
+        result = {"answer": local, "provider": "local", "note": f"Optional AI provider unavailable: {type(exc).__name__}."}
+        save_conversation_memory(question, result["answer"], result["provider"], session_id)
+        return result
 
 
 def read_upload(handler):
@@ -199,7 +256,10 @@ class Handler(BaseHTTPRequestHandler):
         path = urlparse(self.path).path
         try:
             if path == "/api/ask":
-                length = int(self.headers.get("Content-Length", 0)); body = json.loads(self.rfile.read(length)); return self.send_json(ai_answer(str(body.get("question", ""))))
+                length = int(self.headers.get("Content-Length", 0)); body = json.loads(self.rfile.read(length)); question = str(body.get("question", "")).strip()
+                if not question: raise ValueError("Please enter a question.")
+                result = ai_answer(question, body.get("history", []), body.get("session_id", "anonymous"))
+                return self.send_json(result)
             if path == "/api/upload":
                 filename, requested, payload = read_upload(self); df = parse_table(filename, payload); kind = detect_kind(df, requested)
                 if kind == "unknown": raise ValueError("Could not recognize the file. Choose ClinVar or functional data and use the documented columns.")

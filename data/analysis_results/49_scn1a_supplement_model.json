@@ -1,0 +1,54 @@
+{
+  "created": "2026-10-04",
+  "source_file": "C:\\Users\\Hp\\OneDrive\\Documents\\Project_DeepGene_2.0\\data\\raw\\SCN1A_Brunklaus_2020_supplementary.xlsx",
+  "source_url": "https://discovery.ucl.ac.uk/id/eprint/10091164/10/Schorge_SCN1A%20variants%20from%20bench%20to%20bedside-improved%20clinical%20prediction%20from%20functional%20characterization_Spreadsheet.xlsx",
+  "excluded_source_rows": 19,
+  "model_file": "C:\\Users\\Hp\\OneDrive\\Documents\\Project_DeepGene_2.0\\data\\model\\deepgene_scn1a_supplement_candidate.pkl",
+  "metrics": {
+    "rows_in_source": 40,
+    "source_label_counts": {
+      "LOF": 36,
+      "GOF": 4
+    },
+    "rows_in_combined_training_table": 377,
+    "combined_label_counts": {
+      "LOF": 212,
+      "GOF": 165
+    },
+    "test_rows": 95,
+    "balanced_accuracy": 0.7176549865229112,
+    "roc_auc": 0.7502246181491464,
+    "classification_report": {
+      "GOF": {
+        "precision": 0.7105263157894737,
+        "recall": 0.6428571428571429,
+        "f1-score": 0.675,
+        "support": 42.0
+      },
+      "LOF": {
+        "precision": 0.7368421052631579,
+        "recall": 0.7924528301886793,
+        "f1-score": 0.7636363636363637,
+        "support": 53.0
+      },
+      "accuracy": 0.7263157894736842,
+      "macro avg": {
+        "precision": 0.7236842105263157,
+        "recall": 0.7176549865229112,
+        "f1-score": 0.7193181818181819,
+        "support": 95.0
+      },
+      "weighted avg": {
+        "precision": 0.725207756232687,
+        "recall": 0.7263157894736842,
+        "f1-score": 0.7244497607655503,
+        "support": 95.0
+      }
+    }
+  },
+  "limitations": [
+    "This is a binary LOF/GOF research experiment; mixed and uncertain effects were excluded.",
+    "The random holdout is internal, not an independent external validation set.",
+    "The model is not a pathogenicity classifier, diagnostic tool, or treatment recommendation system."
+  ]
+}
