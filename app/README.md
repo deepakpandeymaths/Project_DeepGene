@@ -29,6 +29,13 @@ Functional model retraining is separate and requires a labelled CSV/TSV with
 validated and combined with the existing training data to create a research
 candidate model. Ordinary chat messages are never used as training labels.
 
+AlphaMissense gene/transcript score files such as
+`AlphaMissense_gene_hg38.tsv.gz` are also supported. The uploader decompresses
+gzip files, ignores `#`-prefixed license metadata, validates
+`transcript_id` and `mean_am_pathogenicity`, and stores the normalized table at
+`data/processed/alphamissense_gene_hg38.csv`. These scores are annotations and
+do not trigger LOF/GOF retraining.
+
 ## SCN1A benchmark refresh
 
 The project includes a public supplementary SCN1A functional dataset from

@@ -10,6 +10,7 @@ present.
 
 from __future__ import annotations
 import csv
+import gzip
 import io
 import json
 import os
@@ -35,6 +36,7 @@ AUDIT = UPLOADS / "upload_audit.jsonl"
 MEMORY_DIR = ROOT / "data" / "memory"
 CONVERSATIONS = MEMORY_DIR / "conversations.jsonl"
 MODEL = ROOT / "data" / "model" / "deepgene_generation2_gbm_app.pkl"
+ALPHAMISSENSE_PROCESSED = ROOT / "data" / "processed" / "alphamissense_gene_hg38.csv"
 UPLOADS.mkdir(parents=True, exist_ok=True)
 MEMORY_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -51,7 +53,7 @@ def db_summary():
                 result["tables"][table] = int(con.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0])
             except sqlite3.Error:
                 result["tables"][table] = None
-    for path in [ROOT / "data/processed/deepgene_v1_final.csv", ROOT / "data/processed/deepgene_gen2_ml_ready_v1.csv"]:
+    for path in [ROOT / "data/processed/deepgene_v1_final.csv", ROOT / "data/processed/deepgene_gen2_ml_ready_v1.csv", ALPHAMISSENSE_PROCESSED]:
         if path.exists():
             result["csv_files"][path.name] = int(sum(1 for _ in path.open(encoding="utf-8")) - 1)
     for path in [ROOT / "data/model/deepgene_generation2_gbm.pkl", ROOT / "data/model/deepgene_scn1a_supplement_candidate.pkl", ROOT / "data/model/deepgene_dravet_research_candidate.pkl"]:
@@ -169,20 +171,49 @@ def read_upload(handler):
 
 
 def parse_table(filename, payload):
+    if filename.lower().endswith(".gz"):
+        try:
+            payload = gzip.decompress(payload)
+        except gzip.BadGzipFile as exc:
+            raise ValueError("The uploaded .gz file is not a valid gzip archive.") from exc
+        if len(payload) > 250 * 1024 * 1024:
+            raise ValueError("The decompressed upload exceeds the 250 MB safety limit.")
+        filename = filename[:-3]
     suffix = Path(filename).suffix.lower()
     if suffix not in {".csv", ".tsv", ".txt"}:
-        raise ValueError("Only CSV or TSV files are accepted.")
+        raise ValueError("Only CSV, TSV, TXT, or gzip-compressed CSV/TSV files are accepted.")
     text = payload.decode("utf-8-sig", errors="strict")
     sep = "\t" if suffix in {".tsv", ".txt"} else ","
-    return pd.read_csv(io.StringIO(text), sep=sep, low_memory=False)
+    return pd.read_csv(io.StringIO(text), sep=sep, comment="#", low_memory=False)
 
 
 def detect_kind(df, requested):
     if requested in {"clinvar", "functional"}:
         return requested
+    if requested == "alphamissense":
+        return "alphamissense_gene"
+    if {"transcript_id", "mean_am_pathogenicity"}.issubset(df.columns):
+        return "alphamissense_gene"
     if {"#AlleleID", "VariationID", "Name", "ClinicalSignificance"}.issubset(df.columns): return "clinvar"
     if {"gene", "aa1", "aa2", "pos"}.issubset(df.columns) and ("y" in df.columns or "functional_label" in df.columns): return "functional"
     return "unknown"
+
+
+def ingest_alphamissense_gene(df):
+    required = {"transcript_id", "mean_am_pathogenicity"}
+    missing = required - set(df.columns)
+    if missing:
+        raise ValueError(f"AlphaMissense file missing columns: {sorted(missing)}")
+    cleaned = df[["transcript_id", "mean_am_pathogenicity"]].copy()
+    cleaned["transcript_id"] = cleaned["transcript_id"].astype(str).str.strip()
+    cleaned["mean_am_pathogenicity"] = pd.to_numeric(cleaned["mean_am_pathogenicity"], errors="coerce")
+    cleaned = cleaned[(cleaned["transcript_id"] != "") & cleaned["mean_am_pathogenicity"].notna()]
+    if cleaned.empty:
+        raise ValueError("No valid AlphaMissense transcript scores were found.")
+    if ((cleaned["mean_am_pathogenicity"] < 0) | (cleaned["mean_am_pathogenicity"] > 1)).any():
+        raise ValueError("AlphaMissense scores must be between 0 and 1.")
+    cleaned.drop_duplicates("transcript_id", keep="last").to_csv(ALPHAMISSENSE_PROCESSED, index=False)
+    return {"kind": "alphamissense_gene", "stored_rows": len(cleaned), "processed_file": str(ALPHAMISSENSE_PROCESSED), "retrained": False, "note": "Stored as annotation data; this gene/transcript score table is not a LOF/GOF training label set."}
 
 
 def ingest_clinvar(df):
@@ -262,9 +293,9 @@ class Handler(BaseHTTPRequestHandler):
                 return self.send_json(result)
             if path == "/api/upload":
                 filename, requested, payload = read_upload(self); df = parse_table(filename, payload); kind = detect_kind(df, requested)
-                if kind == "unknown": raise ValueError("Could not recognize the file. Choose ClinVar or functional data and use the documented columns.")
+                if kind == "unknown": raise ValueError("Could not recognize the file. Choose ClinVar, functional, or AlphaMissense data and use the documented columns.")
                 destination = UPLOADS / filename; destination.write_bytes(payload)
-                result = ingest_clinvar(df) if kind == "clinvar" else retrain_functional(df)
+                result = ingest_clinvar(df) if kind == "clinvar" else retrain_functional(df) if kind == "functional" else ingest_alphamissense_gene(df)
                 result.update({"ok": True, "kind": kind, "filename": filename, "rows_received": len(df), "saved_to": str(destination)})
                 with AUDIT.open("a", encoding="utf-8") as audit: audit.write(json.dumps(result) + "\n")
                 return self.send_json(result)
