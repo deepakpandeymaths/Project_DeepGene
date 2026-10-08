@@ -1,5 +1,9 @@
 # DeepGene v1 and v2 Research Roadmap
 
+<p align="center">
+  <img src="deepgene-logo.svg" alt="DeepGene" width="720">
+</p>
+
 DeepGene is a local-first, research-oriented bioinformatics project for
 evidence-aware analysis of SCN1A variants. It combines a reproducible data
 pipeline, SQLite evidence storage, transparent analyses, research-only
