@@ -1,4 +1,4 @@
-# DeepGene v1
+# DeepGene v1 and v2 Research Roadmap
 
 DeepGene is a local-first, research-oriented bioinformatics project for
 evidence-aware analysis of SCN1A variants. It combines a reproducible data
@@ -8,6 +8,157 @@ functional-effect models, and a browser-based research assistant.
 > **Safety boundary:** DeepGene is not a diagnostic system, pathogenicity
 > classifier, disease-risk calculator, treatment recommender, or substitute for
 > geneticist review. Its model outputs are exploratory research results.
+
+## DeepGene v2 research direction
+
+DeepGene v1 is the reproducible foundation. DeepGene v2 is planned as a formal
+research study titled **Evidence-Aware and Uncertainty-Calibrated Machine
+Learning for SCN1A Variant Prioritization**.
+
+The central research question is not simply whether a model can assign a class
+to a variant. It is whether a research framework can integrate heterogeneous
+evidence, estimate how reliable its output is, identify missing or conflicting
+evidence, and prioritize variants for further expert investigation.
+
+The v2 workflow is planned as:
+
+```text
+SCN1A variant
+      ↓
+Evidence extraction and normalization
+      ↓
+Evidence integration
+      ↓
+Pathogenicity probability
+      ↓
+Uncertainty estimation and probability calibration
+      ↓
+Explainability and evidence completeness
+      ↓
+Variant prioritization
+      ↓
+Expert review support
+```
+
+V2 will remain research decision support. A high model probability is not a
+diagnosis, and a VUS will be described as a candidate for further investigation,
+not declared pathogenic or benign.
+
+### V2 research objectives
+
+1. Build a unique-variant SCN1A representation containing variant, population,
+   clinical/phenotypic, computational, and functional evidence.
+2. Compare transparent baseline models with an evidence-aware model.
+3. Estimate predictive uncertainty and calibrate probability outputs.
+4. Measure evidence completeness and conflict separately from model confidence.
+5. Explain supporting, missing, conflicting, and influential evidence.
+6. Test whether evidence-aware ranking improves the selection of variants for
+   expert investigation.
+
+### V2 dataset design
+
+The current SCN1A audit contains 5,381 unique variants and 10,696 ClinVar
+records. Multiple ClinVar submissions for the same underlying variant must not
+be treated as independent samples. Dataset versions will record the ClinVar
+release, genome assembly, transcript, filters, preprocessing version, and
+feature version.
+
+The planned research cohorts are:
+
+| Cohort | Purpose | Treatment |
+|---|---|---|
+| Full SCN1A set | Exploration and descriptive analysis | Preserve all usable variants |
+| Supervised set | Initial binary model development | Pathogenic/Likely Pathogenic vs Benign/Likely Benign |
+| VUS set | Separate prioritization experiment | Keep VUS out of binary labels |
+| Expert benchmark | Independent evaluation | Use reviewed ClinGen expert-panel variants where available |
+
+Conflicting and unresolved classifications will not be forced into binary
+labels. The model must not receive the final target classification as an input
+when that same classification is being evaluated. Splits will be performed by
+unique variant, not by individual ClinVar submission.
+
+### Planned V2 evidence blocks
+
+- **Variant:** HGVS, consequence, SNV/indel class, amino-acid change, position,
+  exon, and protein region.
+- **Population:** allele frequency, maximum frequency, population-specific
+  frequency, and rarity indicators.
+- **Clinical and phenotype:** conditions, phenotype availability, review status,
+  submission history, and conflict indicators.
+- **Computational:** conservation, existing prediction scores, protein-level
+  predictions, and structural features where available.
+- **Functional:** assay type, experimental effect, evidence strength, and
+  explicitly preserved LOF/GOF information.
+
+The feature audit will distinguish unavailable evidence from assessed absence,
+and computational annotations from experimentally supported functional effects.
+
+### Planned models and outputs
+
+V2 will first compare Logistic Regression, Random Forest, and Gradient
+Boosting/XGBoost baselines. The proposed evidence-aware framework will then be
+evaluated against them. Candidate uncertainty methods include ensemble
+disagreement, predictive entropy, and conformal prediction where appropriate;
+the final method will be selected by experiment rather than assumed in
+advance.
+
+For each variant, the planned research output is:
+
+```text
+Pathogenicity probability
+Uncertainty estimate
+Probability calibration information
+Evidence completeness
+Conflict indicators
+Supporting and missing evidence
+Model contribution or evidence-group explanation
+Research prioritization score
+```
+
+Evidence completeness must not be confused with confidence. A confident output
+based on incomplete or conflicting evidence should remain visibly cautious.
+
+### Validation and experiments
+
+The V2 evaluation plan includes:
+
+- variant-disjoint holdout validation;
+- five-fold cross-validation where appropriate;
+- an independent ClinGen expert-panel benchmark;
+- temporal validation if reliable historical data can be reconstructed;
+- an ablation study from baseline through variant, population, computational,
+  clinical, functional, evidence-fusion, uncertainty, and calibration stages;
+- a separate VUS prioritization experiment.
+
+Evaluation will cover discrimination (AUROC, AUPRC, F1, MCC, sensitivity and
+specificity), calibration (Brier score, ECE and reliability diagrams), ranking
+(Precision@K, Recall@K, NDCG@K and MRR), and uncertainty reliability. Numerical
+results are intentionally not predetermined.
+
+### V1 to V2 implementation sequence
+
+1. Freeze the current V1 pipeline as a reproducible baseline.
+2. Audit the V1 schema, preprocessing, features, labels, model, and frontend.
+3. Create `SCN1A_V2_master.csv` and a formal data dictionary.
+4. Complete a feature-level leakage audit and define the research protocol.
+5. Train and evaluate baseline models using unique-variant splits.
+6. Implement evidence integration, calibration, uncertainty, explainability,
+   and prioritization as separately testable components.
+7. Run VUS, expert-benchmark, temporal, and ablation experiments when their
+   data requirements are satisfied.
+8. Generate reproducible figures and tables and prepare the manuscript.
+
+The planned software layout follows this separation of concerns:
+
+```text
+preprocessing/  features/  models/  calibration/
+explainability/ prioritization/ evaluation/ experiments/
+paper/          frontend/
+```
+
+This roadmap describes planned work, not completed validation. DeepGene v2
+will not be presented as clinically deployable unless future independent
+validation genuinely supports that claim.
 
 ## 1. What DeepGene v1 does
 
