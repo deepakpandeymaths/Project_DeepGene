@@ -8,7 +8,7 @@ the work they perform.
 
 | Contributor | Role | Responsibilities |
 |---|---|---|
-| Deepak Pandey | Founder, Chief Executive Officer, and Developer | Project direction, research planning, software development, architecture, documentation, and release coordination |
+| DEEPAK PANDEY | Founder, Chief Executive Officer, and Developer | Project direction, research planning, software development, architecture, documentation, and release coordination |
 | SUDEV N. PRABHU | Co-founder and Co-developer | Research collaboration, co-development, technical contributions, review, and project improvement |
 
 ## Contribution principles
