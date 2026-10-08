@@ -1,3 +1,6 @@
+// DeepGene branded splash screen
+(function(){const splash=document.querySelector('#splash');if(!splash)return;const hideSplash=()=>window.setTimeout(()=>splash.classList.add('is-hidden'),1800);if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',hideSplash,{once:true});else hideSplash();})();
+
 async function jsonFetch(url, options){const r=await fetch(url, options);const data=await r.json();if(!r.ok)throw new Error(data.error||'Request failed');return data}
 const history=[];
 const sessionId=window.crypto?.randomUUID?.()||`session-${Date.now()}-${Math.random().toString(16).slice(2)}`;
