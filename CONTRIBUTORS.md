@@ -9,10 +9,7 @@ the work they perform.
 | Contributor | Role | Responsibilities |
 |---|---|---|
 | Deepak Pandey | Founder, Chief Executive Officer, and Developer | Project direction, research planning, software development, architecture, documentation, and release coordination |
-| Collaborator | Co-founder and Co-developer | Research collaboration, co-development, technical contributions, review, and project improvement |
-
-The collaborator's personal name can be added when the contributor information
-is finalized.
+| SUDEV N. PRABHU | Co-founder and Co-developer | Research collaboration, co-development, technical contributions, review, and project improvement |
 
 ## Contribution principles
 
