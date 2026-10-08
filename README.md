@@ -1,4 +1,23 @@
-# DeepGene v1 and v2 Research Roadmap
+<div align="center">
+
+<p>
+  <img src="deepgene-logo.svg" alt="DeepGene logo" width="720">
+</p>
+
+# ✦ DEEPGENE
+
+**Evidence-aware SCN1A research platform**
+
+[![version](https://img.shields.io/badge/version-v1%20foundation%20%7C%20v2%20research-blue)](README.md)
+[![status](https://img.shields.io/badge/status-active%20research-orange)](README.md)
+[![platform](https://img.shields.io/badge/platform-local--first-green)](README.md)
+[![scope](https://img.shields.io/badge/scope-research%20only-purple)](README.md)
+
+*V1 foundation · V2 evidence-aware and uncertainty-calibrated roadmap*
+
+</div>
+
+## V1 and V2 research roadmap
 
 DeepGene is a local-first, research-oriented bioinformatics project for
 evidence-aware analysis of SCN1A variants. It combines a reproducible data
