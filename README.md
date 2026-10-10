@@ -40,15 +40,30 @@ replacement for geneticist review.
 > analysis and hypothesis generation. They must not be used as clinical advice
 > or as a patient-level medical decision.
 
-## Live research interface
+## Live deployment and local-first workflow
 
-The current browser deployment is available at the [DeepGene research copilot](https://deepgene-sand.vercel.app/).
-It provides the hosted Research Chat interface and access to the Data Lab frontend for exploring the current SCN1A research workspace.
+The current public browser deployment is available at the
+[DeepGene research copilot](https://deepgene-sand.vercel.app/). It provides a
+shareable hosted interface for the Research Chat experience and the Data Lab
+entry point.
 
-This deployment is a research demonstration. It does not change DeepGene's
-research-only boundary: outputs are exploratory and must not be interpreted as
-diagnoses, pathogenicity classifications, disease-risk estimates, treatment
-recommendations, or replacements for geneticist review.
+The hosted app and the local dashboard serve different purposes:
+
+| Environment | Best use | Data and execution model |
+|---|---|---|
+| [Live Vercel app](https://deepgene-sand.vercel.app/) | Sharing the interface and demonstrating the research workflow | Hosted browser experience; do not use it for private or sensitive data |
+| Local dashboard | Full development, analysis, validation, uploads, and controlled experiments | Local-first execution with the project database, processed data, models, and audit outputs |
+
+The live deployment is a research demonstration, not a replacement for the
+local research workspace. Deployment configuration, hosted storage, API
+availability, and resource limits may differ from the local environment.
+For reproducible analysis, private datasets, model development, retraining,
+and debugging, use the local dashboard described below.
+
+Both environments preserve the same research-only boundary: outputs are
+exploratory and must not be interpreted as diagnoses, pathogenicity
+classifications, disease-risk estimates, treatment recommendations, or
+replacements for geneticist review.
 
 ## 2. What we built in version 1
 
@@ -391,7 +406,12 @@ The feature-policy and leakage-audit outputs document which identifiers,
 phenotype fields, clinical classifications, and functional targets are excluded
 from each modelling task.
 
-## 7. Local dashboard and Research Chat
+## 7. Local dashboard, Research Chat, and Data Lab
+
+The local dashboard is the complete DeepGene development and analysis
+environment. It remains the canonical workflow for source-preserving data,
+the SQLite evidence database, model artifacts, validated uploads, audit logs,
+and reproducible experiments.
 
 Start the dashboard from the project root:
 
