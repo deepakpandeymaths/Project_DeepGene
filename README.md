@@ -40,6 +40,16 @@ replacement for geneticist review.
 > analysis and hypothesis generation. They must not be used as clinical advice
 > or as a patient-level medical decision.
 
+## Live research interface
+
+The current browser deployment is available at the [DeepGene research copilot](https://deepgene-sand.vercel.app/).
+It provides the hosted Research Chat interface and access to the Data Lab frontend for exploring the current SCN1A research workspace.
+
+This deployment is a research demonstration. It does not change DeepGene's
+research-only boundary: outputs are exploratory and must not be interpreted as
+diagnoses, pathogenicity classifications, disease-risk estimates, treatment
+recommendations, or replacements for geneticist review.
+
 ## 2. What we built in version 1
 
 The completed v1 workflow is:
