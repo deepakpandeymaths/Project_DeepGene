@@ -1,0 +1,114 @@
+{
+  "manifest_name": "DeepGene V1 freeze manifest",
+  "manifest_version": "1.0",
+  "freeze_date": "2026-10-18",
+  "project": "DeepGene",
+  "scope": "SCN1A evidence-aware research software",
+  "repository": "https://github.com/deepakpandeymaths/Project_DeepGene",
+  "frozen_branch": "main",
+  "frozen_commit": "ef4b81faec710e42bb77d9824dfee49f4e6ade52",
+  "v1_status": {
+    "clinical_use": false,
+    "diagnostic_use": false,
+    "production_model": false,
+    "research_only": true,
+    "dravet_outcome_model": "blocked_pending_reviewed_labels",
+    "conversation_is_training_data": false,
+    "alphamissense_is_lof_gof_label": false
+  },
+  "evidence_snapshot": {
+    "genes": 1,
+    "unique_scn1a_variants": 5381,
+    "variant_representations": 10696,
+    "clinvar_records": 10696,
+    "alphamissense_annotation_rows": 19233
+  },
+  "functional_experiments": {
+    "primary_independent_dataset_rows": 51,
+    "primary_classes": {
+      "loss": 35,
+      "mixed": 12,
+      "gain": 4
+    },
+    "generation2_source_rows": 375,
+    "generation2_exact_overlaps_removed": 40,
+    "generation2_rows_after_overlap_removal": 335,
+    "scn1a_supplement_explicit_labels": {
+      "total": 40,
+      "lof": 36,
+      "gof": 4
+    },
+    "label_policy": "Only explicitly labelled and validated functional rows are eligible for the corresponding research experiment."
+  },
+  "artifact_hashes": {
+    "algorithm": "SHA-256",
+    "files": {
+      "README.md": {
+        "sha256": "387AE84C037DACE124FB612DA4115B63CD02834D278612C51E115156E40B1D03",
+        "bytes": 19980
+      },
+      "data/processed/deepgene_v1_final.csv": {
+        "sha256": "3D480EDEC10F22D3713DBDA5F2C7550A0BC48D42DE850F92B2E188CD13B2D63A",
+        "bytes": 1079794
+      },
+      "data/processed/deepgene_evidence_v1.csv": {
+        "sha256": "36D4BD542FA427CC6C869D2DEDFFE57CCD3C3F3CF607EE25BD3A52F1517E8F7B",
+        "bytes": 1085176
+      },
+      "data/processed/deepgene_baseline_v1.csv": {
+        "sha256": "D2371A2406F068AD698B73BEAF3DB89CE476EBDD0A9170DC4A9D21D923402B00",
+        "bytes": 1995737
+      },
+      "data/processed/deepgene_ml_ready_v1.csv": {
+        "sha256": "1FD1188155A5A5EEAC8252D3789931359337957060E2A094EEBDA00C6141F403",
+        "bytes": 11725
+      },
+      "data/processed/deepgene_gen2_ml_ready_v1.csv": {
+        "sha256": "D2D3D2E9BEBFBB6C04751D302F73D71288C86324A4F847897FE71B2DBC13FCA3",
+        "bytes": 47507
+      },
+      "data/processed/deepgene_scn1a_brunklaus_2020_functional.csv": {
+        "sha256": "06AB387B480D6B51FD716324FF9B1528F8240EC4381AF761900F2D02AA57B353",
+        "bytes": 14176
+      },
+      "data/processed/alphamissense_gene_hg38.csv": {
+        "sha256": "0477A998302DA86D194640ED2DD80091D06540EC1406A7399612FEC883FC4270",
+        "bytes": 731760
+      },
+      "data/model/deepgene_functional_exploratory_report.json": {
+        "sha256": "BB41FFD0FE79FF0F1E6F6BBFEC7D1A87438A5BBFDA9DA83C25407FB9020AB581",
+        "bytes": 12100
+      },
+      "data/model/deepgene_generation2_gbm.pkl": {
+        "sha256": "36DC33F00BFEB745DED615748152A506278DC52DC2F41FEA59C955A3C2659928",
+        "bytes": 131494
+      },
+      "data/model/deepgene_scn1a_supplement_candidate.pkl": {
+        "sha256": "8AD8F665D14B36ED04B4A9221E5F83713010C8C537156DD2B457CD40607DC944",
+        "bytes": 131084
+      },
+      "data/analysis_results/20_v1_dataset_manifest.txt": {
+        "sha256": "9D4F1A24C5272D1CB7EE0595BF11D9A81520E0D713601AD9EE8F249017D89986",
+        "bytes": 3104
+      },
+      "data/analysis_results/44_generation2_model_benchmark.json": {
+        "sha256": "D427BB0109E1FA42ACBB476310B41F200DD44A11C40849832D54993287A1E6C0",
+        "bytes": 9041
+      },
+      "data/analysis_results/49_scn1a_supplement_model.json": {
+        "sha256": "0A71F38229E4790541A3667342B0386F85D7836FBE83D9BC81EB0DA39BBB956A",
+        "bytes": 1966
+      }
+    }
+  },
+  "v2_entry_rules": [
+    "Do not modify the frozen V1 commit or silently replace V1 artifacts.",
+    "Keep clinical/pathogenicity labels separate from functional LOF/GOF labels.",
+    "Keep AlphaMissense and other computational scores as annotations unless an independent validated target is defined.",
+    "Do not use ordinary conversation memory as automatic training data.",
+    "Every V2 label must have a source accession, release/version, cohort identifier where applicable, and review status.",
+    "Every V2 evaluation must document duplicate handling, leakage controls, split policy, and missing-evidence semantics.",
+    "All V2 outputs remain research-only until independently validated and reviewed."
+  ],
+  "next_step": "Create the V2 data dictionary and source/label separation plan without changing V1 application behaviour."
+}
