@@ -40,6 +40,12 @@ ALPHAMISSENSE_PROCESSED = ROOT / "data" / "processed" / "alphamissense_gene_hg38
 V2_PRIORITIZATION = ROOT / "data" / "processed" / "deepgene_v2_research_prioritization.csv"
 V2_COMPLETENESS = ROOT / "data" / "processed" / "deepgene_v2_evidence_completeness.csv"
 V2_CALIBRATION = ROOT / "data" / "ml_results" / "v2_calibration_report.json"
+V2_COMPLETENESS_REPORT = ROOT / "data" / "analysis_results" / "v2_evidence_completeness_report.json"
+V2_POPULATION_AUDIT = ROOT / "data" / "analysis_results" / "v2_population_join_audit.json"
+V2_LIFTOVER_AUDIT = ROOT / "data" / "analysis_results" / "v2_liftover_gnomad_api_report.json"
+V2_GNOMAD_API_AUDIT = ROOT / "data" / "analysis_results" / "v2_gnomad_api_enrichment_report.json"
+V2_HPO_AUDIT = ROOT / "data" / "analysis_results" / "v2_hpo_join_audit.json"
+V2_HPO_ANNOTATIONS = ROOT / "data" / "processed" / "deepgene_v2_hpo_annotations.csv"
 UPLOADS.mkdir(parents=True, exist_ok=True)
 MEMORY_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -117,6 +123,64 @@ def v2_prioritization(limit=20, query=""):
     if query:
         rows = [row for row in rows if query in row.get("variant_key", "").lower() or query in row.get("source_row_id", "").lower()]
     return rows[:max(1, min(int(limit), 100))]
+
+
+def read_json(path):
+    if not path.exists():
+        return {}
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {}
+
+
+def v2_coverage():
+    completeness = read_csv_records(V2_COMPLETENESS)
+    population = read_json(V2_POPULATION_AUDIT)
+    liftover = read_json(V2_LIFTOVER_AUDIT)
+    api = read_json(V2_GNOMAD_API_AUDIT)
+    hpo = read_json(V2_HPO_AUDIT)
+    hpo_rows = read_csv_records(V2_HPO_ANNOTATIONS)
+
+    representation_total = int(population.get("clinical_representation_rows") or 0)
+    base_matches = int(population.get("matched_rows") or 0)
+    api_matches = int(api.get("allele_consistent_matches") or 0)
+    liftover_matches = int(liftover.get("allele_consistent_matches") or 0)
+    representation_matched = base_matches + api_matches + liftover_matches
+    variant_total = len(completeness)
+    variant_matched = sum(row.get("population_frequency_present") == "1" for row in completeness)
+    hpo_matched_rows = sum(row.get("mapping_status") == "official_exact_match" for row in hpo_rows)
+    hpo_variants = {row.get("variant_id") for row in hpo_rows if row.get("mapping_status") == "official_exact_match"}
+    hpo_total_variants = len({row.get("variant_id") for row in hpo_rows if row.get("variant_id")})
+
+    def percentage(numerator, denominator):
+        return round((numerator / denominator) * 100, 2) if denominator else 0.0
+
+    return {
+        "status": "research_only",
+        "population": {
+            "representation_total": representation_total,
+            "representation_matched": representation_matched,
+            "representation_unmatched": max(0, representation_total - representation_matched),
+            "representation_coverage_percent": percentage(representation_matched, representation_total),
+            "variant_total": variant_total,
+            "variant_matched": variant_matched,
+            "variant_coverage_percent": percentage(variant_matched, variant_total),
+            "methods": ["exact_coordinate", "rsid_allele", "direct_api", "grch37_liftover_api"],
+        },
+        "hpo": {
+            "term_rows": len(hpo_rows),
+            "matched_rows": hpo_matched_rows,
+            "unmatched_rows": max(0, len(hpo_rows) - hpo_matched_rows),
+            "term_coverage_percent": percentage(hpo_matched_rows, len(hpo_rows)),
+            "variant_total": hpo_total_variants,
+            "variant_matched": len(hpo_variants),
+            "variant_coverage_percent": percentage(len(hpo_variants), hpo_total_variants),
+            "release": hpo.get("hpo_release", "unknown"),
+            "annotation_only": True,
+        },
+        "message": "Coverage describes available annotations; missing evidence is not evidence of benignity or absence.",
+    }
 
 
 def load_conversation_memory(limit=12):
@@ -324,6 +388,7 @@ class Handler(BaseHTTPRequestHandler):
         path = parsed.path
         if path == "/api/summary": return self.send_json(db_summary())
         if path == "/api/v2/summary": return self.send_json(v2_summary())
+        if path == "/api/v2/coverage": return self.send_json(v2_coverage())
         if path == "/api/v2/prioritization":
             params = parse_qs(parsed.query)
             return self.send_json({"rows": v2_prioritization(params.get("limit", [20])[0], params.get("q", [""])[0])})

@@ -17,6 +17,13 @@ class V2ApiContractTests(unittest.TestCase):
         filtered = server.v2_prioritization(20, key)
         self.assertTrue(any(item["variant_key"] == key for item in filtered))
 
+    def test_coverage_contract_is_research_only(self):
+        payload = server.v2_coverage()
+        self.assertEqual(payload["status"], "research_only")
+        self.assertGreater(payload["population"]["representation_total"], 0)
+        self.assertGreater(payload["hpo"]["term_rows"], 0)
+        self.assertTrue(payload["hpo"]["annotation_only"])
+
 
 if __name__ == "__main__":
     unittest.main()

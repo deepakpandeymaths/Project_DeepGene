@@ -1,0 +1,10 @@
+.coverage-card{background:#fff;border:1px solid #cfe4d9;border-radius:17px;padding:15px;margin:0 0 15px;box-shadow:0 10px 30px #28634e0b}
+.coverage-list{display:grid;gap:12px;margin-top:12px}
+.coverage-row{display:grid;grid-template-columns:minmax(0,1fr) 36px;gap:7px;align-items:center}
+.coverage-row>div:first-child{grid-column:1 / -1;display:flex;justify-content:space-between;gap:8px}
+.coverage-row span{font-size:10px;color:var(--muted)}
+.coverage-row b{font-size:10px;color:var(--ink)}
+.coverage-row small{font-size:10px;color:var(--green-dark);text-align:right}
+.coverage-track{height:6px;background:#e8f1ec;border-radius:999px;overflow:hidden}
+.coverage-track i{display:block;height:100%;background:var(--green);border-radius:999px}
+.coverage-note{font-size:10px;color:#80573e;background:#fff2e6;border-radius:9px;padding:8px;margin:12px 0 0}
