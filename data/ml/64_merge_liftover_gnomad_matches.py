@@ -26,6 +26,9 @@ def number(value: object) -> float | None:
 def main() -> None:
     path = PROCESSED / "deepgene_v2_population_annotations.csv"
     matches = json.loads((PROCESSED / "deepgene_v2_liftover_gnomad_matches.json").read_text(encoding="utf-8"))
+    retry_path = PROCESSED / "deepgene_v2_liftover_api_retry_matches.json"
+    if retry_path.exists():
+        matches.extend(json.loads(retry_path.read_text(encoding="utf-8")))
     by_source = {clean(item.get("source_variant_id")): item for item in matches}
     with path.open(encoding="utf-8-sig", newline="") as handle:
         rows = list(csv.DictReader(handle))

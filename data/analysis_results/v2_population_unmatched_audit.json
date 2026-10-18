@@ -8,23 +8,23 @@
   ],
   "source_transcripts": 5,
   "representation_rows": 10696,
-  "matched_representation_rows": 2906,
-  "representation_coverage": 0.27169035153328347,
+  "matched_representation_rows": 2926,
+  "representation_coverage": 0.27356020942408377,
   "variant_level_rows": 5381,
-  "variant_level_matched_rows": 1602,
-  "variant_level_coverage": 0.2977141795205352,
-  "unmatched_rows": 7790,
+  "variant_level_matched_rows": 1619,
+  "variant_level_coverage": 0.3008734435978443,
+  "unmatched_rows": 7770,
   "unmatched_by_assembly": {
-    "GRCh37": 3954,
+    "GRCh37": 3934,
     "GRCh38": 3826,
     "na": 10
   },
   "unmatched_reason_counts": {
-    "no_shared_rsid": 7202,
-    "shared_rsid_allele_mismatch": 588
+    "no_shared_rsid": 7183,
+    "shared_rsid_allele_mismatch": 587
   },
-  "unmatched_with_shared_rsid": 588,
-  "shared_rsid_allele_mismatches": 588,
+  "unmatched_with_shared_rsid": 587,
+  "shared_rsid_allele_mismatches": 587,
   "safe_additional_matches_from_current_export": 0,
   "reason": "The local export and targeted API/liftover enrichment are partial; remaining shared rsIDs with allele disagreement are excluded from matching.",
   "next_action": "Retry failed API batches with backoff and evaluate additional transcript or regional gnomAD coverage.",
