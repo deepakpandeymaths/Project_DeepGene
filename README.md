@@ -531,11 +531,14 @@ Invoke-RestMethod http://127.0.0.1:8765/api/summary | ConvertTo-Json -Depth 5
 
 ~~~powershell
 python -m unittest discover -s tests -p "test_v2_*.py" -v
+python -m unittest discover -s tests -p "test_*.py" -v
 ~~~
 
 The same checks run automatically in GitHub Actions for pushes and pull
 requests. The workflow validates the frontend JavaScript and exercises the
-local JSON API.
+local JSON API. Upload-contract tests cover invalid gzip files, unsupported
+extensions, missing functional columns, invalid labels, out-of-range
+AlphaMissense scores, and local AI fallback behaviour.
 
 ### V2 HPO enrichment
 

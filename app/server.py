@@ -64,7 +64,8 @@ def db_summary():
                 result["tables"][table] = None
     for path in [ROOT / "data/processed/deepgene_v1_final.csv", ROOT / "data/processed/deepgene_gen2_ml_ready_v1.csv", ALPHAMISSENSE_PROCESSED]:
         if path.exists():
-            result["csv_files"][path.name] = int(sum(1 for _ in path.open(encoding="utf-8")) - 1)
+            with path.open(encoding="utf-8") as handle:
+                result["csv_files"][path.name] = int(sum(1 for _ in handle) - 1)
     for path in [ROOT / "data/model/deepgene_generation2_gbm.pkl", ROOT / "data/model/deepgene_scn1a_supplement_candidate.pkl", ROOT / "data/model/deepgene_dravet_research_candidate.pkl"]:
         result["models"][path.name] = path.exists()
     events = []
@@ -389,6 +390,12 @@ def feature_frame(df):
 
 def retrain_functional(upload_df):
     from sklearn.ensemble import GradientBoostingClassifier
+    required = {"gene", "aa1", "aa2", "pos"}
+    missing = required - set(upload_df.columns)
+    if "y" not in upload_df.columns and "functional_label" not in upload_df.columns:
+        missing.add("y or functional_label")
+    if missing:
+        raise ValueError(f"Functional file missing columns: {sorted(missing)}")
     base = pd.read_csv(ROOT / "data/processed/deepgene_gen2_scion_harmonized_v1.csv")
     custom = feature_frame(upload_df)
     if custom.empty: raise ValueError("No valid LOF/GOF functional rows found.")
