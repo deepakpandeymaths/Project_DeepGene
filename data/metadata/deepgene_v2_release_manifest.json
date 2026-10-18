@@ -9,19 +9,19 @@
   "clinical_use": false,
   "tests": {
     "command": "python -m unittest discover -s tests -p test_v2_*.py -v",
-    "result": "6 tests passed",
+    "result": "9 tests passed",
     "additional_checks": ["python -m py_compile app/server.py", "node --check app/static/app.js"]
   },
   "v2_status": {
     "master_table": "complete",
     "grouped_leakage_audit": "complete",
-    "evidence_completeness": "baseline_complete_external_enrichment_pending",
+    "evidence_completeness": "population_enriched_with_coverage_audit_hpo_pending",
     "functional_baselines": "complete_research_candidate",
     "calibration_uncertainty": "complete_exploratory",
     "research_prioritization": "complete_exploratory",
     "dashboard_integration": "complete",
     "independent_clinical_validation": "pending",
-    "external_evidence_enrichment": "pending"
+    "external_evidence_enrichment": "population_frequency_integrated_hpo_pending"
   },
   "artifact_hashes": {
     "algorithm": "SHA-256",

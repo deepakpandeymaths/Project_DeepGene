@@ -57,7 +57,8 @@ def main() -> None:
         "observed_target", "predicted_target", "gof_probability", "confidence", "uncertainty_level",
         "evidence_completeness_fraction", "evidence_completeness_category", "functional_signal_component",
         "uncertainty_component", "evidence_gap_component", "conflict_component", "research_priority_score",
-        "priority_band", "supporting_evidence", "missing_evidence", "interpretation_note",
+        "priority_band", "population_evidence_status", "population_max_af", "supporting_evidence",
+        "missing_evidence", "interpretation_note",
     ]
     prioritized: list[dict[str, object]] = []
     for row in selected:
@@ -92,7 +93,13 @@ def main() -> None:
         if not clinical_rows:
             missing.append("clinical variant join")
         else:
-            missing.extend(["HPO normalization", "population frequency", "conservation", "splice", "structural/domain annotation"])
+            for completeness_row in completeness_rows:
+                missing.extend(clean(completeness_row.get("missing_evidence_categories")).split("|"))
+            missing = sorted({item for item in missing if item})
+        population_statuses = sorted({clean(item.get("population_evidence_status")) for item in completeness_rows if clean(item.get("population_evidence_status"))})
+        population_status = "|".join(population_statuses) or "not_joined"
+        population_values = [number(item.get("population_max_af"), -1.0) for item in completeness_rows]
+        population_values = [value for value in population_values if 0.0 <= value <= 1.0]
         prioritized.append({
             "rank": 0,
             "source_row_id": clean(row.get("source_row_id")),
@@ -113,6 +120,8 @@ def main() -> None:
             "conflict_component": f"{conflict_component:.6f}",
             "research_priority_score": f"{score:.6f}",
             "priority_band": band,
+            "population_evidence_status": population_status,
+            "population_max_af": f"{max(population_values):.12g}" if population_values else "",
             "supporting_evidence": "|".join(supporting),
             "missing_evidence": "|".join(missing),
             "interpretation_note": "Research prioritization only; not a clinical classification, diagnosis, risk estimate, or treatment recommendation.",

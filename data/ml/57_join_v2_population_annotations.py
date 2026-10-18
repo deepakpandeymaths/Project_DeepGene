@@ -85,7 +85,7 @@ def rsids(row: dict[str, str]) -> set[str]:
 
 def main() -> None:
     output_fields = [
-        "variant_id", "assembly", "chromosome", "position", "reference_allele", "alternate_allele",
+        "variant_id", "variation_id", "assembly", "chromosome", "position", "reference_allele", "alternate_allele",
         "allele_frequency", "max_population_af", "allele_count", "allele_number", "homozygote_count",
         "join_status", "match_method", "source_id", "source_version", "missing_value_note",
     ]
@@ -97,6 +97,7 @@ def main() -> None:
         clinvar_rsids.setdefault(variant_id, set()).update(rsids(row))
         representation = {
             "variant_id": variant_id,
+            "variation_id": clean(row.get("VariationID")),
             "assembly": clean(row.get("Assembly")),
             "chromosome": clean(row.get("Chromosome")),
             "position": clean(row.get("PositionVCF")) or clean(row.get("Start")),

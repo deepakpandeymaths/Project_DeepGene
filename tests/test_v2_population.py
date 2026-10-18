@@ -38,6 +38,15 @@ class V2PopulationJoinTests(unittest.TestCase):
             )
         )
 
+    def test_population_annotations_reach_variant_completeness(self):
+        with (ROOT / "data/processed/deepgene_v2_evidence_completeness.csv").open(
+            encoding="utf-8-sig", newline=""
+        ) as handle:
+            rows = list(csv.DictReader(handle))
+        self.assertEqual(len(rows), 5381)
+        self.assertEqual(sum(row["population_evidence_status"] == "available" for row in rows), 1409)
+        self.assertTrue(all(row["population_frequency_present"] in {"0", "1"} for row in rows))
+
 
 if __name__ == "__main__":
     unittest.main()
