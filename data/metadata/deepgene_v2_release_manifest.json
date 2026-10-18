@@ -1,0 +1,50 @@
+{
+  "manifest_name": "DeepGene V2 release candidate manifest",
+  "manifest_version": "1.0",
+  "created": "2026-10-18",
+  "base_commit_before_manifest": "49567869d85a1aceeaad5f2bea3dd683fb1b60e6",
+  "repository": "https://github.com/deepakpandeymaths/Project_DeepGene",
+  "release_scope": "V2 research software pipeline, calibration, prioritization, dashboard integration, and regression contracts",
+  "research_only": true,
+  "clinical_use": false,
+  "tests": {
+    "command": "python -m unittest discover -s tests -p test_v2_*.py -v",
+    "result": "6 tests passed",
+    "additional_checks": ["python -m py_compile app/server.py", "node --check app/static/app.js"]
+  },
+  "v2_status": {
+    "master_table": "complete",
+    "grouped_leakage_audit": "complete",
+    "evidence_completeness": "baseline_complete_external_enrichment_pending",
+    "functional_baselines": "complete_research_candidate",
+    "calibration_uncertainty": "complete_exploratory",
+    "research_prioritization": "complete_exploratory",
+    "dashboard_integration": "complete",
+    "independent_clinical_validation": "pending",
+    "external_evidence_enrichment": "pending"
+  },
+  "artifact_hashes": {
+    "algorithm": "SHA-256",
+    "files": {
+      "README.md": {"sha256": "19AFE170402CCE61C79DB3A817159B103472BE7299DD7BB6F56579689FFD0354", "bytes": 21727},
+      "app/server.py": {"sha256": "F9A62B6B1CF585F50B62FD6A6315FDCF676250DCC5498071B43D35720243BAC8", "bytes": 23028},
+      "app/static/index.html": {"sha256": "FF6184D00E2258183BC8E2789C8BD352889BB2D10A19086BBEF0E00DE36D75F4", "bytes": 5205},
+      "app/static/app.js": {"sha256": "59321BD7F55C0B8EFD6A107A3F5CE535E7B4B6A4596FDA67D796D89D9B83DE3C", "bytes": 6520},
+      "app/static/style.css": {"sha256": "B0736815A20D38A573606A60EF913E8549C162E19E91758E32A28AC786A90188", "bytes": 12411},
+      "tests/test_v2_pipeline.py": {"sha256": "5A60D18BDC4AD6855E1B7F2569B1623BD73071C11026A4B9FA8BB7CFCFFDA83C", "bytes": 1980},
+      "tests/test_v2_api.py": {"sha256": "D188CE47F0F76C3806BC49F5CE97374B4BA21B6DC661DF0FB26B6115694E37B4", "bytes": 700},
+      "data/processed/deepgene_v2_research_prioritization.csv": {"sha256": "DDD95B116C7893795C97E1FF303D7A9E21941D45058DEF764BDED556E4F531F0", "bytes": 33774},
+      "data/ml_results/v2_prioritization_explanations.json": {"sha256": "49AE189685C6DD02E99EACCCE88DB95646E524EA52BF4AA2637E5D9EC4538A9B", "bytes": 9660},
+      "data/analysis_results/v2_prioritization_report.json": {"sha256": "F44D8856C22314CDCFBBFEADDF9C6160CD49A273E3261C9A9D8708BF305701AB", "bytes": 896},
+      "data/ml_results/v2_calibration_report.json": {"sha256": "3DE039CCF5E4807D209964178CC06D5C388CA0088D0D9F6F638C15D72880B4AF", "bytes": 4423},
+      "data/analysis_results/v2_calibration_report.json": {"sha256": "3BCC5823B8890CEE4CA6333E73229CAAEA681C08FF5E71EA0F986E2F5F27F4D1", "bytes": 4063}
+    }
+  },
+  "release_rules": [
+    "Clinical classifications, functional LOF/GOF labels, computational annotations, and conversation context remain separate.",
+    "Research-priority scores are not clinical classifications or disease-risk estimates.",
+    "Missing evidence remains unavailable rather than negative.",
+    "External evidence requires versioned source metadata, a validated join, coverage counts, and missing-value semantics.",
+    "Secrets and local conversation memory are excluded from the release manifest."
+  ]
+}

@@ -611,3 +611,55 @@ Future work must preserve the v1 principles:
 
 **DeepGene v1 is a reproducible research foundation, not a completed clinical
   product.**
+
+## 13. Version 2 implementation status
+
+DeepGene v2 is implemented on the `v2-dev` branch and merged into `main` in
+staged research steps. The current implementation includes:
+
+- a frozen v1 manifest with artifact hashes;
+- a v2 data dictionary and source registry;
+- separate clinical, functional, and annotation products;
+- a 5,381-row SCN1A master evidence table;
+- duplicate, overlap, and leakage audits;
+- deterministic grouped train/validation/test split identifiers;
+- evidence-completeness profiling with explicit missingness;
+- functional LOF/GOF baseline models;
+- sigmoid calibration and uncertainty estimates;
+- transparent research prioritization; and
+- dashboard/API integration for the V2 priority queue.
+
+The V2 dashboard endpoints are:
+
+~~~text
+GET /api/v2/summary
+GET /api/v2/prioritization?limit=20
+GET /api/v2/variant?variant_key=SCN1A:p.Met145Thr
+~~~
+
+Run the local application from the project root:
+
+~~~powershell
+python app/server.py
+~~~
+
+Then open `http://127.0.0.1:8765/`. The V2 priority queue is research-only;
+its scores do not represent pathogenicity, disease risk, diagnosis, treatment
+response, or clinical action.
+
+### V2 verification
+
+Run the regression checks with:
+
+~~~powershell
+python -m unittest discover -s tests -p "test_v2_*.py" -v
+python -m py_compile app/server.py
+node --check app/static/app.js
+~~~
+
+The V2 model and evidence pipeline must continue to preserve the separation
+between clinical assertions, functional LOF/GOF labels, computational
+annotations, conversation context, and predictions. External evidence such as
+HPO, gnomAD, conservation, splice, and structural annotations remains subject
+to source-version, join-coverage, and missing-value audits before it can enter
+future experiments.
