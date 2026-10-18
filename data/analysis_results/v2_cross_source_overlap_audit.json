@@ -1,0 +1,330 @@
+{
+  "audit_date": "2026-10-18",
+  "status": "PASS_WITH_REPORTED_OVERLAPS",
+  "source_row_counts": {
+    "clinical_evidence": 5381,
+    "functional_evidence": 375
+  },
+  "source_pair_overlap_counts": {
+    "SRC-BRUNKLAUS__SRC-SCION": 0
+  },
+  "clinical_functional_shared_group_count": 39,
+  "clinical_functional_shared_groups": {
+    "SCN1A:p.Thr875Met": {
+      "clinical": [
+        "2"
+      ],
+      "functional": [
+        "brunklaus2020_011"
+      ]
+    },
+    "SCN1A:p.Val1353Leu": {
+      "clinical": [
+        "4"
+      ],
+      "functional": [
+        "brunklaus2020_023"
+      ]
+    },
+    "SCN1A:p.Ile1656Met": {
+      "clinical": [
+        "5"
+      ],
+      "functional": [
+        "brunklaus2020_028"
+      ]
+    },
+    "SCN1A:p.Leu986Phe": {
+      "clinical": [
+        "9"
+      ],
+      "functional": [
+        "brunklaus2020_020"
+      ]
+    },
+    "SCN1A:p.Gln1489Lys": {
+      "clinical": [
+        "12"
+      ],
+      "functional": [
+        "brunklaus2020_025"
+      ]
+    },
+    "SCN1A:p.Thr1709Ile": {
+      "clinical": [
+        "13"
+      ],
+      "functional": [
+        "brunklaus2020_035"
+      ]
+    },
+    "SCN1A:p.Met145Thr": {
+      "clinical": [
+        "15"
+      ],
+      "functional": [
+        "brunklaus2020_001"
+      ]
+    },
+    "SCN1A:p.Arg393His": {
+      "clinical": [
+        "36"
+      ],
+      "functional": [
+        "brunklaus2020_007"
+      ]
+    },
+    "SCN1A:p.Tyr426Asn": {
+      "clinical": [
+        "41"
+      ],
+      "functional": [
+        "brunklaus2020_008"
+      ]
+    },
+    "SCN1A:p.Arg946His": {
+      "clinical": [
+        "53"
+      ],
+      "functional": [
+        "brunklaus2020_015"
+      ]
+    },
+    "SCN1A:p.Ile227Ser": {
+      "clinical": [
+        "108"
+      ],
+      "functional": [
+        "brunklaus2020_004"
+      ]
+    },
+    "SCN1A:p.Tyr790Cys": {
+      "clinical": [
+        "119"
+      ],
+      "functional": [
+        "brunklaus2020_009"
+      ]
+    },
+    "SCN1A:p.Phe902Cys": {
+      "clinical": [
+        "123"
+      ],
+      "functional": [
+        "brunklaus2020_012"
+      ]
+    },
+    "SCN1A:p.His939Gln": {
+      "clinical": [
+        "1114",
+        "129"
+      ],
+      "functional": [
+        "brunklaus2020_013"
+      ]
+    },
+    "SCN1A:p.Arg946Cys": {
+      "clinical": [
+        "132"
+      ],
+      "functional": [
+        "brunklaus2020_014"
+      ]
+    },
+    "SCN1A:p.Cys959Arg": {
+      "clinical": [
+        "135"
+      ],
+      "functional": [
+        "brunklaus2020_017"
+      ]
+    },
+    "SCN1A:p.Gly979Arg": {
+      "clinical": [
+        "137"
+      ],
+      "functional": [
+        "brunklaus2020_018"
+      ]
+    },
+    "SCN1A:p.Val983Ala": {
+      "clinical": [
+        "138"
+      ],
+      "functional": [
+        "brunklaus2020_019"
+      ]
+    },
+    "SCN1A:p.Asn1011Ile": {
+      "clinical": [
+        "140"
+      ],
+      "functional": [
+        "brunklaus2020_021"
+      ]
+    },
+    "SCN1A:p.Val1366Ile": {
+      "clinical": [
+        "156"
+      ],
+      "functional": [
+        "brunklaus2020_024"
+      ]
+    },
+    "SCN1A:p.Pro1632Ser": {
+      "clinical": [
+        "167"
+      ],
+      "functional": [
+        "brunklaus2020_027"
+      ]
+    },
+    "SCN1A:p.Arg1657Cys": {
+      "clinical": [
+        "170"
+      ],
+      "functional": [
+        "brunklaus2020_029"
+      ]
+    },
+    "SCN1A:p.Met1664Lys": {
+      "clinical": [
+        "173"
+      ],
+      "functional": [
+        "brunklaus2020_030"
+      ]
+    },
+    "SCN1A:p.Gly1674Arg": {
+      "clinical": [
+        "174"
+      ],
+      "functional": [
+        "brunklaus2020_032"
+      ]
+    },
+    "SCN1A:p.Ala1685Asp": {
+      "clinical": [
+        "175"
+      ],
+      "functional": [
+        "brunklaus2020_033"
+      ]
+    },
+    "SCN1A:p.Ala1685Val": {
+      "clinical": [
+        "176"
+      ],
+      "functional": [
+        "brunklaus2020_034"
+      ]
+    },
+    "SCN1A:p.Gly1749Glu": {
+      "clinical": [
+        "182"
+      ],
+      "functional": [
+        "brunklaus2020_036"
+      ]
+    },
+    "SCN1A:p.Gly177Glu": {
+      "clinical": [
+        "186"
+      ],
+      "functional": [
+        "brunklaus2020_003"
+      ]
+    },
+    "SCN1A:p.Met1852Thr": {
+      "clinical": [
+        "192"
+      ],
+      "functional": [
+        "brunklaus2020_038"
+      ]
+    },
+    "SCN1A:p.Ser259Arg": {
+      "clinical": [
+        "201",
+        "4428"
+      ],
+      "functional": [
+        "brunklaus2020_005"
+      ]
+    },
+    "SCN1A:p.Met956Thr": {
+      "clinical": [
+        "1939"
+      ],
+      "functional": [
+        "brunklaus2020_016"
+      ]
+    },
+    "SCN1A:p.Phe1765Leu": {
+      "clinical": [
+        "2039"
+      ],
+      "functional": [
+        "brunklaus2020_037"
+      ]
+    },
+    "SCN1A:p.Leu1624Pro": {
+      "clinical": [
+        "2112"
+      ],
+      "functional": [
+        "brunklaus2020_026"
+      ]
+    },
+    "SCN1A:p.Leu263Val": {
+      "clinical": [
+        "2454"
+      ],
+      "functional": [
+        "brunklaus2020_006"
+      ]
+    },
+    "SCN1A:p.Gly177Ala": {
+      "clinical": [
+        "4417"
+      ],
+      "functional": [
+        "brunklaus2020_002"
+      ]
+    },
+    "SCN1A:p.Leu1670Trp": {
+      "clinical": [
+        "4421"
+      ],
+      "functional": [
+        "brunklaus2020_031"
+      ]
+    },
+    "SCN1A:p.Met1267Ile": {
+      "clinical": [
+        "4422"
+      ],
+      "functional": [
+        "brunklaus2020_022"
+      ]
+    },
+    "SCN1A:p.Arg1927Gly": {
+      "clinical": [
+        "4426"
+      ],
+      "functional": [
+        "brunklaus2020_040"
+      ]
+    },
+    "SCN1A:p.Gln1923Arg": {
+      "clinical": [
+        "4429"
+      ],
+      "functional": [
+        "brunklaus2020_039"
+      ]
+    }
+  },
+  "groups_assigned_to_multiple_splits": [],
+  "interpretation": "Shared variants are retained for audit but assigned to one deterministic split across products. They must not be treated as independent observations."
+}
