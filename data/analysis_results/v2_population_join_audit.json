@@ -9,8 +9,16 @@
   "status": "PASS_WITH_COVERAGE_AUDIT",
   "source_rows": 5056,
   "source_duplicate_join_keys": 0,
-  "matched_rows": 1407,
-  "unmatched_rows": 9289,
-  "coverage_fraction": 0.13154450261780104,
+  "source_duplicate_rsid_allele_keys": 0,
+  "matched_rows": 2534,
+  "exact_coordinate_matches": 1407,
+  "rsid_allele_matches": 1127,
+  "ambiguous_rsid_rows": 0,
+  "unmatched_rows": 8162,
+  "coverage_fraction": 0.2369109947643979,
+  "join_methods": [
+    "exact_coordinate",
+    "rsid_allele"
+  ],
   "next_action": "Review coverage, assembly, and allele semantics before updating V2 evidence completeness."
 }
