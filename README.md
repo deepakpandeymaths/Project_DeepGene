@@ -537,6 +537,22 @@ The same checks run automatically in GitHub Actions for pushes and pull
 requests. The workflow also validates the frontend JavaScript, exercises the
 local JSON API, and compiles the research manuscript.
 
+### V2 HPO enrichment
+
+The HPO workflow downloads the versioned official ontology listed in
+`data/raw/hpo_release_manifest.json` and runs:
+
+~~~powershell
+Invoke-WebRequest https://purl.obolibrary.org/obo/hp.obo -OutFile data/raw/hp.obo
+python data/ml/60_enrich_v2_hpo_official.py
+~~~
+
+Only exact normalized HPO names and synonyms are accepted. Approximate matches,
+disease names, and ambiguous terms remain unresolved. HPO results are
+annotation-only and are not converted into clinical, pathogenicity, or LOF/GOF
+training labels. The audit is written to
+`data/analysis_results/v2_hpo_join_audit.json`.
+
 ### Rebuild the SCN1A supplementary candidate
 
 ~~~powershell

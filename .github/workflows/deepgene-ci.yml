@@ -37,6 +37,11 @@ jobs:
       - name: Run V2 unit and contract tests
         run: python -m unittest discover -s tests -p 'test_v2_*.py' -v
 
+      - name: Refresh official HPO annotation audit
+        run: |
+          curl --fail --location --retry 3 https://purl.obolibrary.org/obo/hp.obo --output data/raw/hp.obo
+          python data/ml/60_enrich_v2_hpo_official.py
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:

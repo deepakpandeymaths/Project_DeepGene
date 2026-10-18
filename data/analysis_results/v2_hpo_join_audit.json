@@ -1,26 +1,22 @@
 {
   "created": "2026-10-18",
-  "status": "STAGED_PENDING_OFFICIAL_HPO_VERIFICATION",
+  "status": "OFFICIAL_HPO_EXACT_MATCH_ANNOTATION_ONLY",
+  "ontology_file": "data\\raw\\hp.obo",
+  "hpo_release": "hp/releases/2026-09-01",
   "input_file": "data\\processed\\deepgene_phenotype_normalized_v1.csv",
   "input_rows": 5381,
   "annotation_rows": 6707,
+  "unique_terms_seen": 115,
   "unique_variants_seen": 5381,
-  "unique_variants_with_seed_mapping": 57,
+  "unique_variants_with_official_exact_match": 106,
   "mapping_status_counts": {
-    "unmapped_pending_official_hpo": 6650,
-    "exact_seed_candidate": 57
-  },
-  "seed_mappings": {
-    "seizure": {
-      "hpo_id": "HP:0001250",
-      "label": "Seizure"
-    }
+    "unmapped_pending_curated_review": 6598,
+    "official_exact_match": 109
   },
   "rules": [
-    "Disease names and clinical classifications are not automatically treated as HPO phenotypes.",
-    "Unmapped terms remain visible and are not assigned guessed ontology IDs.",
-    "Seed mappings are not safe for training until verified against a versioned official HPO resource.",
-    "HPO normalization does not create clinical labels or functional LOF/GOF labels."
-  ],
-  "next_gate": "Add an official HPO release or validated mapping file, then audit mapped and unmatched terms before updating evidence completeness."
+    "Only exact normalized HPO names and synonyms are accepted.",
+    "Approximate, disease-name, and ambiguous mappings remain unresolved.",
+    "HPO annotations are not LOF/GOF labels, pathogenicity labels, or diagnoses.",
+    "safe_for_training remains 0 until a separate feature policy and validation study are approved."
+  ]
 }

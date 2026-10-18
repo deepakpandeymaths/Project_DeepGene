@@ -731,11 +731,30 @@ Product & Source or version & Role and interpretation\\
 V2 master variant table & ClinVar-derived v1 snapshot & Canonical SCN1A identity and evidence join product; not an adjudicated clinical label set.\\
 Functional evidence & SCION and SCN1A supplementary source & Source-specific LOF/GOF or functional-effect experiments; targets remain separate from ClinVar assertions.\\
 AlphaMissense annotations & Gene/transcript table, 19,233 rows & Computational annotation only; no automatic retraining.\\
-HPO staging & Conservative exact mapping & Annotation staging; unmapped phenotype text remains explicit.\\
+HPO enrichment & Official HPO release hp/releases/2026-09-01 & Exact name/synonym annotation only; unmapped and ambiguous terms remain explicit.\\
 Population annotations & gnomAD v4.1.2 and public API & Allele-frequency evidence joined by validated coordinates, rsID alleles, API, and liftover paths.\\
 Conversation memory & Local JSONL context & Retrieval-style context only; excluded from training and public release.\\
 \bottomrule
 \end{longtable}
+
+\subsection{HPO enrichment and phenotype coverage}
+The V2 phenotype workflow uses the official Human Phenotype Ontology release
+\code{hp/releases/2026-09-01}. It compares normalized ClinVar phenotype terms
+with HPO names and synonyms using exact matching only. No approximate string
+matching, disease-name inference, or guessed ontology assignment is performed.
+Among 6,707 phenotype-term rows representing 115 distinct normalized terms,
+109 rows received an official exact HPO match, covering 106 of 5,381 unique
+SCN1A variants. The remaining 6,598 rows remain unresolved for curated review.
+All HPO rows retain \code{safe\_for\_training=0}: these annotations are not
+clinical labels, pathogenicity labels, or LOF/GOF targets.
+
+The HPO audit is stored in
+\code{data/analysis\_results/v2\_hpo\_join\_audit.json}, and the normalized
+annotation table is stored in
+\code{data/processed/deepgene\_v2\_hpo\_annotations.csv}. This conservative
+coverage is a transparent annotation baseline; it should not be interpreted as
+complete phenotype coverage or as evidence that an unmatched variant lacks a
+phenotype.
 
 \subsection{Coverage accounting and uncertainty reporting}
 The population result is reported at two levels because one biological variant

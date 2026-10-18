@@ -1,0 +1,9 @@
+{
+  "name": "Human Phenotype Ontology",
+  "release": "hp/releases/2026-09-01",
+  "download_url": "https://purl.obolibrary.org/obo/hp.obo",
+  "local_filename": "hp.obo",
+  "matching_policy": "exact normalized HPO names and synonyms only",
+  "annotation_only": true,
+  "safe_for_training": false
+}
