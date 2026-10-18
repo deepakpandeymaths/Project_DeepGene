@@ -8,25 +8,25 @@
   ],
   "source_transcripts": 5,
   "representation_rows": 10696,
-  "matched_representation_rows": 2618,
-  "representation_coverage": 0.24476439790575916,
+  "matched_representation_rows": 2901,
+  "representation_coverage": 0.2712228870605834,
   "variant_level_rows": 5381,
-  "variant_level_matched_rows": 1493,
-  "variant_level_coverage": 0.2774577216130831,
-  "unmatched_rows": 8078,
+  "variant_level_matched_rows": 1597,
+  "variant_level_coverage": 0.2967849842036796,
+  "unmatched_rows": 7795,
   "unmatched_by_assembly": {
-    "GRCh37": 4242,
+    "GRCh37": 3959,
     "GRCh38": 3826,
     "na": 10
   },
   "unmatched_reason_counts": {
-    "no_shared_rsid": 7478,
-    "shared_rsid_allele_mismatch": 600
+    "no_shared_rsid": 7207,
+    "shared_rsid_allele_mismatch": 588
   },
-  "unmatched_with_shared_rsid": 600,
-  "shared_rsid_allele_mismatches": 600,
+  "unmatched_with_shared_rsid": 588,
+  "shared_rsid_allele_mismatches": 588,
   "safe_additional_matches_from_current_export": 0,
-  "reason": "The export contains only chromosome 2 rows; shared rsIDs for currently unmatched rows do not agree on alleles, so they cannot be used as fallback matches.",
-  "next_action": "Retry failed API batches with backoff, then acquire a complete SCN1A export and/or add an approved GRCh37-to-GRCh38 chain.",
+  "reason": "The local export and targeted API/liftover enrichment are partial; remaining shared rsIDs with allele disagreement are excluded from matching.",
+  "next_action": "Retry failed API batches with backoff and evaluate additional transcript or regional gnomAD coverage.",
   "safety_rule": "Do not match by rsID alone when reference and alternate alleles disagree; unmatched does not mean rare or benign."
 }

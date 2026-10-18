@@ -28,7 +28,7 @@ class V2PopulationJoinTests(unittest.TestCase):
         self.assertEqual(len(rows), 10696)
         self.assertEqual(
             {row["match_method"] for row in rows},
-            {"exact_coordinate", "rsid_allele", "gnomad_api_exact", "none"},
+            {"exact_coordinate", "rsid_allele", "gnomad_api_exact", "gnomad_api_liftover", "none"},
         )
         self.assertTrue(
             all(
@@ -44,7 +44,7 @@ class V2PopulationJoinTests(unittest.TestCase):
         ) as handle:
             rows = list(csv.DictReader(handle))
         self.assertEqual(len(rows), 5381)
-        self.assertEqual(sum(row["population_evidence_status"] == "available" for row in rows), 1493)
+        self.assertEqual(sum(row["population_evidence_status"] == "available" for row in rows), 1597)
         self.assertTrue(all(row["population_frequency_present"] in {"0", "1"} for row in rows))
 
 

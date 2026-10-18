@@ -1,0 +1,12 @@
+{
+  "created": "2026-10-18",
+  "status": "LIFTOVER_COMPLETE",
+  "chain_file": "data\\raw\\hg19ToHg38.over.chain.gz",
+  "input_unmatched_grch37_rows": 4242,
+  "audit": {
+    "lifted_unique_targets": 4184,
+    "no_liftover_result": 58
+  },
+  "target_output": "data\\processed\\deepgene_v2_grch37_liftover_targets.json",
+  "safety_rule": "Lifted coordinates are candidates for API matching only; reference and alternate alleles must still agree."
+}

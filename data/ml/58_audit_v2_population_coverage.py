@@ -89,8 +89,8 @@ def main() -> None:
         "unmatched_with_shared_rsid": shared_rsid,
         "shared_rsid_allele_mismatches": allele_mismatch,
         "safe_additional_matches_from_current_export": 0,
-        "reason": "The export contains only chromosome 2 rows; shared rsIDs for currently unmatched rows do not agree on alleles, so they cannot be used as fallback matches.",
-        "next_action": "Retry failed API batches with backoff, then acquire a complete SCN1A export and/or add an approved GRCh37-to-GRCh38 chain.",
+        "reason": "The local export and targeted API/liftover enrichment are partial; remaining shared rsIDs with allele disagreement are excluded from matching.",
+        "next_action": "Retry failed API batches with backoff and evaluate additional transcript or regional gnomAD coverage.",
         "safety_rule": "Do not match by rsID alone when reference and alternate alleles disagree; unmatched does not mean rare or benign.",
     }
     RESULTS.mkdir(parents=True, exist_ok=True)
