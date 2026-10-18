@@ -1,0 +1,44 @@
+{
+  "audit_date": "2026-10-18",
+  "purpose": "V2 identity, duplicate, cross-source overlap, and label-conflict audit",
+  "source_summaries": {
+    "clinvar_variant_id": {
+      "rows": 5381,
+      "nonempty_identity_keys": 5381,
+      "unique_identity_keys": 5381,
+      "duplicate_identity_groups": 0,
+      "duplicate_rows_beyond_first": 0,
+      "conflicting_label_groups": 0,
+      "conflicting_labels": {}
+    },
+    "brunklaus_variant_key": {
+      "rows": 40,
+      "nonempty_identity_keys": 40,
+      "unique_identity_keys": 40,
+      "duplicate_identity_groups": 0,
+      "duplicate_rows_beyond_first": 0,
+      "conflicting_label_groups": 0,
+      "conflicting_labels": {}
+    },
+    "scion_variant_key": {
+      "rows": 335,
+      "nonempty_identity_keys": 335,
+      "unique_identity_keys": 335,
+      "duplicate_identity_groups": 0,
+      "duplicate_rows_beyond_first": 0,
+      "conflicting_label_groups": 0,
+      "conflicting_labels": {}
+    }
+  },
+  "cross_source_overlaps": {
+    "brunklaus_scion_functional_keys": 0,
+    "clinical_functional_protein_keys": 39,
+    "clinical_variants_with_functional_records": 41
+  },
+  "alphamissense": {
+    "rows": 19233,
+    "unique_transcript_ids": 19233,
+    "master_join_status": "not_joined_transcript_only_source_without_variant_transcript_mapping"
+  },
+  "interpretation": "Duplicate and overlap counts are audit signals. Cross-source overlap does not make either source an independent clinical gold standard."
+}
