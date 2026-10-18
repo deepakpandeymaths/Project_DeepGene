@@ -8,19 +8,19 @@
   ],
   "source_transcripts": 5,
   "representation_rows": 10696,
-  "matched_representation_rows": 2901,
-  "representation_coverage": 0.2712228870605834,
+  "matched_representation_rows": 2906,
+  "representation_coverage": 0.27169035153328347,
   "variant_level_rows": 5381,
-  "variant_level_matched_rows": 1597,
-  "variant_level_coverage": 0.2967849842036796,
-  "unmatched_rows": 7795,
+  "variant_level_matched_rows": 1602,
+  "variant_level_coverage": 0.2977141795205352,
+  "unmatched_rows": 7790,
   "unmatched_by_assembly": {
-    "GRCh37": 3959,
+    "GRCh37": 3954,
     "GRCh38": 3826,
     "na": 10
   },
   "unmatched_reason_counts": {
-    "no_shared_rsid": 7207,
+    "no_shared_rsid": 7202,
     "shared_rsid_allele_mismatch": 588
   },
   "unmatched_with_shared_rsid": 588,

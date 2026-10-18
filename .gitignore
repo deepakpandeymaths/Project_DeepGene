@@ -15,6 +15,7 @@ env/
 # Local conversation memory may contain sensitive research notes.
 data/memory/*.jsonl
 data/raw/hp.obo
+data/processed/v2_liftover_api_checkpoint.jsonl
 
 .ipynb_checkpoints/
 

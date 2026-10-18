@@ -1,0 +1,172 @@
+[
+  {
+    "source_variant_id": "282505",
+    "source_variation_id": "331856",
+    "source_assembly": "GRCh37",
+    "source_chromosome": "2",
+    "source_position": "166845794",
+    "reference_allele": "G",
+    "alternate_allele": "A",
+    "lifted_variant_id": "2-165989284-G-A",
+    "target_assembly": "GRCh38",
+    "chain_file": "data\\raw\\hg19ToHg38.over.chain.gz",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-165989284-G-A",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 165989284,
+      "ref": "G",
+      "alt": "A",
+      "rsids": [
+        "rs7577411"
+      ],
+      "exome": {
+        "ac": 6,
+        "an": 432,
+        "af": 0.013888888888888888
+      },
+      "genome": {
+        "ac": 12292,
+        "an": 151982,
+        "af": 0.0808779987103736
+      }
+    }
+  },
+  {
+    "source_variant_id": "282516",
+    "source_variation_id": "331859",
+    "source_assembly": "GRCh37",
+    "source_chromosome": "2",
+    "source_position": "166845882",
+    "reference_allele": "GA",
+    "alternate_allele": "G",
+    "lifted_variant_id": "2-165989372-GA-G",
+    "target_assembly": "GRCh38",
+    "chain_file": "data\\raw\\hg19ToHg38.over.chain.gz",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-165989372-GA-G",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 165989372,
+      "ref": "GA",
+      "alt": "G",
+      "rsids": [
+        "rs878898132"
+      ],
+      "exome": {
+        "ac": 0,
+        "an": 414,
+        "af": 0
+      },
+      "genome": {
+        "ac": 51,
+        "an": 149954,
+        "af": 0.00034010429865158646
+      }
+    }
+  },
+  {
+    "source_variant_id": "283171",
+    "source_variation_id": "331858",
+    "source_assembly": "GRCh37",
+    "source_chromosome": "2",
+    "source_position": "166845805",
+    "reference_allele": "C",
+    "alternate_allele": "T",
+    "lifted_variant_id": "2-165989295-C-T",
+    "target_assembly": "GRCh38",
+    "chain_file": "data\\raw\\hg19ToHg38.over.chain.gz",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-165989295-C-T",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 165989295,
+      "ref": "C",
+      "alt": "T",
+      "rsids": [
+        "rs773354801"
+      ],
+      "exome": {
+        "ac": 0,
+        "an": 432,
+        "af": 0
+      },
+      "genome": {
+        "ac": 7,
+        "an": 151988,
+        "af": 4.605626760007369e-05
+      }
+    }
+  },
+  {
+    "source_variant_id": "284767",
+    "source_variation_id": "331855",
+    "source_assembly": "GRCh37",
+    "source_chromosome": "2",
+    "source_position": "166845766",
+    "reference_allele": "G",
+    "alternate_allele": "A",
+    "lifted_variant_id": "2-165989256-G-A",
+    "target_assembly": "GRCh38",
+    "chain_file": "data\\raw\\hg19ToHg38.over.chain.gz",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-165989256-G-A",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 165989256,
+      "ref": "G",
+      "alt": "A",
+      "rsids": [
+        "rs371391758"
+      ],
+      "exome": {
+        "ac": 0,
+        "an": 432,
+        "af": 0
+      },
+      "genome": {
+        "ac": 16,
+        "an": 151996,
+        "af": 0.00010526592805073818
+      }
+    }
+  },
+  {
+    "source_variant_id": "284774",
+    "source_variation_id": "331857",
+    "source_assembly": "GRCh37",
+    "source_chromosome": "2",
+    "source_position": "166845803",
+    "reference_allele": "A",
+    "alternate_allele": "G",
+    "lifted_variant_id": "2-165989293-A-G",
+    "target_assembly": "GRCh38",
+    "chain_file": "data\\raw\\hg19ToHg38.over.chain.gz",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-165989293-A-G",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 165989293,
+      "ref": "A",
+      "alt": "G",
+      "rsids": [
+        "rs184794128"
+      ],
+      "exome": {
+        "ac": 0,
+        "an": 432,
+        "af": 0
+      },
+      "genome": {
+        "ac": 864,
+        "an": 152186,
+        "af": 0.005677263348796867
+      }
+    }
+  }
+]

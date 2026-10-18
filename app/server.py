@@ -46,6 +46,7 @@ V2_LIFTOVER_AUDIT = ROOT / "data" / "analysis_results" / "v2_liftover_gnomad_api
 V2_GNOMAD_API_AUDIT = ROOT / "data" / "analysis_results" / "v2_gnomad_api_enrichment_report.json"
 V2_HPO_AUDIT = ROOT / "data" / "analysis_results" / "v2_hpo_join_audit.json"
 V2_HPO_ANNOTATIONS = ROOT / "data" / "processed" / "deepgene_v2_hpo_annotations.csv"
+V2_POPULATION_ANNOTATIONS = ROOT / "data" / "processed" / "deepgene_v2_population_annotations.csv"
 UPLOADS.mkdir(parents=True, exist_ok=True)
 MEMORY_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -142,12 +143,15 @@ def v2_coverage():
     api = read_json(V2_GNOMAD_API_AUDIT)
     hpo = read_json(V2_HPO_AUDIT)
     hpo_rows = read_csv_records(V2_HPO_ANNOTATIONS)
+    population_rows = read_csv_records(V2_POPULATION_ANNOTATIONS)
 
-    representation_total = int(population.get("clinical_representation_rows") or 0)
+    representation_total = len(population_rows) or int(population.get("clinical_representation_rows") or 0)
     base_matches = int(population.get("matched_rows") or 0)
     api_matches = int(api.get("allele_consistent_matches") or 0)
     liftover_matches = int(liftover.get("allele_consistent_matches") or 0)
-    representation_matched = base_matches + api_matches + liftover_matches
+    representation_matched = sum(row.get("join_status") == "matched" for row in population_rows)
+    if not population_rows:
+        representation_matched = base_matches + api_matches + liftover_matches
     variant_total = len(completeness)
     variant_matched = sum(row.get("population_frequency_present") == "1" for row in completeness)
     hpo_matched_rows = sum(row.get("mapping_status") == "official_exact_match" for row in hpo_rows)

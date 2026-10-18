@@ -1586,9 +1586,9 @@ variant_id,variation_id,assembly,chromosome,position,reference_allele,alternate_
 274642,290405,GRCh38,2,166051748,A,C,,,,,,unmatched,none,SRC-GNOMAD,gnomAD_v4.1.2,No gnomAD row matched this genomic representation.
 275319,291082,GRCh37,2,166900526,G,A,0.0000012390637138952322,0.00000553,2,1614122,0,matched,rsid_allele,SRC-GNOMAD,gnomAD_v4.1.2,Blank frequency fields remain unavailable and are not interpreted as zero.
 275319,291082,GRCh38,2,166044016,G,A,0.0000012390637138952322,0.00000553,2,1614122,0,matched,exact_coordinate,SRC-GNOMAD,gnomAD_v4.1.2,Blank frequency fields remain unavailable and are not interpreted as zero.
-282505,331856,GRCh37,2,166845794,G,A,,,,,,unmatched,none,SRC-GNOMAD,gnomAD_v4.1.2,No gnomAD row matched this genomic representation.
+282505,331856,GRCh37,2,166845794,G,A,0.0808779987104,0.0808779987104,12298,152414,,matched,gnomad_api_liftover,SRC-GNOMAD,gnomAD_v4_api_liftover,"Frequency retrieved after validated GRCh37-to-GRCh38 liftover; annotation only, not a training label."
 282505,331856,GRCh38,2,165989284,G,A,,,,,,unmatched,none,SRC-GNOMAD,gnomAD_v4.1.2,No gnomAD row matched this genomic representation.
-282516,331859,GRCh37,2,166845882,GA,G,,,,,,unmatched,none,SRC-GNOMAD,gnomAD_v4.1.2,No gnomAD row matched this genomic representation.
+282516,331859,GRCh37,2,166845882,GA,G,0.000340104298652,0.000340104298652,51,150368,,matched,gnomad_api_liftover,SRC-GNOMAD,gnomAD_v4_api_liftover,"Frequency retrieved after validated GRCh37-to-GRCh38 liftover; annotation only, not a training label."
 282516,331859,GRCh38,2,165989372,GA,G,,,,,,unmatched,none,SRC-GNOMAD,gnomAD_v4.1.2,No gnomAD row matched this genomic representation.
 282517,331863,GRCh37,2,166846062,T,C,,,,,,unmatched,none,SRC-GNOMAD,gnomAD_v4.1.2,No gnomAD row matched this genomic representation.
 282517,331863,GRCh38,2,165989552,T,C,,,,,,unmatched,none,SRC-GNOMAD,gnomAD_v4.1.2,No gnomAD row matched this genomic representation.
@@ -1610,7 +1610,7 @@ variant_id,variation_id,assembly,chromosome,position,reference_allele,alternate_
 282541,331891,GRCh38,2,166042281,T,G,0.00014468077707859085,0.00017341,233,1610442,0,matched,exact_coordinate,SRC-GNOMAD,gnomAD_v4.1.2,Blank frequency fields remain unavailable and are not interpreted as zero.
 282542,331892,GRCh37,2,166898938,TA,T,0.00014583766619153177,0.00013309,230,1577096,0,matched,rsid_allele,SRC-GNOMAD,gnomAD_v4.1.2,Blank frequency fields remain unavailable and are not interpreted as zero.
 282542,331892,GRCh38,2,166042428,TA,T,0.00014583766619153177,0.00013309,230,1577096,0,matched,exact_coordinate,SRC-GNOMAD,gnomAD_v4.1.2,Blank frequency fields remain unavailable and are not interpreted as zero.
-283171,331858,GRCh37,2,166845805,C,T,,,,,,unmatched,none,SRC-GNOMAD,gnomAD_v4.1.2,No gnomAD row matched this genomic representation.
+283171,331858,GRCh37,2,166845805,C,T,4.60562676001e-05,4.60562676001e-05,7,152420,,matched,gnomad_api_liftover,SRC-GNOMAD,gnomAD_v4_api_liftover,"Frequency retrieved after validated GRCh37-to-GRCh38 liftover; annotation only, not a training label."
 283171,331858,GRCh38,2,165989295,C,T,,,,,,unmatched,none,SRC-GNOMAD,gnomAD_v4.1.2,No gnomAD row matched this genomic representation.
 283180,331865,GRCh37,2,166846273,C,T,,,,,,unmatched,none,SRC-GNOMAD,gnomAD_v4.1.2,No gnomAD row matched this genomic representation.
 283180,331865,GRCh38,2,165989763,C,T,,,,,,unmatched,none,SRC-GNOMAD,gnomAD_v4.1.2,No gnomAD row matched this genomic representation.
@@ -1620,9 +1620,9 @@ variant_id,variation_id,assembly,chromosome,position,reference_allele,alternate_
 283182,331883,GRCh38,2,165996043,T,C,0.0002279927936882649,0.0034865100000000013,367,1609700,2,matched,exact_coordinate,SRC-GNOMAD,gnomAD_v4.1.2,Blank frequency fields remain unavailable and are not interpreted as zero.
 283183,331894,GRCh37,2,166911185,G,C,,,,,,unmatched,none,SRC-GNOMAD,gnomAD_v4.1.2,No gnomAD row matched this genomic representation.
 283183,331894,GRCh38,2,166054675,G,C,,,,,,unmatched,none,SRC-GNOMAD,gnomAD_v4.1.2,No gnomAD row matched this genomic representation.
-284767,331855,GRCh37,2,166845766,G,A,,,,,,unmatched,none,SRC-GNOMAD,gnomAD_v4.1.2,No gnomAD row matched this genomic representation.
+284767,331855,GRCh37,2,166845766,G,A,0.000105265928051,0.000105265928051,16,152428,,matched,gnomad_api_liftover,SRC-GNOMAD,gnomAD_v4_api_liftover,"Frequency retrieved after validated GRCh37-to-GRCh38 liftover; annotation only, not a training label."
 284767,331855,GRCh38,2,165989256,G,A,,,,,,unmatched,none,SRC-GNOMAD,gnomAD_v4.1.2,No gnomAD row matched this genomic representation.
-284774,331857,GRCh37,2,166845803,A,G,,,,,,unmatched,none,SRC-GNOMAD,gnomAD_v4.1.2,No gnomAD row matched this genomic representation.
+284774,331857,GRCh37,2,166845803,A,G,0.0056772633488,0.0056772633488,864,152618,,matched,gnomad_api_liftover,SRC-GNOMAD,gnomAD_v4_api_liftover,"Frequency retrieved after validated GRCh37-to-GRCh38 liftover; annotation only, not a training label."
 284774,331857,GRCh38,2,165989293,A,G,,,,,,unmatched,none,SRC-GNOMAD,gnomAD_v4.1.2,No gnomAD row matched this genomic representation.
 284775,331860,GRCh37,2,166845891,A,T,,,,,,unmatched,none,SRC-GNOMAD,gnomAD_v4.1.2,No gnomAD row matched this genomic representation.
 284775,331860,GRCh38,2,165989381,A,T,,,,,,unmatched,none,SRC-GNOMAD,gnomAD_v4.1.2,No gnomAD row matched this genomic representation.

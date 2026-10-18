@@ -745,10 +745,10 @@ The latest audited result is:
 |---|---:|
 | ClinVar representation rows | 10,696 |
 | Matched representations | 2,901 |
-| Representation-level coverage | 27.12% |
+| Representation-level coverage | 27.17% |
 | V2 master variants | 5,381 |
 | Variants with population evidence | 1,597 |
-| Variant-level coverage | 29.68% |
+| Variant-level coverage | 29.77% |
 | Remaining unmatched representations | 7,795 |
 | Tests passing | 10 |
 
@@ -783,11 +783,15 @@ The retry helpers are available for rate-limited or malformed API batches:
 ~~~powershell
 python data/ml/61_retry_gnomad_api_errors.py
 python data/ml/65_retry_liftover_api_requests.py
+python data/ml/66_retry_liftover_api_checkpointed.py --dry-run
 ~~~
 
-They must be treated as resumable enrichment tools. Results are merged only
-after allele validation and a successful audit. A timeout or failed request is
-not evidence that a variant is absent from gnomAD.
+The checkpointed runner is the preferred liftover retry path. It retries only
+recorded request errors, writes one JSONL checkpoint per attempt, supports
+`--max-requests`, `--max-attempts`, `--sleep`, and `--dry-run`, and can resume
+after interruption. Results are merged only after allele validation and a
+successful audit. A timeout or failed request is not evidence that a variant is
+absent from gnomAD.
 
 The complete gnomAD short-variant release is too large for ordinary local
 download workflows. DeepGene therefore uses targeted API queries and records
@@ -841,7 +845,7 @@ performance.
 | Conservative HPO staging | Complete as staged annotation |
 | gnomAD exact and rsID integration | Complete with coverage audit |
 | gnomAD targeted API enrichment | Partial; 84 direct matches |
-| GRCh37-to-GRCh38 liftover enrichment | Partial; 283 additional matches |
+| GRCh37-to-GRCh38 liftover enrichment | Partial; 288 validated matches |
 | API retry recovery | Pending; previous service timeouts preserved |
 | Independent clinical validation | Pending |
 | Dravet clinical-outcome model | Blocked |

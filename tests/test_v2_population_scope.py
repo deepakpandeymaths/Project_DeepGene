@@ -17,8 +17,8 @@ class V2PopulationScopeTests(unittest.TestCase):
         self.assertEqual(report["source_chromosomes"], ["2"])
         self.assertEqual(report["safe_additional_matches_from_current_export"], 0)
         self.assertEqual(report["shared_rsid_allele_mismatches"], 588)
-        self.assertEqual(report["variant_level_matched_rows"], 1597)
-        self.assertAlmostEqual(report["variant_level_coverage"], 0.2967849842, places=6)
+        self.assertEqual(report["variant_level_matched_rows"], 1602)
+        self.assertAlmostEqual(report["variant_level_coverage"], 0.2977141795, places=6)
 
 
 if __name__ == "__main__":
