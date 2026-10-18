@@ -1,0 +1,62 @@
+{
+  "audit_date": "2026-10-18",
+  "status": "PASS_WITH_GUARDS",
+  "checks": [
+    {
+      "check": "clinical_target_reconstruction",
+      "status": "GUARDED",
+      "fields": [
+        "clinical_significance",
+        "review_status",
+        "conflict_flag"
+      ],
+      "rule": "Do not use a submitted clinical target or its direct aggregation to predict the same target."
+    },
+    {
+      "check": "functional_target_reconstruction",
+      "status": "GUARDED",
+      "fields": [
+        "functional_label",
+        "functional_target"
+      ],
+      "rule": "Functional labels are targets and must be excluded from feature matrices."
+    },
+    {
+      "check": "cross_source_duplicate_overlap",
+      "status": "REPORTED",
+      "fields": [
+        "protein_key",
+        "variant_key"
+      ],
+      "rule": "Overlapping biological variants require grouped splits or explicit source-aware evaluation."
+    },
+    {
+      "check": "alphamissense_annotation",
+      "status": "SAFE_AS_ANNOTATION",
+      "fields": [
+        "alphamissense_score"
+      ],
+      "rule": "AlphaMissense is not converted to LOF/GOF or clinical ground truth."
+    },
+    {
+      "check": "conversation_memory",
+      "status": "EXCLUDED",
+      "fields": [
+        "conversation_text"
+      ],
+      "rule": "Conversation memory is retrieval context only and cannot enter training labels or features."
+    },
+    {
+      "check": "missing_evidence",
+      "status": "GUARDED",
+      "fields": [
+        "phenotypes",
+        "population_max_af",
+        "hpo_id",
+        "splice_score"
+      ],
+      "rule": "Missing evidence means unavailable, not negative or benign."
+    }
+  ],
+  "training_policy": "Only source-labelled, provenance-complete, experiment-specific targets may enter supervised training."
+}
