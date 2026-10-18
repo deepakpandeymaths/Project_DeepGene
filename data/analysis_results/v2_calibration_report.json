@@ -1,0 +1,141 @@
+{
+  "status": "RESEARCH_ONLY_CALIBRATION",
+  "models": {
+    "logistic_regression": {
+      "validation": {
+        "rows": 46,
+        "class_counts": {
+          "LOF": 32,
+          "GOF": 14
+        },
+        "brier_score": 0.21007499567366744,
+        "log_loss": 0.6109271232894653,
+        "expected_calibration_error": 0.001438617334648451,
+        "roc_auc": 0.5446428571428571,
+        "mean_entropy_bits": 0.8839662527290403,
+        "uncertainty_level_counts": {
+          "moderate": 42,
+          "uncertain": 4
+        }
+      },
+      "test": {
+        "rows": 38,
+        "class_counts": {
+          "GOF": 19,
+          "LOF": 19
+        },
+        "brier_score": 0.27629222632873546,
+        "log_loss": 0.748434696753455,
+        "expected_calibration_error": 0.18859450695819907,
+        "roc_auc": 0.6869806094182825,
+        "mean_entropy_bits": 0.8914493494453838,
+        "uncertainty_level_counts": {
+          "moderate": 34,
+          "uncertain": 4
+        }
+      }
+    },
+    "random_forest": {
+      "validation": {
+        "rows": 46,
+        "class_counts": {
+          "LOF": 32,
+          "GOF": 14
+        },
+        "brier_score": 0.210839131516874,
+        "log_loss": 0.612516270077849,
+        "expected_calibration_error": 0.0014386188554511015,
+        "roc_auc": 0.5368303571428571,
+        "mean_entropy_bits": 0.8858659824772898,
+        "uncertainty_level_counts": {
+          "moderate": 45,
+          "uncertain": 1
+        }
+      },
+      "test": {
+        "rows": 38,
+        "class_counts": {
+          "GOF": 19,
+          "LOF": 19
+        },
+        "brier_score": 0.28321622565182425,
+        "log_loss": 0.7649760240818178,
+        "expected_calibration_error": 0.1938692325470917,
+        "roc_auc": 0.6204986149584487,
+        "mean_entropy_bits": 0.8863779915623351,
+        "uncertainty_level_counts": {
+          "moderate": 38
+        }
+      }
+    },
+    "gradient_boosting": {
+      "validation": {
+        "rows": 46,
+        "class_counts": {
+          "LOF": 32,
+          "GOF": 14
+        },
+        "brier_score": 0.1984551959222217,
+        "log_loss": 0.586392955484872,
+        "expected_calibration_error": 0.07411155410041914,
+        "roc_auc": 0.6517857142857143,
+        "mean_entropy_bits": 0.8546975724090704,
+        "uncertainty_level_counts": {
+          "high": 6,
+          "moderate": 25,
+          "uncertain": 15
+        }
+      },
+      "test": {
+        "rows": 38,
+        "class_counts": {
+          "GOF": 19,
+          "LOF": 19
+        },
+        "brier_score": 0.2570986246339892,
+        "log_loss": 0.7113331213108282,
+        "expected_calibration_error": 0.17805960648578395,
+        "roc_auc": 0.6869806094182825,
+        "mean_entropy_bits": 0.8789460387177034,
+        "uncertainty_level_counts": {
+          "uncertain": 13,
+          "moderate": 23,
+          "high": 2
+        }
+      }
+    },
+    "majority_baseline": {
+      "validation": {
+        "rows": 46,
+        "class_counts": {
+          "LOF": 32,
+          "GOF": 14
+        },
+        "brier_score": 0.21172229645990698,
+        "log_loss": 0.6145081993098855,
+        "expected_calibration_error": 0.001438616282009364,
+        "roc_auc": 0.5,
+        "mean_entropy_bits": 0.8882496063318895,
+        "uncertainty_level_counts": {
+          "moderate": 46
+        }
+      },
+      "test": {
+        "rows": 38,
+        "class_counts": {
+          "GOF": 19,
+          "LOF": 19
+        },
+        "brier_score": 0.28771890596770294,
+        "log_loss": 0.7749219836564121,
+        "expected_calibration_error": 0.1942135576310341,
+        "roc_auc": 0.5,
+        "mean_entropy_bits": 0.8882496063318894,
+        "uncertainty_level_counts": {
+          "moderate": 38
+        }
+      }
+    }
+  },
+  "interpretation": "Lower Brier score, log loss, and expected calibration error indicate better probability reliability within this exploratory test."
+}
