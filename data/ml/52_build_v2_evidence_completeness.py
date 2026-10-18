@@ -39,6 +39,13 @@ def main() -> None:
     master = read_csv(PROCESSED / "deepgene_v2_master_variants.csv")
     alpha = read_csv(PROCESSED / "alphamissense_gene_hg38.csv")
     population = read_csv(PROCESSED / "deepgene_v2_population_annotations.csv")
+    hpo_path = PROCESSED / "deepgene_v2_hpo_annotations.csv"
+    hpo = read_csv(hpo_path) if hpo_path.exists() else []
+    hpo_by_variant = {
+        clean(item.get("variant_id"))
+        for item in hpo
+        if clean(item.get("mapping_status")) == "official_exact_match"
+    }
     population_by_variant: dict[str, list[dict[str, str]]] = {}
     for item in population:
         population_by_variant.setdefault(clean(item.get("variant_id")), []).append(item)
@@ -96,7 +103,7 @@ def main() -> None:
             "phenotype": phenotype_present,
             "functional": functional_present,
             "alphamissense_variant_join": 0,
-            "hpo_normalized": 0,
+            "hpo_normalized": int(clean(source.get("variant_id")) in hpo_by_variant),
             "population_frequency": population_present,
             "conservation": 0,
             "splice": 0,
@@ -123,7 +130,7 @@ def main() -> None:
             "meaningful_phenotype_present": meaningful_present,
             "functional_evidence_present": functional_present,
             "alphamissense_variant_join_present": 0,
-            "hpo_normalized_present": 0,
+            "hpo_normalized_present": values["hpo_normalized"],
             "population_frequency_present": population_present,
             "conservation_present": 0,
             "splice_evidence_present": 0,
@@ -166,9 +173,10 @@ def main() -> None:
             "Computational annotations remain annotations until a separate validated target is defined.",
             "New sources must include release/version, accession or URL, join key, coverage report, and missing-value semantics.",
         ],
-        "next_gate": "Add validated HPO mappings and preserve population-frequency missingness before any model-feature experiment.",
+        "next_gate": "Preserve population-frequency missingness and validate any future feature experiment against independent data.",
         "alphamissense_rows_preserved": len(alpha),
         "alphamissense_join_note": "The current AlphaMissense table contains transcript-level rows but no validated mapping into the V2 variant master; all variant-level join indicators remain zero.",
+        "hpo_join_note": f"Official exact HPO matches contribute annotation completeness for {len(hpo_by_variant)} variants; unresolved terms remain unavailable and safe_for_training remains 0.",
         "population_join_note": "gnomAD frequency is joined as annotation evidence using exact coordinates and allele-aware rsID fallbacks; it is never converted into a training label.",
     }
     (RESULTS / "v2_evidence_completeness_report.json").write_text(json.dumps(plan, indent=2), encoding="utf-8")
