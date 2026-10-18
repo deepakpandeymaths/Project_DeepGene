@@ -1,12 +1,12 @@
 {
-  "pending_targets": 2299,
+  "pending_targets": 2274,
   "selected_targets": 25,
   "checkpoint": "data\\processed\\v2_liftover_api_checkpoint.jsonl",
   "dry_run": false,
   "status_counts": {
-    "matched": 25,
-    "not_found": 5
+    "matched": 29,
+    "not_found": 26
   },
-  "matches": 25,
+  "matches": 29,
   "next_action": "Run data/ml/64_merge_liftover_gnomad_matches.py only after reviewing the checkpoint and audit."
 }
