@@ -491,6 +491,22 @@ No upload is automatically promoted to a clinical model.
 
 ## 9. Running and testing DeepGene v1
 
+### First-time setup
+
+Use Python 3.12 or a compatible recent Python release. From the project root:
+
+~~~powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+Copy-Item .env.example .env
+~~~
+
+The `.env` file is optional and must never be committed. Add a real
+`OPENROUTER_API_KEY` only when external AI answers are required. The local
+evidence assistant works without it.
+
 ### Start the application
 
 ~~~powershell
@@ -510,6 +526,16 @@ node --check app/static/app.js
 Invoke-RestMethod http://127.0.0.1:8765/api/health
 Invoke-RestMethod http://127.0.0.1:8765/api/summary | ConvertTo-Json -Depth 5
 ~~~
+
+### Run the V2 regression tests
+
+~~~powershell
+python -m unittest discover -s tests -p "test_v2_*.py" -v
+~~~
+
+The same checks run automatically in GitHub Actions for pushes and pull
+requests. The workflow also validates the frontend JavaScript, exercises the
+local JSON API, and compiles the research manuscript.
 
 ### Rebuild the SCN1A supplementary candidate
 

@@ -1,0 +1,5 @@
+# DeepGene runtime and research-analysis dependencies.
+# Python 3.12 is used by the CI workflow.
+pandas>=2.2,<3
+scikit-learn>=1.5,<2
+openpyxl>=3.1,<4
