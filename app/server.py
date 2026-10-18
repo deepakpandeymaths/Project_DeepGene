@@ -24,7 +24,7 @@ import urllib.error
 import urllib.request
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import parse_qs, urlparse
 
 import pandas as pd
 
@@ -37,6 +37,9 @@ MEMORY_DIR = ROOT / "data" / "memory"
 CONVERSATIONS = MEMORY_DIR / "conversations.jsonl"
 MODEL = ROOT / "data" / "model" / "deepgene_generation2_gbm_app.pkl"
 ALPHAMISSENSE_PROCESSED = ROOT / "data" / "processed" / "alphamissense_gene_hg38.csv"
+V2_PRIORITIZATION = ROOT / "data" / "processed" / "deepgene_v2_research_prioritization.csv"
+V2_COMPLETENESS = ROOT / "data" / "processed" / "deepgene_v2_evidence_completeness.csv"
+V2_CALIBRATION = ROOT / "data" / "ml_results" / "v2_calibration_report.json"
 UPLOADS.mkdir(parents=True, exist_ok=True)
 MEMORY_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -72,6 +75,48 @@ def db_summary():
             conversation_count = sum(1 for _ in handle)
     result["learning"] = {"events": len(events), "last_event": events[-1].get("kind", "unknown") if events else "None yet", "last_rows": events[-1].get("rows_received") if events else None, "conversation_turns": conversation_count, "message": "New evidence is validated and logged before a research candidate model is built."}
     return result
+
+
+def read_csv_records(path):
+    if not path.exists():
+        return []
+    with path.open(encoding="utf-8-sig", newline="") as handle:
+        return list(csv.DictReader(handle))
+
+
+def v2_summary():
+    prioritized = read_csv_records(V2_PRIORITIZATION)
+    completeness = read_csv_records(V2_COMPLETENESS)
+    calibration = {}
+    if V2_CALIBRATION.exists():
+        try:
+            calibration = json.loads(V2_CALIBRATION.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            calibration = {}
+    bands = {}
+    for row in prioritized:
+        band = row.get("priority_band", "unknown")
+        bands[band] = bands.get(band, 0) + 1
+    completeness_bands = {}
+    for row in completeness:
+        band = row.get("evidence_completeness_category", "unknown")
+        completeness_bands[band] = completeness_bands.get(band, 0) + 1
+    return {
+        "status": "research_only",
+        "prioritized_rows": len(prioritized),
+        "priority_bands": bands,
+        "evidence_completeness": completeness_bands,
+        "calibration_models": sorted((calibration.get("models") or {}).keys()),
+        "message": "V2 rankings support research review only; they are not clinical classifications or diagnoses.",
+    }
+
+
+def v2_prioritization(limit=20, query=""):
+    rows = read_csv_records(V2_PRIORITIZATION)
+    query = str(query).strip().lower()
+    if query:
+        rows = [row for row in rows if query in row.get("variant_key", "").lower() or query in row.get("source_row_id", "").lower()]
+    return rows[:max(1, min(int(limit), 100))]
 
 
 def load_conversation_memory(limit=12):
@@ -275,8 +320,18 @@ class Handler(BaseHTTPRequestHandler):
         self.send_response(status); self.send_header("Content-Type", "application/json"); self.send_header("Content-Length", str(len(data))); self.end_headers(); self.wfile.write(data)
 
     def do_GET(self):
-        path = urlparse(self.path).path
+        parsed = urlparse(self.path)
+        path = parsed.path
         if path == "/api/summary": return self.send_json(db_summary())
+        if path == "/api/v2/summary": return self.send_json(v2_summary())
+        if path == "/api/v2/prioritization":
+            params = parse_qs(parsed.query)
+            return self.send_json({"rows": v2_prioritization(params.get("limit", [20])[0], params.get("q", [""])[0])})
+        if path == "/api/v2/variant":
+            params = parse_qs(parsed.query)
+            key = params.get("variant_key", [""])[0]
+            rows = v2_prioritization(100, key)
+            return self.send_json({"variant_key": key, "rows": rows, "found": bool(rows)})
         if path == "/api/health": return self.send_json({"ok": True})
         target = STATIC / ("index.html" if path in {"/", ""} else path.lstrip("/"))
         if target.exists() and target.is_file():
