@@ -24,6 +24,13 @@ class V2ApiContractTests(unittest.TestCase):
         self.assertGreater(payload["hpo"]["term_rows"], 0)
         self.assertTrue(payload["hpo"]["annotation_only"])
 
+    def test_calibration_contract_is_research_only(self):
+        payload = server.v2_calibration()
+        self.assertTrue(payload["research_only"])
+        self.assertGreater(payload["test_rows"], 0)
+        self.assertTrue(payload["models"])
+        self.assertIn("expected_calibration_error", payload["models"][0])
+
 
 if __name__ == "__main__":
     unittest.main()

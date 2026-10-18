@@ -183,6 +183,31 @@ def v2_coverage():
     }
 
 
+def v2_calibration():
+    report = read_json(V2_CALIBRATION)
+    models = []
+    for name, payload in (report.get("models") or {}).items():
+        test = payload.get("test") or {}
+        models.append({
+            "model": name,
+            "rows": test.get("rows", 0),
+            "brier_score": round(float(test.get("brier_score", 0)), 4),
+            "log_loss": round(float(test.get("log_loss", 0)), 4),
+            "expected_calibration_error": round(float(test.get("expected_calibration_error", 0)), 4),
+            "roc_auc": round(float(test.get("roc_auc", 0)), 4),
+            "mean_entropy_bits": round(float(test.get("mean_entropy_bits", 0)), 4),
+            "uncertainty_level_counts": test.get("uncertainty_level_counts", {}),
+        })
+    return {
+        "status": report.get("status", "unavailable"),
+        "protocol": report.get("calibration_protocol", "Not available"),
+        "test_rows": (report.get("rows") or {}).get("test", 0),
+        "models": sorted(models, key=lambda row: row["expected_calibration_error"]),
+        "limitations": report.get("limitations", []),
+        "research_only": True,
+    }
+
+
 def load_conversation_memory(limit=12):
     if not CONVERSATIONS.exists():
         return []
@@ -389,6 +414,7 @@ class Handler(BaseHTTPRequestHandler):
         if path == "/api/summary": return self.send_json(db_summary())
         if path == "/api/v2/summary": return self.send_json(v2_summary())
         if path == "/api/v2/coverage": return self.send_json(v2_coverage())
+        if path == "/api/v2/calibration": return self.send_json(v2_calibration())
         if path == "/api/v2/prioritization":
             params = parse_qs(parsed.query)
             return self.send_json({"rows": v2_prioritization(params.get("limit", [20])[0], params.get("q", [""])[0])})

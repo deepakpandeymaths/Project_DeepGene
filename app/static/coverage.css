@@ -8,3 +8,4 @@
 .coverage-track{height:6px;background:#e8f1ec;border-radius:999px;overflow:hidden}
 .coverage-track i{display:block;height:100%;background:var(--green);border-radius:999px}
 .coverage-note{font-size:10px;color:#80573e;background:#fff2e6;border-radius:9px;padding:8px;margin:12px 0 0}
+.calibration-card{background:#fff;border:1px solid #cfe4d9;border-radius:17px;padding:15px;margin:0 0 15px;box-shadow:0 10px 30px #28634e0b}.calibration-list{display:grid;gap:9px;margin-top:12px}.calibration-row{border-bottom:1px solid var(--line);padding:8px 0}.calibration-row:last-child{border-bottom:0}.calibration-name{font-size:11px;font-weight:800;text-transform:capitalize}.calibration-name small{display:block;color:var(--muted);font-size:10px;font-weight:400;margin-top:2px}.calibration-metrics{display:flex;gap:10px;flex-wrap:wrap;margin-top:7px}.calibration-metrics span{font-size:10px;color:var(--muted)}.calibration-metrics b{color:var(--green-dark)}

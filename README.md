@@ -818,6 +818,13 @@ conversation text, an unlabeled upload, or an annotation score to silently
 become a supervised target. Model retraining requires an explicitly supported
 label source and a controlled preparation script.
 
+The Research Chat dashboard exposes V2 evidence coverage through
+`/api/v2/coverage` and model-quality summaries through
+`/api/v2/calibration`. These panels display population/HPO coverage,
+calibration error, Brier score, ROC--AUC, and uncertainty counts for research
+review. They do not represent disease risk, clinical certainty, or diagnostic
+performance.
+
 ## 16. Current V2 status and next scope
 
 | V2 component | Status |
