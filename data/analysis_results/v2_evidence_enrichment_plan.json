@@ -1,0 +1,18 @@
+{
+  "created": "2026-10-18",
+  "priority_order": [
+    "HPO phenotype normalization with versioned mappings",
+    "gnomAD population frequency with assembly and allele matching",
+    "AlphaMissense variant-level mapping with transcript validation",
+    "conservation annotations",
+    "splice-impact annotations",
+    "SCN1A domain and structural annotations"
+  ],
+  "acceptance_gates": [
+    "No source is merged without a documented join key.",
+    "Coverage and unmatched-row counts are reported.",
+    "Source release and checksum are recorded.",
+    "Missing values remain explicit and are not converted to negative evidence.",
+    "The enriched source is not used as a label without independent validation."
+  ]
+}
