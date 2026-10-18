@@ -6,9 +6,17 @@
   \usepackage{newtxtext,newtxmath}
 \else
   \usepackage{fontspec}
-  \setmainfont{Times New Roman}
-  \setsansfont{Arial}
-  \setmonofont{Courier New}
+  % Use the requested Windows fonts when available, with portable
+  % TeX Live fallbacks for GitHub Actions and other Linux environments.
+  \IfFontExistsTF{Times New Roman}
+    {\setmainfont{Times New Roman}}
+    {\setmainfont{TeX Gyre Termes}}
+  \IfFontExistsTF{Arial}
+    {\setsansfont{Arial}}
+    {\setsansfont{TeX Gyre Heros}}
+  \IfFontExistsTF{Courier New}
+    {\setmonofont{Courier New}}
+    {\setmonofont{TeX Gyre Cursor}}
 \fi
 \usepackage{microtype}
 \usepackage{amsmath,amssymb}
