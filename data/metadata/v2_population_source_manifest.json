@@ -1,7 +1,7 @@
 {
   "source_id": "SRC-GNOMAD",
-  "path": "data\\raw\\gnomad_scn1a_population.tsv",
-  "status": "STATUS: BLOCKED",
+  "path": "data\\raw\\gnomad_scn1a_population.csv",
+  "status": "PASS_WITH_COVERAGE_AUDIT",
   "join_key": "assembly + chromosome + position + reference_allele + alternate_allele",
   "required_columns": [
     "assembly",
@@ -12,6 +12,6 @@
     "allele_frequency",
     "source_version"
   ],
-  "sha256": null,
+  "sha256": "2398b79c1e25acea4eceb01f87fbcf6dfda5cd9886d33bfd7443e22e42fc22af",
   "note": "Do not use this annotation as a clinical or functional label."
 }

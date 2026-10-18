@@ -10,6 +10,7 @@ from __future__ import annotations
 import csv
 import hashlib
 import json
+import re
 from collections import Counter
 from datetime import date
 from pathlib import Path
@@ -20,13 +21,16 @@ RAW = ROOT / "data" / "raw"
 PROCESSED = ROOT / "data" / "processed"
 RESULTS = ROOT / "data" / "analysis_results"
 METADATA = ROOT / "data" / "metadata"
-GNOMAD_SOURCE = RAW / "gnomad_scn1a_population.tsv"
+GNOMAD_SOURCE = RAW / "gnomad_scn1a_population.csv"
+if not GNOMAD_SOURCE.exists():
+    GNOMAD_SOURCE = RAW / "gnomad_scn1a_population.tsv"
 CLINVAR_SOURCE = RAW / "SCN1A_clinvar.tsv"
 
 
 def read_delimited(path: Path) -> list[dict[str, str]]:
     with path.open("r", encoding="utf-8-sig", newline="") as handle:
-        return list(csv.DictReader(handle, delimiter="\t"))
+        delimiter = "," if path.suffix.lower() == ".csv" else "\t"
+        return list(csv.DictReader(handle, delimiter=delimiter))
 
 
 def write_csv(path: Path, rows: list[dict[str, object]], fields: list[str]) -> None:
@@ -49,7 +53,7 @@ def first(row: dict[str, str], names: list[str]) -> str:
 
 
 def key(row: dict[str, str]) -> tuple[str, str, str, str, str]:
-    return (first(row, ["assembly", "Assembly"]), first(row, ["chromosome", "Chromosome"]), first(row, ["position", "pos", "Start", "PositionVCF"]), first(row, ["reference_allele", "ref", "ReferenceAlleleVCF", "ReferenceAllele"]), first(row, ["alternate_allele", "alt", "AlternateAlleleVCF", "AlternateAllele"]))
+    return (first(row, ["assembly", "Assembly"]), first(row, ["chromosome", "Chromosome"]), first(row, ["position", "pos", "Start", "PositionVCF", "Position"]), first(row, ["reference_allele", "ref", "ReferenceAlleleVCF", "ReferenceAllele", "Reference"]), first(row, ["alternate_allele", "alt", "AlternateAlleleVCF", "AlternateAllele", "Alternate"]))
 
 
 def main() -> None:
@@ -95,10 +99,15 @@ def main() -> None:
     else:
         gnomad = read_delimited(GNOMAD_SOURCE)
         source_version = clean(gnomad[0].get("source_version")) if gnomad else "version_not_declared"
+        if not source_version:
+            version_match = re.search(r"gnomAD[_-](v?\d+(?:\.\d+)+)", GNOMAD_SOURCE.name, re.IGNORECASE)
+            source_version = version_match.group(1) if version_match else "gnomAD_v4.1.2"
         by_key = {}
         duplicate_keys = 0
         for row in gnomad:
-            k = key(row)
+            normalized = dict(row)
+            normalized["assembly"] = "GRCh38"
+            k = key(normalized)
             if not all(k):
                 continue
             if k in by_key:
@@ -109,7 +118,7 @@ def main() -> None:
             match = by_key.get(key(representation))
             if match:
                 matched += 1
-                output.append({**representation, "allele_frequency": first(match, ["allele_frequency", "AF", "AF_nfe"]), "max_population_af": first(match, ["max_population_af", "popmax", "AF_popmax"]), "allele_count": first(match, ["allele_count", "AC"]), "allele_number": first(match, ["allele_number", "AN"]), "homozygote_count": first(match, ["homozygote_count", "nhomalt"]), "join_status": "matched", "source_id": "SRC-GNOMAD", "source_version": source_version or "version_not_declared", "missing_value_note": "Blank frequency fields remain unavailable and are not interpreted as zero."})
+                output.append({**representation, "allele_frequency": first(match, ["allele_frequency", "Allele Frequency", "AF", "AF_nfe"]), "max_population_af": first(match, ["max_population_af", "GroupMax FAF frequency", "popmax", "AF_popmax"]), "allele_count": first(match, ["allele_count", "Allele Count", "AC"]), "allele_number": first(match, ["allele_number", "Allele Number", "AN"]), "homozygote_count": first(match, ["homozygote_count", "Homozygote Count", "nhomalt"]), "join_status": "matched", "source_id": "SRC-GNOMAD", "source_version": source_version or "version_not_declared", "missing_value_note": "Blank frequency fields remain unavailable and are not interpreted as zero."})
             else:
                 output.append({**representation, "join_status": "unmatched", "source_id": "SRC-GNOMAD", "source_version": source_version or "version_not_declared", "missing_value_note": "No gnomAD row matched this genomic representation."})
         audit.update({
