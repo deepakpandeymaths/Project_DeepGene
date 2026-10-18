@@ -1,0 +1,14 @@
+{
+  "created": "2026-10-18",
+  "source_id": "SRC-GNOMAD",
+  "expected_source": "data\\raw\\gnomad_scn1a_population.tsv",
+  "clinical_representation_rows": 10696,
+  "join_key": "assembly + chromosome + position + reference_allele + alternate_allele",
+  "frequency_is_annotation": true,
+  "used_as_training_label": false,
+  "status": "STATUS: BLOCKED",
+  "reason": "The expected gnomAD source file is not present in data/raw.",
+  "matched_rows": 0,
+  "unmatched_rows": 10696,
+  "next_action": "Provide a versioned gnomAD TSV with the documented genomic join columns, then rerun this script."
+}

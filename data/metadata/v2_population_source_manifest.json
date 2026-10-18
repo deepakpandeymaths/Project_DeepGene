@@ -1,0 +1,17 @@
+{
+  "source_id": "SRC-GNOMAD",
+  "path": "data\\raw\\gnomad_scn1a_population.tsv",
+  "status": "STATUS: BLOCKED",
+  "join_key": "assembly + chromosome + position + reference_allele + alternate_allele",
+  "required_columns": [
+    "assembly",
+    "chromosome",
+    "position",
+    "reference_allele",
+    "alternate_allele",
+    "allele_frequency",
+    "source_version"
+  ],
+  "sha256": null,
+  "note": "Do not use this annotation as a clinical or functional label."
+}
