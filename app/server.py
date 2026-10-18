@@ -336,6 +336,8 @@ class Handler(BaseHTTPRequestHandler):
         target = STATIC / ("index.html" if path in {"/", ""} else path.lstrip("/"))
         if target.exists() and target.is_file():
             content = target.read_bytes(); self.send_response(200); self.send_header("Content-Type", "text/html" if target.suffix == ".html" else "text/css" if target.suffix == ".css" else "application/javascript"); self.send_header("Content-Length", str(len(content))); self.end_headers(); self.wfile.write(content); return
+        if path.startswith("/api/"):
+            return self.send_json({"ok": False, "error": "API endpoint not found."}, 404)
         self.send_error(404)
 
     def do_POST(self):

@@ -12,6 +12,7 @@
 [![status](https://img.shields.io/badge/status-v1%20complete%20%7C%20v2%20in%20progress-orange)](README.md)
 [![platform](https://img.shields.io/badge/platform-local--first-green)](README.md)
 [![scope](https://img.shields.io/badge/scope-research%20only-purple)](README.md)
+[![CI](https://github.com/deepakpandeymaths/Project_DeepGene/actions/workflows/deepgene-ci.yml/badge.svg)](https://github.com/deepakpandeymaths/Project_DeepGene/actions/workflows/deepgene-ci.yml)
 
 </div>
 
