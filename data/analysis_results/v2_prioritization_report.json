@@ -1,0 +1,21 @@
+{
+  "created": "2026-10-18",
+  "status": "RESEARCH_ONLY_PRIORITIZATION",
+  "rows_ranked": 84,
+  "priority_band_counts": {
+    "high_research_priority": 19,
+    "moderate_research_priority": 65
+  },
+  "split_counts": {
+    "test": 38,
+    "validation": 46
+  },
+  "formula": "0.45 functional signal + 0.20 uncertainty + 0.25 evidence gap + 0.10 conflict component",
+  "interpretation": "This ranks variants for research review. It does not estimate pathogenicity, disease risk, diagnosis, treatment response, or clinical action.",
+  "limitations": [
+    "Only evaluated functional rows with calibrated predictions are ranked.",
+    "Clinical joins use protein-level keys and may contain multiple nucleotide representations.",
+    "Missing external evidence is not interpreted as benign or absent disease.",
+    "The functional model is source-dependent and research-only."
+  ]
+}

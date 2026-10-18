@@ -1,0 +1,182 @@
+{
+  "created": "2026-10-18",
+  "model_reference": "gradient_boosting calibrated functional baseline",
+  "rows_ranked": 84,
+  "top_ranked_explanations": [
+    {
+      "rank": 1,
+      "variant_key": "SCN4A:p.R225W",
+      "priority_band": "high_research_priority",
+      "score": "0.755046",
+      "explanation": "Ranked using calibrated functional signal (0.823368), model uncertainty (0.672653), evidence gap (1.000000), and clinical conflict component (0.000000). Missing evidence remains unobserved, not negative."
+    },
+    {
+      "rank": 2,
+      "variant_key": "SCN5A:p.R965C",
+      "priority_band": "high_research_priority",
+      "score": "0.754927",
+      "explanation": "Ranked using calibrated functional signal (0.837478), model uncertainty (0.640308), evidence gap (1.000000), and clinical conflict component (0.000000). Missing evidence remains unobserved, not negative."
+    },
+    {
+      "rank": 3,
+      "variant_key": "SCN5A:p.R367L",
+      "priority_band": "high_research_priority",
+      "score": "0.754710",
+      "explanation": "Ranked using calibrated functional signal (0.807510), model uncertainty (0.706651), evidence gap (1.000000), and clinical conflict component (0.000000). Missing evidence remains unobserved, not negative."
+    },
+    {
+      "rank": 4,
+      "variant_key": "SCN5A:p.D84N",
+      "priority_band": "high_research_priority",
+      "score": "0.754707",
+      "explanation": "Ranked using calibrated functional signal (0.807436), model uncertainty (0.706804), evidence gap (1.000000), and clinical conflict component (0.000000). Missing evidence remains unobserved, not negative."
+    },
+    {
+      "rank": 5,
+      "variant_key": "SCN5A:p.S1609L",
+      "priority_band": "high_research_priority",
+      "score": "0.754600",
+      "explanation": "Ranked using calibrated functional signal (0.804677), model uncertainty (0.712476), evidence gap (1.000000), and clinical conflict component (0.000000). Missing evidence remains unobserved, not negative."
+    },
+    {
+      "rank": 6,
+      "variant_key": "SCN4A:p.R1457H",
+      "priority_band": "high_research_priority",
+      "score": "0.754475",
+      "explanation": "Ranked using calibrated functional signal (0.801851), model uncertainty (0.718210), evidence gap (1.000000), and clinical conflict component (0.000000). Missing evidence remains unobserved, not negative."
+    },
+    {
+      "rank": 7,
+      "variant_key": "SCN5A:p.R282C",
+      "priority_band": "high_research_priority",
+      "score": "0.754165",
+      "explanation": "Ranked using calibrated functional signal (0.795891), model uncertainty (0.730070), evidence gap (1.000000), and clinical conflict component (0.000000). Missing evidence remains unobserved, not negative."
+    },
+    {
+      "rank": 8,
+      "variant_key": "SCN5A:p.R367C",
+      "priority_band": "high_research_priority",
+      "score": "0.754165",
+      "explanation": "Ranked using calibrated functional signal (0.795891), model uncertainty (0.730070), evidence gap (1.000000), and clinical conflict component (0.000000). Missing evidence remains unobserved, not negative."
+    },
+    {
+      "rank": 9,
+      "variant_key": "SCN4A:p.R1451C",
+      "priority_band": "high_research_priority",
+      "score": "0.754130",
+      "explanation": "Ranked using calibrated functional signal (0.795289), model uncertainty (0.731251), evidence gap (1.000000), and clinical conflict component (0.000000). Missing evidence remains unobserved, not negative."
+    },
+    {
+      "rank": 10,
+      "variant_key": "SCN8A:p.R223G",
+      "priority_band": "high_research_priority",
+      "score": "0.753976",
+      "explanation": "Ranked using calibrated functional signal (0.792748), model uncertainty (0.736197), evidence gap (1.000000), and clinical conflict component (0.000000). Missing evidence remains unobserved, not negative."
+    },
+    {
+      "rank": 11,
+      "variant_key": "SCN9A:p.F1449V",
+      "priority_band": "high_research_priority",
+      "score": "0.753692",
+      "explanation": "Ranked using calibrated functional signal (0.788491), model uncertainty (0.744358), evidence gap (1.000000), and clinical conflict component (0.000000). Missing evidence remains unobserved, not negative."
+    },
+    {
+      "rank": 12,
+      "variant_key": "SCN2A:p.R937H",
+      "priority_band": "high_research_priority",
+      "score": "0.753568",
+      "explanation": "Ranked using calibrated functional signal (0.786760), model uncertainty (0.747630), evidence gap (1.000000), and clinical conflict component (0.000000). Missing evidence remains unobserved, not negative."
+    },
+    {
+      "rank": 13,
+      "variant_key": "SCN5A:p.R18W",
+      "priority_band": "high_research_priority",
+      "score": "0.753044",
+      "explanation": "Ranked using calibrated functional signal (0.869426), model uncertainty (0.559011), evidence gap (1.000000), and clinical conflict component (0.000000). Missing evidence remains unobserved, not negative."
+    },
+    {
+      "rank": 14,
+      "variant_key": "SCN5A:p.G1642E",
+      "priority_band": "high_research_priority",
+      "score": "0.752642",
+      "explanation": "Ranked using calibrated functional signal (0.775579), model uncertainty (0.768157), evidence gap (1.000000), and clinical conflict component (0.000000). Missing evidence remains unobserved, not negative."
+    },
+    {
+      "rank": 15,
+      "variant_key": "SCN5A:p.R225P",
+      "priority_band": "high_research_priority",
+      "score": "0.752368",
+      "explanation": "Ranked using calibrated functional signal (0.772681), model uncertainty (0.773309), evidence gap (1.000000), and clinical conflict component (0.000000). Missing evidence remains unobserved, not negative."
+    },
+    {
+      "rank": 16,
+      "variant_key": "SCN10A:p.R756W",
+      "priority_band": "high_research_priority",
+      "score": "0.752363",
+      "explanation": "Ranked using calibrated functional signal (0.772629), model uncertainty (0.773399), evidence gap (1.000000), and clinical conflict component (0.000000). Missing evidence remains unobserved, not negative."
+    },
+    {
+      "rank": 17,
+      "variant_key": "SCN5A:p.L276Q",
+      "priority_band": "high_research_priority",
+      "score": "0.751954",
+      "explanation": "Ranked using calibrated functional signal (0.768550), model uncertainty (0.780530), evidence gap (1.000000), and clinical conflict component (0.000000). Missing evidence remains unobserved, not negative."
+    },
+    {
+      "rank": 18,
+      "variant_key": "SCN5A:p.G1661R",
+      "priority_band": "high_research_priority",
+      "score": "0.751888",
+      "explanation": "Ranked using calibrated functional signal (0.767920), model uncertainty (0.781620), evidence gap (1.000000), and clinical conflict component (0.000000). Missing evidence remains unobserved, not negative."
+    },
+    {
+      "rank": 19,
+      "variant_key": "SCN2A:p.R379H",
+      "priority_band": "high_research_priority",
+      "score": "0.750748",
+      "explanation": "Ranked using calibrated functional signal (0.757821), model uncertainty (0.798645), evidence gap (1.000000), and clinical conflict component (0.000000). Missing evidence remains unobserved, not negative."
+    },
+    {
+      "rank": 20,
+      "variant_key": "SCN8A:p.M139I",
+      "priority_band": "moderate_research_priority",
+      "score": "0.749983",
+      "explanation": "Ranked using calibrated functional signal (0.751723), model uncertainty (0.808536), evidence gap (1.000000), and clinical conflict component (0.000000). Missing evidence remains unobserved, not negative."
+    },
+    {
+      "rank": 21,
+      "variant_key": "SCN5A:p.R1432G",
+      "priority_band": "moderate_research_priority",
+      "score": "0.749932",
+      "explanation": "Ranked using calibrated functional signal (0.751337), model uncertainty (0.809152), evidence gap (1.000000), and clinical conflict component (0.000000). Missing evidence remains unobserved, not negative."
+    },
+    {
+      "rank": 22,
+      "variant_key": "SCN2A:p.T773I",
+      "priority_band": "moderate_research_priority",
+      "score": "0.749779",
+      "explanation": "Ranked using calibrated functional signal (0.750178), model uncertainty (0.810995), evidence gap (1.000000), and clinical conflict component (0.000000). Missing evidence remains unobserved, not negative."
+    },
+    {
+      "rank": 23,
+      "variant_key": "SCN8A:p.T767I",
+      "priority_band": "moderate_research_priority",
+      "score": "0.749779",
+      "explanation": "Ranked using calibrated functional signal (0.750178), model uncertainty (0.810995), evidence gap (1.000000), and clinical conflict component (0.000000). Missing evidence remains unobserved, not negative."
+    },
+    {
+      "rank": 24,
+      "variant_key": "SCN5A:p.R569W",
+      "priority_band": "moderate_research_priority",
+      "score": "0.749465",
+      "explanation": "Ranked using calibrated functional signal (0.747842), model uncertainty (0.814681), evidence gap (1.000000), and clinical conflict component (0.000000). Missing evidence remains unobserved, not negative."
+    },
+    {
+      "rank": 25,
+      "variant_key": "SCN2A:p.V208E",
+      "priority_band": "moderate_research_priority",
+      "score": "0.748843",
+      "explanation": "Ranked using calibrated functional signal (0.743393), model uncertainty (0.821584), evidence gap (1.000000), and clinical conflict component (0.000000). Missing evidence remains unobserved, not negative."
+    }
+  ]
+}
