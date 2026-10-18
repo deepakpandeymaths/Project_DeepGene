@@ -1,0 +1,350 @@
+{
+  "created": "2026-10-18",
+  "status": "RESEARCH_ONLY_BASELINE",
+  "target_definition": "LOF and Loss mapped to LOF; GOF and Gain mapped to GOF. Other labels are excluded.",
+  "feature_names": [
+    "protein_position",
+    "delta_hydrophobicity",
+    "absolute_delta_hydrophobicity",
+    "delta_charge",
+    "absolute_delta_charge",
+    "delta_volume",
+    "absolute_delta_volume",
+    "same_amino_acid"
+  ],
+  "source_rows": 375,
+  "usable_rows": 375,
+  "split_rows": {
+    "train": 291,
+    "validation": 46,
+    "test": 38
+  },
+  "models": {
+    "majority_baseline": {
+      "train": {
+        "rows": 291,
+        "class_counts": {
+          "LOF": 161,
+          "GOF": 130
+        },
+        "balanced_accuracy": 0.5,
+        "macro_f1": 0.3561946902654867,
+        "macro_precision": 0.2766323024054983,
+        "macro_recall": 0.5,
+        "confusion_matrix_labels": [
+          "GOF",
+          "LOF"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            130
+          ],
+          [
+            0,
+            161
+          ]
+        ],
+        "roc_auc": 0.5
+      },
+      "validation": {
+        "rows": 46,
+        "class_counts": {
+          "LOF": 32,
+          "GOF": 14
+        },
+        "balanced_accuracy": 0.5,
+        "macro_f1": 0.41025641025641024,
+        "macro_precision": 0.34782608695652173,
+        "macro_recall": 0.5,
+        "confusion_matrix_labels": [
+          "GOF",
+          "LOF"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            14
+          ],
+          [
+            0,
+            32
+          ]
+        ],
+        "roc_auc": 0.5
+      },
+      "test": {
+        "rows": 38,
+        "class_counts": {
+          "GOF": 19,
+          "LOF": 19
+        },
+        "balanced_accuracy": 0.5,
+        "macro_f1": 0.3333333333333333,
+        "macro_precision": 0.25,
+        "macro_recall": 0.5,
+        "confusion_matrix_labels": [
+          "GOF",
+          "LOF"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            19
+          ],
+          [
+            0,
+            19
+          ]
+        ],
+        "roc_auc": 0.5
+      }
+    },
+    "logistic_regression": {
+      "train": {
+        "rows": 291,
+        "class_counts": {
+          "LOF": 161,
+          "GOF": 130
+        },
+        "balanced_accuracy": 0.6188485427615862,
+        "macro_f1": 0.6147517730496455,
+        "macro_precision": 0.6177347595607725,
+        "macro_recall": 0.6188485427615862,
+        "confusion_matrix_labels": [
+          "GOF",
+          "LOF"
+        ],
+        "confusion_matrix": [
+          [
+            85,
+            45
+          ],
+          [
+            67,
+            94
+          ]
+        ],
+        "roc_auc": 0.6443860487338748
+      },
+      "validation": {
+        "rows": 46,
+        "class_counts": {
+          "LOF": 32,
+          "GOF": 14
+        },
+        "balanced_accuracy": 0.546875,
+        "macro_f1": 0.5334685598377282,
+        "macro_precision": 0.5403846153846154,
+        "macro_recall": 0.546875,
+        "confusion_matrix_labels": [
+          "GOF",
+          "LOF"
+        ],
+        "confusion_matrix": [
+          [
+            7,
+            7
+          ],
+          [
+            13,
+            19
+          ]
+        ],
+        "roc_auc": 0.5446428571428571
+      },
+      "test": {
+        "rows": 38,
+        "class_counts": {
+          "GOF": 19,
+          "LOF": 19
+        },
+        "balanced_accuracy": 0.631578947368421,
+        "macro_f1": 0.631578947368421,
+        "macro_precision": 0.631578947368421,
+        "macro_recall": 0.631578947368421,
+        "confusion_matrix_labels": [
+          "GOF",
+          "LOF"
+        ],
+        "confusion_matrix": [
+          [
+            12,
+            7
+          ],
+          [
+            7,
+            12
+          ]
+        ],
+        "roc_auc": 0.6869806094182825
+      }
+    },
+    "random_forest": {
+      "train": {
+        "rows": 291,
+        "class_counts": {
+          "LOF": 161,
+          "GOF": 130
+        },
+        "balanced_accuracy": 1.0,
+        "macro_f1": 1.0,
+        "macro_precision": 1.0,
+        "macro_recall": 1.0,
+        "confusion_matrix_labels": [
+          "GOF",
+          "LOF"
+        ],
+        "confusion_matrix": [
+          [
+            130,
+            0
+          ],
+          [
+            0,
+            161
+          ]
+        ],
+        "roc_auc": 1.0
+      },
+      "validation": {
+        "rows": 46,
+        "class_counts": {
+          "LOF": 32,
+          "GOF": 14
+        },
+        "balanced_accuracy": 0.5200892857142857,
+        "macro_f1": 0.4881470730527334,
+        "macro_precision": 0.5171428571428571,
+        "macro_recall": 0.5200892857142857,
+        "confusion_matrix_labels": [
+          "GOF",
+          "LOF"
+        ],
+        "confusion_matrix": [
+          [
+            8,
+            6
+          ],
+          [
+            17,
+            15
+          ]
+        ],
+        "roc_auc": 0.5368303571428571
+      },
+      "test": {
+        "rows": 38,
+        "class_counts": {
+          "GOF": 19,
+          "LOF": 19
+        },
+        "balanced_accuracy": 0.5526315789473684,
+        "macro_f1": 0.5523215523215523,
+        "macro_precision": 0.5527777777777778,
+        "macro_recall": 0.5526315789473684,
+        "confusion_matrix_labels": [
+          "GOF",
+          "LOF"
+        ],
+        "confusion_matrix": [
+          [
+            11,
+            8
+          ],
+          [
+            9,
+            10
+          ]
+        ],
+        "roc_auc": 0.6204986149584487
+      }
+    },
+    "gradient_boosting": {
+      "train": {
+        "rows": 291,
+        "class_counts": {
+          "LOF": 161,
+          "GOF": 130
+        },
+        "balanced_accuracy": 0.9482322025800287,
+        "macro_f1": 0.9478998818347835,
+        "macro_precision": 0.9475906488549619,
+        "macro_recall": 0.9482322025800287,
+        "confusion_matrix_labels": [
+          "GOF",
+          "LOF"
+        ],
+        "confusion_matrix": [
+          [
+            123,
+            7
+          ],
+          [
+            8,
+            153
+          ]
+        ],
+        "roc_auc": 0.9862398471094124
+      },
+      "validation": {
+        "rows": 46,
+        "class_counts": {
+          "LOF": 32,
+          "GOF": 14
+        },
+        "balanced_accuracy": 0.625,
+        "macro_f1": 0.6223316912972086,
+        "macro_precision": 0.6204301075268817,
+        "macro_recall": 0.625,
+        "confusion_matrix_labels": [
+          "GOF",
+          "LOF"
+        ],
+        "confusion_matrix": [
+          [
+            7,
+            7
+          ],
+          [
+            8,
+            24
+          ]
+        ],
+        "roc_auc": 0.6517857142857143
+      },
+      "test": {
+        "rows": 38,
+        "class_counts": {
+          "GOF": 19,
+          "LOF": 19
+        },
+        "balanced_accuracy": 0.631578947368421,
+        "macro_f1": 0.6274509803921569,
+        "macro_precision": 0.6376811594202898,
+        "macro_recall": 0.631578947368421,
+        "confusion_matrix_labels": [
+          "GOF",
+          "LOF"
+        ],
+        "confusion_matrix": [
+          [
+            10,
+            9
+          ],
+          [
+            5,
+            14
+          ]
+        ],
+        "roc_auc": 0.6869806094182825
+      }
+    }
+  },
+  "limitations": [
+    "Functional assay labels are not clinical pathogenicity labels.",
+    "The dataset is source-dependent and class-imbalanced.",
+    "The grouped split is reproducible but is not an independent clinical benchmark.",
+    "No final model is selected for deployment from this baseline comparison."
+  ]
+}

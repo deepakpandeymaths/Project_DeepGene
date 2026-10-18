@@ -1,0 +1,37 @@
+{
+  "created": "2026-10-18",
+  "algorithm": "SHA-256 of normalized biological group key; first 32 bits modulo 100",
+  "assignment": {
+    "train": "0-79",
+    "validation": "80-89",
+    "test": "90-99"
+  },
+  "grouping": {
+    "clinical_evidence": "protein_key when available, otherwise ClinVar variant_id",
+    "functional_evidence": "variant_key when available, otherwise source_id and source_row_id"
+  },
+  "guarantees": [
+    "All rows for one group_key receive one split.",
+    "The split is deterministic and reproducible without a mutable random seed.",
+    "Clinical and functional products remain separate even when they share a group_key.",
+    "No clinical or functional target value is used to assign a split."
+  ],
+  "row_counts": {
+    "clinical_evidence": {
+      "train": 4333,
+      "test": 519,
+      "validation": 529
+    },
+    "functional_evidence": {
+      "train": 291,
+      "validation": 46,
+      "test": 38
+    }
+  },
+  "group_count_by_split": {
+    "train": 4499,
+    "test": 545,
+    "validation": 554
+  },
+  "next_validation_requirement": "Future model scripts must consume these split IDs or document a stronger source-aware external split."
+}
