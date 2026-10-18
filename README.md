@@ -365,7 +365,7 @@ Project_DeepGene_2.0/
 ├── data/analysis_results/  JSON and text analysis reports
 ├── data/uploads/           Data Lab uploads and upload audit
 ├── data/memory/            Local conversation memory, ignored by Git
-├── docs/                   Version-one research manuscript
+├── docs/                   Reserved for future documentation
 ├── CONTRIBUTORS.md         Project acknowledgements
 ├── LICENSE                 Project license
 └── README.md               Project documentation
@@ -534,8 +534,8 @@ python -m unittest discover -s tests -p "test_v2_*.py" -v
 ~~~
 
 The same checks run automatically in GitHub Actions for pushes and pull
-requests. The workflow also validates the frontend JavaScript, exercises the
-local JSON API, and compiles the research manuscript.
+requests. The workflow validates the frontend JavaScript and exercises the
+local JSON API.
 
 ### V2 HPO enrichment
 
