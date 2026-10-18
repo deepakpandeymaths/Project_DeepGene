@@ -7,7 +7,10 @@
     "2"
   ],
   "source_transcripts": 5,
-  "current_coverage": 0.2369109947643979,
+  "representation_coverage": 0.2369109947643979,
+  "variant_level_rows": 5381,
+  "variant_level_matched_rows": 1409,
+  "variant_level_coverage": 0.2618472402899089,
   "unmatched_rows": 8162,
   "unmatched_by_assembly": {
     "GRCh37": 4242,

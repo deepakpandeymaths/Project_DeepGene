@@ -38,6 +38,7 @@ def main() -> None:
     clinvar = read(RAW / "SCN1A_clinvar.tsv", "\t")
     gnomad = read(RAW / "gnomad_scn1a_population.csv", ",")
     annotations = read(PROCESSED / "deepgene_v2_population_annotations.csv", ",")
+    completeness = read(PROCESSED / "deepgene_v2_evidence_completeness.csv", ",")
     gnomad_by_rsid: dict[str, list[dict[str, str]]] = {}
     for row in gnomad:
         for rsid in ids(row.get("rsIDs")):
@@ -76,7 +77,10 @@ def main() -> None:
         "source_rows": len(gnomad),
         "source_chromosomes": sorted({clean(row.get("Chromosome")) for row in gnomad}),
         "source_transcripts": len({clean(row.get("Transcript")) for row in gnomad if clean(row.get("Transcript"))}),
-        "current_coverage": 0.2369109947643979,
+        "representation_coverage": 0.2369109947643979,
+        "variant_level_rows": len(completeness),
+        "variant_level_matched_rows": sum(clean(row.get("population_evidence_status")) == "available" for row in completeness),
+        "variant_level_coverage": sum(clean(row.get("population_evidence_status")) == "available" for row in completeness) / len(completeness) if completeness else 0.0,
         "unmatched_rows": sum(unmatched_by_assembly.values()),
         "unmatched_by_assembly": dict(unmatched_by_assembly),
         "unmatched_reason_counts": dict(reasons),
