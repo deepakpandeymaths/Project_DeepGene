@@ -1,0 +1,27 @@
+{
+  "created": "2026-10-18",
+  "status": "SOURCE_SCOPE_LIMITED_NO_SAFE_ADDITIONAL_MATCHES",
+  "source": "gnomAD v4.1.2 local SCN1A export",
+  "source_rows": 5056,
+  "source_chromosomes": [
+    "2"
+  ],
+  "source_transcripts": 5,
+  "current_coverage": 0.2369109947643979,
+  "unmatched_rows": 8162,
+  "unmatched_by_assembly": {
+    "GRCh37": 4242,
+    "GRCh38": 3910,
+    "na": 10
+  },
+  "unmatched_reason_counts": {
+    "no_shared_rsid": 7558,
+    "shared_rsid_allele_mismatch": 604
+  },
+  "unmatched_with_shared_rsid": 604,
+  "shared_rsid_allele_mismatches": 604,
+  "safe_additional_matches_from_current_export": 0,
+  "reason": "The export contains only chromosome 2 rows; shared rsIDs for currently unmatched rows do not agree on alleles, so they cannot be used as fallback matches.",
+  "next_action": "Acquire a complete SCN1A gnomAD export and/or add an approved GRCh37-to-GRCh38 chain before attempting liftover-based matching.",
+  "safety_rule": "Do not match by rsID alone when reference and alternate alleles disagree; unmatched does not mean rare or benign."
+}
