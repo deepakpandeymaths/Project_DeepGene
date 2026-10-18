@@ -1,0 +1,1812 @@
+[
+  {
+    "requested_variant_id": "2-165998049-G-T",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-165998049-G-T",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 165998049,
+      "ref": "G",
+      "alt": "T",
+      "rsids": [
+        "rs121918628"
+      ],
+      "exome": {
+        "ac": 0,
+        "an": 1451728,
+        "af": 0
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-166056450-A-G",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166056450-A-G",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166056450,
+      "ref": "A",
+      "alt": "G",
+      "rsids": [
+        "rs121918631"
+      ],
+      "exome": {
+        "ac": 0,
+        "an": 1456296,
+        "af": 0
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-166046970-G-A",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166046970-G-A",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166046970,
+      "ref": "G",
+      "alt": "A",
+      "rsids": [
+        "rs121917929"
+      ],
+      "exome": {
+        "ac": 0,
+        "an": 1461198,
+        "af": 0
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-165998162-G-A",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-165998162-G-A",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 165998162,
+      "ref": "G",
+      "alt": "A",
+      "rsids": [
+        "rs121917945"
+      ],
+      "exome": {
+        "ac": 0,
+        "an": 1453276,
+        "af": 0
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-166048949-C-A",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166048949-C-A",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166048949,
+      "ref": "C",
+      "alt": "A",
+      "rsids": [
+        "rs121917928"
+      ],
+      "exome": {
+        "ac": 0,
+        "an": 1443262,
+        "af": 0
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-166048886-C-T",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166048886-C-T",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166048886,
+      "ref": "C",
+      "alt": "T",
+      "rsids": [
+        "rs121918753"
+      ],
+      "exome": {
+        "ac": 0,
+        "an": 1430980,
+        "af": 0
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-166046931-C-A",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166046931-C-A",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166046931,
+      "ref": "C",
+      "alt": "A",
+      "rsids": [
+        "rs121918768"
+      ],
+      "exome": null,
+      "genome": {
+        "ac": 0,
+        "an": 152106,
+        "af": 0
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-166037891-A-G",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166037891-A-G",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166037891,
+      "ref": "A",
+      "alt": "G",
+      "rsids": [
+        "rs121917969"
+      ],
+      "exome": {
+        "ac": 0,
+        "an": 1461886,
+        "af": 0
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-165991853-A-G",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-165991853-A-G",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 165991853,
+      "ref": "A",
+      "alt": "G",
+      "rsids": [
+        "rs121918757"
+      ],
+      "exome": {
+        "ac": 0,
+        "an": 1461796,
+        "af": 0
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-165991619-G-A",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-165991619-G-A",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 165991619,
+      "ref": "G",
+      "alt": "A",
+      "rsids": [
+        "rs779614747"
+      ],
+      "exome": {
+        "ac": 0,
+        "an": 1461716,
+        "af": 0
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-165996039-GT-G",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-165996039-GT-G",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 165996039,
+      "ref": "GT",
+      "alt": "G",
+      "rsids": [
+        "rs794726825"
+      ],
+      "exome": {
+        "ac": 0,
+        "an": 1457366,
+        "af": 0
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-166013812-G-A",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166013812-G-A",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166013812,
+      "ref": "G",
+      "alt": "A",
+      "rsids": [
+        "rs794726710"
+      ],
+      "exome": {
+        "ac": 0,
+        "an": 1460560,
+        "af": 0
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-166039428-G-A",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166039428-G-A",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166039428,
+      "ref": "G",
+      "alt": "A",
+      "rsids": [
+        "rs397514459"
+      ],
+      "exome": {
+        "ac": 0,
+        "an": 1405258,
+        "af": 0
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-166041433-C-T",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166041433-C-T",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166041433,
+      "ref": "C",
+      "alt": "T",
+      "rsids": [
+        "rs794726742"
+      ],
+      "exome": null,
+      "genome": {
+        "ac": 0,
+        "an": 148208,
+        "af": 0
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-166045259-GCTGT-G",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166045259-GCTGT-G",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166045259,
+      "ref": "GCTGT",
+      "alt": "G",
+      "rsids": [
+        "rs794726829"
+      ],
+      "exome": {
+        "ac": 0,
+        "an": 1461850,
+        "af": 0
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-166048889-G-A",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166048889-G-A",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166048889,
+      "ref": "G",
+      "alt": "A",
+      "rsids": [
+        "rs794726797"
+      ],
+      "exome": {
+        "ac": 0,
+        "an": 1437326,
+        "af": 0
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-166058616-G-T",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166058616-G-T",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166058616,
+      "ref": "G",
+      "alt": "T",
+      "rsids": [
+        "rs794726711"
+      ],
+      "exome": {
+        "ac": 0,
+        "an": 1459868,
+        "af": 0
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-165996021-G-T",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-165996021-G-T",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 165996021,
+      "ref": "G",
+      "alt": "T",
+      "rsids": [
+        "rs794726752"
+      ],
+      "exome": {
+        "ac": 0,
+        "an": 1445730,
+        "af": 0
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-166036276-T-G",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166036276-T-G",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166036276,
+      "ref": "T",
+      "alt": "G",
+      "rsids": [
+        "rs1376202812"
+      ],
+      "exome": {
+        "ac": 3,
+        "an": 1461530,
+        "af": 2.0526434626726788e-06
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-165991914-C-T",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-165991914-C-T",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 165991914,
+      "ref": "C",
+      "alt": "T",
+      "rsids": [
+        "rs796053038"
+      ],
+      "exome": {
+        "ac": 2,
+        "an": 1461800,
+        "af": 1.3681762210972774e-06
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-166002739-G-A",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166002739-G-A",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166002739,
+      "ref": "G",
+      "alt": "A",
+      "rsids": [
+        "rs2105510596"
+      ],
+      "exome": {
+        "ac": 1,
+        "an": 1456070,
+        "af": 6.867801685358534e-07
+      },
+      "genome": {
+        "ac": 0,
+        "an": 151270,
+        "af": 0
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-165992644-T-A",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-165992644-T-A",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 165992644,
+      "ref": "T",
+      "alt": "A",
+      "rsids": [
+        "rs56079318"
+      ],
+      "exome": {
+        "ac": 731,
+        "an": 67522,
+        "af": 0.01082610112259708
+      },
+      "genome": {
+        "ac": 1764,
+        "an": 151246,
+        "af": 0.011663118363460852
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-166058660-G-A",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166058660-G-A",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166058660,
+      "ref": "G",
+      "alt": "A",
+      "rsids": [
+        "rs2105918454"
+      ],
+      "exome": {
+        "ac": 0,
+        "an": 1457168,
+        "af": 0
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-165997836-A-T",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-165997836-A-T",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 165997836,
+      "ref": "A",
+      "alt": "T",
+      "rsids": [
+        "rs149570962"
+      ],
+      "exome": null,
+      "genome": {
+        "ac": 861,
+        "an": 151382,
+        "af": 0.005687598261352077
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-166002201-A-T",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166002201-A-T",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166002201,
+      "ref": "A",
+      "alt": "T",
+      "rsids": [
+        "rs149674261"
+      ],
+      "exome": null,
+      "genome": {
+        "ac": 1965,
+        "an": 151778,
+        "af": 0.01294654034181502
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-166035939-A-T",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166035939-A-T",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166035939,
+      "ref": "A",
+      "alt": "T",
+      "rsids": [
+        "rs200404199"
+      ],
+      "exome": {
+        "ac": 22872,
+        "an": 680184,
+        "af": 0.0336261952648107
+      },
+      "genome": {
+        "ac": 1896,
+        "an": 138592,
+        "af": 0.013680443315631494
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-165994670-C-T",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-165994670-C-T",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 165994670,
+      "ref": "C",
+      "alt": "T",
+      "rsids": [
+        "rs919198"
+      ],
+      "exome": null,
+      "genome": {
+        "ac": 3448,
+        "an": 151748,
+        "af": 0.022721881013258824
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-165998270-T-TA",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-165998270-T-TA",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 165998270,
+      "ref": "T",
+      "alt": "TA",
+      "rsids": [
+        "rs142978131"
+      ],
+      "exome": {
+        "ac": 21195,
+        "an": 926978,
+        "af": 0.02286462030382598
+      },
+      "genome": {
+        "ac": 2720,
+        "an": 151082,
+        "af": 0.01800346831521955
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-166013577-AG-A",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166013577-AG-A",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166013577,
+      "ref": "AG",
+      "alt": "A",
+      "rsids": [
+        "rs139618094"
+      ],
+      "exome": null,
+      "genome": {
+        "ac": 1101,
+        "an": 151670,
+        "af": 0.00725918111689853
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-166047107-CT-C",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166047107-CT-C",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166047107,
+      "ref": "CT",
+      "alt": "C",
+      "rsids": [
+        "rs202157655"
+      ],
+      "exome": {
+        "ac": 1855,
+        "an": 820178,
+        "af": 0.002261704166656506
+      },
+      "genome": {
+        "ac": 351,
+        "an": 151378,
+        "af": 0.002318698886231817
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-165997722-G-A",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-165997722-G-A",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 165997722,
+      "ref": "G",
+      "alt": "A",
+      "rsids": [
+        "rs184022580"
+      ],
+      "exome": null,
+      "genome": {
+        "ac": 856,
+        "an": 151200,
+        "af": 0.0056613756613756614
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-166038359-T-C",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166038359-T-C",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166038359,
+      "ref": "T",
+      "alt": "C",
+      "rsids": [
+        "rs142984238"
+      ],
+      "exome": null,
+      "genome": {
+        "ac": 855,
+        "an": 152086,
+        "af": 0.00562181923385453
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-166045478-ATT-A",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166045478-ATT-A",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166045478,
+      "ref": "ATT",
+      "alt": "A",
+      "rsids": [
+        "rs5836074"
+      ],
+      "exome": {
+        "ac": 314,
+        "an": 606060,
+        "af": 0.0005181005181005181
+      },
+      "genome": {
+        "ac": 687,
+        "an": 151484,
+        "af": 0.004535132423226215
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-165994650-AAAACAAAC-A",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-165994650-AAAACAAAC-A",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 165994650,
+      "ref": "AAAACAAAC",
+      "alt": "A",
+      "rsids": [
+        "rs140431192"
+      ],
+      "exome": null,
+      "genome": {
+        "ac": 21936,
+        "an": 150892,
+        "af": 0.14537550035787186
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-166014090-A-G",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166014090-A-G",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166014090,
+      "ref": "A",
+      "alt": "G",
+      "rsids": [
+        "rs568376"
+      ],
+      "exome": null,
+      "genome": {
+        "ac": 151250,
+        "an": 151700,
+        "af": 0.9970336189848384
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-166007055-G-GT",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166007055-G-GT",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166007055,
+      "ref": "G",
+      "alt": "GT",
+      "rsids": [
+        "rs560882795"
+      ],
+      "exome": null,
+      "genome": {
+        "ac": 5573,
+        "an": 140670,
+        "af": 0.039617544607947676
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-166052619-A-AT",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166052619-A-AT",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166052619,
+      "ref": "A",
+      "alt": "AT",
+      "rsids": [
+        "rs367905968"
+      ],
+      "exome": null,
+      "genome": {
+        "ac": 73471,
+        "an": 147804,
+        "af": 0.4970839760764255
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-165994650-A-AAAACAAAC",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-165994650-A-AAAACAAAC",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 165994650,
+      "ref": "A",
+      "alt": "AAAACAAAC",
+      "rsids": [
+        "rs140431192"
+      ],
+      "exome": null,
+      "genome": {
+        "ac": 2280,
+        "an": 150978,
+        "af": 0.015101537972419823
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-166058235-C-T",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166058235-C-T",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166058235,
+      "ref": "C",
+      "alt": "T",
+      "rsids": [
+        "rs79554951"
+      ],
+      "exome": null,
+      "genome": {
+        "ac": 2864,
+        "an": 152130,
+        "af": 0.018826004075461776
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-166052612-G-GAA",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166052612-G-GAA",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166052612,
+      "ref": "G",
+      "alt": "GAA",
+      "rsids": [
+        "rs34747425"
+      ],
+      "exome": null,
+      "genome": {
+        "ac": 5215,
+        "an": 87706,
+        "af": 0.05946001413814334
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-166002293-T-A",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166002293-T-A",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166002293,
+      "ref": "T",
+      "alt": "A",
+      "rsids": [
+        "rs72871938"
+      ],
+      "exome": null,
+      "genome": {
+        "ac": 6388,
+        "an": 151776,
+        "af": 0.04208834071262914
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-166035934-TAAAAA-T",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166035934-TAAAAA-T",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166035934,
+      "ref": "TAAAAA",
+      "alt": "T",
+      "rsids": [
+        "rs34673057"
+      ],
+      "exome": {
+        "ac": 5255,
+        "an": 919474,
+        "af": 0.005715224139018613
+      },
+      "genome": {
+        "ac": 6884,
+        "an": 150076,
+        "af": 0.04587009248647352
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-166002912-A-AT",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166002912-A-AT",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166002912,
+      "ref": "A",
+      "alt": "AT",
+      "rsids": [
+        "rs139683811"
+      ],
+      "exome": {
+        "ac": 2688,
+        "an": 423512,
+        "af": 0.006346927595912277
+      },
+      "genome": {
+        "ac": 4059,
+        "an": 150546,
+        "af": 0.026961858833844804
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-165994650-AAAAC-A",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-165994650-AAAAC-A",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 165994650,
+      "ref": "AAAAC",
+      "alt": "A",
+      "rsids": [
+        "rs140431192"
+      ],
+      "exome": null,
+      "genome": {
+        "ac": 52610,
+        "an": 150868,
+        "af": 0.3487154333589628
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-166052612-G-GA",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166052612-G-GA",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166052612,
+      "ref": "G",
+      "alt": "GA",
+      "rsids": [
+        "rs34747425"
+      ],
+      "exome": null,
+      "genome": {
+        "ac": 37765,
+        "an": 87476,
+        "af": 0.4317184141936074
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-166045478-AT-A",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166045478-AT-A",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166045478,
+      "ref": "AT",
+      "alt": "A",
+      "rsids": [
+        "rs5836074"
+      ],
+      "exome": {
+        "ac": 410394,
+        "an": 605234,
+        "af": 0.6780749263921062
+      },
+      "genome": {
+        "ac": 111096,
+        "an": 151402,
+        "af": 0.7337815880899856
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-166038371-T-C",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166038371-T-C",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166038371,
+      "ref": "T",
+      "alt": "C",
+      "rsids": [
+        "rs6719077"
+      ],
+      "exome": null,
+      "genome": {
+        "ac": 111117,
+        "an": 151020,
+        "af": 0.7357767183154549
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-166073704-T-A",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166073704-T-A",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166073704,
+      "ref": "T",
+      "alt": "A",
+      "rsids": [
+        "rs566839"
+      ],
+      "exome": {
+        "ac": 1300500,
+        "an": 1301888,
+        "af": 0.9989338560613509
+      },
+      "genome": {
+        "ac": 150675,
+        "an": 152340,
+        "af": 0.9890705001969279
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-165994650-A-AAAAC",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-165994650-A-AAAAC",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 165994650,
+      "ref": "A",
+      "alt": "AAAAC",
+      "rsids": [
+        "rs140431192"
+      ],
+      "exome": null,
+      "genome": {
+        "ac": 3139,
+        "an": 150968,
+        "af": 0.020792485824810556
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-166054359-ATGTG-A",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166054359-ATGTG-A",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166054359,
+      "ref": "ATGTG",
+      "alt": "A",
+      "rsids": [
+        "rs66512822"
+      ],
+      "exome": null,
+      "genome": {
+        "ac": 73022,
+        "an": 151022,
+        "af": 0.4835189575028804
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-165996105-C-T",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-165996105-C-T",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 165996105,
+      "ref": "C",
+      "alt": "T",
+      "rsids": [
+        "rs2105462657"
+      ],
+      "exome": {
+        "ac": 0,
+        "an": 1448526,
+        "af": 0
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-166037655-C-CT",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166037655-C-CT",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166037655,
+      "ref": "C",
+      "alt": "CT",
+      "rsids": [
+        "rs67819222"
+      ],
+      "exome": {
+        "ac": 198103,
+        "an": 707014,
+        "af": 0.2801967146336565
+      },
+      "genome": {
+        "ac": 40027,
+        "an": 151182,
+        "af": 0.26476035506872514
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-166046678-A-C",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166046678-A-C",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166046678,
+      "ref": "A",
+      "alt": "C",
+      "rsids": [
+        "rs538921"
+      ],
+      "exome": {
+        "ac": 1012054,
+        "an": 1053622,
+        "af": 0.9605475208376438
+      },
+      "genome": {
+        "ac": 144567,
+        "an": 152204,
+        "af": 0.9498239205277128
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-166035934-TAAA-T",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166035934-TAAA-T",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166035934,
+      "ref": "TAAA",
+      "alt": "T",
+      "rsids": [
+        "rs34673057"
+      ],
+      "exome": {
+        "ac": 591430,
+        "an": 918130,
+        "af": 0.6441680372060602
+      },
+      "genome": {
+        "ac": 102414,
+        "an": 150024,
+        "af": 0.6826507758758599
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-165992564-T-A",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-165992564-T-A",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 165992564,
+      "ref": "T",
+      "alt": "A",
+      "rsids": [
+        "rs6754638"
+      ],
+      "exome": {
+        "ac": 10348,
+        "an": 272204,
+        "af": 0.03801560594260187
+      },
+      "genome": {
+        "ac": 12076,
+        "an": 149864,
+        "af": 0.08057972561789356
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-166002471-C-T",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166002471-C-T",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166002471,
+      "ref": "C",
+      "alt": "T",
+      "rsids": [
+        "rs1553524865"
+      ],
+      "exome": null,
+      "genome": {
+        "ac": 0,
+        "an": 151718,
+        "af": 0
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-166035940-A-T",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166035940-A-T",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166035940,
+      "ref": "A",
+      "alt": "T",
+      "rsids": [
+        "rs538930553"
+      ],
+      "exome": {
+        "ac": 5394,
+        "an": 1067198,
+        "af": 0.0050543572982707985
+      },
+      "genome": {
+        "ac": 6876,
+        "an": 152132,
+        "af": 0.04519759156521968
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-165989495-A-G",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-165989495-A-G",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 165989495,
+      "ref": "A",
+      "alt": "G",
+      "rsids": [
+        "rs181548655"
+      ],
+      "exome": {
+        "ac": 0,
+        "an": 42,
+        "af": 0
+      },
+      "genome": {
+        "ac": 583,
+        "an": 152280,
+        "af": 0.003828473863934857
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-166002644-C-A",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166002644-C-A",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166002644,
+      "ref": "C",
+      "alt": "A",
+      "rsids": [
+        "rs865867764"
+      ],
+      "exome": {
+        "ac": 0,
+        "an": 1460102,
+        "af": 0
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-166056410-C-T",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166056410-C-T",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166056410,
+      "ref": "C",
+      "alt": "T",
+      "rsids": [
+        "rs794726840"
+      ],
+      "exome": {
+        "ac": 0,
+        "an": 1398942,
+        "af": 0
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-166073546-C-A",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166073546-C-A",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166073546,
+      "ref": "C",
+      "alt": "A",
+      "rsids": [
+        "rs76921794"
+      ],
+      "exome": {
+        "ac": 0,
+        "an": 1461862,
+        "af": 0
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-166051743-A-G",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166051743-A-G",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166051743,
+      "ref": "A",
+      "alt": "G",
+      "rsids": [
+        "rs2105888708"
+      ],
+      "exome": {
+        "ac": 0,
+        "an": 1452928,
+        "af": 0
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-165994347-T-G",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-165994347-T-G",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 165994347,
+      "ref": "T",
+      "alt": "G",
+      "rsids": [
+        "rs1553521053"
+      ],
+      "exome": {
+        "ac": 3,
+        "an": 1460360,
+        "af": 2.05428798378482e-06
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-165992092-C-G",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-165992092-C-G",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 165992092,
+      "ref": "C",
+      "alt": "G",
+      "rsids": [
+        "rs2105431330"
+      ],
+      "exome": {
+        "ac": 1,
+        "an": 1461796,
+        "af": 6.840899824599329e-07
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-166007252-G-A",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166007252-G-A",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166007252,
+      "ref": "G",
+      "alt": "A",
+      "rsids": [],
+      "exome": {
+        "ac": 0,
+        "an": 28,
+        "af": 0
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-166007610-A-G",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166007610-A-G",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166007610,
+      "ref": "A",
+      "alt": "G",
+      "rsids": [
+        "rs1691830771"
+      ],
+      "exome": null,
+      "genome": {
+        "ac": 1,
+        "an": 151430,
+        "af": 6.603711285742587e-06
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-166045316-C-A",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166045316-C-A",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166045316,
+      "ref": "C",
+      "alt": "A",
+      "rsids": [],
+      "exome": {
+        "ac": 0,
+        "an": 1461808,
+        "af": 0
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-166007740-C-T",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166007740-C-T",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166007740,
+      "ref": "C",
+      "alt": "T",
+      "rsids": [
+        "rs956787480"
+      ],
+      "exome": null,
+      "genome": {
+        "ac": 2,
+        "an": 151222,
+        "af": 1.3225588869344408e-05
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-166007372-A-G",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166007372-A-G",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166007372,
+      "ref": "A",
+      "alt": "G",
+      "rsids": [
+        "rs1476753090"
+      ],
+      "exome": null,
+      "genome": {
+        "ac": 2,
+        "an": 151280,
+        "af": 1.3220518244315177e-05
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-166007711-G-A",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166007711-G-A",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166007711,
+      "ref": "G",
+      "alt": "A",
+      "rsids": [
+        "rs1394084278"
+      ],
+      "exome": null,
+      "genome": {
+        "ac": 6,
+        "an": 151288,
+        "af": 3.965945745862197e-05
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-166007095-G-C",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166007095-G-C",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166007095,
+      "ref": "G",
+      "alt": "C",
+      "rsids": [
+        "rs750240682"
+      ],
+      "exome": null,
+      "genome": {
+        "ac": 7,
+        "an": 148466,
+        "af": 4.714884215914755e-05
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-166007621-A-C",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166007621-A-C",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166007621,
+      "ref": "A",
+      "alt": "C",
+      "rsids": [
+        "rs182825244"
+      ],
+      "exome": null,
+      "genome": {
+        "ac": 5,
+        "an": 151546,
+        "af": 3.299328256766922e-05
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-165992079-G-A",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-165992079-G-A",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 165992079,
+      "ref": "G",
+      "alt": "A",
+      "rsids": [
+        "rs1475847942"
+      ],
+      "exome": null,
+      "genome": {
+        "ac": 1,
+        "an": 152018,
+        "af": 6.578168374797721e-06
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-166007572-A-C",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166007572-A-C",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166007572,
+      "ref": "A",
+      "alt": "C",
+      "rsids": [
+        "rs553600910"
+      ],
+      "exome": null,
+      "genome": {
+        "ac": 5,
+        "an": 151468,
+        "af": 3.301027279689439e-05
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-166060832-T-C",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166060832-T-C",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166060832,
+      "ref": "T",
+      "alt": "C",
+      "rsids": [],
+      "exome": {
+        "ac": 0,
+        "an": 280,
+        "af": 0
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-166056447-G-T",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166056447-G-T",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166056447,
+      "ref": "G",
+      "alt": "T",
+      "rsids": [],
+      "exome": {
+        "ac": 0,
+        "an": 1455354,
+        "af": 0
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-166048887-C-A",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166048887-C-A",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166048887,
+      "ref": "C",
+      "alt": "A",
+      "rsids": [],
+      "exome": {
+        "ac": 0,
+        "an": 1434882,
+        "af": 0
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-166002477-G-T",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166002477-G-T",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166002477,
+      "ref": "G",
+      "alt": "T",
+      "rsids": [],
+      "exome": {
+        "ac": 0,
+        "an": 1458992,
+        "af": 0
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-166058568-A-G",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166058568-A-G",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166058568,
+      "ref": "A",
+      "alt": "G",
+      "rsids": [],
+      "exome": {
+        "ac": 0,
+        "an": 1341064,
+        "af": 0
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-166043722-C-G",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166043722-C-G",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166043722,
+      "ref": "C",
+      "alt": "G",
+      "rsids": [],
+      "exome": {
+        "ac": 0,
+        "an": 1461846,
+        "af": 0
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-166007150-C-G",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166007150-C-G",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166007150,
+      "ref": "C",
+      "alt": "G",
+      "rsids": [
+        "rs1327853203"
+      ],
+      "exome": null,
+      "genome": {
+        "ac": 2,
+        "an": 150294,
+        "af": 1.3307251121135908e-05
+      }
+    }
+  },
+  {
+    "requested_variant_id": "2-165991811-A-G",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-165991811-A-G",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 165991811,
+      "ref": "A",
+      "alt": "G",
+      "rsids": [],
+      "exome": {
+        "ac": 1,
+        "an": 1461788,
+        "af": 6.840937263132548e-07
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-165998056-G-T",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-165998056-G-T",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 165998056,
+      "ref": "G",
+      "alt": "T",
+      "rsids": [],
+      "exome": {
+        "ac": 0,
+        "an": 1452598,
+        "af": 0
+      },
+      "genome": null
+    }
+  },
+  {
+    "requested_variant_id": "2-166039436-C-A",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-166039436-C-A",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 166039436,
+      "ref": "C",
+      "alt": "A",
+      "rsids": [],
+      "exome": {
+        "ac": 0,
+        "an": 1453398,
+        "af": 0
+      },
+      "genome": {
+        "ac": 0,
+        "an": 147068,
+        "af": 0
+      }
+    }
+  }
+]

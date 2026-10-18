@@ -50,8 +50,8 @@
     }
   },
   "current_category_counts": {
-    "limited": 3935,
-    "partial": 1446
+    "limited": 3853,
+    "partial": 1528
   },
   "rules": [
     "Evidence completeness is descriptive and is not a pathogenicity score.",

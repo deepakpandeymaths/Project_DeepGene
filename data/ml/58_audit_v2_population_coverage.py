@@ -72,12 +72,14 @@ def main() -> None:
 
     audit = {
         "created": date.today().isoformat(),
-        "status": "SOURCE_SCOPE_LIMITED_NO_SAFE_ADDITIONAL_MATCHES",
+        "status": "API_ENRICHED_PARTIAL_SOURCE_SCOPE_LIMITED",
         "source": "gnomAD v4.1.2 local SCN1A export",
         "source_rows": len(gnomad),
         "source_chromosomes": sorted({clean(row.get("Chromosome")) for row in gnomad}),
         "source_transcripts": len({clean(row.get("Transcript")) for row in gnomad if clean(row.get("Transcript"))}),
-        "representation_coverage": 0.2369109947643979,
+        "representation_rows": len(annotations),
+        "matched_representation_rows": sum(clean(row.get("join_status")) == "matched" for row in annotations),
+        "representation_coverage": sum(clean(row.get("join_status")) == "matched" for row in annotations) / len(annotations) if annotations else 0.0,
         "variant_level_rows": len(completeness),
         "variant_level_matched_rows": sum(clean(row.get("population_evidence_status")) == "available" for row in completeness),
         "variant_level_coverage": sum(clean(row.get("population_evidence_status")) == "available" for row in completeness) / len(completeness) if completeness else 0.0,
@@ -88,7 +90,7 @@ def main() -> None:
         "shared_rsid_allele_mismatches": allele_mismatch,
         "safe_additional_matches_from_current_export": 0,
         "reason": "The export contains only chromosome 2 rows; shared rsIDs for currently unmatched rows do not agree on alleles, so they cannot be used as fallback matches.",
-        "next_action": "Acquire a complete SCN1A gnomAD export and/or add an approved GRCh37-to-GRCh38 chain before attempting liftover-based matching.",
+        "next_action": "Retry failed API batches with backoff, then acquire a complete SCN1A export and/or add an approved GRCh37-to-GRCh38 chain.",
         "safety_rule": "Do not match by rsID alone when reference and alternate alleles disagree; unmatched does not mean rare or benign.",
     }
     RESULTS.mkdir(parents=True, exist_ok=True)
