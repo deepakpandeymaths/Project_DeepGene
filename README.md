@@ -8,8 +8,8 @@
 
 **Evidence-aware SCN1A variant research platform**
 
-[![version](https://img.shields.io/badge/version-v1.0-blue)](README.md)
-[![status](https://img.shields.io/badge/status-v1%20complete%20%7C%20research--only-orange)](README.md)
+[![version](https://img.shields.io/badge/version-v2%20research--development-blue)](README.md)
+[![status](https://img.shields.io/badge/status-v1%20complete%20%7C%20v2%20in%20progress-orange)](README.md)
 [![platform](https://img.shields.io/badge/platform-local--first-green)](README.md)
 [![scope](https://img.shields.io/badge/scope-research%20only-purple)](README.md)
 
@@ -663,3 +663,138 @@ annotations, conversation context, and predictions. External evidence such as
 HPO, gnomAD, conservation, splice, and structural annotations remains subject
 to source-version, join-coverage, and missing-value audits before it can enter
 future experiments.
+
+## 14. V2 population-frequency enrichment
+
+Population frequency is integrated as annotation evidence and missingness
+information. It is not converted into a pathogenicity label, LOF/GOF label, or
+clinical conclusion.
+
+### 14.1 Sources and matching strategy
+
+The current population workflow uses:
+
+~~~text
+data/raw/gnomad_scn1a_population.csv
+data/raw/gnomad_scn1a_api_enrichment.jsonl
+data/raw/hg19ToHg38.over.chain.gz
+~~~
+
+The matching order is:
+
+1. exact assembly, chromosome, position, reference, and alternate match;
+2. allele-aware rsID match, requiring reference and alternate agreement;
+3. targeted gnomAD v4 API query for unmatched GRCh38 variants;
+4. validated GRCh37-to-GRCh38 liftover followed by a targeted API query; and
+5. explicit missing status when no safe match is available.
+
+Ambiguous conversions, allele conflicts, API misses, and unavailable values are
+not treated as zero frequency or benign evidence.
+
+### 14.2 Current measured coverage
+
+The latest audited result is:
+
+| Measure | Result |
+|---|---:|
+| ClinVar representation rows | 10,696 |
+| Matched representations | 2,901 |
+| Representation-level coverage | 27.12% |
+| V2 master variants | 5,381 |
+| Variants with population evidence | 1,597 |
+| Variant-level coverage | 29.68% |
+| Remaining unmatched representations | 7,795 |
+| Tests passing | 10 |
+
+The current source and API enrichment are partial. The unfinished retry
+process is not included in these numbers. The authoritative audit is:
+
+~~~text
+data/analysis_results/v2_population_unmatched_audit.json
+data/analysis_results/v2_gnomad_api_enrichment_report.json
+data/analysis_results/v2_grch37_liftover_report.json
+data/analysis_results/v2_liftover_gnomad_api_report.json
+~~~
+
+### 14.3 Reproducing the enrichment
+
+Run the local annotation and evidence rebuild in this order:
+
+~~~powershell
+python data/ml/57_join_v2_population_annotations.py
+python data/ml/59_query_gnomad_api_enrichment.py
+python data/ml/60_merge_gnomad_api_matches.py
+python data/ml/62_liftover_grch37_population_targets.py
+python data/ml/63_query_lifted_gnomad_targets.py
+python data/ml/64_merge_liftover_gnomad_matches.py
+python data/ml/52_build_v2_evidence_completeness.py
+python data/ml/55_build_v2_research_prioritization.py
+python data/ml/58_audit_v2_population_coverage.py
+~~~
+
+The retry helpers are available for rate-limited or malformed API batches:
+
+~~~powershell
+python data/ml/61_retry_gnomad_api_errors.py
+python data/ml/65_retry_liftover_api_requests.py
+~~~
+
+They must be treated as resumable enrichment tools. Results are merged only
+after allele validation and a successful audit. A timeout or failed request is
+not evidence that a variant is absent from gnomAD.
+
+The complete gnomAD short-variant release is too large for ordinary local
+download workflows. DeepGene therefore uses targeted API queries and records
+the API, dataset, raw response log, source version, join method, and coverage
+audit. The current implementation uses the public `gnomad_r4` dataset endpoint.
+
+## 15. V2 software flow and architecture
+
+DeepGene V2 is a modular local research system:
+
+~~~text
+Source data and manifests
+          ↓
+Validated ingestion and normalization
+          ↓
+SQLite evidence store and master variant tables
+          ↓
+Evidence completeness, overlap, and leakage audits
+          ↓
+Functional models, calibration, and uncertainty estimates
+          ↓
+Population/HPO/annotation enrichment with coverage audits
+          ↓
+Transparent research prioritization
+          ↓
+Local API, dashboard, Research Chat, and Data Lab
+~~~
+
+The application layer reads generated, auditable products. It does not allow
+conversation text, an unlabeled upload, or an annotation score to silently
+become a supervised target. Model retraining requires an explicitly supported
+label source and a controlled preparation script.
+
+## 16. Current V2 status and next scope
+
+| V2 component | Status |
+|---|---|
+| V1 baseline freeze and manifest | Complete |
+| V2 master table and data dictionary | Complete |
+| Grouped split and leakage audits | Complete |
+| Evidence completeness with explicit missingness | Complete |
+| Functional baseline, calibration, and uncertainty | Complete exploratory |
+| Research prioritization and dashboard integration | Complete exploratory |
+| Conservative HPO staging | Complete as staged annotation |
+| gnomAD exact and rsID integration | Complete with coverage audit |
+| gnomAD targeted API enrichment | Partial; 84 direct matches |
+| GRCh37-to-GRCh38 liftover enrichment | Partial; 283 additional matches |
+| API retry recovery | Pending; previous service timeouts preserved |
+| Independent clinical validation | Pending |
+| Dravet clinical-outcome model | Blocked |
+
+The next safe V2 work is to resume API retries with checkpointing and lower
+request rates, then evaluate a broader regional or transcript-aware gnomAD
+source. Only after external evidence is stable should it be used in a model
+feature experiment. No current V2 output is a diagnosis, pathogenicity call,
+disease-risk estimate, treatment recommendation, or clinical decision.
