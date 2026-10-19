@@ -1,0 +1,16 @@
+# DeepGene repository ownership
+# Pull requests touching these paths require review from the repository owner.
+
+* @deepakpandeymaths
+
+# Keep repository policy and automation under owner review.
+/.github/ @deepakpandeymaths
+/CODEOWNERS @deepakpandeymaths
+/LICENSE @deepakpandeymaths
+/SECURITY.md @deepakpandeymaths
+
+# Protect the research pipeline and application code.
+/app/ @deepakpandeymaths
+/data/ml/ @deepakpandeymaths
+/data/processed/ @deepakpandeymaths
+/tests/ @deepakpandeymaths
