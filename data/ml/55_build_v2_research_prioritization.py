@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import csv
 import json
+import re
 from collections import defaultdict
 from datetime import date
 from pathlib import Path
@@ -13,6 +14,15 @@ ROOT = Path(__file__).resolve().parents[2]
 PROCESSED = ROOT / "data" / "processed"
 ML_RESULTS = ROOT / "data" / "ml_results"
 ANALYSIS = ROOT / "data" / "analysis_results"
+
+
+AA_ONE_TO_THREE = {
+    "A": "Ala", "R": "Arg", "N": "Asn", "D": "Asp", "C": "Cys",
+    "Q": "Gln", "E": "Glu", "G": "Gly", "H": "His", "I": "Ile",
+    "L": "Leu", "K": "Lys", "M": "Met", "F": "Phe", "P": "Pro",
+    "S": "Ser", "T": "Thr", "W": "Trp", "Y": "Tyr", "V": "Val",
+}
+AA_THREE_TO_THREE = {value.lower(): value for value in AA_ONE_TO_THREE.values()}
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
@@ -39,6 +49,32 @@ def number(value: object, default: float = 0.0) -> float:
         return default
 
 
+def canonical_amino_acid(token: str) -> str:
+    token = clean(token)
+    if len(token) == 1 and token.upper() in AA_ONE_TO_THREE:
+        return AA_ONE_TO_THREE[token.upper()]
+    if token.lower() in AA_THREE_TO_THREE:
+        return AA_THREE_TO_THREE[token.lower()]
+    if token in {"Ter", "*"}:
+        return "Ter"
+    return ""
+
+
+def canonical_variant_key(value: str) -> str:
+    value = clean(value)
+    match = re.match(
+        r"^([^:]+):p\.([A-Z][a-z]{2}|[A-Z])(\d+)(Ter|\*|[A-Z][a-z]{2}|[A-Z])$",
+        value,
+    )
+    if not match:
+        return value
+    reference = canonical_amino_acid(match.group(2))
+    alternate = canonical_amino_acid(match.group(4))
+    if not reference or not alternate:
+        return value
+    return f"{match.group(1)}:p.{reference}{match.group(3)}{alternate}"
+
+
 def main() -> None:
     predictions = read_csv(ML_RESULTS / "v2_uncertainty_predictions.csv")
     master = read_csv(PROCESSED / "deepgene_v2_master_variants.csv")
@@ -62,7 +98,7 @@ def main() -> None:
     ]
     prioritized: list[dict[str, object]] = []
     for row in selected:
-        key = clean(row.get("variant_key"))
+        key = canonical_variant_key(row.get("variant_key", ""))
         clinical_rows = clinical_by_key.get(key, [])
         clinical_ids = sorted({clean(item.get("variant_id")) for item in clinical_rows if clean(item.get("variant_id"))})
         completeness_rows = [completeness_by_id[item] for item in clinical_ids if item in completeness_by_id]
@@ -152,9 +188,12 @@ def main() -> None:
         "created": date.today().isoformat(),
         "status": "RESEARCH_ONLY_PRIORITIZATION",
         "rows_ranked": len(prioritized),
+        "clinical_joined_rows": sum(1 for row in prioritized if clean(row["clinical_variant_ids"])),
+        "population_available_rows": sum(1 for row in prioritized if "available" in clean(row["population_evidence_status"])),
         "priority_band_counts": {band: sum(1 for row in prioritized if row["priority_band"] == band) for band in sorted({row["priority_band"] for row in prioritized})},
         "split_counts": {split: sum(1 for row in prioritized if row["split"] == split) for split in sorted({row["split"] for row in prioritized})},
         "formula": "0.45 functional signal + 0.20 uncertainty + 0.25 evidence gap + 0.10 conflict component",
+        "join_policy": "Canonicalize one-letter and three-letter protein HGVS tokens before exact protein-key matching; do not use position-only or amino-acid-only matches.",
         "interpretation": "This ranks variants for research review. It does not estimate pathogenicity, disease risk, diagnosis, treatment response, or clinical action.",
         "limitations": [
             "Only evaluated functional rows with calibrated predictions are ranked.",

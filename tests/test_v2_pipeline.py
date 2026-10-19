@@ -38,6 +38,14 @@ class V2PipelineContractTests(unittest.TestCase):
         self.assertEqual(checks["conversation_memory"]["status"], "EXCLUDED")
         self.assertEqual(checks["alphamissense_annotation"]["status"], "SAFE_AS_ANNOTATION")
 
+    def test_priority_join_normalizes_scientific_protein_hgvs(self):
+        rows = self.read_csv("data/processed/deepgene_v2_research_prioritization.csv")
+        scn1a = [row for row in rows if row["variant_key"].startswith("SCN1A:")]
+        self.assertEqual(len(scn1a), 14)
+        self.assertTrue(all(row["clinical_variant_ids"] for row in scn1a))
+        report = json.loads((ROOT / "data/analysis_results/v2_prioritization_report.json").read_text(encoding="utf-8"))
+        self.assertEqual(report["clinical_joined_rows"], 14)
+
 
 if __name__ == "__main__":
     unittest.main()

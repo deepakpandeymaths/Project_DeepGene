@@ -1,5 +1,5 @@
 {
-  "audit_date": "2026-10-18",
+  "audit_date": "2026-10-19",
   "purpose": "V2 identity, duplicate, cross-source overlap, and label-conflict audit",
   "source_summaries": {
     "clinvar_variant_id": {
@@ -31,9 +31,9 @@
     }
   },
   "cross_source_overlaps": {
-    "brunklaus_scion_functional_keys": 0,
-    "clinical_functional_protein_keys": 39,
-    "clinical_variants_with_functional_records": 41
+    "brunklaus_scion_functional_keys": 1,
+    "clinical_functional_protein_keys": 59,
+    "clinical_variants_with_functional_records": 63
   },
   "alphamissense": {
     "rows": 19233,

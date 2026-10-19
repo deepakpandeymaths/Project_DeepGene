@@ -1,7 +1,9 @@
 {
-  "created": "2026-10-18",
+  "created": "2026-10-19",
   "status": "RESEARCH_ONLY_PRIORITIZATION",
   "rows_ranked": 84,
+  "clinical_joined_rows": 14,
+  "population_available_rows": 1,
   "priority_band_counts": {
     "high_research_priority": 19,
     "moderate_research_priority": 65
@@ -11,6 +13,7 @@
     "validation": 46
   },
   "formula": "0.45 functional signal + 0.20 uncertainty + 0.25 evidence gap + 0.10 conflict component",
+  "join_policy": "Canonicalize one-letter and three-letter protein HGVS tokens before exact protein-key matching; do not use position-only or amino-acid-only matches.",
   "interpretation": "This ranks variants for research review. It does not estimate pathogenicity, disease risk, diagnosis, treatment response, or clinical action.",
   "limitations": [
     "Only evaluated functional rows with calibrated predictions are ranked.",

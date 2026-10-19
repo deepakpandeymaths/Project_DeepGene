@@ -1,5 +1,5 @@
 {
-  "created": "2026-10-18",
+  "created": "2026-10-19",
   "status": "BASELINE_COMPLETE_EXTERNAL_ENRICHMENT_PENDING",
   "variant_rows_profiled": 5381,
   "evidence_categories": {
@@ -50,9 +50,9 @@
     }
   },
   "current_category_counts": {
-    "limited": 3647,
-    "broad": 1,
-    "partial": 1733
+    "limited": 3633,
+    "broad": 2,
+    "partial": 1746
   },
   "rules": [
     "Evidence completeness is descriptive and is not a pathogenicity score.",

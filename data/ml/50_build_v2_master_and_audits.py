@@ -20,6 +20,15 @@ PROCESSED = ROOT / "data" / "processed"
 RESULTS = ROOT / "data" / "analysis_results"
 
 
+AA_ONE_TO_THREE = {
+    "A": "Ala", "R": "Arg", "N": "Asn", "D": "Asp", "C": "Cys",
+    "Q": "Gln", "E": "Glu", "G": "Gly", "H": "His", "I": "Ile",
+    "L": "Leu", "K": "Lys", "M": "Met", "F": "Phe", "P": "Pro",
+    "S": "Ser", "T": "Thr", "W": "Trp", "Y": "Tyr", "V": "Val",
+}
+AA_THREE_TO_THREE = {value.lower(): value for value in AA_ONE_TO_THREE.values()}
+
+
 def read_csv(path: Path) -> list[dict[str, str]]:
     with path.open("r", encoding="utf-8-sig", newline="") as handle:
         return list(csv.DictReader(handle))
@@ -37,11 +46,33 @@ def clean(value: object) -> str:
     return "" if value is None else str(value).strip()
 
 
-def protein_key_from_hgvs(hgvs: str) -> str:
-    match = re.search(r"p\.([A-Z][a-z]{2})(\d+)([A-Z][a-z]{2})", clean(hgvs))
+def canonical_amino_acid(token: str) -> str:
+    token = clean(token)
+    if len(token) == 1 and token.upper() in AA_ONE_TO_THREE:
+        return AA_ONE_TO_THREE[token.upper()]
+    if token.lower() in AA_THREE_TO_THREE:
+        return AA_THREE_TO_THREE[token.lower()]
+    if token in {"Ter", "*"}:
+        return "Ter"
+    return ""
+
+
+def canonical_protein_key(gene: str, value: str) -> str:
+    match = re.search(
+        r"p\.([A-Z][a-z]{2}|[A-Z])(\d+)(Ter|\*|[A-Z][a-z]{2}|[A-Z])",
+        clean(value),
+    )
     if not match:
         return ""
-    return f"SCN1A:p.{match.group(1)}{match.group(2)}{match.group(3)}"
+    reference = canonical_amino_acid(match.group(1))
+    alternate = canonical_amino_acid(match.group(3))
+    if not reference or not alternate:
+        return ""
+    return f"{clean(gene)}:p.{reference}{match.group(2)}{alternate}"
+
+
+def protein_key_from_hgvs(hgvs: str, gene: str = "SCN1A") -> str:
+    return canonical_protein_key(gene, hgvs)
 
 
 def functional_key(gene: str, value: str) -> str:
@@ -49,10 +80,10 @@ def functional_key(gene: str, value: str) -> str:
     if not value:
         return ""
     if value.startswith(f"{gene}:p."):
-        return value
+        return canonical_protein_key(gene, value)
     if value.startswith("p."):
-        return f"{gene}:{value}"
-    return f"{gene}:p.{value}"
+        return canonical_protein_key(gene, value)
+    return canonical_protein_key(gene, f"p.{value}")
 
 
 def duplicate_summary(rows: list[dict[str, str]], key_name: str, label_name: str | None = None) -> dict[str, object]:
