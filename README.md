@@ -744,16 +744,17 @@ The latest audited result is:
 | Measure | Result |
 |---|---:|
 | ClinVar representation rows | 10,696 |
-| Matched representations | 2,901 |
-| Representation-level coverage | 27.17% |
+| Matched representations | 2,931 |
+| Representation-level coverage | 27.40% |
 | V2 master variants | 5,381 |
-| Variants with population evidence | 1,597 |
-| Variant-level coverage | 29.77% |
-| Remaining unmatched representations | 7,795 |
+| Variants with population evidence | 1,619 |
+| Variant-level coverage | 30.09% |
+| Remaining unmatched representations | 7,765 |
 | Tests passing | 10 |
 
-The current source and API enrichment are partial. The unfinished retry
-process is not included in these numbers. The authoritative audit is:
+The current source and API enrichment are partial. The latest checkpointed
+retry results are included in these numbers; remaining request failures and
+allele conflicts remain excluded. The authoritative audit is:
 
 ~~~text
 data/analysis_results/v2_population_unmatched_audit.json
@@ -845,12 +846,12 @@ performance.
 | Conservative HPO staging | Complete as staged annotation |
 | gnomAD exact and rsID integration | Complete with coverage audit |
 | gnomAD targeted API enrichment | Partial; 84 direct matches |
-| GRCh37-to-GRCh38 liftover enrichment | Partial; 288 validated matches |
-| API retry recovery | Pending; previous service timeouts preserved |
+| GRCh37-to-GRCh38 liftover enrichment | Partial; 313 validated matches |
+| API retry recovery | Partial; checkpointed retries recovered 30 matches; 2,227 remain |
 | Independent clinical validation | Pending |
 | Dravet clinical-outcome model | Blocked |
 
-The next safe V2 work is to resume API retries with checkpointing and lower
+The next safe V2 work is to continue API retries with checkpointing and lower
 request rates, then evaluate a broader regional or transcript-aware gnomAD
 source. Only after external evidence is stable should it be used in a model
 feature experiment. No current V2 output is a diagnosis, pathogenicity call,
