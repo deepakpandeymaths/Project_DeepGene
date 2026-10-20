@@ -1,5 +1,5 @@
 {
-  "created": "2026-10-19",
+  "created": "2026-10-20",
   "status": "API_ENRICHED_PARTIAL_SOURCE_SCOPE_LIMITED",
   "source": "gnomAD v4.1.2 local SCN1A export",
   "source_rows": 5056,
@@ -8,19 +8,19 @@
   ],
   "source_transcripts": 5,
   "representation_rows": 10696,
-  "matched_representation_rows": 2931,
-  "representation_coverage": 0.27402767389678384,
+  "matched_representation_rows": 2932,
+  "representation_coverage": 0.27412116679132387,
   "variant_level_rows": 5381,
   "variant_level_matched_rows": 1619,
   "variant_level_coverage": 0.3008734435978443,
-  "unmatched_rows": 7765,
+  "unmatched_rows": 7764,
   "unmatched_by_assembly": {
-    "GRCh37": 3929,
+    "GRCh37": 3928,
     "GRCh38": 3826,
     "na": 10
   },
   "unmatched_reason_counts": {
-    "no_shared_rsid": 7178,
+    "no_shared_rsid": 7177,
     "shared_rsid_allele_mismatch": 587
   },
   "unmatched_with_shared_rsid": 587,
