@@ -830,6 +830,34 @@
     }
   },
   {
+    "source_variant_id": "1938468",
+    "source_variation_id": "2420925",
+    "source_assembly": "GRCh37",
+    "source_chromosome": "2",
+    "source_position": "166848328",
+    "reference_allele": "T",
+    "alternate_allele": "A",
+    "lifted_variant_id": "2-165991818-T-A",
+    "target_assembly": "GRCh38",
+    "chain_file": "data\\raw\\hg19ToHg38.over.chain.gz",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-165991818-T-A",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 165991818,
+      "ref": "T",
+      "alt": "A",
+      "rsids": [],
+      "exome": {
+        "ac": 2,
+        "an": 1461784,
+        "af": 1.3681911965105651e-06
+      },
+      "genome": null
+    }
+  },
+  {
     "source_variant_id": "2116530",
     "source_variation_id": "2057373",
     "source_assembly": "GRCh37",
@@ -1005,6 +1033,34 @@
         "an": 152084,
         "af": 6.575313642460746e-06
       }
+    }
+  },
+  {
+    "source_variant_id": "4184591",
+    "source_variation_id": "4070751",
+    "source_assembly": "GRCh37",
+    "source_chromosome": "2",
+    "source_position": "166848309",
+    "reference_allele": "C",
+    "alternate_allele": "T",
+    "lifted_variant_id": "2-165991799-C-T",
+    "target_assembly": "GRCh38",
+    "chain_file": "data\\raw\\hg19ToHg38.over.chain.gz",
+    "api_status": "matched",
+    "api_variant": {
+      "variantId": "2-165991799-C-T",
+      "reference_genome": "GRCh38",
+      "chrom": "2",
+      "pos": 165991799,
+      "ref": "C",
+      "alt": "T",
+      "rsids": [],
+      "exome": {
+        "ac": 1,
+        "an": 1461788,
+        "af": 6.840937263132548e-07
+      },
+      "genome": null
     }
   },
   {
