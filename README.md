@@ -43,16 +43,81 @@ replacement for geneticist review.
 
 ## Live deployment and local-first workflow
 
-The current public browser deployment is available at the
-[DeepGene research copilot](https://deepgene-sand.vercel.app/). It provides a
-shareable hosted interface for the Research Chat experience and the Data Lab
-entry point.
+The public DeepGene browser interface is hosted on Vercel:
+
+- **Frontend:** [DeepGene research copilot](https://deepgene-sand.vercel.app/)
+- **Python API:** [deepgene-api.onrender.com](https://deepgene-api.onrender.com/)
+- **API health check:** [deepgene-api.onrender.com/api/health](https://deepgene-api.onrender.com/api/health)
+
+The health endpoint should return:
+
+```json
+{"ok": true}
+```
+
+The deployed application uses a split frontend/backend architecture:
+
+```text
+Browser
+  │
+  ├── Vercel: static frontend, Research Chat, and Data Lab interface
+  │
+  └── Render: Python API, evidence access, local answer logic,
+              optional external AI request, and upload routes
+```
+
+The frontend sends API requests to:
+
+```text
+https://deepgene-api.onrender.com
+```
+
+The main deployed API routes are:
+
+```text
+GET  /api/health
+GET  /api/summary
+POST /api/ask
+POST /api/upload
+GET  /api/v2/summary
+GET  /api/v2/prioritization?limit=20
+GET  /api/v2/variant?variant_key=SCN1A:p.Met145Thr
+GET  /api/v2/coverage
+GET  /api/v2/calibration
+```
+
+The Render Web Service uses the following deployment settings:
+
+```text
+Runtime:        Python 3
+Branch:         main
+Root Directory: empty
+Build Command:  pip install -r requirements.txt
+Start Command:  python app/server.py
+Health Path:    /api/health
+Plan:           Free
+Auto-Deploy:    On Commit
+```
+
+The server must listen on Render's assigned port and all network interfaces:
+
+```python
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", "8765"))
+    print(f"DeepGene dashboard listening on port {port}")
+    ThreadingHTTPServer(("0.0.0.0", port), Handler).serve_forever()
+```
+
+The Free Render instance may spin down after inactivity, so its first request
+after a period of inactivity may take longer. If the service is redeployed,
+verify the health endpoint before testing the Vercel frontend.
 
 The hosted app and the local dashboard serve different purposes:
 
 | Environment | Best use | Data and execution model |
 |---|---|---|
 | [Live Vercel app](https://deepgene-sand.vercel.app/) | Sharing the interface and demonstrating the research workflow | Hosted browser experience; do not use it for private or sensitive data |
+| [Render API](https://deepgene-api.onrender.com/) | Serving the deployed research API to the Vercel frontend | Hosted Python service with deployment and resource limits |
 | Local dashboard | Full development, analysis, validation, uploads, and controlled experiments | Local-first execution with the project database, processed data, models, and audit outputs |
 
 The live deployment is a research demonstration, not a replacement for the
