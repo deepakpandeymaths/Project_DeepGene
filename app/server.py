@@ -467,5 +467,6 @@ class Handler(BaseHTTPRequestHandler):
 
 
 if __name__ == "__main__":
-    print("DeepGene dashboard: http://127.0.0.1:8765")
-    ThreadingHTTPServer(("127.0.0.1", 8765), Handler).serve_forever()
+    port = int(os.environ.get("PORT", "8765"))
+    print(f"DeepGene dashboard listening on port {port}")
+    ThreadingHTTPServer(("0.0.0.0", port), Handler).serve_forever()
