@@ -415,9 +415,23 @@ def retrain_functional(upload_df):
 
 
 class Handler(BaseHTTPRequestHandler):
-    def send_json(self, payload, status=200):
+   def send_json(self, payload, status=200):
         data = json.dumps(payload, indent=2).encode()
-        self.send_response(status); self.send_header("Content-Type", "application/json"); self.send_header("Content-Length", str(len(data))); self.end_headers(); self.wfile.write(data)
+        self.send_response(status)
+        self.send_header("Content-Type", "application/json")
+        self.send_header("Access-Control-Allow-Origin", "https://deepgene-sand.vercel.app")
+        self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+        self.send_header("Access-Control-Allow-Headers", "Content-Type")
+        self.send_header("Content-Length", str(len(data)))
+        self.end_headers()
+        self.wfile.write(data)
+
+    def do_OPTIONS(self):
+        self.send_response(204)
+        self.send_header("Access-Control-Allow-Origin", "https://deepgene-sand.vercel.app")
+        self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+        self.send_header("Access-Control-Allow-Headers", "Content-Type")
+        self.end_headers()
 
     def do_GET(self):
         parsed = urlparse(self.path)
@@ -467,5 +481,6 @@ class Handler(BaseHTTPRequestHandler):
 
 
 if __name__ == "__main__":
-    print("DeepGene dashboard: http://127.0.0.1:8765")
-    ThreadingHTTPServer(("127.0.0.1", 8765), Handler).serve_forever()
+    port = int(os.environ.get("PORT", "8765"))
+    print(f"DeepGene dashboard listening on port {port}")
+    ThreadingHTTPServer(("0.0.0.0", port), Handler).serve_forever()
