@@ -1,0 +1,42 @@
+/* Conversation layout: keep the composer visible while the message list scrolls. */
+@media (min-width: 701px) {
+  body { overflow: hidden; }
+  .app-shell { height: calc(100vh - 78px); min-height: 0; }
+  .rail, .chat-panel, .insights { min-height: 0; }
+  .rail { overflow-y: auto; }
+  .chat-panel { height: calc(100vh - 78px); overflow: hidden; }
+  .chat-stream {
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: #b7d3c7 transparent;
+  }
+  .insights {
+    height: calc(100vh - 78px);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #b7d3c7 transparent;
+  }
+}
+
+@media (max-width: 700px) {
+  body { overflow: auto; }
+  .app-shell { height: auto; min-height: calc(100vh - 78px); }
+  .chat-panel { height: auto; min-height: calc(100vh - 78px); overflow: visible; }
+  .chat-stream {
+    min-height: 0;
+    max-height: 55vh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: #b7d3c7 transparent;
+  }
+  .composer-wrap {
+    position: sticky;
+    bottom: 0;
+    z-index: 5;
+    padding-bottom: 4px;
+    background: linear-gradient(180deg, transparent 0, #f4f7f3 18px, #f4f7f3 100%);
+  }
+}

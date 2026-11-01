@@ -43,10 +43,9 @@ replacement for geneticist review.
 
 ## Live deployment and local-first workflow
 
-The public DeepGene browser interface is hosted on Vercel:
+The public DeepGene application is hosted as a single Render Web Service:
 
-- **Frontend:** [DeepGene research copilot](https://deepgene-sand.vercel.app/)
-- **Python API:** [deepgene-api.onrender.com](https://deepgene-api.onrender.com/)
+- **Application:** [deepgene-api.onrender.com](https://deepgene-api.onrender.com/)
 - **API health check:** [deepgene-api.onrender.com/api/health](https://deepgene-api.onrender.com/api/health)
 
 The health endpoint should return:
@@ -55,21 +54,17 @@ The health endpoint should return:
 {"ok": true}
 ```
 
-The deployed application uses a split frontend/backend architecture:
+The Render service serves both the browser interface and the Python API from
+the same origin:
 
 ```text
 Browser
   │
-  ├── Vercel: static frontend, Research Chat, and Data Lab interface
-  │
-  └── Render: Python API, evidence access, local answer logic,
-              optional external AI request, and upload routes
-```
-
-The frontend sends API requests to:
-
-```text
-https://deepgene-api.onrender.com
+  └── Render Web Service
+      ├── Research Chat and Data Lab frontend
+      ├── Python API and local evidence access
+      ├── Optional external AI request
+      └── Upload and V2 research routes
 ```
 
 The main deployed API routes are:
@@ -86,7 +81,7 @@ GET  /api/v2/coverage
 GET  /api/v2/calibration
 ```
 
-The Render Web Service uses the following deployment settings:
+The Render Web Service uses:
 
 ```text
 Runtime:        Python 3
@@ -99,7 +94,7 @@ Plan:           Free
 Auto-Deploy:    On Commit
 ```
 
-The server must listen on Render's assigned port and all network interfaces:
+The server listens on Render's assigned port and all network interfaces:
 
 ```python
 if __name__ == "__main__":
@@ -109,22 +104,21 @@ if __name__ == "__main__":
 ```
 
 The Free Render instance may spin down after inactivity, so its first request
-after a period of inactivity may take longer. If the service is redeployed,
-verify the health endpoint before testing the Vercel frontend.
+after inactivity may take longer. For private datasets, model development,
+retraining, audit logs, and reproducible experiments, use the local dashboard
+described below. Do not upload private or sensitive data to the public service.
 
-The hosted app and the local dashboard serve different purposes:
+The hosted service and local dashboard serve different purposes:
 
 | Environment | Best use | Data and execution model |
 |---|---|---|
-| [Live Vercel app](https://deepgene-sand.vercel.app/) | Sharing the interface and demonstrating the research workflow | Hosted browser experience; do not use it for private or sensitive data |
-| [Render API](https://deepgene-api.onrender.com/) | Serving the deployed research API to the Vercel frontend | Hosted Python service with deployment and resource limits |
+| [Live Render application](https://deepgene-api.onrender.com/) | Sharing the interface and demonstrating the research workflow | Hosted browser and API experience with deployment and resource limits |
 | Local dashboard | Full development, analysis, validation, uploads, and controlled experiments | Local-first execution with the project database, processed data, models, and audit outputs |
 
-The live deployment is a research demonstration, not a replacement for the
-local research workspace. Deployment configuration, hosted storage, API
-availability, and resource limits may differ from the local environment.
-For reproducible analysis, private datasets, model development, retraining,
-and debugging, use the local dashboard described below.
+Both environments preserve the same research-only boundary: outputs are
+exploratory and must not be interpreted as diagnoses, pathogenicity
+classifications, disease-risk estimates, treatment recommendations, or
+replacements for geneticist review.
 
 Both environments preserve the same research-only boundary: outputs are
 exploratory and must not be interpreted as diagnoses, pathogenicity
