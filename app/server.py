@@ -415,7 +415,7 @@ def retrain_functional(upload_df):
 
 
 class Handler(BaseHTTPRequestHandler):
-   def send_json(self, payload, status=200):
+    def send_json(self, payload, status=200):
         data = json.dumps(payload, indent=2).encode()
         self.send_response(status)
         self.send_header("Content-Type", "application/json")
